@@ -1,0 +1,46 @@
+{
+  "status": "official_sources_used_for_v18_alignment",
+  "generated_at_utc": "2026-06-16T12:12:14.680197+00:00",
+  "sources": [
+    {
+      "title": "Editor V4 Help",
+      "url": "https://elementor.com/help/v4-editor/"
+    },
+    {
+      "title": "Get started with Elementor Editor V4",
+      "url": "https://elementor.com/help/get-started-with-the-elementor-editor-v4/"
+    },
+    {
+      "title": "Classes in Elementor",
+      "url": "https://elementor.com/help/classes-in-elementor-2/"
+    },
+    {
+      "title": "The Elementor Editor Class Manager",
+      "url": "https://elementor.com/help/the-elementor-editor-class-manager/"
+    },
+    {
+      "title": "Prioritize conflicting styles",
+      "url": "https://elementor.com/help/prioritize-conflicting-styles/"
+    },
+    {
+      "title": "Variables",
+      "url": "https://elementor.com/help/variables/"
+    },
+    {
+      "title": "Atomic Form element",
+      "url": "https://elementor.com/help/atomic-form-element/"
+    },
+    {
+      "title": "Interactions",
+      "url": "https://elementor.com/help/interactions/"
+    },
+    {
+      "title": "Dynamic tags in V4",
+      "url": "https://elementor.com/help/dynamic-tags-in-v4/"
+    },
+    {
+      "title": "Elementor Editor 4.0 Developers Update",
+      "url": "https://developers.elementor.com/elementor-editor-4-0-developers-update/"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# چک‌لیست پیاده‌سازی
+
+- [ ] v29 ZIP استخراج شد و تنها source base است.
+- [ ] ۲۱ درس، ۷ تکمیلی و ۶ ایستگاه حفظ شدند.
+- [ ] فصل معماری بدون تغییر شمارش درس‌ها اضافه شد.
+- [ ] اطلس v29 گسترش یافت، duplicate نشد.
+- [ ] دو Step-Through جدید با همان موتور داده‌محور v27/v29 اضافه شدند.
+- [ ] Registry و Schema به‌روزرسانی شدند.
+- [ ] Variables Architecture Lab اضافه شد.
+- [ ] Class Conflict Simulator موجود گسترش یافت.
+- [ ] Component Lifecycle Lab اضافه شد.
+- [ ] Dynamic Data Case Study اضافه شد.
+- [ ] Interactions Lab اضافه شد.
+- [ ] مدل dependency و cascade جدا شدند.
+- [ ] اصطلاحات رسمی Color/Font/Size Variable حفظ شدند.
+- [ ] ادعاهای CSS-only از UI Elementor جدا شدند.
+- [ ] source registry، changelog، README و patch summary به‌روزرسانی شدند.
+- [ ] Validatorهای معنایی جدید اجرا شدند.
+- [ ] SHA256SUMS و manifest بازسازی شدند.
+- [ ] ZIP integrity تست شد.
+- [ ] Browser runtime فقط در صورت اجرای واقعی passed اعلام شد.

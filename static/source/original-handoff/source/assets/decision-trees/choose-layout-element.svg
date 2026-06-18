@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">انتخاب Element چیدمان در Elementor V4</title>
+<desc id="desc">انتخاب Element چیدمان در Elementor V4؛ نمودار تصمیم آموزشی برای Elementor V4</desc>
+<defs>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="5" stdDeviation="6" flood-opacity="0.14"/>
+  </filter>
+  <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#0f766e"/>
+  </marker>
+  <marker id="arrow-yellow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#b7791f"/>
+  </marker>
+  <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L9,3 z" fill="#c53030"/>
+  </marker>
+  <style>
+    .title { font: 700 32px Tahoma, sans-serif; fill:#15322e; }
+    .label { font: 600 23px Tahoma, sans-serif; fill:#15322e; }
+    .small { font: 500 19px Tahoma, sans-serif; fill:#36524c; }
+    .box { fill:#ffffff; stroke:#0f766e; stroke-width:3; rx:18; filter:url(#shadow); }
+    .question { fill:#f0fdfa; stroke:#0f766e; stroke-width:3; filter:url(#shadow); }
+    .warn { fill:#fff7ed; stroke:#c05621; stroke-width:3; rx:18; filter:url(#shadow); }
+    .good { fill:#ecfdf5; stroke:#047857; stroke-width:3; rx:18; filter:url(#shadow); }
+    .muted { fill:#f8fafc; stroke:#64748b; stroke-width:2; rx:18; }
+    .line-green { fill:none; stroke:#0f766e; stroke-width:4; marker-end:url(#arrow-green); }
+    .line-yellow { fill:none; stroke:#b7791f; stroke-width:4; marker-end:url(#arrow-yellow); }
+    .line-red { fill:none; stroke:#c53030; stroke-width:4; marker-end:url(#arrow-red); }
+  </style>
+</defs>
+<rect width="100%" height="100%" fill="#f5faf9"/>
+<text x="600.0" y="54" text-anchor="middle" class="title" direction="rtl">انتخاب Element چیدمان در Elementor V4</text>
+<polygon points="600,90.0 835.0,150 600,210.0 365.0,150" class="question"/>
+<text x="600" y="135" text-anchor="middle" class="label" direction="rtl">فقط یک پوستهٔ سبک</text>
+<text x="600" y="165" text-anchor="middle" class="label" direction="rtl">و گروه‌بندی ساده می‌خواهی؟</text>
+<path d="M600,210 L310,300" class="line-green"/>
+<path d="M600,210 L890,300" class="line-green"/>
+<rect x="120" y="300" width="380" height="110" class="good"/>
+<text x="310.0" y="355.0" text-anchor="middle" class="label" direction="rtl">بله: Div Block</text>
+<polygon points="890,295.0 1105.0,355 890,415.0 675.0,355" class="question"/>
+<text x="890" y="340" text-anchor="middle" class="label" direction="rtl">فرزندان روی</text>
+<text x="890" y="370" text-anchor="middle" class="label" direction="rtl">یک محور قرار می‌گیرند؟</text>
+<path d="M890,415 L690,510" class="line-green"/>
+<path d="M890,415 L1070,510" class="line-green"/>
+<rect x="500" y="510" width="380" height="110" class="good"/>
+<text x="690.0" y="565.0" text-anchor="middle" class="label" direction="rtl">بله: Flexbox</text>
+<rect x="900" y="510" width="250" height="110" class="good"/>
+<text x="1025.0" y="549.0" text-anchor="middle" class="label" direction="rtl">خیر: Grid</text>
+<text x="1025.0" y="581.0" text-anchor="middle" class="label" direction="rtl">اگر ردیف و ستون لازم است</text>
+<text x="275" y="285" class="small" text-anchor="middle">مسیر پیشنهادی</text>
+<text x="880" y="285" class="small" text-anchor="middle">سؤال بعد</text>
+</svg>

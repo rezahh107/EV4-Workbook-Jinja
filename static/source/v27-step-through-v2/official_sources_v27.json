@@ -1,0 +1,120 @@
+{
+  "evidence_policy": {
+    "css_behavior": "supported by CSS specifications",
+    "elementor_behavior": "limited to claims explicitly supported by official help",
+    "environment_specific_behavior": "must remain real_fixture or insufficient_evidence",
+    "simulated_numeric_values": "simulated_explanation; not browser capture"
+  },
+  "official_sources": [
+    {
+      "id": "ELEMENTOR_CONTAINER_SIZE",
+      "supports": [
+        "Container size is configured from Layout",
+        "Width/content width affect layout behavior"
+      ],
+      "title": "Set a Flexbox Container's size and behavior",
+      "type": "official_elementor_help",
+      "url": "https://elementor.com/help/set-flexbox-container-size-behavior/"
+    },
+    {
+      "id": "ELEMENTOR_CONTAINER_LAYOUT",
+      "supports": [
+        "Justify and Align depend on layout direction",
+        "Gap and overflow are container controls"
+      ],
+      "title": "Define container layout",
+      "type": "official_elementor_help",
+      "url": "https://elementor.com/help/container-layout-tab-settings/"
+    },
+    {
+      "id": "ELEMENTOR_RESPONSIVE_EDITING",
+      "supports": [
+        "Values inherit from larger to smaller breakpoints",
+        "Inherited values are visually muted"
+      ],
+      "title": "Responsive editing",
+      "type": "official_elementor_help",
+      "url": "https://elementor.com/help/responsive-editing/"
+    },
+    {
+      "id": "ELEMENTOR_INHERITED_VALUES",
+      "supports": [
+        "Numeric controls inherit",
+        "Changes cascade down and not vice versa"
+      ],
+      "title": "What are inherited responsive values?",
+      "type": "official_elementor_help",
+      "url": "https://elementor.com/help/inherited-responsive-values/"
+    },
+    {
+      "id": "ELEMENTOR_CLASSES",
+      "supports": [
+        "Every element has a Local Class",
+        "Local Class has top priority"
+      ],
+      "title": "Classes in Elementor",
+      "type": "official_elementor_help",
+      "url": "https://elementor.com/help/classes-in-elementor-2/"
+    },
+    {
+      "id": "ELEMENTOR_CLASS_PRIORITY",
+      "supports": [
+        "Classes to the left have priority",
+        "Class Manager hierarchy controls Global conflicts",
+        "Local remains leftmost/top priority"
+      ],
+      "title": "Prioritize conflicting styles",
+      "type": "official_elementor_help",
+      "url": "https://elementor.com/help/prioritize-conflicting-styles/"
+    },
+    {
+      "id": "CSS2_USED_WIDTH",
+      "supports": [
+        "Used width and margins are interdependent",
+        "Width auto is resolved by context and is not universally shrink-to-fit"
+      ],
+      "title": "CSS 2.1 — Calculating widths and margins",
+      "type": "css_spec",
+      "url": "https://www.w3.org/TR/CSS2/visudet.html#blockwidth"
+    },
+    {
+      "id": "CSS_FLEXBOX_AXES",
+      "supports": [
+        "Flex direction defines the main axis",
+        "Alignment is interpreted against main/cross axes"
+      ],
+      "title": "CSS Flexible Box Layout Module Level 1",
+      "type": "css_spec",
+      "url": "https://www.w3.org/TR/css-flexbox-1/"
+    },
+    {
+      "id": "WAI_INTERACTIVE_CONTROLS",
+      "supports": [
+        "Use real buttons and keyboard-accessible actions",
+        "Use status/live regions for dynamic updates",
+        "Respect reduced motion"
+      ],
+      "title": "WCAG 2.2 Techniques",
+      "type": "accessibility_standard",
+      "url": "https://www.w3.org/WAI/WCAG22/Techniques/"
+    },
+    {
+      "id": "REZA_MARGIN_OBSERVATION",
+      "limitations": [
+        "Matched CSS rule was not captured",
+        "Blocksy involvement was not conclusively proven"
+      ],
+      "path": "source/v27-step-through-v2/REZA_MARGIN_OBSERVATION_FA.md",
+      "supports": [
+        "Both margins were present in Computed Style",
+        "The ending margin became overflow",
+        "Explicit Auto changed sizing in that observed context"
+      ],
+      "title": "مشاهدهٔ واقعی margin راست در Flexbox Elementor",
+      "type": "real_observation"
+    }
+  ],
+  "scope": "Four Step-Through v2 reference implementations; no claim of exhaustive conversion of all lessons.",
+  "source_base": "v26.0",
+  "version": "27.0.0"
+}

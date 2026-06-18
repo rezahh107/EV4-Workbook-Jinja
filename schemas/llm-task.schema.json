@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:elementor-workbook:schema:llm-task:1.0.0",
+  "title": "LLM task front matter",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["task_status", "task_id", "change_type", "workbook_version_policy", "allowed_paths", "protected_path_exceptions", "required_checks"],
+  "properties": {
+    "task_status": {"enum": ["draft", "ready", "completed"]},
+    "task_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]+$"},
+    "change_type": {"enum": ["content", "presentation", "builder", "schema", "mixed"]},
+    "workbook_version_policy": {"enum": ["keep", "patch", "minor", "major", "explicit"]},
+    "allowed_paths": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "protected_path_exceptions": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "required_checks": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  }
+}

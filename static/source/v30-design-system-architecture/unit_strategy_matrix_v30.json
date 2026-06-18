@@ -1,0 +1,112 @@
+{
+  "version": "30.0.0",
+  "model_label": "derived_educational_model",
+  "official_variable_types": [
+    "Color",
+    "Font",
+    "Size"
+  ],
+  "columns": [
+    "design_intent",
+    "property",
+    "candidate_value_or_unit",
+    "reference",
+    "advantages",
+    "risks",
+    "elementor_ui_availability",
+    "recommended_baseline",
+    "when_another_option_is_more_appropriate"
+  ],
+  "rows": [
+    {
+      "design_intent": "precise_border",
+      "property": "border-width",
+      "candidate_value_or_unit": "1px",
+      "reference": "CSS pixel",
+      "advantages": "predictable",
+      "risks": "not typographic scaling",
+      "elementor_ui_availability": "contextual official control",
+      "recommended_baseline": "small local literal",
+      "when_another_option_is_more_appropriate": "shared density scale"
+    },
+    {
+      "design_intent": "root_relative_type_or_spacing",
+      "property": "font-size/padding",
+      "candidate_value_or_unit": "rem",
+      "reference": "root font-size",
+      "advantages": "consistent root-relative scale",
+      "risks": "root changes affect all",
+      "elementor_ui_availability": "contextual",
+      "recommended_baseline": "when root relationship is intentional",
+      "when_another_option_is_more_appropriate": "px constraint or local em coupling"
+    },
+    {
+      "design_intent": "component_local_scale",
+      "property": "font-size/padding",
+      "candidate_value_or_unit": "em",
+      "reference": "font context",
+      "advantages": "component-local scaling",
+      "risks": "nested compounding",
+      "elementor_ui_availability": "contextual",
+      "recommended_baseline": "only when coupling is intended",
+      "when_another_option_is_more_appropriate": "rem/Size Variable for site scale"
+    },
+    {
+      "design_intent": "parent_relative_width",
+      "property": "width",
+      "candidate_value_or_unit": "%/auto/min()",
+      "reference": "containing block",
+      "advantages": "container-aware",
+      "risks": "unknown reference/overflow",
+      "elementor_ui_availability": "% and auto contextual; functions CSS boundary",
+      "recommended_baseline": "auto or percentage with constraints",
+      "when_another_option_is_more_appropriate": "fr for Grid tracks"
+    },
+    {
+      "design_intent": "grid_free_space",
+      "property": "grid-template-columns",
+      "candidate_value_or_unit": "fr",
+      "reference": "remaining free space",
+      "advantages": "track relationship",
+      "risks": "mistaken for total percentage",
+      "elementor_ui_availability": "Grid context",
+      "recommended_baseline": "fr for flexible tracks",
+      "when_another_option_is_more_appropriate": "fixed/auto/minmax constraints"
+    },
+    {
+      "design_intent": "viewport_aware_height",
+      "property": "min-height",
+      "candidate_value_or_unit": "vh/dvh",
+      "reference": "large/dynamic viewport",
+      "advantages": "viewport relation",
+      "risks": "mobile browser UI and variable content",
+      "elementor_ui_availability": "vh documented; dvh not asserted in every control",
+      "recommended_baseline": "min-height with content escape",
+      "when_another_option_is_more_appropriate": "auto/content-based layout"
+    },
+    {
+      "design_intent": "fluid_constraint",
+      "property": "font-size/spacing",
+      "candidate_value_or_unit": "clamp()",
+      "reference": "min/preferred/max references",
+      "advantages": "bounded fluidity",
+      "risks": "complexity and readability",
+      "elementor_ui_availability": "CSS/Custom CSS unless officially exposed",
+      "recommended_baseline": "only with tested bounds",
+      "when_another_option_is_more_appropriate": "responsive Size Variables or literals"
+    }
+  ],
+  "smells": [
+    "repeated_literal",
+    "arbitrary_spacing",
+    "arbitrary_typography_scale",
+    "mixed_units_without_intent",
+    "viewport_overuse",
+    "fixed_height_variable_content",
+    "percentage_without_known_reference",
+    "100vw_plus_horizontal_spacing",
+    "unnecessary_responsive_overrides",
+    "variable_for_one_off",
+    "one_size_variable_for_unrelated_semantics"
+  ]
+}

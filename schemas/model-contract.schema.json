@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:elementor-workbook:schema:model-contract:1.0.0",
+  "title": "LLM editing contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_id",
+    "contract_version",
+    "always_read",
+    "source_precedence",
+    "generated_paths",
+    "protected_by_default",
+    "default_content_paths",
+    "required_commands",
+    "optional_environment_commands",
+    "return_contract"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "contract_id": {"type": "string", "minLength": 1},
+    "contract_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "always_read": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "source_precedence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "generated_paths": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "protected_by_default": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "reason"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "default_content_paths": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "required_commands": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "optional_environment_commands": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "return_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "required_files", "report_path"],
+      "properties": {
+        "format": {"const": "complete_repository_zip"},
+        "required_files": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "report_path": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

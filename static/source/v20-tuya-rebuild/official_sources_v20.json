@@ -1,0 +1,30 @@
+{
+  "status": "source_registry",
+  "version": "20.0.0",
+  "sources": [
+    {
+      "label": "Elementor Editor V4 overview",
+      "url": "https://elementor.com/help/get-started-with-the-elementor-editor-v4/"
+    },
+    {
+      "label": "Elementor Classes",
+      "url": "https://elementor.com/help/classes-in-elementor-2/"
+    },
+    {
+      "label": "Elementor Class Manager",
+      "url": "https://elementor.com/help/the-elementor-editor-class-manager/"
+    },
+    {
+      "label": "Elementor Variables",
+      "url": "https://elementor.com/help/variables/"
+    },
+    {
+      "label": "MDN details element",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details"
+    },
+    {
+      "label": "MDN summary element",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/summary"
+    }
+  ]
+}

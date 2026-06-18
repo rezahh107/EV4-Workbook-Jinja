@@ -1,0 +1,61 @@
+{
+  "version": "30.0-planning",
+  "source_base": "Elementor_V4_Offline_Interactive_Workbook_v29_0_settings_values_units_step_through.zip",
+  "required": [
+    {
+      "id": "V30-ARCH-001",
+      "title": "System-first architecture primer",
+      "priority": "P0"
+    },
+    {
+      "id": "V30-UNIT-001",
+      "title": "Unit Strategy and Design System Decision layer",
+      "priority": "P0"
+    },
+    {
+      "id": "V30-STV2-001",
+      "title": "Value-to-system Step-Through",
+      "priority": "P0"
+    },
+    {
+      "id": "V30-STV2-002",
+      "title": "Unit-selection tradeoff Step-Through",
+      "priority": "P0"
+    },
+    {
+      "id": "V30-VAR-001",
+      "title": "Variables Architecture Lab",
+      "priority": "P0"
+    },
+    {
+      "id": "V30-CLASS-001",
+      "title": "Expanded class conflict debugging",
+      "priority": "P0"
+    },
+    {
+      "id": "V30-COMP-001",
+      "title": "Components lifecycle lab",
+      "priority": "P0"
+    },
+    {
+      "id": "V30-DYN-001",
+      "title": "Dynamic data case study",
+      "priority": "P0"
+    },
+    {
+      "id": "V30-INT-001",
+      "title": "Interactions lab",
+      "priority": "P0"
+    },
+    {
+      "id": "V30-VIS-001",
+      "title": "Architecture visual set",
+      "priority": "P1"
+    },
+    {
+      "id": "V30-VAL-001",
+      "title": "Semantic validation expansion",
+      "priority": "P0"
+    }
+  ]
+}

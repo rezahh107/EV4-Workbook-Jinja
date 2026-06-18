@@ -1,0 +1,62 @@
+{
+  "version": "30.0.0",
+  "source_base": "Elementor_V4_Offline_Interactive_Workbook_v29_0_settings_values_units_step_through.zip",
+  "source_base_sha256": "3b0335721d623c477513a56716594cafd4222028b8f0fd316b4180197ea49d58",
+  "changes": [
+    {
+      "id": "V30-ARCH-001",
+      "status": "implemented",
+      "target": "architecture-primer-v30"
+    },
+    {
+      "id": "V30-UNIT-001",
+      "status": "implemented",
+      "target": "appendix-v29-units-atlas"
+    },
+    {
+      "id": "V30-STV2-001",
+      "status": "implemented",
+      "target": "stv2-literal-to-system"
+    },
+    {
+      "id": "V30-STV2-002",
+      "status": "implemented",
+      "target": "stv2-unit-selection-tradeoffs"
+    },
+    {
+      "id": "V30-VAR-001",
+      "status": "implemented",
+      "target": "variables-architecture-lab-v30"
+    },
+    {
+      "id": "V30-CLASS-001",
+      "status": "implemented",
+      "target": "stv2-class-priority"
+    },
+    {
+      "id": "V30-COMP-001",
+      "status": "implemented",
+      "target": "components-lifecycle-lab-v30"
+    },
+    {
+      "id": "V30-DYN-001",
+      "status": "implemented",
+      "target": "dynamic-data-case-study-v30"
+    },
+    {
+      "id": "V30-INT-001",
+      "status": "implemented",
+      "target": "interactions-lab-v30"
+    },
+    {
+      "id": "V30-VIS-001",
+      "status": "implemented",
+      "target": "six accessible inline SVGs"
+    },
+    {
+      "id": "V30-VAL-001",
+      "status": "implemented",
+      "target": "validate_v30.py + runtime_browser_validate_v30.py"
+    }
+  ]
+}

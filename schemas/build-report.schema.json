@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:elementor-workbook:schema:build-report:1.0.0",
+  "title": "Deterministic workbook build report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generator_version",
+    "workbook_version",
+    "unit_count",
+    "output_files",
+    "source_files"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0.0"},
+    "generator_version": {"type": "string"},
+    "workbook_version": {"type": "string"},
+    "unit_count": {"type": "integer", "minimum": 1},
+    "output_files": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+    },
+    "source_files": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+    }
+  }
+}

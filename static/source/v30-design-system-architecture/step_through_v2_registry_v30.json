@@ -1,0 +1,2673 @@
+{
+  "version": "30.0.0",
+  "engine": "shared_data_driven_step_through_v2",
+  "total_modules": 7,
+  "total_states": 44,
+  "modules": [
+    {
+      "id": "stv2-literal-to-system",
+      "renderer": "value-system",
+      "state_count": 8,
+      "storage_key": "elementor-v4-workbook:v30:stv2:stv2-literal-to-system",
+      "lesson_id": "appendix-v29-units-atlas",
+      "config": {
+        "schema_version": "2.0.0",
+        "id": "stv2-literal-to-system",
+        "title": "Literal to System",
+        "goal": "مسیر literal → Size Variable → Global Class → Component usage و propagation را همراه با مورد «عدم نیاز به abstraction» ببین.",
+        "renderer": "value-system",
+        "lesson_id": "appendix-v29-units-atlas",
+        "lab_target": "design-system-decision-layer-v30",
+        "type": "decision_propagation",
+        "storage_key": "elementor-v4-workbook:v30:stv2:stv2-literal-to-system",
+        "states": [
+          {
+            "id": "literal",
+            "phase": "Literal",
+            "title": "مقدار مستقیم",
+            "summary": "یک padding یکتا با literal محلی شروع می‌شود.",
+            "explanation": "برای prototype یا مورد واقعاً یکتا، abstraction فوری لازم نیست.",
+            "golden_rule": "هر literal بد نیست؛ تکرار و معنای پایدار را قبل از abstraction بررسی کن.",
+            "evidence": "proposed_strategy",
+            "elementor": [
+              [
+                "Element",
+                "Card A"
+              ],
+              [
+                "Local declaration",
+                "padding: 24px"
+              ]
+            ],
+            "computed": [
+              [
+                "Reuse",
+                "یک مورد"
+              ],
+              [
+                "Propagation",
+                "ندارد"
+              ]
+            ],
+            "visual": {
+              "stage": "literal",
+              "label": "24px",
+              "nodes": [
+                "Card A"
+              ]
+            },
+            "prediction": {
+              "prompt": "در این لحظه بهترین اقدام چیست؟",
+              "options": [
+                "فوراً Component بساز",
+                "literal را محلی نگه دار و reuse را مشاهده کن",
+                "Global Class بدون نام بساز"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است؛ ابتدا evidence تکرار را ببین.",
+              "feedback_wrong": "Abstraction قبل از evidence می‌تواند سیستم را شلوغ کند."
+            }
+          },
+          {
+            "id": "repeat-smell",
+            "phase": "Smell",
+            "title": "بوی literal تکراری",
+            "summary": "همان 24px در چند نقش هم‌معنا تکرار شده است.",
+            "explanation": "وقتی مقدار و معنای طراحی مشترک‌اند، drift و ویرایش چندباره نشانهٔ نیاز به named value است.",
+            "golden_rule": "تکرار syntax کافی نیست؛ تکرار semantic role مهم‌تر است.",
+            "evidence": "derived_educational_model",
+            "elementor": [
+              [
+                "Elements",
+                "Card A, B, C"
+              ],
+              [
+                "Repeated value",
+                "24px"
+              ]
+            ],
+            "computed": [
+              [
+                "Risk",
+                "drift"
+              ],
+              [
+                "Candidate",
+                "Size Variable"
+              ]
+            ],
+            "visual": {
+              "stage": "repeat",
+              "label": "24px × 3",
+              "nodes": [
+                "Card A",
+                "Card B",
+                "Card C"
+              ]
+            },
+            "prediction": {
+              "prompt": "کدام evidence قوی‌تر است؟",
+              "options": [
+                "سه مقدار برابر با معنای مشترک",
+                "یک مقدار یکتای تزئینی",
+                "هر عدد px"
+              ],
+              "correct": 0,
+              "feedback_correct": "درست است؛ semantic repetition مهم است.",
+              "feedback_wrong": "برابری عدد به‌تنهایی Variable را توجیه نمی‌کند."
+            }
+          },
+          {
+            "id": "size-variable",
+            "phase": "Variable",
+            "title": "ساخت Size Variable",
+            "summary": "یک named value برای spacing مشترک ساخته می‌شود.",
+            "explanation": "نوع رسمی Size Variable است؛ نام space-card-padding فقط naming strategy است، نه نوع رسمی Variable.",
+            "golden_rule": "Variable یک مقدار نام‌دار یا reference است؛ نه فرمول جهانی value + unit.",
+            "evidence": "verified_by_official_elementor_help",
+            "elementor": [
+              [
+                "Official type",
+                "Size Variable"
+              ],
+              [
+                "Proposed name",
+                "space-card-padding"
+              ],
+              [
+                "Value",
+                "24px"
+              ]
+            ],
+            "computed": [
+              [
+                "Reference",
+                "named value"
+              ],
+              [
+                "Scope",
+                "مصرف‌کنندگان Variable"
+              ]
+            ],
+            "visual": {
+              "stage": "variable",
+              "label": "space-card-padding = 24px",
+              "nodes": [
+                "Variable"
+              ]
+            },
+            "prediction": {
+              "prompt": "Space Variable در این مثال چیست؟",
+              "options": [
+                "نوع رسمی چهارم Elementor",
+                "نام‌گذاری راهبردی برای Size Variable",
+                "Component property"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است؛ نوع رسمی Size است.",
+              "feedback_wrong": "Elementor فقط Color، Font و Size Variable را رسمی معرفی می‌کند."
+            }
+          },
+          {
+            "id": "variable-in-global-class",
+            "phase": "Class",
+            "title": "Variable داخل Global Class",
+            "summary": "Global Class declaration از Size Variable استفاده می‌کند.",
+            "explanation": "Variable مقدار را reuse می‌کند و Class مجموعه declarationها را reuse می‌کند؛ این دو نقش یکسان نیستند.",
+            "golden_rule": "Named value و reusable style bundle را از هم جدا نگه دار.",
+            "evidence": "verified_by_official_elementor_help",
+            "elementor": [
+              [
+                "Global Class",
+                ".card-surface"
+              ],
+              [
+                "Declaration",
+                "padding: var(space-card-padding)"
+              ]
+            ],
+            "computed": [
+              [
+                "Style reuse",
+                "تأییدشده"
+              ],
+              [
+                "Value source",
+                "Size Variable"
+              ]
+            ],
+            "visual": {
+              "stage": "class",
+              "label": "Variable → Global Class",
+              "nodes": [
+                "Variable",
+                ".card-surface"
+              ]
+            },
+            "prediction": {
+              "prompt": "کدام لایه مجموعهٔ چند declaration را reuse می‌کند؟",
+              "options": [
+                "Variable",
+                "Global Class",
+                "literal"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است؛ Class bundle سبک است.",
+              "feedback_wrong": "Variable یک named value است، نه bundle کامل declaration."
+            }
+          },
+          {
+            "id": "class-reused",
+            "phase": "Reuse",
+            "title": "Global Class روی چند Element",
+            "summary": "همان Class روی چند Card اعمال می‌شود.",
+            "explanation": "اکنون تغییر declaration Class یا مقدار Variable می‌تواند چند Element را هماهنگ کند.",
+            "golden_rule": "Global Class را پس از reuse تأییدشده بساز یا Local را Convert کن.",
+            "evidence": "verified_by_official_elementor_help",
+            "elementor": [
+              [
+                "Applied class",
+                ".card-surface"
+              ],
+              [
+                "Elements",
+                "Card A, B, C"
+              ]
+            ],
+            "computed": [
+              [
+                "Style reuse",
+                "سه Element"
+              ],
+              [
+                "Structure reuse",
+                "هنوز نه"
+              ]
+            ],
+            "visual": {
+              "stage": "reuse",
+              "label": ".card-surface × 3",
+              "nodes": [
+                "Card A",
+                "Card B",
+                "Card C"
+              ]
+            },
+            "prediction": {
+              "prompt": "آیا سه Card با Class مشترک خودبه‌خود Component هستند؟",
+              "options": [
+                "بله",
+                "نه؛ فقط style reuse ثابت شده",
+                "فقط در Mobile"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است؛ style reuse با structural reuse یکی نیست.",
+              "feedback_wrong": "Component برای ساختار تکراری و lifecycle Master/Instance است."
+            }
+          },
+          {
+            "id": "component",
+            "phase": "Structure",
+            "title": "Class و Variable داخل Master Component",
+            "summary": "ساختار Card واقعاً تکراری است و به Master Component refactor می‌شود.",
+            "explanation": "Master از Atomic Elements ساخته شده و همان Class و Variable را مصرف می‌کند؛ Component جایگزین Class یا Variable نیست.",
+            "golden_rule": "Component را برای structural reuse بساز، نه فقط یک رنگ یا padding مشترک.",
+            "evidence": "verified_by_official_elementor_help",
+            "elementor": [
+              [
+                "Master",
+                "Feature Card"
+              ],
+              [
+                "Atomic structure",
+                "Div + Heading + Paragraph"
+              ],
+              [
+                "Styles",
+                ".card-surface + Variable"
+              ]
+            ],
+            "computed": [
+              [
+                "Instances",
+                "چند نمونه"
+              ],
+              [
+                "Overrides",
+                "فقط propertyهای exposeشده"
+              ]
+            ],
+            "visual": {
+              "stage": "component",
+              "label": "Master → Instances",
+              "nodes": [
+                "Master",
+                "Instance A",
+                "Instance B"
+              ]
+            },
+            "prediction": {
+              "prompt": "چه چیزی Component را توجیه می‌کند؟",
+              "options": [
+                "تکرار ساختار و نیاز به sync",
+                "وجود یک literal",
+                "هر Global Class"
+              ],
+              "correct": 0,
+              "feedback_correct": "درست است؛ structural reuse دلیل اصلی است.",
+              "feedback_wrong": "Style reuse به‌تنهایی با Class/Variable حل می‌شود."
+            }
+          },
+          {
+            "id": "propagation",
+            "phase": "Propagation",
+            "title": "ویرایش Variable و انتشار",
+            "summary": "Size Variable از 24px به 28px تغییر می‌کند و مصرف‌کنندگان به‌روزرسانی می‌شوند.",
+            "explanation": "Class declaration همان reference را نگه می‌دارد؛ Component Instanceها نیز از Master و Styleهای مشترک استفاده می‌کنند، در حالی که overrideهای instance معتبر می‌مانند.",
+            "golden_rule": "پیش از update، blast radius را بدان و نمونه‌ها را در breakpointها بررسی کن.",
+            "evidence": "verified_by_official_elementor_help",
+            "elementor": [
+              [
+                "Variable update",
+                "24px → 28px"
+              ],
+              [
+                "Class reference",
+                "unchanged"
+              ],
+              [
+                "Master",
+                "uses class"
+              ]
+            ],
+            "computed": [
+              [
+                "Propagation",
+                "همهٔ مصرف‌کنندگان"
+              ],
+              [
+                "Check",
+                "instances + responsive"
+              ]
+            ],
+            "visual": {
+              "stage": "propagation",
+              "label": "24px → 28px",
+              "nodes": [
+                "Variable",
+                "Class",
+                "Master",
+                "Instances",
+                "Pages"
+              ]
+            },
+            "prediction": {
+              "prompt": "کدام تغییر بیشترین blast radius دارد؟",
+              "options": [
+                "ویرایش literal محلی",
+                "ویرایش Variable مصرف‌شده در چند Class/Component",
+                "تغییر متن یک Instance"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است؛ dependency گسترده‌تر است.",
+              "feedback_wrong": "Named value مشترک می‌تواند مصرف‌کنندگان زیادی داشته باشد."
+            }
+          },
+          {
+            "id": "no-abstraction",
+            "phase": "Restraint",
+            "title": "وقتی abstraction لازم نیست",
+            "summary": "یک offset تزئینی یکتا و ناپایدار محلی می‌ماند.",
+            "explanation": "ساخت Variable، Global Class یا Component برای هر one-off باعث token/class/component sprawl می‌شود.",
+            "golden_rule": "سادگی محلی نیز بخشی از معماری خوب است.",
+            "evidence": "proposed_strategy",
+            "elementor": [
+              [
+                "Case",
+                "decorative one-off offset"
+              ],
+              [
+                "Decision",
+                "Local literal"
+              ]
+            ],
+            "computed": [
+              [
+                "Reason",
+                "no stable reuse"
+              ],
+              [
+                "Avoid",
+                "unnecessary abstraction"
+              ]
+            ],
+            "visual": {
+              "stage": "local",
+              "label": "Local 13px",
+              "nodes": [
+                "Decorative node"
+              ]
+            },
+            "prediction": {
+              "prompt": "برای offset یکتای یک node تزئینی چه می‌کنی؟",
+              "options": [
+                "همیشه Variable",
+                "همیشه Component",
+                "محلی نگه می‌دارم مگر reuse واقعی ثابت شود"
+              ],
+              "correct": 2,
+              "feedback_correct": "درست است؛ restraint مهم است.",
+              "feedback_wrong": "قانون «همیشه abstract کن» وجود ندارد."
+            }
+          }
+        ],
+        "verification": [
+          {
+            "status": "verified_by_official_elementor_help"
+          },
+          {
+            "status": "derived_educational_model"
+          },
+          {
+            "status": "proposed_strategy"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stv2-unit-selection-tradeoffs",
+      "renderer": "unit-tradeoff",
+      "state_count": 8,
+      "storage_key": "elementor-v4-workbook:v30:stv2:stv2-unit-selection-tradeoffs",
+      "lesson_id": "appendix-v29-units-atlas",
+      "config": {
+        "schema_version": "2.0.0",
+        "id": "stv2-unit-selection-tradeoffs",
+        "title": "Unit Selection Tradeoffs",
+        "goal": "محاسبه و tradeoff واحدها، keywordها و functionها را بدون انتخاب یک برندهٔ جهانی مقایسه کن.",
+        "renderer": "unit-tradeoff",
+        "lesson_id": "appendix-v29-units-atlas",
+        "lab_target": "unit-selection-framework-v30",
+        "type": "decision_propagation",
+        "storage_key": "elementor-v4-workbook:v30:stv2:stv2-unit-selection-tradeoffs",
+        "states": [
+          {
+            "id": "px",
+            "phase": "Fixed reference",
+            "title": "px؛ کنترل محدود و مستقیم",
+            "summary": "border: 1px یا offset محدود می‌تواند انتخاب روشن باشد.",
+            "explanation": "CSS px واحد absolute در CSS است اما یک device pixel تضمین نمی‌کند. برای typography یا layout هیچ قانون «px ممنوع است» وجود ندارد.",
+            "golden_rule": "px را بر اساس Property و intent قضاوت کن، نه شعار.",
+            "evidence": "verified_by_css_spec",
+            "elementor": [
+              [
+                "Property",
+                "border-width"
+              ],
+              [
+                "Candidate",
+                "1px"
+              ],
+              [
+                "UI",
+                "contextual"
+              ]
+            ],
+            "computed": [
+              [
+                "Reference",
+                "CSS pixel"
+              ],
+              [
+                "Tradeoff",
+                "predictable vs scaling"
+              ]
+            ],
+            "visual": {
+              "kind": "length",
+              "property": "border-width",
+              "declared": "1px",
+              "reference": "CSS px",
+              "formula": "1",
+              "result": 1,
+              "max": 8
+            },
+            "prediction": {
+              "prompt": "برای border ظریف کدام baseline معقول‌تر است؟",
+              "options": [
+                "1px با تست contrast",
+                "100vw",
+                "2em همیشه"
+              ],
+              "correct": 0,
+              "feedback_correct": "درست است؛ context تعیین‌کننده است.",
+              "feedback_wrong": "Viewport یا font-relative لزوماً برای border بهتر نیست."
+            }
+          },
+          {
+            "id": "rem",
+            "phase": "Root relative",
+            "title": "rem؛ scale وابسته به Root",
+            "summary": "1.5rem با root برابر 16px به 24px محاسبه می‌شود.",
+            "explanation": "rem به root font-size وابسته است و برای spacing یا typography می‌تواند مفید باشد، اما workflow عمومی تغییر root در Elementor ادعا نمی‌شود.",
+            "golden_rule": "مرجع rem را بدان و از «rem برای همهٔ موارد» پرهیز کن.",
+            "evidence": "verified_by_css_spec",
+            "elementor": [
+              [
+                "Property",
+                "padding"
+              ],
+              [
+                "Declared",
+                "1.5rem"
+              ],
+              [
+                "Root",
+                "16px"
+              ]
+            ],
+            "computed": [
+              [
+                "Formula",
+                "1.5 × 16"
+              ],
+              [
+                "Used",
+                "24px"
+              ]
+            ],
+            "visual": {
+              "kind": "length",
+              "property": "padding",
+              "declared": "1.5rem",
+              "reference": "root=16px",
+              "formula": "1.5 × 16",
+              "result": 24,
+              "max": 64
+            },
+            "prediction": {
+              "prompt": "اگر root=18px شود، 1.5rem چند px می‌شود؟",
+              "options": [
+                "24px",
+                "27px",
+                "18px"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است؛ 1.5 × 18 = 27px.",
+              "feedback_wrong": "rem از root محاسبه می‌شود."
+            }
+          },
+          {
+            "id": "em",
+            "phase": "Local scale",
+            "title": "em؛ scale محلی",
+            "summary": "2em در font-size با والد 20px برابر 40px می‌شود.",
+            "explanation": "em coupling محلی می‌سازد و nesting ممکن است scaling زنجیره‌ای ایجاد کند.",
+            "golden_rule": "em را وقتی انتخاب کن که وابستگی به context عمدی باشد.",
+            "evidence": "verified_by_css_spec",
+            "elementor": [
+              [
+                "Property",
+                "font-size"
+              ],
+              [
+                "Declared",
+                "2em"
+              ],
+              [
+                "Parent",
+                "20px"
+              ]
+            ],
+            "computed": [
+              [
+                "Formula",
+                "2 × 20"
+              ],
+              [
+                "Used",
+                "40px"
+              ]
+            ],
+            "visual": {
+              "kind": "font",
+              "property": "font-size",
+              "declared": "2em",
+              "reference": "parent=20px",
+              "formula": "2 × 20",
+              "result": 40,
+              "max": 64
+            },
+            "prediction": {
+              "prompt": "ریسک اصلی nesting با em چیست؟",
+              "options": [
+                "وابستگی زنجیره‌ای",
+                "حذف cascade",
+                "تبدیل به fr"
+              ],
+              "correct": 0,
+              "feedback_correct": "درست است.",
+              "feedback_wrong": "em به context فونت وابسته است."
+            }
+          },
+          {
+            "id": "percentage",
+            "phase": "Containing block",
+            "title": "%؛ مرجع وابسته به Property",
+            "summary": "width: 50% در والد 1200px برابر 600px است.",
+            "explanation": "درصد بدون Property و reference ناقص است؛ درصد Font Size و Width الزاماً یک مرجع عملی یکسان ندارند.",
+            "golden_rule": "قبل از نوشتن %، بگو درصدِ چه چیزی است.",
+            "evidence": "verified_by_css_spec",
+            "elementor": [
+              [
+                "Property",
+                "width"
+              ],
+              [
+                "Declared",
+                "50%"
+              ],
+              [
+                "Parent",
+                "1200px"
+              ]
+            ],
+            "computed": [
+              [
+                "Formula",
+                "0.5 × 1200"
+              ],
+              [
+                "Used",
+                "600px"
+              ]
+            ],
+            "visual": {
+              "kind": "length",
+              "property": "width",
+              "declared": "50%",
+              "reference": "parent=1200px",
+              "formula": "0.5 × 1200",
+              "result": 600,
+              "max": 1200
+            },
+            "prediction": {
+              "prompt": "اگر والد 900px شود، 50% چند px است؟",
+              "options": [
+                "600px",
+                "450px",
+                "50px"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است.",
+              "feedback_wrong": "مرجع Width درصدی containing block است."
+            }
+          },
+          {
+            "id": "fr",
+            "phase": "Free space",
+            "title": "fr؛ سهم فضای آزاد Grid",
+            "summary": "در 900px فضای آزاد، 1fr 2fr به 300px و 600px تقسیم می‌شود.",
+            "explanation": "fr درصد کل container نیست؛ پس از درنظرگرفتن trackهای ثابت و gap، free space را تقسیم می‌کند.",
+            "golden_rule": "fr را relationship بین trackها ببین.",
+            "evidence": "verified_by_css_spec",
+            "elementor": [
+              [
+                "Property",
+                "grid-template-columns"
+              ],
+              [
+                "Declared",
+                "1fr 2fr"
+              ],
+              [
+                "Free space",
+                "900px"
+              ]
+            ],
+            "computed": [
+              [
+                "Total shares",
+                "3"
+              ],
+              [
+                "Tracks",
+                "300px / 600px"
+              ]
+            ],
+            "visual": {
+              "kind": "grid",
+              "property": "grid-template-columns",
+              "declared": "1fr 2fr",
+              "reference": "free space=900px",
+              "formula": "900 ÷ 3",
+              "result": 300,
+              "secondary": 600,
+              "max": 900
+            },
+            "prediction": {
+              "prompt": "اگر 300px track ثابت و 30px gap داشته باشیم، fr بر چه چیزی تقسیم می‌شود؟",
+              "options": [
+                "کل viewport",
+                "فضای آزاد باقی‌مانده",
+                "font-size root"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است.",
+              "feedback_wrong": "fr سهم فضای آزاد است."
+            }
+          },
+          {
+            "id": "viewport",
+            "phase": "Viewport",
+            "title": "vw، vh و dvh؛ viewport با ریسک",
+            "summary": "40vw از viewport 1440px برابر 576px و 40dvh از viewport پویا 780px برابر 312px است.",
+            "explanation": "VH و VW در Help Center توضیح داده می‌شوند؛ dvh قابلیت CSS است اما عرضهٔ آن در همهٔ کنترل‌های Elementor تأیید نشده. 100vw نیز baseline عمومی full-width نیست.",
+            "golden_rule": "CSS-supported، UI-exposed و مناسب‌بودن برای intent سه پرسش جدا هستند.",
+            "evidence": "verified_by_css_spec",
+            "elementor": [
+              [
+                "Candidates",
+                "vw / vh / dvh"
+              ],
+              [
+                "UI boundary",
+                "dvh: insufficient evidence for every control"
+              ]
+            ],
+            "computed": [
+              [
+                "40vw",
+                "576px @ 1440"
+              ],
+              [
+                "40dvh",
+                "312px @ 780"
+              ]
+            ],
+            "visual": {
+              "kind": "viewport",
+              "property": "width / min-height",
+              "declared": "40vw / 40dvh",
+              "reference": "viewport",
+              "formula": "0.4 × viewport",
+              "result": 576,
+              "secondary": 312,
+              "max": 1440
+            },
+            "prediction": {
+              "prompt": "برای full-width معمولی چه baseline امن‌تری است؟",
+              "options": [
+                "همیشه 100vw",
+                "100% یا auto در context والد",
+                "همیشه 100dvh"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است؛ viewport breakout باید عمدی باشد.",
+              "feedback_wrong": "100vw می‌تواند با spacing افقی overflow بسازد."
+            }
+          },
+          {
+            "id": "auto-min",
+            "phase": "Keyword / function",
+            "title": "auto و min()؛ واژه و function",
+            "summary": "auto واژهٔ وابسته به algorithm است و min(100%,75rem) سقف context-aware می‌سازد.",
+            "explanation": "auto یک عدد با unit نیست؛ min() candidateها را محاسبه می‌کند. پشتیبانی CSS با وجود کنترل UI یکسان نیست.",
+            "golden_rule": "نوع مقدار را قبل از انتخاب unit تشخیص بده.",
+            "evidence": "verified_by_css_spec",
+            "elementor": [
+              [
+                "Candidates",
+                "auto / min()"
+              ],
+              [
+                "UI",
+                "auto contextual; min() often Custom CSS"
+              ]
+            ],
+            "computed": [
+              [
+                "auto",
+                "layout algorithm"
+              ],
+              [
+                "min()",
+                "smaller valid candidate"
+              ]
+            ],
+            "visual": {
+              "kind": "function",
+              "property": "width",
+              "declared": "min(100%, 75rem)",
+              "reference": "parent + root",
+              "formula": "min(parent,1200px)",
+              "result": 960,
+              "max": 1200
+            },
+            "prediction": {
+              "prompt": "اگر والد 960px و 75rem=1200px باشد، min() چه می‌دهد؟",
+              "options": [
+                "1200px",
+                "960px",
+                "2160px"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است.",
+              "feedback_wrong": "min() کوچک‌ترین candidate معتبر را انتخاب می‌کند."
+            }
+          },
+          {
+            "id": "clamp",
+            "phase": "Fluid constraint",
+            "title": "clamp()؛ حداقل، ترجیحی، حداکثر",
+            "summary": "clamp(1rem, 2vw, 2rem) مقدار fluid را بین 16px و 32px محدود می‌کند.",
+            "explanation": "clamp() برای typography یا spacing fluid مفید است اما یک برندهٔ جهانی نیست و ممکن است در Custom CSS قرار گیرد.",
+            "golden_rule": "fluid بودن باید با readability، zoom و breakpointها آزموده شود.",
+            "evidence": "verified_by_css_spec",
+            "elementor": [
+              [
+                "Property",
+                "font-size"
+              ],
+              [
+                "Declared",
+                "clamp(1rem,2vw,2rem)"
+              ],
+              [
+                "Boundary",
+                "CSS / Custom CSS unless UI evidence"
+              ]
+            ],
+            "computed": [
+              [
+                "Min",
+                "16px"
+              ],
+              [
+                "Preferred",
+                "2vw"
+              ],
+              [
+                "Max",
+                "32px"
+              ]
+            ],
+            "visual": {
+              "kind": "function",
+              "property": "font-size",
+              "declared": "clamp(1rem,2vw,2rem)",
+              "reference": "root + viewport",
+              "formula": "clamp(16, 2vw, 32)",
+              "result": 28,
+              "max": 40
+            },
+            "prediction": {
+              "prompt": "در viewport بسیار بزرگ، مقدار از چه چیزی بالاتر نمی‌رود؟",
+              "options": [
+                "2rem",
+                "2vw",
+                "1rem"
+              ],
+              "correct": 0,
+              "feedback_correct": "درست است؛ max برابر 2rem است.",
+              "feedback_wrong": "پارامتر سوم clamp سقف است."
+            }
+          }
+        ],
+        "verification": [
+          {
+            "status": "verified_by_css_spec"
+          },
+          {
+            "status": "verified_by_official_elementor_help"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stv2-unit-context-math",
+      "renderer": "unit-context",
+      "state_count": 8,
+      "storage_key": "edis-workbook-v29-stv2-unit-context-math",
+      "lesson_id": "appendix-v29-units-atlas",
+      "config": {
+        "goal": "با عددهای واقعی ببین که Property و مرجع محاسبه چگونه نتیجهٔ نهایی را می‌سازند.",
+        "id": "stv2-unit-context-math",
+        "lab_target": "units-atlas-build-test",
+        "lesson_id": "appendix-v29-units-atlas",
+        "renderer": "unit-context",
+        "states": [
+          {
+            "computed": [
+              [
+                "Formula",
+                "2 × 16px"
+              ],
+              [
+                "Computed",
+                "32px"
+              ]
+            ],
+            "elementor": [
+              [
+                "Control",
+                "Typography → Font Size"
+              ],
+              [
+                "Declared",
+                "2 REM"
+              ],
+              [
+                "Root font",
+                "16px"
+              ]
+            ],
+            "evidence": "verified_by_css_spec",
+            "explanation": "rem همیشه از اندازهٔ فونت عنصر ریشه می‌آید؛ این Property فقط می‌گوید طول محاسبه‌شده برای Font Size مصرف شود.",
+            "golden_rule": "rem مرجع root دارد؛ Property محل مصرف را تعیین می‌کند.",
+            "id": "font-rem",
+            "phase": "مرجع Root",
+            "prediction": {
+              "correct": 1,
+              "feedback_correct": "درست است؛ 2 × 18 = 36px.",
+              "feedback_wrong": "مرجع rem اندازهٔ فونت root است.",
+              "options": [
+                "32px",
+                "36px",
+                "18px"
+              ],
+              "prompt": "اگر root از 16px به 18px برسد، 2rem چند px می‌شود؟"
+            },
+            "summary": "۲rem با root برابر ۱۶px به ۳۲px تبدیل می‌شود.",
+            "title": "Font Size با rem",
+            "visual": {
+              "declared": "2rem",
+              "formula": "2 × 16",
+              "kind": "font",
+              "max": 64,
+              "property": "font-size",
+              "reference": "root font-size = 16px",
+              "result": 32
+            }
+          },
+          {
+            "computed": [
+              [
+                "Formula",
+                "2 × 20px"
+              ],
+              [
+                "Computed",
+                "40px"
+              ]
+            ],
+            "elementor": [
+              [
+                "Control",
+                "Typography → Font Size"
+              ],
+              [
+                "Declared",
+                "2 EM"
+              ],
+              [
+                "Parent font",
+                "20px"
+              ]
+            ],
+            "evidence": "verified_by_css_spec",
+            "explanation": "در font-size، em نسبت به font-size والد محاسبه می‌شود؛ nesting می‌تواند scaling زنجیره‌ای بسازد.",
+            "golden_rule": "em در font-size محلی و وابسته به والد است.",
+            "id": "font-em",
+            "phase": "مرجع Parent",
+            "prediction": {
+              "correct": 1,
+              "feedback_correct": "درست است؛ 2 × 18 = 36px.",
+              "feedback_wrong": "برای font-size، em از والد می‌آید.",
+              "options": [
+                "18px",
+                "36px",
+                "32px"
+              ],
+              "prompt": "اگر Parent برابر 18px باشد، 2em چند px است؟"
+            },
+            "summary": "۲em در font-size با Parent برابر ۲۰px به ۴۰px می‌رسد.",
+            "title": "Font Size با em",
+            "visual": {
+              "declared": "2em",
+              "formula": "2 × 20",
+              "kind": "font",
+              "max": 64,
+              "property": "font-size",
+              "reference": "parent font-size = 20px",
+              "result": 40
+            }
+          },
+          {
+            "computed": [
+              [
+                "Formula",
+                "0.5 × 1200"
+              ],
+              [
+                "Computed",
+                "600px"
+              ]
+            ],
+            "elementor": [
+              [
+                "Control",
+                "Style → Size → Width"
+              ],
+              [
+                "Declared",
+                "50%"
+              ],
+              [
+                "Parent width",
+                "1200px"
+              ]
+            ],
+            "evidence": "verified_by_css_spec",
+            "explanation": "درصد همیشه به یک مقدار مرجع وابسته است؛ برای Width معمولاً containing block افقی مبناست.",
+            "golden_rule": "درصد بدون دانستن مرجع ناقص است.",
+            "id": "width-percent",
+            "phase": "مرجع Parent",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ 0.5 × 800 = 400px.",
+              "feedback_wrong": "درصد Width به عرض مرجع وابسته است.",
+              "options": [
+                "400px",
+                "600px",
+                "50px"
+              ],
+              "prompt": "همان 50% در Parent با عرض 800px چند px می‌شود؟"
+            },
+            "summary": "۵۰٪ از Parent با عرض ۱۲۰۰px برابر ۶۰۰px است.",
+            "title": "Width با درصد",
+            "visual": {
+              "declared": "50%",
+              "formula": "0.5 × 1200",
+              "kind": "box",
+              "max": 1200,
+              "property": "width",
+              "reference": "parent width = 1200px",
+              "result": 600
+            }
+          },
+          {
+            "computed": [
+              [
+                "Formula",
+                "30 × 16"
+              ],
+              [
+                "Computed",
+                "480px"
+              ]
+            ],
+            "elementor": [
+              [
+                "UI note",
+                "ممکن است این واحد در همهٔ Width controls عرضه نشود"
+              ],
+              [
+                "Custom CSS",
+                "width: 30rem"
+              ],
+              [
+                "Root font",
+                "16px"
+              ]
+            ],
+            "evidence": "verified_by_css_spec",
+            "explanation": "rem برای Width همان مرجع root را دارد؛ فقط نتیجه برای عرض جعبه مصرف می‌شود.",
+            "golden_rule": "معنای rem تغییر نمی‌کند؛ نقش Property تغییر می‌کند.",
+            "id": "width-rem",
+            "phase": "مرجع Root",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ 30 × 20 = 600px.",
+              "feedback_wrong": "rem همیشه به root وابسته است.",
+              "options": [
+                "600px",
+                "480px",
+                "30px"
+              ],
+              "prompt": "اگر root برابر 20px شود، width:30rem چند px می‌شود؟"
+            },
+            "summary": "۳۰rem با root برابر ۱۶px، Width برابر ۴۸۰px می‌سازد.",
+            "title": "Width با rem",
+            "visual": {
+              "declared": "30rem",
+              "formula": "30 × 16",
+              "kind": "box",
+              "max": 1200,
+              "property": "width",
+              "reference": "root font-size = 16px",
+              "result": 480
+            }
+          },
+          {
+            "computed": [
+              [
+                "Formula",
+                "0.40 × 1440"
+              ],
+              [
+                "Computed",
+                "576px"
+              ]
+            ],
+            "elementor": [
+              [
+                "Control",
+                "Width controls that expose VW"
+              ],
+              [
+                "Declared",
+                "40 VW"
+              ],
+              [
+                "Viewport width",
+                "1440px"
+              ]
+            ],
+            "evidence": "verified_by_css_spec",
+            "explanation": "هر 1vw برابر یک درصد عرض viewport است. این واحد می‌تواند در نمایشگرهای بسیار کوچک و بزرگ تغییر زیادی بسازد.",
+            "golden_rule": "vw با Parent نمی‌رقصد؛ با viewport می‌رقصد.",
+            "id": "width-vw",
+            "phase": "مرجع Viewport",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ 40٪ از 1000 برابر 400 است.",
+              "feedback_wrong": "vw نسبت به عرض viewport است.",
+              "options": [
+                "400px",
+                "576px",
+                "40px"
+              ],
+              "prompt": "در viewport با عرض 1000px، 40vw چند px می‌شود؟"
+            },
+            "summary": "۴۰vw در viewport با عرض ۱۴۴۰px برابر ۵۷۶px است.",
+            "title": "Width با vw",
+            "visual": {
+              "declared": "40vw",
+              "formula": "0.40 × 1440",
+              "kind": "box",
+              "max": 1440,
+              "property": "width",
+              "reference": "viewport width = 1440px",
+              "result": 576
+            }
+          },
+          {
+            "computed": [
+              [
+                "Formula",
+                "0.40 × 780"
+              ],
+              [
+                "Computed",
+                "312px"
+              ]
+            ],
+            "elementor": [
+              [
+                "UI status",
+                "not asserted as available in every control"
+              ],
+              [
+                "Custom CSS",
+                "min-height: 40dvh"
+              ],
+              [
+                "Dynamic viewport",
+                "780px"
+              ]
+            ],
+            "evidence": "verified_by_css_spec",
+            "explanation": "dvh از dynamic viewport height می‌آید. Elementor ممکن است این واحد را در کنترل UI عرضه نکند؛ در اینجا قابلیت CSS/Custom CSS آموزش داده می‌شود.",
+            "golden_rule": "CSS-supported با Elementor-UI-exposed یکی نیست.",
+            "id": "height-dvh",
+            "phase": "Viewport پویا",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ 0.4 × 700 = 280px.",
+              "feedback_wrong": "dvh از ارتفاع پویا محاسبه می‌شود.",
+              "options": [
+                "280px",
+                "312px",
+                "400px"
+              ],
+              "prompt": "اگر dynamic viewport height برابر 700px شود، 40dvh چند px است؟"
+            },
+            "summary": "۴۰dvh در viewport پویا با ارتفاع ۷۸۰px برابر ۳۱۲px است.",
+            "title": "Height با dvh",
+            "visual": {
+              "declared": "40dvh",
+              "formula": "0.40 × 780",
+              "kind": "box-height",
+              "max": 780,
+              "property": "min-height",
+              "reference": "dynamic viewport height = 780px",
+              "result": 312
+            }
+          },
+          {
+            "computed": [
+              [
+                "Total fractions",
+                "3"
+              ],
+              [
+                "Tracks",
+                "300px / 600px"
+              ]
+            ],
+            "elementor": [
+              [
+                "Context",
+                "Grid track sizing"
+              ],
+              [
+                "Declared",
+                "1fr 2fr"
+              ],
+              [
+                "Free space",
+                "900px"
+              ]
+            ],
+            "evidence": "verified_by_css_spec",
+            "explanation": "fr سهمی از فضای آزاد Grid است. Gap و Trackهای ثابت پیش از تقسیم فضای آزاد اثر می‌گذارند.",
+            "golden_rule": "fr درصد کل نیست؛ سهم فضای آزاد است.",
+            "id": "grid-fr",
+            "phase": "فضای آزاد Grid",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ سه سهم داریم: 400 و 800.",
+              "feedback_wrong": "1fr:2fr یعنی نسبت یک به دو.",
+              "options": [
+                "400px و 800px",
+                "600px و 600px",
+                "300px و 900px"
+              ],
+              "prompt": "اگر فضای آزاد 1200px باشد، 1fr و 2fr چه می‌شوند؟"
+            },
+            "summary": "در ۹۰۰px فضای آزاد، الگوی 1fr 2fr به ۳۰۰px و ۶۰۰px تقسیم می‌شود.",
+            "title": "Track با fr",
+            "visual": {
+              "declared": "1fr 2fr",
+              "formula": "900 ÷ 3",
+              "kind": "grid",
+              "max": 900,
+              "property": "grid-template-columns",
+              "reference": "free space = 900px",
+              "result": 300,
+              "secondary": 600
+            }
+          },
+          {
+            "computed": [
+              [
+                "Formula",
+                "200 ÷ 1000"
+              ],
+              [
+                "Seconds",
+                "0.2s"
+              ]
+            ],
+            "elementor": [
+              [
+                "Control",
+                "Transition / Interaction Duration"
+              ],
+              [
+                "Declared",
+                "200 MS"
+              ],
+              [
+                "Equivalent",
+                "0.2 s"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "واحد زمان به Propertyهای animation/transition/interactions تعلق دارد. Elementor در Effects و Interactions نمونه‌های ms را مستند کرده است.",
+            "golden_rule": "هر عددی طول نیست؛ 200ms یک پنجم ثانیه است.",
+            "id": "time-ms",
+            "phase": "زمان",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ 1500 ÷ 1000 = 1.5s.",
+              "feedback_wrong": "هر 1000ms یک ثانیه است.",
+              "options": [
+                "1.5s",
+                "15s",
+                "0.15s"
+              ],
+              "prompt": "1500ms چند ثانیه است؟"
+            },
+            "summary": "۲۰۰ms برابر ۰٫۲s است. این مقدار اندازهٔ جعبه نیست؛ زمان transition است.",
+            "title": "Duration با ms",
+            "visual": {
+              "declared": "200ms",
+              "formula": "200 ÷ 1000",
+              "kind": "time",
+              "max": 1000,
+              "property": "transition-duration",
+              "reference": "1000ms = 1s",
+              "result": 200
+            }
+          }
+        ],
+        "storage_key": "edis-workbook-v29-stv2-unit-context-math",
+        "title": "واحد یکسان، مرجع متفاوت — محاسبه را ببین",
+        "verification": [
+          {
+            "source_id": "E_UNITS",
+            "status": "verified_by_official_elementor_help"
+          },
+          {
+            "source_id": "CSS_VALUES",
+            "status": "verified_by_css_spec"
+          }
+        ],
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "stv2-width-margin-overflow",
+      "renderer": "width-overflow",
+      "state_count": 5,
+      "storage_key": "elementor-v4-workbook:v27:stv2:width-margin-overflow",
+      "lesson_id": "lesson-4",
+      "config": {
+        "goal": "ببین چرا margin ممکن است اعمال شده باشد اما فاصلهٔ انتهایی به overflow تبدیل شود.",
+        "id": "stv2-width-margin-overflow",
+        "lab_target": "lesson-4-responsive-build-test",
+        "lesson_id": "lesson-4",
+        "renderer": "width-overflow",
+        "schema_version": "1.0.0",
+        "states": [
+          {
+            "computed": [
+              [
+                "Parent inline-size",
+                "320px — مدل آموزشی"
+              ],
+              [
+                "Child used width",
+                "320px"
+              ],
+              [
+                "Outer inline-size",
+                "320px"
+              ]
+            ],
+            "elementor": [
+              [
+                "Width",
+                "Full / فضای موجود"
+              ],
+              [
+                "Margin inline",
+                "0"
+              ],
+              [
+                "Overflow والد",
+                "Default"
+              ]
+            ],
+            "evidence": "simulated_explanation",
+            "explanation": "این حالت مبناست. هنوز فاصلهٔ بیرونی به عرض جعبه اضافه نشده است.",
+            "golden_rule": "قبل از افزودن فاصله، used width و فضای موجود والد را بشناس.",
+            "id": "baseline-full",
+            "phase": "مشاهده",
+            "prediction": {
+              "correct": 1,
+              "feedback_correct": "درست است؛ width و marginها باید با هم در outer size دیده شوند.",
+              "feedback_wrong": "دوباره Box Model را بخوان: margin بیرون border قرار می‌گیرد.",
+              "options": [
+                "همان 320px می‌ماند",
+                "تقریباً 368px می‌شود",
+                "به 272px کاهش می‌یابد"
+              ],
+              "prompt": "اگر به Child با عرض کامل، 24px margin در هر دو سمت اضافه شود، outer size چه می‌شود؟"
+            },
+            "summary": "Child فضای موجود را پر می‌کند و outer size از Parent بزرگ‌تر نیست.",
+            "title": "عرض کامل، بدون margin",
+            "visual": {
+              "margin": 0,
+              "mode": "baseline",
+              "padding": 0
+            }
+          },
+          {
+            "computed": [
+              [
+                "Parent inline-size",
+                "320px — مدل آموزشی"
+              ],
+              [
+                "Child used width",
+                "320px"
+              ],
+              [
+                "Outer inline-size",
+                "368px"
+              ],
+              [
+                "Overflow",
+                "48px"
+              ]
+            ],
+            "elementor": [
+              [
+                "Width",
+                "Full / 100%"
+              ],
+              [
+                "Margin inline",
+                "24px + 24px"
+              ],
+              [
+                "Overflow والد",
+                "Default"
+              ]
+            ],
+            "evidence": "verified_by_real_fixture",
+            "explanation": "نشانهٔ «margin کار نمی‌کند» می‌تواند در واقع overflow باشد. Computed Style باید قبل از نتیجه‌گیری بررسی شود.",
+            "golden_rule": "اعمال‌شدن property را با دیده‌شدن نتیجهٔ بصری یکی ندان.",
+            "id": "full-plus-margin",
+            "phase": "علت و معلول",
+            "prediction": {
+              "correct": 1,
+              "feedback_correct": "دقیقاً؛ Hidden می‌تواند علامت را ببرد، نه علت را.",
+              "feedback_wrong": "Overflow نوع فاصله یا width را تغییر نمی‌دهد؛ فقط نمایش بخش بیرون‌زده را کنترل می‌کند.",
+              "options": [
+                "اصلاح می‌شود",
+                "پنهان می‌شود اما باقی می‌ماند",
+                "margin به padding تبدیل می‌شود"
+              ],
+              "prompt": "اگر فقط overflow والد را Hidden کنیم، علت sizing چه می‌شود؟"
+            },
+            "summary": "margin اعمال شده، اما outer size از Parent بزرگ‌تر شده و سمت پایان بیرون می‌رود.",
+            "title": "عرض کامل + margin دوطرفه",
+            "visual": {
+              "margin": 24,
+              "mode": "overflow",
+              "padding": 0
+            }
+          },
+          {
+            "computed": [
+              [
+                "Outer inline-size",
+                "368px"
+              ],
+              [
+                "Clipping",
+                "فعال"
+              ],
+              [
+                "Sizing cause",
+                "بدون تغییر"
+              ]
+            ],
+            "elementor": [
+              [
+                "Width",
+                "Full / 100%"
+              ],
+              [
+                "Margin inline",
+                "24px + 24px"
+              ],
+              [
+                "Overflow والد",
+                "Hidden"
+              ]
+            ],
+            "evidence": "verified_by_css_spec",
+            "explanation": "این مرحله عمداً نشان می‌دهد که حذف نشانه با اصلاح ساختار تفاوت دارد.",
+            "golden_rule": "Overflow Hidden آخرین راه بررسی نیست؛ ابتدا عنصر overflowکننده را پیدا کن.",
+            "id": "clipped-symptom",
+            "phase": "خرابی عمدی",
+            "prediction": {
+              "correct": 1,
+              "feedback_correct": "درست است؛ padding فضای داخل Shell را می‌سازد.",
+              "feedback_wrong": "هدف فاصلهٔ داخلی است؛ property باید همان رابطه را بیان کند.",
+              "options": [
+                "margin روی Main تمام‌عرض",
+                "padding-inline روی Shell",
+                "z-index روی Main"
+              ],
+              "prompt": "برای ساخت فاصلهٔ داخلی Shell تمام‌عرض، کدام انتخاب مستقیم‌تر است؟"
+            },
+            "summary": "اسکرول یا بیرون‌زدگی دیده نمی‌شود، ولی outer size نامناسب همچنان وجود دارد.",
+            "title": "پنهان‌کردن علامت با Overflow Hidden",
+            "visual": {
+              "margin": 24,
+              "mode": "clipped",
+              "padding": 0
+            }
+          },
+          {
+            "computed": [
+              [
+                "Used width",
+                "بر اساس context بازحساب می‌شود"
+              ],
+              [
+                "Shrink-to-fit",
+                "همیشه قابل ادعا نیست"
+              ],
+              [
+                "Matched rule",
+                "برای قطعیت لازم است"
+              ]
+            ],
+            "elementor": [
+              [
+                "Width",
+                "Auto"
+              ],
+              [
+                "Margin inline",
+                "24px + 24px"
+              ],
+              [
+                "Parent context",
+                "باید بررسی شود"
+              ]
+            ],
+            "evidence": "verified_by_real_fixture",
+            "explanation": "Auto در همهٔ layoutها برابر shrink-to-fit نیست. اینجا به‌عنوان workaround واقعی ثبت شده، نه نسخهٔ همیشگی.",
+            "golden_rule": "از یک رفع مشکل واقعی، قانون عمومی نساز؛ context و matched rule را ثبت کن.",
+            "id": "auto-observed-workaround",
+            "phase": "مرزبندی شواهد",
+            "prediction": {
+              "correct": 1,
+              "feedback_correct": "درست است؛ منبع قانون در Styles/Computed تعیین‌کننده است.",
+              "feedback_wrong": "بدون selector و فایل منبع، نسبت‌دادن رفتار به Theme یا Elementor قطعی نیست.",
+              "options": [
+                "فقط پنل Elementor",
+                "Matched CSS rule در DevTools",
+                "رنگ Background"
+              ],
+              "prompt": "برای اثبات اینکه Theme یا Elementor width را تعیین کرده، کجا باید نگاه کنی؟"
+            },
+            "summary": "در مسئلهٔ واقعی رضا، انتخاب صریح Auto رفتار sizing را تغییر داد؛ نتیجه به layout context وابسته است.",
+            "title": "Width Auto — workaround مشاهده‌شده، نه قانون جهانی",
+            "visual": {
+              "margin": 24,
+              "mode": "auto",
+              "padding": 0
+            }
+          },
+          {
+            "computed": [
+              [
+                "Shell content width",
+                "272px — مدل آموزشی"
+              ],
+              [
+                "Main outer width",
+                "272px"
+              ],
+              [
+                "Overflow",
+                "0"
+              ]
+            ],
+            "elementor": [
+              [
+                "Shell > Padding inline",
+                "24px"
+              ],
+              [
+                "Main > Width",
+                "Full / 100%"
+              ],
+              [
+                "Main > Margin inline",
+                "0"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "این الگو رابطهٔ Page Padding و Main Content را روشن‌تر می‌کند و برای پروژهٔ TUYA قابل آزمایش است.",
+            "golden_rule": "Shell فاصلهٔ صفحه را می‌سازد؛ Main داخل فضای باقی‌مانده چیدمان می‌شود.",
+            "id": "shell-padding",
+            "phase": "انتقال به TUYA",
+            "prediction": {
+              "correct": 1,
+              "feedback_correct": "دقیقاً؛ مسئولیت spacing در Shell باقی می‌ماند.",
+              "feedback_wrong": "به نقش معماری لایه‌ها نگاه کن: Shell فاصلهٔ صفحه را کنترل می‌کند.",
+              "options": [
+                "Margin فرزند",
+                "Padding والد",
+                "Z-index"
+              ],
+              "prompt": "در این الگو، اگر عرض viewport کم شود، کدام بخش مسئول فاصلهٔ کناری است؟"
+            },
+            "summary": "Shell فاصلهٔ صفحه را کنترل می‌کند و Main بدون افزودن outer margin داخل آن قرار می‌گیرد.",
+            "title": "الگوی پایدار: Padding والد + Child با Width مناسب",
+            "visual": {
+              "margin": 0,
+              "mode": "padding",
+              "padding": 24
+            }
+          }
+        ],
+        "storage_key": "elementor-v4-workbook:v27:stv2:width-margin-overflow",
+        "title": "Width، Margin و Overflow — از نشانه تا علت",
+        "type": "cause_effect_debug",
+        "verification": [
+          {
+            "source_id": "ELEMENTOR_CONTAINER_SIZE",
+            "status": "verified_by_official_elementor_help"
+          },
+          {
+            "source_id": "CSS2_USED_WIDTH",
+            "status": "verified_by_css_spec"
+          },
+          {
+            "source_id": "REZA_MARGIN_OBSERVATION",
+            "status": "verified_by_real_fixture"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stv2-flex-axis-alignment",
+      "renderer": "flex-axis",
+      "state_count": 4,
+      "storage_key": "elementor-v4-workbook:v27:stv2:flex-axis-alignment",
+      "lesson_id": "lesson-6",
+      "config": {
+        "goal": "با تغییر Direction ببین main axis و cross axis چگونه جابه‌جا می‌شوند.",
+        "id": "stv2-flex-axis-alignment",
+        "lab_target": "lesson-6-responsive-build-test",
+        "lesson_id": "lesson-6",
+        "renderer": "flex-axis",
+        "schema_version": "1.0.0",
+        "states": [
+          {
+            "computed": [
+              [
+                "Main axis",
+                "Inline / افقی"
+              ],
+              [
+                "Cross axis",
+                "Block / عمودی"
+              ],
+              [
+                "Free-space distribution",
+                "شروع محور اصلی"
+              ]
+            ],
+            "elementor": [
+              [
+                "Direction",
+                "Row"
+              ],
+              [
+                "Justify Content",
+                "Start"
+              ],
+              [
+                "Align Items",
+                "Center"
+              ]
+            ],
+            "evidence": "verified_by_css_spec",
+            "explanation": "در Row، Justify جای عناصر را در امتداد ردیف و Align جای آن‌ها را در ارتفاع Container کنترل می‌کند.",
+            "golden_rule": "Justify را با نام افقی حفظ نکن؛ آن را به main axis وصل کن.",
+            "id": "row-start-center",
+            "phase": "مشاهده",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ Justify فضای آزاد main axis را توزیع می‌کند.",
+              "feedback_wrong": "ابتدا main axis را از Direction استخراج کن.",
+              "options": [
+                "فضای آزاد محور اصلی",
+                "ارتفاع تک‌تک عناصر",
+                "z-index عناصر"
+              ],
+              "prompt": "اگر Justify را Space Between کنیم، کدام فضا توزیع می‌شود؟"
+            },
+            "summary": "Direction روی Row است؛ main axis افقی و cross axis عمودی است.",
+            "title": "Row: Justify روی محور افقی",
+            "visual": {
+              "align": "center",
+              "direction": "row",
+              "justify": "flex-start",
+              "order": [
+                "Visual",
+                "Copy",
+                "Logos"
+              ]
+            }
+          },
+          {
+            "computed": [
+              [
+                "Main axis",
+                "افقی"
+              ],
+              [
+                "justify-content",
+                "space-between"
+              ],
+              [
+                "align-items",
+                "center"
+              ]
+            ],
+            "elementor": [
+              [
+                "Direction",
+                "Row"
+              ],
+              [
+                "Justify Content",
+                "Space Between"
+              ],
+              [
+                "Align Items",
+                "Center"
+              ]
+            ],
+            "evidence": "verified_by_css_spec",
+            "explanation": "اگر Flex Grow تمام فضای آزاد را مصرف کند، ممکن است چیزی برای Justify باقی نماند؛ بنابراین sizing و alignment را جدا بررسی کن.",
+            "golden_rule": "Alignment بعد از sizing خوانده می‌شود.",
+            "id": "row-space-between",
+            "phase": "تغییر حالت",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "بله؛ با Column، main axis عمودی می‌شود.",
+              "feedback_wrong": "Direction تعریف‌کنندهٔ main axis است.",
+              "options": [
+                "در محور عمودی",
+                "همچنان فقط افقی",
+                "فقط روی رنگ‌ها"
+              ],
+              "prompt": "اگر Direction به Column تغییر کند ولی همین Justify حفظ شود، اثر اصلی کجا دیده می‌شود؟"
+            },
+            "summary": "آیتم اول و آخر به دو انتهای main axis می‌روند و فضای آزاد میان آن‌ها پخش می‌شود.",
+            "title": "Row: Space Between",
+            "visual": {
+              "align": "center",
+              "direction": "row",
+              "justify": "space-between",
+              "order": [
+                "Visual",
+                "Copy",
+                "Logos"
+              ]
+            }
+          },
+          {
+            "computed": [
+              [
+                "Main axis",
+                "Block / عمودی"
+              ],
+              [
+                "Cross axis",
+                "Inline / افقی"
+              ],
+              [
+                "Order",
+                "بدون تغییر"
+              ]
+            ],
+            "elementor": [
+              [
+                "Direction",
+                "Column"
+              ],
+              [
+                "Justify Content",
+                "Space Between"
+              ],
+              [
+                "Align Items",
+                "Center"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "نام Control ثابت است، اما جهت اثر آن با Direction تغییر می‌کند. این یکی از منابع رایج سردرگمی Responsive است.",
+            "golden_rule": "بعد از هر Row → Column، Align و Justify را از نو تفسیر کن.",
+            "id": "column-same-controls",
+            "phase": "بازخوانی محور",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ Order می‌تواند ترتیب بصری breakpoint را تغییر دهد.",
+              "feedback_wrong": "هدف بازچینی است، نه پنهان‌کردن یا حذف ساختار.",
+              "options": [
+                "Custom Order در breakpoint",
+                "فقط opacity",
+                "حذف Element Tree"
+              ],
+              "prompt": "برای نزدیک‌شدن به طرح Mobile TUYA، بدون Duplicate کردن سکشن چه چیزی را می‌توان بررسی کرد؟"
+            },
+            "summary": "Justify اکنون عمودی و Align اکنون افقی عمل می‌کند.",
+            "title": "Column: همان نام‌ها، محورهای تازه",
+            "visual": {
+              "align": "center",
+              "direction": "column",
+              "justify": "space-between",
+              "order": [
+                "Visual",
+                "Copy",
+                "Logos"
+              ]
+            }
+          },
+          {
+            "computed": [
+              [
+                "Visual order",
+                "1"
+              ],
+              [
+                "Copy order",
+                "2"
+              ],
+              [
+                "Logo order",
+                "3"
+              ],
+              [
+                "DOM order",
+                "باید جداگانه بررسی شود"
+              ]
+            ],
+            "elementor": [
+              [
+                "Direction",
+                "Column"
+              ],
+              [
+                "Visual > Order",
+                "1"
+              ],
+              [
+                "Copy > Order",
+                "2"
+              ],
+              [
+                "Logo Strip > Order",
+                "3"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "Custom Order ابزار بصری است؛ ترتیب DOM و دسترسی‌پذیری باید مستقل ارزیابی شوند.",
+            "golden_rule": "ترتیب بصری را تغییر بده، اما ترتیب خواندن را فراموش نکن.",
+            "id": "column-custom-order",
+            "phase": "انتقال",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ visual order الزاماً reading order را تغییر نمی‌دهد.",
+              "feedback_wrong": "بازچینی بصری باید با ترتیب معنایی مقایسه شود.",
+              "options": [
+                "DOM و ترتیب Focus",
+                "فقط border-radius",
+                "فقط سایه"
+              ],
+              "prompt": "بعد از تغییر Order، برای دسترسی‌پذیری چه چیزی باید بررسی شود؟"
+            },
+            "summary": "Visual پیش از Copy نمایش داده می‌شود، در حالی که یک ساختار اصلی حفظ می‌شود.",
+            "title": "Column + Order برای Mobile TUYA",
+            "visual": {
+              "align": "stretch",
+              "direction": "column",
+              "justify": "flex-start",
+              "order": [
+                "Visual",
+                "Copy",
+                "Logos"
+              ]
+            }
+          }
+        ],
+        "storage_key": "elementor-v4-workbook:v27:stv2:flex-axis-alignment",
+        "title": "Flex Direction، Justify و Align — محور را دوباره بخوان",
+        "type": "state_change",
+        "verification": [
+          {
+            "source_id": "ELEMENTOR_CONTAINER_LAYOUT",
+            "status": "verified_by_official_elementor_help"
+          },
+          {
+            "source_id": "CSS_FLEXBOX_AXES",
+            "status": "verified_by_css_spec"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stv2-responsive-inheritance",
+      "renderer": "responsive-inheritance",
+      "state_count": 4,
+      "storage_key": "elementor-v4-workbook:v27:stv2:responsive-inheritance",
+      "lesson_id": "lesson-14",
+      "config": {
+        "goal": "منبع هر مقدار را در Desktop، Tablet و Mobile ببین و Reset را با حذف تصادفی اشتباه نگیر.",
+        "id": "stv2-responsive-inheritance",
+        "lab_target": "lesson-14-responsive-build-test",
+        "lesson_id": "lesson-14",
+        "renderer": "responsive-inheritance",
+        "schema_version": "1.0.0",
+        "states": [
+          {
+            "computed": [
+              [
+                "Desktop used value",
+                "48px"
+              ],
+              [
+                "Tablet source",
+                "Desktop"
+              ],
+              [
+                "Mobile source",
+                "Desktop"
+              ]
+            ],
+            "elementor": [
+              [
+                "Desktop Padding",
+                "48px"
+              ],
+              [
+                "Tablet",
+                "Inherited"
+              ],
+              [
+                "Mobile",
+                "Inherited"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "در مدل پیش‌فرض، مقدار بزرگ‌تر به کوچک‌تر cascade می‌شود مگر override ایجاد شود.",
+            "golden_rule": "وجود مقدار در Mobile الزاماً به معنی تنظیم مستقیم در Mobile نیست.",
+            "id": "desktop-source",
+            "phase": "منبع",
+            "prediction": {
+              "correct": 1,
+              "feedback_correct": "درست است؛ Mobile از نزدیک‌ترین breakpoint بزرگ‌ترِ دارای مقدار ارث می‌برد.",
+              "feedback_wrong": "Cascade را از بزرگ‌تر به کوچک‌تر و مرحله‌به‌مرحله دنبال کن.",
+              "options": [
+                "48px از Desktop",
+                "32px از Tablet",
+                "0px"
+              ],
+              "prompt": "اگر Tablet را روی 32px override کنیم و Mobile مقدار مستقیم نداشته باشد، Mobile چه می‌گیرد؟"
+            },
+            "summary": "Padding روی Desktop برابر 48px است و breakpointهای کوچک‌تر هنوز override ندارند.",
+            "title": "Desktop مقدار پایه را تعریف می‌کند",
+            "visual": {
+              "devices": [
+                {
+                  "name": "Desktop",
+                  "source": "local",
+                  "value": "48px"
+                },
+                {
+                  "name": "Tablet",
+                  "source": "inherited",
+                  "value": "48px"
+                },
+                {
+                  "name": "Mobile",
+                  "source": "inherited",
+                  "value": "48px"
+                }
+              ]
+            }
+          },
+          {
+            "computed": [
+              [
+                "Desktop source",
+                "Desktop"
+              ],
+              [
+                "Tablet source",
+                "Tablet"
+              ],
+              [
+                "Mobile source",
+                "Tablet"
+              ]
+            ],
+            "elementor": [
+              [
+                "Desktop Padding",
+                "48px"
+              ],
+              [
+                "Tablet Padding",
+                "32px — مستقیم"
+              ],
+              [
+                "Mobile Padding",
+                "32px — inherited"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "رنگ یا حالت muted در Editor به تشخیص مقدار inherited کمک می‌کند.",
+            "golden_rule": "عدد را تنها نبین؛ منبع عدد را هم بخوان.",
+            "id": "tablet-override",
+            "phase": "Override",
+            "prediction": {
+              "correct": 1,
+              "feedback_correct": "درست است؛ تغییر breakpoint کوچک‌تر به بزرگ‌تر برنمی‌گردد.",
+              "feedback_wrong": "Cascade Responsive به‌طور پیش‌فرض از بزرگ‌تر به کوچک‌تر است، نه برعکس.",
+              "options": [
+                "20px",
+                "48px باقی می‌ماند",
+                "به Auto تبدیل می‌شود"
+              ],
+              "prompt": "اگر فقط Mobile را روی 20px تنظیم کنیم، Desktop چه می‌شود؟"
+            },
+            "summary": "Tablet برابر 32px شده و Mobile همان 32px را به‌صورت inherited می‌بیند.",
+            "title": "Tablet Override، Mobile Inherited",
+            "visual": {
+              "devices": [
+                {
+                  "name": "Desktop",
+                  "source": "local",
+                  "value": "48px"
+                },
+                {
+                  "name": "Tablet",
+                  "source": "override",
+                  "value": "32px"
+                },
+                {
+                  "name": "Mobile",
+                  "source": "inherited",
+                  "value": "32px"
+                }
+              ]
+            }
+          },
+          {
+            "computed": [
+              [
+                "Desktop used",
+                "48px"
+              ],
+              [
+                "Tablet used",
+                "32px"
+              ],
+              [
+                "Mobile used",
+                "20px"
+              ]
+            ],
+            "elementor": [
+              [
+                "Desktop",
+                "48px"
+              ],
+              [
+                "Tablet",
+                "32px"
+              ],
+              [
+                "Mobile",
+                "20px — مستقیم"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "این مرحله نشان می‌دهد Responsive correction باید فقط جایی انجام شود که طرح واقعاً نیاز دارد.",
+            "golden_rule": "Override را حداقلی و هدفمند نگه دار.",
+            "id": "mobile-override",
+            "phase": "Override کوچک‌تر",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "بله؛ با حذف override، inheritance دوباره فعال می‌شود.",
+              "feedback_wrong": "Reset را به‌عنوان بازگشت به زنجیرهٔ inheritance ببین.",
+              "options": [
+                "از Tablet، یعنی 32px",
+                "همیشه صفر می‌شود",
+                "از Theme بدون بررسی"
+              ],
+              "prompt": "اگر Mobile override را Reset کنیم، مقدار Mobile از کجا می‌آید؟"
+            },
+            "summary": "Mobile برابر 20px است؛ Desktop و Tablet بدون تغییر می‌مانند.",
+            "title": "Mobile Override مستقل",
+            "visual": {
+              "devices": [
+                {
+                  "name": "Desktop",
+                  "source": "local",
+                  "value": "48px"
+                },
+                {
+                  "name": "Tablet",
+                  "source": "override",
+                  "value": "32px"
+                },
+                {
+                  "name": "Mobile",
+                  "source": "override",
+                  "value": "20px"
+                }
+              ]
+            }
+          },
+          {
+            "computed": [
+              [
+                "Mobile used value",
+                "32px"
+              ],
+              [
+                "Value source",
+                "Tablet"
+              ],
+              [
+                "Desktop effect",
+                "بدون تغییر"
+              ]
+            ],
+            "elementor": [
+              [
+                "Mobile direct value",
+                "Reset / حذف"
+              ],
+              [
+                "Mobile displayed value",
+                "32px muted"
+              ],
+              [
+                "Source indicator",
+                "Tablet"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "پاک‌کردن یک مقدار responsive لزوماً به صفر منجر نمی‌شود؛ ممکن است مقدار inherited دوباره ظاهر شود.",
+            "golden_rule": "بعد از Reset، منبع جدید مقدار را بررسی کن.",
+            "id": "mobile-reset",
+            "phase": "خطایابی",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ خود Editor منبع inherited را قابل مشاهده می‌کند.",
+              "feedback_wrong": "عدد یکسان کافی نیست؛ حالت نمایش و منبع را بررسی کن.",
+              "options": [
+                "نمایش muted و indicator منبع",
+                "فقط نام دستگاه",
+                "فقط رنگ Background"
+              ],
+              "prompt": "برای تشخیص مقدار inherited در Editor V4، به چه نشانه‌ای توجه می‌کنی؟"
+            },
+            "summary": "20px حذف می‌شود و Mobile دوباره 32px را از Tablet دریافت می‌کند.",
+            "title": "Reset Mobile و بازگشت مقدار Inherited",
+            "visual": {
+              "devices": [
+                {
+                  "name": "Desktop",
+                  "source": "local",
+                  "value": "48px"
+                },
+                {
+                  "name": "Tablet",
+                  "source": "override",
+                  "value": "32px"
+                },
+                {
+                  "name": "Mobile",
+                  "source": "inherited",
+                  "value": "32px"
+                }
+              ]
+            }
+          }
+        ],
+        "storage_key": "elementor-v4-workbook:v27:stv2:responsive-inheritance",
+        "title": "Responsive Inheritance — مقدار از کجا آمده است؟",
+        "type": "layer_reveal_debug",
+        "verification": [
+          {
+            "source_id": "ELEMENTOR_RESPONSIVE_EDITING",
+            "status": "verified_by_official_elementor_help"
+          },
+          {
+            "source_id": "ELEMENTOR_INHERITED_VALUES",
+            "status": "verified_by_official_elementor_help"
+          }
+        ]
+      }
+    },
+    {
+      "id": "stv2-class-priority",
+      "renderer": "class-priority",
+      "state_count": 7,
+      "storage_key": "elementor-v4-workbook:v30:stv2:class-priority-expanded",
+      "lesson_id": "lesson-v17-class-manager",
+      "config": {
+        "goal": "اولویت Local Class و ترتیب Global Classها را بدون تکیه بر زمان افزودن کلاس‌ها بفهم.",
+        "id": "stv2-class-priority",
+        "lab_target": "class-priority-build-test",
+        "lesson_id": "lesson-v17-class-manager",
+        "renderer": "class-priority",
+        "schema_version": "2.0.0",
+        "states": [
+          {
+            "computed": [
+              [
+                "Winning source",
+                "Local Class"
+              ],
+              [
+                "Scope",
+                "همین Element"
+              ]
+            ],
+            "elementor": [
+              [
+                "Classes Field",
+                "Local Class"
+              ],
+              [
+                "Local text color",
+                "Navy"
+              ],
+              [
+                "Global Classes",
+                "هیچ"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "Local Class مخصوص Element انتخاب‌شده است و در hierarchy بالاترین اولویت را دارد.",
+            "golden_rule": "Local Class لباس اختصاصی همین Element است.",
+            "id": "local-only",
+            "phase": "پایه",
+            "prediction": {
+              "correct": 1,
+              "feedback_correct": "درست است؛ Local Class بالاترین priority را دارد.",
+              "feedback_wrong": "در hierarchy رسمی Elementor، Local Class همیشه در بالاترین اولویت است.",
+              "options": [
+                "Global Class",
+                "Local Class",
+                "کلاسی که دیرتر اضافه شده"
+              ],
+              "prompt": "اگر Global Class متعارض اضافه شود ولی Local همان property را تعیین کند، کدام برنده است؟"
+            },
+            "summary": "Style اختصاصی همان Element از Local Class می‌آید.",
+            "title": "هر Element یک Local Class دارد",
+            "visual": {
+              "chips": [
+                {
+                  "kind": "local",
+                  "name": "Local",
+                  "priority": 1
+                }
+              ],
+              "result": "Navy",
+              "second": "بدون تغییر",
+              "winner": "Local"
+            }
+          },
+          {
+            "computed": [
+              [
+                "Winning source",
+                "Local"
+              ],
+              [
+                "Indicator meaning",
+                "Local override"
+              ]
+            ],
+            "elementor": [
+              [
+                "Classes",
+                "Local + Green_text"
+              ],
+              [
+                "Local color",
+                "Navy"
+              ],
+              [
+                "Green_text color",
+                "Green"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "وجود Global Class به‌تنهایی Local property متعارض را کنار نمی‌زند.",
+            "golden_rule": "برای دیدن اثر Global، property متعارض Local را پاک یا بازطراحی کن.",
+            "id": "local-over-global",
+            "phase": "Conflict",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ Class Manager hierarchy را تعیین می‌کند.",
+              "feedback_wrong": "Elementor priority را از Class Manager بازتاب می‌دهد، نه از زمان افزودن.",
+              "options": [
+                "Class Manager",
+                "زمان کلیک کاربر",
+                "ترتیب DOM"
+              ],
+              "prompt": "اگر رنگ Local را پاک کنیم و دو Global Class متعارض بمانند، اولویت از کجا می‌آید؟"
+            },
+            "summary": "Global Class رنگ سبز دارد، اما Local Class همچنان Navy را اعمال می‌کند.",
+            "title": "Local Class روی Global Class غلبه می‌کند",
+            "visual": {
+              "chips": [
+                {
+                  "kind": "local",
+                  "name": "Local",
+                  "priority": 1
+                },
+                {
+                  "kind": "global",
+                  "name": "Green_text",
+                  "priority": 2
+                }
+              ],
+              "result": "Navy",
+              "second": "Green",
+              "winner": "Local"
+            }
+          },
+          {
+            "computed": [
+              [
+                "Winning global",
+                "Green_text"
+              ],
+              [
+                "Reason",
+                "Manager priority / left position"
+              ]
+            ],
+            "elementor": [
+              [
+                "Classes Field",
+                "Local(empty) | Green_text | Red_text"
+              ],
+              [
+                "Class Manager order",
+                "Green_text بالاتر از Red_text"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "حتی اگر Green_text بعدتر اضافه شده باشد، Manager order می‌تواند آن را به سمت چپ و اولویت بالاتر ببرد.",
+            "golden_rule": "زمان افزودن را با priority اشتباه نگیر.",
+            "id": "global-manager-order",
+            "phase": "Hierarchy",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "بله؛ hierarchy Global Classها تغییر می‌کند.",
+              "feedback_wrong": "تغییر Manager order روی تعارض Global Classها اثر می‌گذارد، نه DOM یا وجود Local.",
+              "options": [
+                "Global winner می‌تواند Red_text شود",
+                "Local Class حذف می‌شود",
+                "DOM order تغییر می‌کند"
+              ],
+              "prompt": "اگر در Class Manager، Red_text بالاتر از Green_text قرار گیرد، چه چیزی تغییر می‌کند؟"
+            },
+            "summary": "Green_text در Class Manager بالاتر است و در Classes Field سمت چپ Red_text قرار می‌گیرد.",
+            "title": "دو Global Class: کلاس سمت چپ اولویت دارد",
+            "visual": {
+              "chips": [
+                {
+                  "kind": "local-empty",
+                  "name": "Local (empty)",
+                  "priority": 1
+                },
+                {
+                  "kind": "global winner",
+                  "name": "Green_text",
+                  "priority": 2
+                },
+                {
+                  "kind": "global",
+                  "name": "Red_text",
+                  "priority": 3
+                }
+              ],
+              "result": "Green",
+              "second": "Green",
+              "winner": "Green_text"
+            }
+          },
+          {
+            "computed": [
+              [
+                "Winning global",
+                "Red_text"
+              ],
+              [
+                "Local override",
+                "ندارد"
+              ]
+            ],
+            "elementor": [
+              [
+                "Class Manager order",
+                "Red_text بالاتر"
+              ],
+              [
+                "Classes Field",
+                "Local(empty) | Red_text | Green_text"
+              ]
+            ],
+            "evidence": "verified_by_official_elementor_help",
+            "explanation": "تغییر hierarchy تصمیمی سیستمی است و می‌تواند روی تمام Elementهای دارای هر دو Class اثر بگذارد.",
+            "golden_rule": "Reorder کلاس، تغییر محلی کوچک نیست؛ اثر سیستم طراحی را بررسی کن.",
+            "id": "global-reordered",
+            "phase": "علت و معلول",
+            "prediction": {
+              "correct": 0,
+              "feedback_correct": "درست است؛ Global hierarchy می‌تواند چندین Element را تغییر دهد.",
+              "feedback_wrong": "Global Class بخشی از سیستم طراحی است و دامنهٔ آن فراتر از Element فعلی است.",
+              "options": [
+                "Elementهای دیگری که هر دو Class را دارند",
+                "فقط نام صفحهٔ فعلی",
+                "فقط breakpoint Mobile"
+              ],
+              "prompt": "پیش از Reorder کردن Global Class در سایت واقعی، چه چیزی باید بررسی شود؟"
+            },
+            "summary": "Red_text به اولویت بالاتر منتقل شده و در نبود Local override، نتیجه قرمز است.",
+            "title": "Reorder در Class Manager، نتیجهٔ Global را تغییر می‌دهد",
+            "visual": {
+              "chips": [
+                {
+                  "kind": "local-empty",
+                  "name": "Local (empty)",
+                  "priority": 1
+                },
+                {
+                  "kind": "global winner",
+                  "name": "Red_text",
+                  "priority": 2
+                },
+                {
+                  "kind": "global",
+                  "name": "Green_text",
+                  "priority": 3
+                }
+              ],
+              "result": "Red",
+              "second": "Red",
+              "winner": "Red_text"
+            }
+          },
+          {
+            "id": "selected-state",
+            "phase": "State",
+            "title": "State روی Class انتخاب‌شده",
+            "summary": "Hover برای Global یا Local Class انتخاب‌شده declaration متفاوت می‌سازد.",
+            "explanation": "State یک context از Class فعال است؛ برنده‌بودن آن به class target، property conflict و state match وابسته است.",
+            "golden_rule": "قبل از ویرایش Hover، ببین کدام Class و State واقعاً selected است.",
+            "evidence": "verified_by_official_elementor_help",
+            "elementor": [
+              [
+                "Selected class",
+                "Button_primary"
+              ],
+              [
+                "State",
+                "Hover"
+              ],
+              [
+                "Property",
+                "background"
+              ]
+            ],
+            "computed": [
+              [
+                "Matched context",
+                "Button_primary:hover"
+              ],
+              [
+                "Winner",
+                "State declaration if not overridden"
+              ]
+            ],
+            "visual": {
+              "chips": [
+                {
+                  "kind": "local-empty",
+                  "name": "Local (empty)",
+                  "priority": 1
+                },
+                {
+                  "kind": "global winner",
+                  "name": "Button_primary:hover",
+                  "priority": 2
+                },
+                {
+                  "kind": "global",
+                  "name": "Button_primary",
+                  "priority": 3
+                }
+              ],
+              "winner": "Selected State",
+              "result": "Hover Gold",
+              "second": "Normal Navy"
+            },
+            "prediction": {
+              "prompt": "اگر Hover را روی Local Class ویرایش کنی، دامنهٔ آن چیست؟",
+              "options": [
+                "همهٔ Button_primaryها",
+                "همین Element در Hover",
+                "کل سایت"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است.",
+              "feedback_wrong": "Local State به همان Element محدود است."
+            }
+          },
+          {
+            "id": "custom-css-context",
+            "phase": "Matched rule",
+            "title": "Custom CSS و matched-rule context",
+            "summary": "یک rule سفارشی ممکن است با specificity، source order یا importance وارد تعارض شود.",
+            "explanation": "Class Manager فقط hierarchy Global Classهای Elementor را توضیح می‌دهد؛ Custom CSS در cascade واقعی مرورگر و selector context ارزیابی می‌شود.",
+            "golden_rule": "برای conflict سفارشی، Matched CSS Rules و Computed Style را بخوان.",
+            "evidence": "verified_by_css_spec",
+            "elementor": [
+              [
+                "Elementor classes",
+                "Local + Button_primary"
+              ],
+              [
+                "Custom CSS",
+                ".page .cta { background: red; }"
+              ]
+            ],
+            "computed": [
+              [
+                "Need inspection",
+                "specificity + order + importance"
+              ],
+              [
+                "Winner",
+                "context-dependent"
+              ]
+            ],
+            "visual": {
+              "chips": [
+                {
+                  "kind": "local",
+                  "name": "Local",
+                  "priority": 1
+                },
+                {
+                  "kind": "global",
+                  "name": "Button_primary",
+                  "priority": 2
+                },
+                {
+                  "kind": "winner",
+                  "name": "Matched Custom CSS",
+                  "priority": "CSS"
+                }
+              ],
+              "winner": "Computed rule",
+              "result": "Context-dependent",
+              "second": "Inspect DevTools"
+            },
+            "prediction": {
+              "prompt": "کدام ابزار پاسخ قطعی می‌دهد؟",
+              "options": [
+                "فقط زمان افزودن Class",
+                "Computed Style و Matched Rules",
+                "نام رنگ Variable"
+              ],
+              "correct": 1,
+              "feedback_correct": "درست است.",
+              "feedback_wrong": "Custom CSS با cascade مرورگر حل می‌شود."
+            }
+          },
+          {
+            "id": "local-first-convert",
+            "phase": "Workflow",
+            "title": "Local-first سپس Convert to Global",
+            "summary": "Prototype در Local Class ساخته و پس از اثبات reuse به Global Class تبدیل می‌شود.",
+            "explanation": "این workflow رسمیِ اجباری نیست، اما خود Elementor تبدیل propertyهای Local به Global Class را مستند کرده است.",
+            "golden_rule": "Global Class را با evidence reuse بساز و class sprawl را audit کن.",
+            "evidence": "verified_by_official_elementor_help",
+            "elementor": [
+              [
+                "Start",
+                "Local prototype"
+              ],
+              [
+                "Evidence",
+                "۳ استفادهٔ واقعی"
+              ],
+              [
+                "Action",
+                "Convert to Global Class"
+              ]
+            ],
+            "computed": [
+              [
+                "Benefit",
+                "verified reuse"
+              ],
+              [
+                "Risk",
+                "class sprawl if premature"
+              ]
+            ],
+            "visual": {
+              "chips": [
+                {
+                  "kind": "local",
+                  "name": "Local prototype",
+                  "priority": 1
+                },
+                {
+                  "kind": "global winner",
+                  "name": "Card_elevated",
+                  "priority": 2
+                }
+              ],
+              "winner": "Global after verification",
+              "result": "Reusable",
+              "second": "Semantic naming proposed"
+            },
+            "prediction": {
+              "prompt": "چه زمانی Convert مناسب‌تر است؟",
+              "options": [
+                "پس از اثبات reuse",
+                "قبل از طراحی اولین Element",
+                "برای هر exception"
+              ],
+              "correct": 0,
+              "feedback_correct": "درست است.",
+              "feedback_wrong": "Premature global abstraction می‌تواند class sprawl بسازد."
+            }
+          }
+        ],
+        "storage_key": "elementor-v4-workbook:v30:stv2:class-priority-expanded",
+        "title": "Class Conflict Architecture — Global A/B، State، Local و Custom CSS",
+        "type": "decision_propagation",
+        "verification": [
+          {
+            "source_id": "ELEMENTOR_CLASSES",
+            "status": "verified_by_official_elementor_help"
+          },
+          {
+            "source_id": "ELEMENTOR_CLASS_PRIORITY",
+            "status": "verified_by_official_elementor_help"
+          }
+        ]
+      }
+    }
+  ]
+}

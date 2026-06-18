@@ -1,0 +1,31 @@
+{
+  "version": "21.0.0",
+  "source_base": "attached_latest_v20",
+  "sources": [
+    {
+      "title": "Elementor — Classes in Elementor",
+      "url": "https://elementor.com/help/classes-in-elementor-2/",
+      "used_for": ["local_class", "global_class", "convert_to_global_class", "class_hierarchy"]
+    },
+    {
+      "title": "Elementor — Set a Flexbox Container’s size and behavior",
+      "url": "https://elementor.com/help/set-flexbox-container-size-behavior/",
+      "used_for": ["container_size", "margin_width_overflow_warning", "layout_tab"]
+    },
+    {
+      "title": "MDN — flex-basis CSS property",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-basis",
+      "used_for": ["flex_basis", "flex_grow_shrink_relationship", "computed_flex_size"]
+    },
+    {
+      "title": "MDN — CSS logical properties and values",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values",
+      "used_for": ["rtl_logical_properties", "inline_start_end", "writing_mode"]
+    },
+    {
+      "title": "MDN — margin-inline-start",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin-inline-start",
+      "used_for": ["margin_inline_start_mapping", "direction_writing_mode_dependency"]
+    }
+  ]
+}

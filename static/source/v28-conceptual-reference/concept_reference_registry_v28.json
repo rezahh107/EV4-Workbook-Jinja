@@ -1,0 +1,364 @@
+{
+  "version": "28.0.0",
+  "count": 28,
+  "references": [
+    {
+      "lesson_id": "lesson-1",
+      "title": "Elementor V4 واقعاً چگونه فکر می‌کند؟",
+      "source_ids": [
+        "E_V4",
+        "E_DIFF",
+        "E_CLASSES",
+        "CSS_DISPLAY"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-2",
+      "title": "Element Tree و انتخاب ظرف درست",
+      "source_ids": [
+        "E_DIV",
+        "E_FLEX",
+        "E_GRID",
+        "CSS_DISPLAY"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-3",
+      "title": "Local Class، Global Class و هدف واقعی ویرایش",
+      "source_ids": [
+        "E_CLASSES",
+        "E_CLASS_MANAGER",
+        "E_CLASS_PRIORITY",
+        "CSS_CASCADE"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-4",
+      "title": "Box Model، Width و تفاوت فضای داخل و بیرون",
+      "source_ids": [
+        "CSS_BOX",
+        "E_SIZE",
+        "E_CONTAINER",
+        "CSS_VALUES"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-5",
+      "title": "Flexbox؛ چیدمان یک‌بعدی و رابطهٔ Parent/Item",
+      "source_ids": [
+        "E_FLEX",
+        "E_FLEX_WORK",
+        "CSS_FLEX"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-6",
+      "title": "Direction، Justify، Align و Gap بدون حفظ‌کردن کور",
+      "source_ids": [
+        "E_CONTAINER",
+        "CSS_ALIGN",
+        "CSS_FLEX"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-7",
+      "title": "Basis، Grow و Shrink؛ قرارداد اندازه در Flex",
+      "source_ids": [
+        "CSS_FLEX",
+        "E_SIZE",
+        "E_FLEX_WORK"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-8",
+      "title": "Wrap؛ وقتی یک ردیف دیگر جا ندارد",
+      "source_ids": [
+        "CSS_FLEX",
+        "E_CONTAINER",
+        "E_RESP_CONTAINER"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-9",
+      "title": "Grid؛ طراحی با Track، Cell و Area",
+      "source_ids": [
+        "E_GRID",
+        "CSS_GRID",
+        "CSS_ALIGN"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-10",
+      "title": "Typography؛ خوانایی، سلسله‌مراتب و ریتم متن",
+      "source_ids": [
+        "E_VARIABLES",
+        "E_DIFF",
+        "MDN_TYPO"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-11",
+      "title": "Image، SVG، Background و نسبت تصویر",
+      "source_ids": [
+        "E_IMAGE",
+        "CSS_IMAGES",
+        "MDN_SVG"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-12",
+      "title": "Position از صفر؛ Flow، مرجع مختصات و Overlay",
+      "source_ids": [
+        "E_POSITION",
+        "CSS_POSITION",
+        "CSS_OVERFLOW"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-13",
+      "title": "Z-index، Stacking Context و Overflow",
+      "source_ids": [
+        "CSS_POSITION",
+        "CSS_OVERFLOW",
+        "E_POSITION"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-14",
+      "title": "Responsive؛ inheritance، override و breakpoint",
+      "source_ids": [
+        "E_RESP",
+        "E_RESP_INHERIT",
+        "E_RESP_CONTAINER",
+        "CSS_MEDIA",
+        "MDN_RESP"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-15",
+      "title": "RTL و Logical Properties؛ Start و End به‌جای حدس راست و چپ",
+      "source_ids": [
+        "CSS_LOGICAL",
+        "E_DIFF",
+        "CSS_FLEX"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-16",
+      "title": "State؛ Normal، Hover، Focus و Active",
+      "source_ids": [
+        "E_CUSTOM_CSS",
+        "E_CLASSES",
+        "WAI_FOCUS"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-17",
+      "title": "Design System؛ رابطهٔ Class، Variable و Component",
+      "source_ids": [
+        "E_VARIABLES",
+        "E_VAR_MANAGER",
+        "E_CLASSES",
+        "E_COMPONENTS"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help"
+      ]
+    },
+    {
+      "lesson_id": "lesson-18",
+      "title": "Hybrid V3/V4 و مهاجرت بدون بازسازی کور",
+      "source_ids": [
+        "E_V4",
+        "E_DIFF",
+        "E_PERF"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help"
+      ]
+    },
+    {
+      "lesson_id": "lesson-v17-advanced",
+      "title": "Custom CSS، Attributes و Dynamic Tags؛ سه لایهٔ متفاوت",
+      "source_ids": [
+        "E_CUSTOM_CSS",
+        "E_ATTRIBUTES",
+        "E_DYNAMIC"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help"
+      ]
+    },
+    {
+      "lesson_id": "lesson-v17-interactions",
+      "title": "Interactions؛ Trigger، Effect و زمان‌بندی",
+      "source_ids": [
+        "E_INTERACTIONS",
+        "WAI_FOCUS"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-v17-atomic-forms",
+      "title": "Atomic Form؛ فرم به‌عنوان ساختار و جریان داده",
+      "source_ids": [
+        "E_FORM",
+        "WAI_FOCUS"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help",
+        "verified_by_css_spec"
+      ]
+    },
+    {
+      "lesson_id": "lesson-v17-components",
+      "title": "Component، Master و Instance",
+      "source_ids": [
+        "E_COMPONENTS",
+        "E_CLASSES",
+        "E_VARIABLES"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help"
+      ]
+    },
+    {
+      "lesson_id": "lesson-v17-variables",
+      "title": "Variable و Design Token؛ مقدار نام‌دار با دامنهٔ اثر",
+      "source_ids": [
+        "E_VARIABLES",
+        "E_VAR_MANAGER"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help"
+      ]
+    },
+    {
+      "lesson_id": "lesson-v17-class-manager",
+      "title": "Class Manager؛ hierarchy سیستم Style",
+      "source_ids": [
+        "E_CLASS_MANAGER",
+        "E_CLASS_PRIORITY",
+        "E_CLASSES"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help"
+      ]
+    },
+    {
+      "lesson_id": "lesson-19",
+      "title": "Refactor؛ تغییر ساختار بدون گم‌کردن رفتار",
+      "source_ids": [
+        "E_V4",
+        "E_PERF"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help"
+      ]
+    },
+    {
+      "lesson_id": "lesson-20",
+      "title": "Performance، DOM و Audit؛ ساده‌سازی قابل اندازه‌گیری",
+      "source_ids": [
+        "E_PERF",
+        "E_DIV",
+        "E_FLEX"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help"
+      ]
+    },
+    {
+      "lesson_id": "lesson-v19-element-weight",
+      "title": "وزن Element؛ هزینه فقط تعداد Node نیست",
+      "source_ids": [
+        "E_DIV",
+        "E_FLEX",
+        "E_PERF"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help"
+      ]
+    },
+    {
+      "lesson_id": "lesson-21",
+      "title": "ساخت مستقل؛ از مسئله به تصمیم قابل دفاع",
+      "source_ids": [
+        "E_V4",
+        "E_RESP_CONTAINER",
+        "E_CLASSES",
+        "E_VARIABLES"
+      ],
+      "verification": [
+        "verified_by_official_elementor_help"
+      ]
+    }
+  ]
+}

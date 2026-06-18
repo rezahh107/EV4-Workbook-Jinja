@@ -1,0 +1,16 @@
+{
+  "contract_version": "1.0.0",
+  "workbook_version": "31.0.0",
+  "required_checks": [
+    "28 conceptual-reference disclosures",
+    "one-to-one chapter/detail mapping",
+    "source and rendered SHA-256 registry integrity",
+    "all disclosures closed by default",
+    "no duplicate ids",
+    "internal hash targets resolve",
+    "responsive table/code containment",
+    "no active external network requests",
+    "deep links reveal ancestor disclosures",
+    "no console or page errors"
+  ]
+}

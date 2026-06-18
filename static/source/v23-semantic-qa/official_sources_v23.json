@@ -1,0 +1,111 @@
+{
+  "insufficient_evidence": [
+    {
+      "reason": "No complete official Role × Variable operation matrix was established in the reviewed sources.",
+      "topic": "exact_role_matrix_for_variables"
+    }
+  ],
+  "source_base": "v22.0.0",
+  "sources": [
+    {
+      "title": "Elementor — Classes in Elementor",
+      "url": "https://elementor.com/help/classes-in-elementor-2/",
+      "used_for": [
+        "local_class",
+        "global_class",
+        "states"
+      ]
+    },
+    {
+      "title": "Elementor — Prioritize conflicting styles",
+      "url": "https://elementor.com/help/prioritize-conflicting-styles/",
+      "used_for": [
+        "class_priority",
+        "classes_field_order",
+        "local_priority"
+      ]
+    },
+    {
+      "title": "Elementor — The Elementor Editor Class Manager",
+      "url": "https://elementor.com/help/the-elementor-editor-class-manager/",
+      "used_for": [
+        "rename_delete_reorder",
+        "class_manager"
+      ]
+    },
+    {
+      "title": "Elementor — User roles and classes",
+      "url": "https://elementor.com/help/user-roles-and-classes/",
+      "used_for": [
+        "class_role_limits"
+      ]
+    },
+    {
+      "title": "Elementor — Components",
+      "url": "https://elementor.com/help/components-2/",
+      "used_for": [
+        "master_instance",
+        "admin_requirement",
+        "pro_requirement"
+      ]
+    },
+    {
+      "title": "Elementor — Atomic Form element",
+      "url": "https://elementor.com/help/atomic-form-element/",
+      "used_for": [
+        "atomic_form_structure"
+      ]
+    },
+    {
+      "title": "Elementor — Dynamic tags in V4",
+      "url": "https://elementor.com/help/dynamic-tags-in-v4/",
+      "used_for": [
+        "dynamic_content"
+      ]
+    },
+    {
+      "title": "Elementor — Add and delete attributes",
+      "url": "https://elementor.com/help/add-and-delete-attributes/",
+      "used_for": [
+        "attributes"
+      ]
+    },
+    {
+      "title": "Elementor — Add Custom CSS to an element",
+      "url": "https://elementor.com/help/add-custom-css-to-an-element/",
+      "used_for": [
+        "custom_css_class_state"
+      ]
+    },
+    {
+      "title": "Elementor — Display Conditions",
+      "url": "https://elementor.com/help/show-and-hide-elements-on-a-page-display-conditions/",
+      "used_for": [
+        "display_conditions"
+      ]
+    },
+    {
+      "title": "Elementor — Editor V3 vs V4",
+      "url": "https://elementor.com/help/what-are-the-differences-between-the-elementor-editor-3-x-and-v4/",
+      "used_for": [
+        "general_style_tabs",
+        "hybrid"
+      ]
+    },
+    {
+      "title": "MDN — flex-basis",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/flex-basis",
+      "used_for": [
+        "flex_main_size"
+      ]
+    },
+    {
+      "title": "MDN — CSS logical properties",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Logical_properties_and_values",
+      "used_for": [
+        "rtl_start_end"
+      ]
+    }
+  ],
+  "version": "23.0.0"
+}

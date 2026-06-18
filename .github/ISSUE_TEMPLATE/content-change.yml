@@ -1,0 +1,39 @@
+name: درخواست تغییر محتوای دوره
+description: تغییر کنترل‌شده در درس، مرجع مفهومی، تمرین یا آزمون
+title: "[Content]: "
+labels:
+  - content
+body:
+  - type: input
+    id: target
+    attributes:
+      label: درس یا فایل هدف
+      placeholder: content/units/048-lesson-14.md
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: هدف دقیق تغییر
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: منبع یا شواهد
+      description: ادعاهای جدید بدون منبع قطعی معرفی نشوند.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: معیار پذیرش
+    validations:
+      required: true
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: کنترل دامنه
+      options:
+        - label: شناسه‌ها و رفتارهای خارج از Scope نباید تغییر کنند.
+          required: true
+        - label: فایل‌های تولیدی نباید دستی ویرایش شوند.
+          required: true

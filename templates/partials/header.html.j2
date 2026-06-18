@@ -1,0 +1,56 @@
+<header class="site-header">
+<div aria-hidden="true" class="reading-progress"><span id="readingProgress"></span></div>
+<div class="header-inner">
+<div class="brand-block">
+<p class="eyebrow">PersianNew · Premium UX · Offline Workbook</p>
+<h1>Elementor V4 از سردرگمی تا طراحی ساختارمند</h1>
+<p>کتاب‌کار تعاملی آفلاین، راست‌به‌چپ، مبتنی بر HTML Living Standard</p>
+</div>
+<div aria-label="ابزارهای خواندن" class="toolbar">
+<button aria-label="چرخش بین تم‌های سورمه‌ای، خاکستری، روشن و سیستم" aria-pressed="false" class="ui-btn" id="themeToggle" type="button">تم: سورمه‌ای</button>
+<button aria-pressed="false" class="ui-btn" id="focusToggle" type="button">حالت تمرکز</button>
+<button class="ui-btn" id="resetProgress" type="button">حذف پیشرفت</button>
+<button aria-controls="readerToolsPanel" aria-expanded="false" class="ui-btn" id="readerToolsToggle" type="button">تنظیمات خواندن و فونت</button><button class="ui-btn" onclick="window.print()" type="button">چاپ</button>
+</div>
+</div>
+<details class="reader-tools-panel" id="readerToolsPanel">
+<summary>تنظیمات خواندن، تم و فونت</summary>
+<div class="reader-tools-grid">
+<form class="interactive-form reader-settings-form" id="themeSettingsForm">
+<fieldset>
+<legend>تم صفحه</legend>
+<p class="form-help">دو حالت دارک مستقل داری: سورمه‌ای DMDS برای حس فنی‌تر و خاکستری PersianNew برای مطالعهٔ طولانی.</p>
+<label class="choice-row"><input checked="checked" name="theme-mode" type="radio" value="dark-navy"/> <span>دارک سورمه‌ای DMDS</span></label>
+<label class="choice-row"><input name="theme-mode" type="radio" value="dark-gray"/> <span>دارک خاکستری PersianNew</span></label>
+<label class="choice-row"><input name="theme-mode" type="radio" value="light"/> <span>روشن</span></label>
+<label class="choice-row"><input name="theme-mode" type="radio" value="system"/> <span>مطابق سیستم</span></label>
+</fieldset>
+</form>
+<form class="interactive-form reader-settings-form" id="readingComfortForm">
+<fieldset>
+<legend>راحتی خواندن</legend>
+<label class="range-row" for="readerFontScale">اندازه متن <input data-reader-setting="fontScale" id="readerFontScale" max="1.18" min="0.92" step="0.02" type="range" value="1"/> <output for="readerFontScale">100%</output></label>
+<label class="range-row" for="readerLineHeight">فاصله خطوط <input data-reader-setting="lineHeight" id="readerLineHeight" max="2.15" min="1.65" step="0.05" type="range" value="1.95"/> <output for="readerLineHeight">1.95</output></label>
+<label class="range-row" for="readerContentWidth">عرض متن <input data-reader-setting="contentWidth" id="readerContentWidth" max="1180" min="820" step="20" type="range" value="980"/> <output for="readerContentWidth">980px</output></label>
+<label class="choice-row"><input data-reader-setting="reduceVisuals" id="reduceVisuals" type="checkbox"/> <span>کاهش جلوه‌های بصری برای مطالعهٔ طولانی</span></label>
+</fieldset>
+</form>
+<form class="interactive-form font-lab-form" id="fontLabForm">
+<fieldset>
+<legend>Font Lab آفلاین</legend>
+<p class="form-help">فقط فایل محلی انتخاب‌شده توسط خودت خوانده می‌شود؛ هیچ آپلود شبکه‌ای انجام نمی‌شود. فرمت‌های مجاز: WOFF2، WOFF، TTF.</p>
+<label class="file-choice-label" for="customFontUpload">انتخاب فونت محلی</label>
+<input accept=".woff2,.woff,.ttf,font/woff2,font/woff,font/ttf" id="customFontUpload" type="file"/>
+<label for="fontApplyTarget">اعمال فونت روی</label>
+<select id="fontApplyTarget">
+<option value="latin">برچسب‌های لاتین و UI انگلیسی</option>
+<option value="all">کل رابط خواندن</option>
+</select>
+<div class="font-preview" dir="ltr" id="fontPreview" lang="en">Amazon Ember Display / Uploaded Font Preview — Elementor V4 Workbook</div>
+<p class="font-status" id="fontStatus" role="status">فونت سفارشی انتخاب نشده است.</p>
+<button class="ui-btn" id="resetCustomFont" type="button">حذف فونت سفارشی</button>
+</fieldset>
+</form>
+</div>
+</details>
+</header>

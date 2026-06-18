@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+<title id="title">درخت تصمیم Local Class یا Global Class</title>
+<desc id="desc">اگر سبک فقط برای همان عنصر است Local Class؛ اگر الگوی سبک در چند عنصر تکرار می‌شود Global Class.</desc>
+<style>
+  .bg{fill:#0f172a}.line{stroke:#60a5fa;stroke-width:4;fill:none}.node{fill:#172554;stroke:#60a5fa;stroke-width:3}.local{fill:#4c1d3f;stroke:#f472b6}.global{fill:#064e3b;stroke:#34d399}.t{fill:#f8fafc;font:700 25px sans-serif;text-anchor:middle;direction:rtl;unicode-bidi:plaintext}.s{fill:#cbd5e1;font:500 19px sans-serif;text-anchor:middle;direction:rtl;unicode-bidi:plaintext}.badge{fill:#0b1220;stroke:#94a3b8;stroke-width:2}
+</style>
+<rect class="bg" width="960" height="560" rx="28"/>
+<rect class="node" x="250" y="40" width="460" height="95" rx="22"/><text class="t" x="480" y="78">آیا این Style فقط برای همین Element است؟</text><text class="s" x="480" y="111">دامنهٔ اثر را قبل از نام کلاس مشخص کن</text>
+<path class="line" d="M480 135 V205 M480 205 H245 V260 M480 205 H715 V260"/>
+<rect class="badge" x="190" y="185" width="110" height="42" rx="21"/><text class="s" x="245" y="213">بله</text>
+<rect class="badge" x="660" y="185" width="110" height="42" rx="21"/><text class="s" x="715" y="213">خیر</text>
+<rect class="node local" x="80" y="260" width="330" height="145" rx="24"/><text class="t" x="245" y="310">Local Class</text><text class="s" x="245" y="348">مخصوص همان Element</text><text class="s" x="245" y="379">بالاترین اولویت روی همان عنصر</text>
+<rect class="node" x="550" y="260" width="330" height="105" rx="24"/><text class="t" x="715" y="302">آیا الگوی Style تکرار می‌شود؟</text><text class="s" x="715" y="338">چند Element یا چند صفحه</text>
+<path class="line" d="M715 365 V425 M715 425 H570 V458 M715 425 H835 V458"/>
+<rect class="node global" x="415" y="445" width="310" height="90" rx="22"/><text class="t" x="570" y="482">Global Class</text><text class="s" x="570" y="513">Style سیستم طراحی</text>
+<rect class="node" x="740" y="445" width="190" height="90" rx="22"/><text class="t" x="835" y="480">Local بماند</text><text class="s" x="835" y="511">تا تکرار اثبات شود</text>
+</svg>

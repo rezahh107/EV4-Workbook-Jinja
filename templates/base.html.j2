@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{{ course.lang }}" dir="{{ course.direction }}" data-theme="{{ course.default_theme }}">
+<head>
+{% include "partials/head.html.j2" %}
+</head>
+<body>
+{% include "partials/skip-link.html.j2" %}
+<div class="app-shell">
+{% include "partials/header.html.j2" %}
+<div class="layout-grid">
+{% include "partials/sidebar.html.j2" %}
+<main id="main-content">
+{% for unit in units %}{{ unit.html }}{% endfor %}
+</main>
+</div>
+{% include "partials/footer.html.j2" %}
+</div>
+</body>
+</html>

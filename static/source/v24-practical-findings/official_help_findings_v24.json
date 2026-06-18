@@ -1,0 +1,129 @@
+{
+  "findings": [
+    {
+      "id": "FIND-V24-001",
+      "lesson": "lesson-4",
+      "sources": [
+        "Claude-مشکل margin راست در flexbox المنتور.md",
+        "https://elementor.com/help/set-flexbox-container-size-behavior/"
+      ],
+      "title": "Top-level full/stretch width plus horizontal margin can overflow",
+      "verification": [
+        "verified_by_real_observation",
+        "verified_by_official_help"
+      ]
+    },
+    {
+      "id": "FIND-V24-002",
+      "lesson": "lesson-4",
+      "sources": [
+        "https://elementor.com/help/full-width-not-working/"
+      ],
+      "title": "Theme or Single Page template can constrain full width",
+      "verification": [
+        "verified_by_official_help"
+      ]
+    },
+    {
+      "id": "FIND-V24-003",
+      "lesson": "lesson-6",
+      "sources": [
+        "https://elementor.com/help/how-do-flexbox-containers-work/"
+      ],
+      "title": "Alignment meaning changes with row/column direction",
+      "verification": [
+        "verified_by_official_help"
+      ]
+    },
+    {
+      "id": "FIND-V24-004",
+      "lesson": "lesson-8",
+      "sources": [
+        "https://elementor.com/help/how-do-flexbox-containers-work/"
+      ],
+      "title": "Wrap controls one-line versus additional rows or columns",
+      "verification": [
+        "verified_by_official_help"
+      ]
+    },
+    {
+      "id": "FIND-V24-005",
+      "lesson": "lesson-13",
+      "sources": [
+        "https://elementor.com/help/set-flexbox-container-size-behavior/"
+      ],
+      "title": "Overflow hidden hides out-of-bound content and may hide a symptom",
+      "verification": [
+        "derived_from_official_help"
+      ]
+    },
+    {
+      "id": "FIND-V24-006",
+      "lesson": "lesson-14",
+      "sources": [
+        "https://elementor.com/help/responsive-editing/",
+        "https://elementor.com/help/inherited-responsive-values/"
+      ],
+      "title": "Responsive values inherit from larger breakpoints",
+      "verification": [
+        "verified_by_official_help"
+      ]
+    },
+    {
+      "id": "FIND-V24-007",
+      "lesson": "lesson-14",
+      "sources": [
+        "https://elementor.com/help/additional-breakpoints/"
+      ],
+      "title": "Breakpoint changes cascade in defined directions",
+      "verification": [
+        "verified_by_official_help"
+      ]
+    },
+    {
+      "id": "FIND-V24-008",
+      "lesson": "lesson-v17-class-manager",
+      "sources": [
+        "https://elementor.com/help/prioritize-conflicting-styles/",
+        "https://elementor.com/help/the-elementor-editor-class-manager/"
+      ],
+      "title": "Class Manager order determines global class priority; local class is highest",
+      "verification": [
+        "verified_by_official_help"
+      ]
+    },
+    {
+      "id": "FIND-V24-009",
+      "lesson": "lesson-v17-advanced",
+      "sources": [
+        "https://elementor.com/help/add-custom-css-to-an-element/",
+        "https://elementor.com/help/custom-css-not-working/"
+      ],
+      "title": "Custom CSS is attached to selected class, state and device context",
+      "verification": [
+        "verified_by_official_help"
+      ]
+    },
+    {
+      "id": "FIND-V24-010",
+      "lesson": "lesson-20",
+      "sources": [
+        "https://elementor.com/help/changes-dont-appear-online/",
+        "https://elementor.com/help/regenerate-css-data/",
+        "https://elementor.com/help/troubleshooting-layout-issues/"
+      ],
+      "title": "Editor/live mismatch has documented cache, file, CSS print and code causes",
+      "verification": [
+        "verified_by_official_help"
+      ]
+    }
+  ],
+  "generated_date": "2026-06-17",
+  "policy": {
+    "derived_claims": "Derived teaching conclusions are explicitly labeled derived_from_official_help.",
+    "official_help_claims": "Only claims explicitly supported by Elementor Help Center are marked verified_by_official_help.",
+    "real_observation": "The Reza margin case preserves observed computed values but does not infer the exact matched CSS source without the original raw capture."
+  },
+  "registry_version": "1.0.0",
+  "workbook_version": "24.0.0"
+}

@@ -1,0 +1,99 @@
+{
+  "package": "Elementor_V4_Workbook_v30_implementation_handoff",
+  "version": "1.0.0",
+  "created_for": "v30 implementation",
+  "source_base": "Elementor_V4_Offline_Interactive_Workbook_v29_0_settings_values_units_step_through.zip",
+  "source_base_sha256": "3b0335721d623c477513a56716594cafd4222028b8f0fd316b4180197ea49d58",
+  "contents": [
+    {
+      "path": "README_FA.md",
+      "sha256": "69bc0e9046af2de2aab54d49e23545dda8840f13868e5909330a13556806d0a8",
+      "size": 1615
+    },
+    {
+      "path": "analysis/CURRENT_STATE_V29_FA.md",
+      "sha256": "af8c8f415bb64c4a4ff4221c8cb1ae2da892199b631357f879576f1c3f3e6c9e",
+      "size": 1483
+    },
+    {
+      "path": "analysis/VERIFIED_ANALYSIS_FA.md",
+      "sha256": "052a60370b4c6403df787d122849442c7a0c6797df81c92edc5fac33314c3762",
+      "size": 4912
+    },
+    {
+      "path": "base/BASE_SHA256SUMS.txt",
+      "sha256": "f210a8943573cc8b7c80a6d20db5ad67201d1cb801b057ed63379b317332ca2e",
+      "size": 246
+    },
+    {
+      "path": "base/Elementor_V4_Offline_Interactive_Workbook_v29_0_settings_values_units_step_through.zip",
+      "sha256": "3b0335721d623c477513a56716594cafd4222028b8f0fd316b4180197ea49d58",
+      "size": 2153289
+    },
+    {
+      "path": "base/VALIDATION_REPORT_v29_0.md",
+      "sha256": "3e7a0a987ed19306acec269ead6a8074d16795341694978c8343555fb0d7fa07",
+      "size": 1443
+    },
+    {
+      "path": "checklists/FINAL_AUDIT_CHECKLIST_FA.md",
+      "sha256": "14ec7fd7a4da962e7d60f936a8650d1ee707fc4814e44cdb050c76609fb2b8c0",
+      "size": 1191
+    },
+    {
+      "path": "checklists/IMPLEMENTATION_CHECKLIST_FA.md",
+      "sha256": "f4dc2ce8fa44134a12f631f25c7f64c25d894c442932019e4cac20dd3acd5271",
+      "size": 1265
+    },
+    {
+      "path": "prompts/MASTER_PROMPT_V30_EN.md",
+      "sha256": "bdcd3a32231c1c5db90b8941bd9ea82adaa71f9c8feae8a0dd5dcaf5c1cab8d2",
+      "size": 11789
+    },
+    {
+      "path": "prompts/MASTER_PROMPT_V30_FA.md",
+      "sha256": "f940a67ec872948dee39ccc3f5aad52aedda3cffc84e9fbbeb3ac4a375497720",
+      "size": 1036
+    },
+    {
+      "path": "registries/change_registry_v30.json",
+      "sha256": "b382d1c6c33d96f28d7755a436059a33ca66611ea01658241f856bac5d9b0b37",
+      "size": 1384
+    },
+    {
+      "path": "registries/evidence_labels.json",
+      "sha256": "edc85f2464a6cf1e8ff9a9d591ce84fd391dca5cc759669caac32a46763dc6d6",
+      "size": 1054
+    },
+    {
+      "path": "registries/official_sources_v30.json",
+      "sha256": "078a1f88aa92d1eb1da7233d0ccb1b5ac3160e1b4acd8aa0253b15324b8e88c2",
+      "size": 6619
+    },
+    {
+      "path": "scope/V30_ARCHITECTURE_BLUEPRINT_FA.md",
+      "sha256": "ce0218b13c31781f961d8d9b3ea92fa28b74a0d6c17abad839934cba650f499c",
+      "size": 1801
+    },
+    {
+      "path": "scope/V30_CHANGE_LIST_FA.md",
+      "sha256": "7b76807970b4528851343e484912c0e5b34fa3702f6cde7efd753d8a1bbaf3a6",
+      "size": 5187
+    },
+    {
+      "path": "scope/V30_CONTENT_REQUIREMENTS_FA.md",
+      "sha256": "718954e6695f321c2f770c3efc61f36562f8b115d6f731d7357d54e215a77eb2",
+      "size": 2790
+    },
+    {
+      "path": "scope/V30_VALIDATION_CONTRACT_FA.md",
+      "sha256": "48db62c9597948b0727643bcb4fb1efda747d0d6d312c024d20a3a1fdd27e88e",
+      "size": 2523
+    },
+    {
+      "path": "scope/V30_VISUAL_AND_INTERACTIVE_REQUIREMENTS_FA.md",
+      "sha256": "bbe4b39b6293a6ad30cb3af96ea6aba9c00a5d755291085652b0b81c4b532b21",
+      "size": 1464
+    }
+  ]
+}

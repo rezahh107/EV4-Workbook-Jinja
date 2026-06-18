@@ -1,0 +1,108 @@
+{
+  "version": "26.0.0",
+  "source_base": "Elementor_V4_Offline_Interactive_Workbook_v25_0_responsive_tuya_progressive_disclosure.zip",
+  "reviewed_at_utc": "2026-06-17T11:53:44.969222+00:00",
+  "scope": "Responsive hands-on exercises only; no change to frozen lesson count or TUYA evidence boundaries.",
+  "official_sources": [
+    {
+      "id": "ELEMENTOR_RESPONSIVE_EDITING",
+      "title": "Responsive editing",
+      "url": "https://elementor.com/help/responsive-editing/",
+      "supports": [
+        "responsive values inherit from larger screens to smaller screens",
+        "inherited values are visually distinguished",
+        "device-specific editing and preview"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_INHERITED_VALUES",
+      "title": "What are inherited responsive values?",
+      "url": "https://elementor.com/help/inherited-responsive-values/",
+      "supports": [
+        "numeric controls such as margin and padding inherit",
+        "custom breakpoint inheritance must be understood",
+        "visible inherited values aid debugging"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_RESPONSIVE_CONTAINERS",
+      "title": "Create responsive design with containers",
+      "url": "https://elementor.com/help/responsive-design-using-containers/",
+      "supports": [
+        "direction can differ by breakpoint",
+        "width and height can differ by breakpoint",
+        "custom order can avoid duplicate hidden sections"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_ORDER",
+      "title": "Widget Advanced Settings: Order",
+      "url": "https://elementor.com/help/advanced-widget-settings-order/",
+      "supports": [
+        "order is commonly used with responsive breakpoints",
+        "order can avoid extra hidden sections"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_MOBILE_EDITING",
+      "title": "Responsive editing for mobile and tablets",
+      "url": "https://elementor.com/help/mobile-editing/",
+      "supports": [
+        "preview device ranges",
+        "edit default breakpoints",
+        "add additional breakpoints"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_MOBILE_TROUBLESHOOTING",
+      "title": "Troubleshooting - Issues with mobiles and tablets",
+      "url": "https://elementor.com/help/troubleshooting-issues-with-mobiles/",
+      "supports": [
+        "poor breakpoint choices can interfere with frontend layout",
+        "frontend verification is required"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_CONTAINER_SIZE",
+      "title": "Set a Flexbox Container's size and behavior",
+      "url": "https://elementor.com/help/set-flexbox-container-size-behavior/",
+      "supports": [
+        "container size and behavior are controlled from Layout",
+        "width and content width affect layout behavior"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_CONTAINER_LAYOUT",
+      "title": "Define container layout",
+      "url": "https://elementor.com/help/container-layout-tab-settings/",
+      "supports": [
+        "direction, justify, align and gap are container layout controls",
+        "overflow and sizing affect contained items"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_FLEX_MODEL",
+      "title": "Understanding how Flexbox containers work",
+      "url": "https://elementor.com/help/how-do-flexbox-containers-work/",
+      "supports": [
+        "alignment meaning depends on row or column direction",
+        "order controls the placement of elements"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_LAYOUT_TROUBLESHOOTING",
+      "title": "Troubleshooting layout Issues",
+      "url": "https://elementor.com/help/troubleshooting-layout-issues/",
+      "supports": [
+        "editor and frontend differences can involve cache or generated files",
+        "changes must be verified on the live frontend"
+      ]
+    }
+  ],
+  "evidence_boundaries": {
+    "tuya_mobile_reference": "observed_design_reference inherited from v25",
+    "tablet_layout": "proposed_pending_designer_confirmation",
+    "exact_breakpoints_and_css_values": "insufficient_evidence",
+    "exercise_outcomes": "learner_observation; not predeclared as universal factual results"
+  }
+}

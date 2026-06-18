@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "offline://elementor-workbook/v30/step-through-v2.schema.json",
+  "title": "Elementor Workbook Step-Through v2 configuration",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "title",
+    "goal",
+    "renderer",
+    "storage_key",
+    "states"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "renderer": {
+      "enum": [
+        "width-overflow",
+        "flex-axis",
+        "responsive-inheritance",
+        "class-priority",
+        "unit-context",
+        "value-system",
+        "unit-tradeoff"
+      ]
+    },
+    "storage_key": {
+      "type": "string"
+    },
+    "lesson_id": {
+      "type": "string"
+    },
+    "lab_target": {
+      "type": "string"
+    },
+    "states": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "phase",
+          "title",
+          "summary",
+          "explanation",
+          "golden_rule",
+          "evidence",
+          "elementor",
+          "computed",
+          "visual",
+          "prediction"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "phase": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "golden_rule": {
+            "type": "string"
+          },
+          "evidence": {
+            "enum": [
+              "verified_by_official_elementor_help",
+              "verified_by_elementor_developer_docs",
+              "verified_by_css_spec",
+              "verified_by_real_fixture",
+              "verified_by_controlled_experiment",
+              "derived_educational_model",
+              "proposed_strategy",
+              "insufficient_evidence"
+            ]
+          },
+          "elementor": {
+            "type": "array"
+          },
+          "computed": {
+            "type": "array"
+          },
+          "visual": {
+            "type": "object"
+          },
+          "prediction": {
+            "type": "object",
+            "required": [
+              "prompt",
+              "options",
+              "correct",
+              "feedback_correct",
+              "feedback_wrong"
+            ],
+            "properties": {
+              "prompt": {
+                "type": "string"
+              },
+              "options": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "correct": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "feedback_correct": {
+                "type": "string"
+              },
+              "feedback_wrong": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

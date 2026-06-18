@@ -1,0 +1,35 @@
+{
+  "version": "17.0.0",
+  "review_date_utc": "2026-06-16T11:57:38.412362+00:00",
+  "official_topics_added": [
+    "Global Classes",
+    "Class Manager",
+    "Variables Manager",
+    "Components",
+    "Atomic Forms",
+    "Interactions",
+    "Custom CSS",
+    "Attributes",
+    "Dynamic Tags"
+  ],
+  "official_sources": [
+    "https://elementor.com/help/v4-editor/",
+    "https://elementor.com/help/classes-in-elementor-2/",
+    "https://elementor.com/help/the-elementor-editor-class-manager/",
+    "https://elementor.com/help/variables-manager/",
+    "https://elementor.com/help/variables/",
+    "https://elementor.com/help/components-2/",
+    "https://elementor.com/help/atomic-form-element/",
+    "https://elementor.com/help/interactions/",
+    "https://elementor.com/help/add-custom-css-to-an-element/",
+    "https://elementor.com/help/add-and-delete-attributes/",
+    "https://elementor.com/help/dynamic-tags-in-v4/",
+    "https://developers.elementor.com/elementor-editor-4-0-developers-update/",
+    "https://developers.elementor.com/elementor-editor-4-1-developers-update/"
+  ],
+  "terminology_policy": {
+    "preferred": "Global Class",
+    "avoid_as_primary_term": "Shared Class",
+    "explanation": "Global Class may be reusable/shared in behavior, but Elementor UI/docs use Global Class."
+  }
+}

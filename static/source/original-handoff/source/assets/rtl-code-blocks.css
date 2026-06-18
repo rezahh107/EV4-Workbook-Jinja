@@ -1,0 +1,46 @@
+:root {
+  --edis-code-bg: #0f1f1c;
+  --edis-code-fg: #e7f5f2;
+  --edis-code-border: #36524c;
+}
+
+html[dir="rtl"],
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+pre.edis-rtl-text-block,
+pre.edis-rtl-text-block code {
+  display: block !important;
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: plaintext !important;
+  writing-mode: horizontal-tb !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+pre.edis-rtl-text-block {
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  border: 1px solid var(--edis-code-border);
+  border-radius: 0.75rem;
+  background: var(--edis-code-bg);
+  color: var(--edis-code-fg);
+}
+
+pre:not(.edis-rtl-text-block),
+pre:not(.edis-rtl-text-block) code {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
+}
+
+/* Explicitly resist late theme/hydration rules. */
+[dir="rtl"].edis-rtl-text-block,
+[dir="rtl"].edis-rtl-text-block * {
+  direction: rtl !important;
+  text-align: right !important;
+}

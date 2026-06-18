@@ -1,0 +1,267 @@
+{
+  "package": "Elementor_V4_HTML_Workbook_Handoff",
+  "version": "1.0.0",
+  "base_source_version": "14.1.0 Premium UX",
+  "language": "fa",
+  "direction": "rtl",
+  "purpose": "handoff_package_for_next_chat_senior_html_developer",
+  "contains": {
+    "source_package": true,
+    "senior_developer_prompt": true,
+    "implementation_brief": true,
+    "offline_workbook_requirements": true,
+    "technical_reference_pointers": true
+  },
+  "validation": {
+    "expected_files_present": true,
+    "json_files_parsed": 4,
+    "svg_files_parsed": 7
+  },
+  "files": [
+    {
+      "path": "IMPLEMENTATION_BRIEF_FA.md",
+      "size_bytes": 1093,
+      "sha256": "69493be52bc16184b5dae10d2c8cd658c3055e8fb2d8120ef2477144c87cad6d"
+    },
+    {
+      "path": "OFFLINE_HTML_WORKBOOK_REQUIREMENTS_FA.md",
+      "size_bytes": 750,
+      "sha256": "b47f1548709de9c6da1bf0d5c77e2d980290a20cd5c89984830e305d4dc304a4"
+    },
+    {
+      "path": "PROMPT_SENIOR_HTML_DEVELOPER_FA.md",
+      "size_bytes": 12331,
+      "sha256": "85221db714510b1a667f9a87dd68e19458cb39fd2c6ef260b45bb205a86ffd96"
+    },
+    {
+      "path": "README_HANDOFF_FA.md",
+      "size_bytes": 1371,
+      "sha256": "40427f077e01e945249d4da0569222f3a56f0d299fc02c3b0531c331b56287c4"
+    },
+    {
+      "path": "TECHNICAL_REFERENCES_FA.md",
+      "size_bytes": 482,
+      "sha256": "1a5ddb719f6bfdcec34191b25f0e893b867f171b78cd5eea9a66da5d7d878e77"
+    },
+    {
+      "path": "source/CASE_STUDIES_FA.md",
+      "size_bytes": 4587,
+      "sha256": "6642dee132792b95418a034215f67eb2bccd46b6e3680292b9a1dfbe2ed6c1bf"
+    },
+    {
+      "path": "source/CHANGELOG_v13_2_FA.md",
+      "size_bytes": 806,
+      "sha256": "afe03cf4e6821b6310b4d5e5bfcab55668de4a802c80a8ad204928e1fac991ec"
+    },
+    {
+      "path": "source/CHANGELOG_v13_3_FA.md",
+      "size_bytes": 838,
+      "sha256": "d8fffa25f394309f7d6f8cb80076ac08ffdfbd4b040d94e17afc370df727ec9d"
+    },
+    {
+      "path": "source/CHANGELOG_v13_4_FA.md",
+      "size_bytes": 899,
+      "sha256": "59e8d0d9a2ff22692fbf54e796ddee2dc70f5daf5030c0eb090e836ea8ac0b86"
+    },
+    {
+      "path": "source/CHANGELOG_v13_FA.md",
+      "size_bytes": 1375,
+      "sha256": "796bb67fa76a1f8c7e622c13ee1f522297a88d5472f9993b3b5f9e1e170ca343"
+    },
+    {
+      "path": "source/CHANGELOG_v14_1_FA.md",
+      "size_bytes": 850,
+      "sha256": "adb6a18589c20d4f2d61b2bc4d050cc0925e7386bd7f1e937d589201b46de03c"
+    },
+    {
+      "path": "source/CHANGELOG_v14_FA.md",
+      "size_bytes": 746,
+      "sha256": "f7773622ca47f352ae31ea36a763ca69684c037a57332450ab39a457636f33f6"
+    },
+    {
+      "path": "source/CONFIDENCE_AND_TIME_TRACKER_FA.md",
+      "size_bytes": 3300,
+      "sha256": "8887154b677bd0864904e84aa97a7ba394826a341da092533bc3339d60eac1ad"
+    },
+    {
+      "path": "source/COURSE_MAP_FA.md",
+      "size_bytes": 4779,
+      "sha256": "98a3685f3ad3d7c33df7a6367564c960c2345d9a5407e6c7eda1b5c249f1eab0"
+    },
+    {
+      "path": "source/Elementor_V4_Clear_Mind_Course_v14_1_Premium_UX_FA.html",
+      "size_bytes": 227119,
+      "sha256": "2f50de5ceb39d07c2f0070ea8d46a1177282d554f6c152aa06ae79e844b731f6"
+    },
+    {
+      "path": "source/Elementor_V4_Clear_Mind_Course_v14_1_Premium_UX_FA.md",
+      "size_bytes": 232867,
+      "sha256": "629a2a62a0922934d4b2052f6b44942dbf6753e4b841ad4f965d6b4feffc5e67"
+    },
+    {
+      "path": "source/GLOSSARY_AND_INDEX_FA.md",
+      "size_bytes": 7405,
+      "sha256": "41cb61f17bea957cac9e0b51409e822020c148651654420bac1dad6bbb9c97e8"
+    },
+    {
+      "path": "source/HTML_FIRST_FEATURES_FA.md",
+      "size_bytes": 940,
+      "sha256": "444fb68171c6933e7de644a350a3ea11de43d53065813524dc0dae24d4543add"
+    },
+    {
+      "path": "source/LESSON_TIME_AND_LOAD_MAP_FA.md",
+      "size_bytes": 5323,
+      "sha256": "c267615ab7bd64234d095d5dd2180e80d5f4719cea7ff3c6b94b64a6d8f0df85"
+    },
+    {
+      "path": "source/MASTERY_CRITERIA_TRACKER_FA.md",
+      "size_bytes": 2727,
+      "sha256": "2a9c8a5015532f2cc452bbc77821d548323d85043b018958dcf622fc991779fb"
+    },
+    {
+      "path": "source/MY_ELEMENTOR_ERROR_LOG_FA.md",
+      "size_bytes": 2202,
+      "sha256": "ce1b1d4c2881e919ce6e8fb32cc3a479908e0f87430e43178b0109b656a9bb36"
+    },
+    {
+      "path": "source/PILOT_GUIDE_FA.md",
+      "size_bytes": 3259,
+      "sha256": "ada06131ffa0e4d5ab33d566e5300324d3a48606cd5d33d6853281ea36b3e8d3"
+    },
+    {
+      "path": "source/PILOT_OBSERVATION_LOG_FA.md",
+      "size_bytes": 1207,
+      "sha256": "d41240c337b0326cf5033693296aca73cea5bef53c2d9a1034e621e8d74e19ae"
+    },
+    {
+      "path": "source/PREMIUM_UX_FEATURES_FA.md",
+      "size_bytes": 1111,
+      "sha256": "372cf66b3c88108b69bf2160fe139b8f21e47b5f62b27bb2eb92040c7dd8a19d"
+    },
+    {
+      "path": "source/PersianNew_v12_4_HTML_Viewer.css",
+      "size_bytes": 28839,
+      "sha256": "2cd05e9fad83d66ca0bff5c57ba5b61949221a73e100978d94c7f5444e0f9d1c"
+    },
+    {
+      "path": "source/PersianNew_v14_1_Premium_Reader.css",
+      "size_bytes": 10732,
+      "sha256": "a2c099f9782f4f9380f6489abe5de26c858ae45f527d0e001116794f04742932"
+    },
+    {
+      "path": "source/README.md",
+      "size_bytes": 7082,
+      "sha256": "9d263a7b62b9ae3272d649dbfeade183141aeaa8eee73c7d99b70c546273b7ae"
+    },
+    {
+      "path": "source/SHA256SUMS.txt",
+      "size_bytes": 4156,
+      "sha256": "ba524abfa536e998299975da409886e7736cfed2946150856b3d3a8f5ca60942"
+    },
+    {
+      "path": "source/SOURCES_AND_VIDEOS_FA.md",
+      "size_bytes": 3146,
+      "sha256": "421eaa3ac38f13feb4d25e1cb31e05f63ea6c889de6a20e214df35ae99919d52"
+    },
+    {
+      "path": "source/TEACHER_DESIGN_NOTES_FA.md",
+      "size_bytes": 2175,
+      "sha256": "da9d1076ae25cd5150acfc9c1fa457867f725d54831a87d09c2653b4663be6d1"
+    },
+    {
+      "path": "source/VALIDATION_REPORT.md",
+      "size_bytes": 1105,
+      "sha256": "dbfee4353153a2ab4b1cbb1cdd5d2ef76ff2dd1549c0d928fe3d8854e6d83e31"
+    },
+    {
+      "path": "source/VISUAL_ASCII_SCAFFOLD_INDEX_FA.md",
+      "size_bytes": 946,
+      "sha256": "77e739f2c0fbe069d2fd1f57218708cb7bdd33987d87ea6b287b4a9af9fa8fe8"
+    },
+    {
+      "path": "source/VISUAL_DECISION_TREE_INDEX_FA.md",
+      "size_bytes": 1548,
+      "sha256": "0ba8c274c20bfcbbf3e0d6008ebf06c45da617292d1adeea50149773c89759fa"
+    },
+    {
+      "path": "source/assets/decision-trees/choose-layout-element.svg",
+      "size_bytes": 3754,
+      "sha256": "a4e0e7c736bed43c6c2330c09f16d929d2d72bafb5e2be57dd8a56ee50266293"
+    },
+    {
+      "path": "source/assets/decision-trees/debug-first-check.svg",
+      "size_bytes": 3973,
+      "sha256": "9644f943b138b9f18085ff2d801b6d29f2f444e465c3f05189a2182074e82012"
+    },
+    {
+      "path": "source/assets/decision-trees/flex-vs-grid.svg",
+      "size_bytes": 3588,
+      "sha256": "cf70033680f98236d848881e9ad92dfedc39a095c1ab7cf6d1e93d99bd3b7668"
+    },
+    {
+      "path": "source/assets/decision-trees/image-vs-background.svg",
+      "size_bytes": 3651,
+      "sha256": "76ac34534324206d6f6db150b3912edc0ce74e8e18bf84d4052c38aaa3274980"
+    },
+    {
+      "path": "source/assets/decision-trees/local-vs-reusable-class.svg",
+      "size_bytes": 4017,
+      "sha256": "dc3d182fa1c5bfd01f07ca65311866083c75a989f523727f76585a34fd808303"
+    },
+    {
+      "path": "source/assets/decision-trees/migrate-v3-to-v4.svg",
+      "size_bytes": 3664,
+      "sha256": "bd9dde0077548c512735647582bc0cad5e5923314397b2309e04750118b4e63c"
+    },
+    {
+      "path": "source/assets/decision-trees/normal-flow-vs-absolute.svg",
+      "size_bytes": 3638,
+      "sha256": "8a9d15a3e75b57c156310461bcc0432bb29451a7033e9499889f5f242d79c14c"
+    },
+    {
+      "path": "source/assets/rtl-code-blocks.css",
+      "size_bytes": 1037,
+      "sha256": "fd00e74b65635758012abc41077ecb27e6fcc4e4bc6843ec53d288a84706ece4"
+    },
+    {
+      "path": "source/assets/tuya-reference.jpg",
+      "size_bytes": 164150,
+      "sha256": "50bd4279830c7b1ec656125d64d6d05ab8d32b53e0df3a27fab7933b3bbdf7bc"
+    },
+    {
+      "path": "source/evidence/evidence_registry.json",
+      "size_bytes": 8249,
+      "sha256": "c2370dadeebee86cea783854d251e86e911d01465d606351377b4b9df5eee5f2"
+    },
+    {
+      "path": "source/evidence/evidence_registry_v10_source.json",
+      "size_bytes": 6529,
+      "sha256": "a32fb4bfdd3cf3461bda5aba956e2501eb34bde64a2dddd4722efe14b3d27a44"
+    },
+    {
+      "path": "source/fonts/README_FA.md",
+      "size_bytes": 549,
+      "sha256": "68fdb060a82fba9ed6559b456bb2569514cd7ab01aaa3b2fbadb1a16d48ae777"
+    },
+    {
+      "path": "source/manifest.json",
+      "size_bytes": 8626,
+      "sha256": "8d402ee087f0f6aee01aa252c647b3f81ec3dbe57aacf6dde83825ad8d083508"
+    },
+    {
+      "path": "source/printables/STUDENT_RESCUE_CARD_FA.md",
+      "size_bytes": 2320,
+      "sha256": "80dd67a76ac4bc371bd63d54a072b2d9909192be6ca6b842f5515bc1b7ba70a9"
+    },
+    {
+      "path": "source/sources/forlesson-manifest.json",
+      "size_bytes": 3634,
+      "sha256": "f8af062d970f59c2211d70c8e643a0f41fd586f297106dc24dabe0c6efd6a69b"
+    },
+    {
+      "path": "source/tools/harden_rtl_blocks.py",
+      "size_bytes": 1775,
+      "sha256": "032c95d25894bd47fe88e45c085e410b10c7be3ba7b80a9cd47b42e531e3396f"
+    }
+  ]
+}

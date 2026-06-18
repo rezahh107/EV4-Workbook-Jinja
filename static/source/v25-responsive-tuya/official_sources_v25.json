@@ -1,0 +1,108 @@
+{
+  "version": "25.0.0",
+  "source_base": "Elementor_V4_Offline_Interactive_Workbook_v24_0_practical_findings_help_center.zip",
+  "reviewed_at_utc": "2026-06-17T11:15:26.068955+00:00",
+  "official_sources": [
+    {
+      "id": "ELEMENTOR_V4_RESPONSIVE_EDITING",
+      "title": "Responsive editing",
+      "url": "https://elementor.com/help/responsive-editing/",
+      "supports": [
+        "V4 responsive mode",
+        "device-specific Style options",
+        "larger-to-smaller inheritance",
+        "responsive display none"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_RESPONSIVE_CONTAINERS",
+      "title": "Create responsive design with containers",
+      "url": "https://elementor.com/help/responsive-design-using-containers/",
+      "supports": [
+        "direction per breakpoint",
+        "responsive width and height",
+        "custom order per breakpoint",
+        "avoid duplicate hidden sections"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_MOBILE_EDITING",
+      "title": "Responsive editing for mobile and tablets",
+      "url": "https://elementor.com/help/mobile-editing/",
+      "supports": [
+        "default device ranges",
+        "viewport handles",
+        "responsive controls",
+        "custom breakpoints"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_CONTAINER_LAYOUT",
+      "title": "Define container layout",
+      "url": "https://elementor.com/help/container-layout-tab-settings/",
+      "supports": [
+        "content width",
+        "responsive width and min-height",
+        "direction",
+        "justify",
+        "align",
+        "stretch conditions"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_COMMON_MOBILE_ISSUES",
+      "title": "How to resolve common mobile layout issues in Elementor",
+      "url": "https://elementor.com/help/how-to-resolve-common-mobile-layout-issues-in-elementor/",
+      "supports": [
+        "column reverse",
+        "mobile visibility",
+        "mobile typography and spacing",
+        "clear files and data"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_MOBILE_TROUBLESHOOTING",
+      "title": "Troubleshooting - Issues with mobiles and tablets",
+      "url": "https://elementor.com/help/troubleshooting-issues-with-mobiles/",
+      "supports": [
+        "breakpoints are viewport widths, not device identities",
+        "too-low breakpoints can interfere with frontend layout"
+      ]
+    },
+    {
+      "id": "ELEMENTOR_UNITS",
+      "title": "Units of measurement",
+      "url": "https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/",
+      "supports": [
+        "absolute versus relative units",
+        "relative units for responsive design",
+        "viewport units"
+      ]
+    }
+  ],
+  "image_evidence": {
+    "file": "tuya-mobile-reference-original.png",
+    "width": 881,
+    "height": 2047,
+    "mode": "RGBA",
+    "observed": [
+      "single-column mobile composition",
+      "visual stage before copy",
+      "copy before logo strip",
+      "six radial nodes around a central circular/cloud visual",
+      "transparent side gutters are not page background"
+    ],
+    "not_established": [
+      "exact breakpoint values",
+      "exact CSS units",
+      "tablet composition",
+      "whether order is DOM order or responsive custom order",
+      "final production spacing values"
+    ]
+  },
+  "verification_labels": {
+    "official_documentation": "verified_by_official_documentation",
+    "uploaded_mobile_design": "observed_design_reference",
+    "tablet_behavior": "proposed_pending_designer_confirmation"
+  }
+}

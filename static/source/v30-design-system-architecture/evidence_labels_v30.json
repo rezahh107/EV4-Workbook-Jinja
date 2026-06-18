@@ -1,0 +1,37 @@
+{
+  "version": "30.0.0",
+  "labels": [
+    {
+      "id": "verified_by_official_elementor_help",
+      "meaning": "Supported by current Elementor Help Center."
+    },
+    {
+      "id": "verified_by_elementor_developer_docs",
+      "meaning": "Supported by official Elementor developer documentation."
+    },
+    {
+      "id": "verified_by_css_spec",
+      "meaning": "Supported by CSSWG/W3C or primary CSS documentation."
+    },
+    {
+      "id": "verified_by_real_fixture",
+      "meaning": "Observed in a preserved real project fixture."
+    },
+    {
+      "id": "verified_by_controlled_experiment",
+      "meaning": "Reproduced in a controlled environment."
+    },
+    {
+      "id": "derived_educational_model",
+      "meaning": "Teaching model derived from verified facts; not an official Elementor taxonomy."
+    },
+    {
+      "id": "proposed_strategy",
+      "meaning": "Recommended workflow, not an official product rule."
+    },
+    {
+      "id": "insufficient_evidence",
+      "meaning": "Cannot be established from current evidence."
+    }
+  ]
+}

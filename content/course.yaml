@@ -1,0 +1,970 @@
+schema_version: 1.0.0
+generator_version: 1.0.0
+workbook_version: 32.0.0
+content_baseline: 31.0.0
+html_title: Elementor V4 — کتاب‌کار تعاملی آفلاین فارسی v32.0
+lang: fa
+direction: rtl
+default_theme: dark-navy
+template: base.html.j2
+output: course/index.html
+static_directories:
+- assets
+- printables
+- source
+units:
+- id: appendix-v32-generator-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - release-note
+  - v32-generator-release-note
+  attributes: {}
+  source: units/000-generator-v32.md
+  format: markdown
+  title: یادداشت نسخه 32.0 — مولد ساختاریافته و قابل بازتولید
+  allow_raw_html: false
+- id: appendix-v31-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - release-note
+  - v31-release-note
+  attributes: {}
+  source: units/001-appendix-v31-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 31.0 — مرجع مفهومی کامل درون درس‌ها
+  allow_raw_html: true
+- id: appendix-v31-conceptual-reference-guide
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - conceptual-reference-guide-v31
+  attributes: {}
+  source: units/002-appendix-v31-conceptual-reference-guide.md
+  format: trusted_html
+  title: راهنمای مرجع مفهومی کامل v31 و مرز اطمینان ادعاها
+  allow_raw_html: true
+- id: appendix-v30-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - release-note
+  - v30-release-note
+  attributes: {}
+  source: units/003-appendix-v30-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 30.0 — معماری Design System و Unit Strategy
+  allow_raw_html: true
+- id: appendix-v28-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - release-note
+  attributes: {}
+  source: units/004-appendix-v28-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 28.0 — مرجع مفهومی از پایه و دقیق
+  allow_raw_html: true
+- id: appendix-v27-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - release-note
+  attributes: {}
+  source: units/005-appendix-v27-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 27.0 — Step‑Through v2 و یادگیری فعال
+  allow_raw_html: true
+- id: appendix-v21-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - release-note
+  attributes: {}
+  source: units/006-appendix-v21-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 21.0 — مدل ذهنی، عیب‌یابی و آزمایش‌های واقعی رضا
+  allow_raw_html: true
+- id: appendix-v22-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/007-appendix-v22-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 22.0 — هم‌ترازی رسمی Elementor، SVGهای زنده و شبیه‌سازهای مرحله‌ای
+  allow_raw_html: true
+- id: appendix-v24-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/008-appendix-v24-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 24.0 — یافته‌های عملی و خطایابی مستند
+  allow_raw_html: true
+- id: appendix-v25-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - release-note
+  attributes: {}
+  source: units/009-appendix-v25-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 25.0 — مسیر Responsive پیوسته و افشای مرحله‌ای
+  allow_raw_html: true
+- id: appendix-v26-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - release-note
+  attributes: {}
+  source: units/010-appendix-v26-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 26.0 — آزمایشگاه‌های «بساز و امتحان کن» برای Responsive
+  allow_raw_html: true
+- id: appendix-v23-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/011-appendix-v23-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 23.0 — QA معنایی، نقش‌ها و شبیه‌سازهای عمیق‌تر
+  allow_raw_html: true
+- id: appendix-v22-doc-audit
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/012-appendix-v22-doc-audit.md
+  format: trusted_html
+  title: ممیزی مفهومی نسخه 22 با مستندات رسمی Elementor 4
+  allow_raw_html: true
+- id: appendix-v23-roles-evidence
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/013-appendix-v23-roles-evidence.md
+  format: trusted_html
+  title: نقش‌ها و سطح دسترسی در Elementor V4 — آنچه می‌دانیم و آنچه نباید حدس بزنیم
+  allow_raw_html: true
+- id: appendix-v20-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - release-note
+  attributes: {}
+  source: units/014-appendix-v20-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 20.0 — بازسازی کامل TUYA و تمرکز روی تیترهای H2
+  allow_raw_html: true
+- id: v19-update-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/015-v19-update-note.md
+  format: trusted_html
+  title: یادداشت نسخه 19.0 — نقشهٔ وزن المان‌ها و مقایسه‌های پایان هر درس
+  allow_raw_html: true
+- id: v18-update-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/016-v18-update-note.md
+  format: trusted_html
+  title: یادداشت نسخه 18.0 — جعبه‌های مقایسه‌ای و آموزش معلم‌محور
+  allow_raw_html: true
+- id: v17-update-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/017-v17-update-note.md
+  format: trusted_html
+  title: یادداشت نسخه 17.0 — تکمیل سرفصل‌های رسمی Elementor 4 و عمق‌بخشی آموزشی
+  allow_raw_html: true
+- id: v16-update-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/018-v16-update-note.md
+  format: trusted_html
+  title: یادداشت نسخه 16.0 — تطبیق Elementor 4 و عمق‌بخشی ForLesson
+  allow_raw_html: true
+- id: course-preface
+  kind: preface
+  tag: article
+  classes:
+  - course-preface
+  - card-surface
+  attributes:
+    aria-labelledby: preface-title
+  source: units/019-course-preface.md
+  format: trusted_html
+  title: پیش‌درآمد و سیاست‌های یادگیری
+  allow_raw_html: true
+- id: appendix-v22-terminology-guardrails
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/020-appendix-v22-terminology-guardrails.md
+  format: trusted_html
+  title: واژه‌نامهٔ محافظ Elementor V4
+  allow_raw_html: true
+- id: appendix-1
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/021-appendix-1.md
+  format: trusted_html
+  title: Elementor V4 از سردرگمی تا طراحی ساختارمند
+  allow_raw_html: true
+- id: appendix-2
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/022-appendix-2.md
+  format: trusted_html
+  title: معماری آموزشی جدید
+  allow_raw_html: true
+- id: appendix-3
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/023-appendix-3.md
+  format: trusted_html
+  title: زبان ثابت Decision Treeها
+  allow_raw_html: true
+- id: appendix-4
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/024-appendix-4.md
+  format: trusted_html
+  title: کارت نجات دانش‌آموز گیج
+  allow_raw_html: true
+- id: appendix-5
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/025-appendix-5.md
+  format: trusted_html
+  title: سه خط آموزشی هم‌زمان
+  allow_raw_html: true
+- id: appendix-6
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/026-appendix-6.md
+  format: trusted_html
+  title: سیاست شواهد
+  allow_raw_html: true
+- id: appendix-7
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/027-appendix-7.md
+  format: trusted_html
+  title: نقشهٔ دوره
+  allow_raw_html: true
+- id: appendix-8
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/028-appendix-8.md
+  format: trusted_html
+  title: پروژهٔ TUYA در یک نگاه
+  allow_raw_html: true
+- id: appendix-v29-units-atlas
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - units-atlas
+  attributes: {}
+  source: units/029-appendix-v29-units-atlas.md
+  format: trusted_html
+  title: 📐 اطلس Unit Strategy، تنظیمات، مقدارها و واحدهای Elementor V4
+  allow_raw_html: true
+- id: appendix-v29-release-note
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - release-note
+  attributes: {}
+  source: units/030-appendix-v29-release-note.md
+  format: trusted_html
+  title: یادداشت نسخه 29.0 — تنظیمات، مقدارها و واحدها
+  allow_raw_html: true
+- id: lesson-1
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '1'
+  source: units/031-lesson-1.md
+  format: trusted_html
+  title: درس 1 — V4 چگونه فکر می‌کند؟
+  allow_raw_html: true
+- id: architecture-primer-v30
+  kind: appendix
+  tag: article
+  classes:
+  - architecture-primer
+  - card-surface
+  attributes:
+    data-core-primer: 'true'
+  source: units/032-architecture-primer-v30.md
+  format: trusted_html
+  title: از ساخت صفحه تا ساخت سیستم — معماری ذهنی Elementor V4
+  allow_raw_html: true
+- id: lesson-2
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '2'
+  source: units/033-lesson-2.md
+  format: trusted_html
+  title: درس 2 — Element Tree و انتخاب Element مناسب
+  allow_raw_html: true
+- id: lesson-3
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '3'
+  source: units/034-lesson-3.md
+  format: trusted_html
+  title: درس 3 — Local Class، Global Class و کلاس هدف ویرایش
+  allow_raw_html: true
+- id: lesson-4
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '4'
+  source: units/035-lesson-4.md
+  format: trusted_html
+  title: درس 4 — Box Model، Width و پوستهٔ سکشن
+  allow_raw_html: true
+- id: station-a
+  kind: station
+  tag: article
+  classes:
+  - station
+  - card-surface
+  attributes:
+    data-station: A
+  source: units/036-station-a.md
+  format: trusted_html
+  title: ایستگاه A — جهت‌یابی، Tree، Class و پوسته
+  allow_raw_html: true
+- id: lesson-5
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '5'
+  source: units/037-lesson-5.md
+  format: trusted_html
+  title: درس 5 — Flexbox و ساخت دو ستون اصلی
+  allow_raw_html: true
+- id: lesson-6
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '6'
+  source: units/038-lesson-6.md
+  format: trusted_html
+  title: درس 6 — Direction، Align، Justify و Gap
+  allow_raw_html: true
+- id: lesson-7
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '7'
+  source: units/039-lesson-7.md
+  format: trusted_html
+  title: درس 7 — Grow، Shrink، Basis، Width و Max Width
+  allow_raw_html: true
+- id: lesson-8
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '8'
+  source: units/040-lesson-8.md
+  format: trusted_html
+  title: درس 8 — Wrap و ساخت Logo Strip
+  allow_raw_html: true
+- id: lesson-9
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '9'
+  source: units/041-lesson-9.md
+  format: trusted_html
+  title: درس 9 — Grid و زمان درست استفاده از آن
+  allow_raw_html: true
+- id: station-b
+  kind: station
+  tag: article
+  classes:
+  - station
+  - card-surface
+  attributes:
+    data-station: B
+  source: units/042-station-b.md
+  format: trusted_html
+  title: ایستگاه B — Layout، اندازه، Wrap و Grid
+  allow_raw_html: true
+- id: lesson-10
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '10'
+  source: units/043-lesson-10.md
+  format: trusted_html
+  title: درس 10 — Heading، Paragraph، List و Typography
+  allow_raw_html: true
+- id: lesson-11
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '11'
+  source: units/044-lesson-11.md
+  format: trusted_html
+  title: درس 11 — Image، SVG، Background، Aspect Ratio و Object Fit
+  allow_raw_html: true
+- id: station-c
+  kind: station
+  tag: article
+  classes:
+  - station
+  - card-surface
+  attributes:
+    data-station: C
+  source: units/045-station-c.md
+  format: trusted_html
+  title: ایستگاه C — محتوا و رسانه
+  allow_raw_html: true
+- id: lesson-12
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '12'
+  source: units/046-lesson-12.md
+  format: trusted_html
+  title: درس 12 — Position، Relative و Absolute
+  allow_raw_html: true
+- id: lesson-13
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '13'
+  source: units/047-lesson-13.md
+  format: trusted_html
+  title: درس 13 — Z-index، Overflow و Layering
+  allow_raw_html: true
+- id: lesson-14
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '14'
+  source: units/048-lesson-14.md
+  format: trusted_html
+  title: درس 14 — Responsive Inheritance و Breakpointها
+  allow_raw_html: true
+- id: appendix-v25-tuya-responsive-workshop
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  - responsive-workshop
+  attributes: {}
+  source: units/049-appendix-v25-tuya-responsive-workshop.md
+  format: trusted_html
+  title: کارگاه Responsive TUYA — از Desktop به Mobile بدون ساخت نسخهٔ تکراری
+  allow_raw_html: true
+- id: lesson-15
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '15'
+  source: units/050-lesson-15.md
+  format: trusted_html
+  title: درس 15 — RTL، Start و End
+  allow_raw_html: true
+- id: station-d
+  kind: station
+  tag: article
+  classes:
+  - station
+  - card-surface
+  attributes:
+    data-station: D
+  source: units/051-station-d.md
+  format: trusted_html
+  title: ایستگاه D — Position، Layering، Responsive و RTL
+  allow_raw_html: true
+- id: lesson-16
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '16'
+  source: units/052-lesson-16.md
+  format: trusted_html
+  title: درس 16 — State، Hover، Focus و دسترسی‌پذیری
+  allow_raw_html: true
+- id: lesson-17
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '17'
+  source: units/053-lesson-17.md
+  format: trusted_html
+  title: درس 17 — Classes، Variables و Components در Design System V4
+  allow_raw_html: true
+- id: lesson-18
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '18'
+  source: units/054-lesson-18.md
+  format: trusted_html
+  title: درس 18 — صفحات Hybrid V3/V4 و نردبان مهاجرت
+  allow_raw_html: true
+- id: appendix-v22-site-composition
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/055-appendix-v22-site-composition.md
+  format: trusted_html
+  title: ضمیمهٔ مقدماتی — Theme Builder، Loop Grid و Popup در اکوسیستم Elementor
+  allow_raw_html: true
+- id: lesson-v17-advanced
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-trackable: lesson-v17-advanced
+  source: units/056-lesson-v17-advanced.md
+  format: trusted_html
+  title: تکمیلی 18F — Custom CSS، Attributes و Dynamic Tags در V4
+  allow_raw_html: true
+- id: lesson-v17-interactions
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-trackable: lesson-v17-interactions
+  source: units/057-lesson-v17-interactions.md
+  format: trusted_html
+  title: تکمیلی 18E — Interactions، State و Motion
+  allow_raw_html: true
+- id: lesson-v17-atomic-forms
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-trackable: lesson-v17-atomic-forms
+  source: units/058-lesson-v17-atomic-forms.md
+  format: trusted_html
+  title: تکمیلی 18D — Atomic Forms در Elementor 4
+  allow_raw_html: true
+- id: lesson-v17-components
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-trackable: lesson-v17-components
+  source: units/059-lesson-v17-components.md
+  format: trusted_html
+  title: تکمیلی 18C — Components، Master و Instance
+  allow_raw_html: true
+- id: lesson-v17-variables
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-trackable: lesson-v17-variables
+  source: units/060-lesson-v17-variables.md
+  format: trusted_html
+  title: تکمیلی 18B — Variables Manager و Design Tokens
+  allow_raw_html: true
+- id: lesson-v17-class-manager
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-trackable: lesson-v17-class-manager
+  source: units/061-lesson-v17-class-manager.md
+  format: trusted_html
+  title: تکمیلی 18A — Class Manager و اولویت Global Classها
+  allow_raw_html: true
+- id: station-e
+  kind: station
+  tag: article
+  classes:
+  - station
+  - card-surface
+  attributes:
+    data-station: E
+  source: units/062-station-e.md
+  format: trusted_html
+  title: ایستگاه E — State، Design System و Hybrid Migration
+  allow_raw_html: true
+- id: lesson-19
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '19'
+  source: units/063-lesson-19.md
+  format: trusted_html
+  title: درس 19 — Refactor واقعی صفحهٔ Solutions
+  allow_raw_html: true
+- id: lesson-20
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '20'
+  source: units/064-lesson-20.md
+  format: trusted_html
+  title: درس 20 — Performance، DOM و Audit ساختار
+  allow_raw_html: true
+- id: lesson-v19-element-weight
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes: {}
+  source: units/065-lesson-v19-element-weight.md
+  format: trusted_html
+  title: 'درس 20A — وزن المان‌ها در Elementor 4: سبک‌ترین راه درست کدام است؟'
+  allow_raw_html: true
+- id: lesson-21
+  kind: lesson
+  tag: article
+  classes:
+  - lesson
+  - card-surface
+  attributes:
+    data-lesson: '21'
+  source: units/066-lesson-21.md
+  format: trusted_html
+  title: درس 21 — Boss Fight — ساخت مستقل و ذهن ساختارمند
+  allow_raw_html: true
+- id: station-f
+  kind: station
+  tag: article
+  classes:
+  - station
+  - card-surface
+  attributes:
+    data-station: F
+  source: units/067-station-f.md
+  format: trusted_html
+  title: ایستگاه F — بازسازی مستقل و انتقال
+  allow_raw_html: true
+- id: appendix-forlesson-deep-dive-v17
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/068-appendix-forlesson-deep-dive-v17.md
+  format: trusted_html
+  title: 'ضمیمهٔ عمیق ForLesson — نسخه 17: از Export واقعی تا تصمیم طراحی'
+  allow_raw_html: true
+- id: appendix-elementor4-official-v17
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/069-appendix-elementor4-official-v17.md
+  format: trusted_html
+  title: ضمیمهٔ تطبیق رسمی Elementor 4 — نسخه 17
+  allow_raw_html: true
+- id: appendix-v20-tuya-zero-to-100
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/070-appendix-v20-tuya-zero-to-100.md
+  format: trusted_html
+  title: ضمیمهٔ نهایی نسخه 20 — TUYA از صفر تا صد
+  allow_raw_html: true
+- id: appendix-9
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/071-appendix-9.md
+  format: trusted_html
+  title: فهرست ارجاع ایستگاه‌های تمرینی
+  allow_raw_html: true
+- id: appendix-10
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/072-appendix-10.md
+  format: trusted_html
+  title: راهنمای استفاده از واژه‌نامه و Index
+  allow_raw_html: true
+- id: appendix-v18-teacher-method
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/073-appendix-v18-teacher-method.md
+  format: trusted_html
+  title: روش توضیح نسخه 18 — از مفهوم مبهم تا تصمیم طراحی
+  allow_raw_html: true
+- id: appendix-v18-comparison-cards
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/074-appendix-v18-comparison-cards.md
+  format: trusted_html
+  title: جعبه‌های مقایسه‌ای نسخه 18 — مفاهیم شبیه، تصمیم‌های متفاوت
+  allow_raw_html: true
+- id: appendix-v18-builder-checklist
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/075-appendix-v18-builder-checklist.md
+  format: trusted_html
+  title: چک‌لیست سازندهٔ نسخه 18 — کنترل نهایی مفاهیم مقایسه‌ای
+  allow_raw_html: true
+- id: appendix-v19-builder-checklist
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/076-appendix-v19-builder-checklist.md
+  format: trusted_html
+  title: چک‌لیست سازندهٔ نسخه 19 — کنترل نهایی وزن و مقایسه‌های درون‌درسی
+  allow_raw_html: true
+- id: appendix-v17-coverage-checklist
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/077-appendix-v17-coverage-checklist.md
+  format: trusted_html
+  title: چک‌لیست سازندهٔ نسخه 17 — پوشش Elementor 4
+  allow_raw_html: true
+- id: appendix-11
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/078-appendix-11.md
+  format: trusted_html
+  title: منابع و تاریخ بازبینی
+  allow_raw_html: true
+- id: appendix-12
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/079-appendix-12.md
+  format: trusted_html
+  title: تغییرات نسخهٔ ۱۶ نسبت به نسخهٔ ۱۵.۵
+  allow_raw_html: true
+- id: appendix-13
+  kind: appendix
+  tag: article
+  classes:
+  - appendix
+  - card-surface
+  attributes: {}
+  source: units/080-appendix-13.md
+  format: trusted_html
+  title: سخن پایانی
+  allow_raw_html: true
+- id: visual-learning-preservation-note
+  kind: appendix
+  tag: section
+  classes:
+  - card-surface
+  - appendix
+  - visual-preservation-note
+  attributes:
+    aria-labelledby: visual-learning-preservation-heading
+  source: units/081-visual-learning-preservation-note.md
+  format: trusted_html
+  title: یادداشت حفظ یادگیری دیداری
+  allow_raw_html: true

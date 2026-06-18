@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.0.0",
+  "workbook_version": "31.0.0",
+  "source_file": "source/v31-conceptual-reference/CONCEPTUAL_REFERENCE_COMPLETE_V31_FA.md",
+  "source_file_sha256": "ac8a4dcf5dc15fb2783b9402616119578f83f4ce2f5e214b6cd5122c907b18e0",
+  "base_archive": "Elementor_V4_Offline_Interactive_Workbook_v30_0_design_system_architecture_unit_strategy(1).zip",
+  "base_archive_sha256": "1ed7745ebb477e5c515946d5c19e5b89f79acc2e3848f9925e4c5f78cd3e98ab",
+  "chapter_count": 28,
+  "chapters": [
+    {
+      "index": 1,
+      "detail_id": "lesson-1-concept-reference",
+      "title": "درک عمیق Elementor V4؛ واقعاً چگونه فکر می‌کند؟",
+      "source_markdown_sha256": "84aa70716f22693de3c93db3897b3801fddb897155546f158dcd41bf607e789a",
+      "rendered_body_sha256": "0986e6975077a3c72eefbb3a243c2a81c4b362a428d3151813b7cc2342956313",
+      "section_count": 10,
+      "source_character_count": 5184,
+      "rendered_text_character_count": 5106
+    },
+    {
+      "index": 2,
+      "detail_id": "lesson-2-concept-reference",
+      "title": "درک عمیق Element Tree و انتخاب ظرف درست",
+      "source_markdown_sha256": "bc85265e9472b02817fc1466f71195a6131cb7ad26ad8f6f4a37dc8eb6615ad1",
+      "rendered_body_sha256": "873f2f14639be7ed5b3b5ead73a8149228bda2944515dfc27c2e637ee44dee18",
+      "section_count": 11,
+      "source_character_count": 4211,
+      "rendered_text_character_count": 4111
+    },
+    {
+      "index": 3,
+      "detail_id": "lesson-3-concept-reference",
+      "title": "درک عمیق Local Class، Global Class و هدف واقعی ویرایش",
+      "source_markdown_sha256": "4d948ce22247be35bf7e1bbe841cdc138c94edd7e7ff46e7694ee81f0b99789e",
+      "rendered_body_sha256": "e32621c6684e9ad0c5af5a1f9de219485d941ef8e0331df4b9a5c740942dc66c",
+      "section_count": 14,
+      "source_character_count": 5558,
+      "rendered_text_character_count": 5447
+    },
+    {
+      "index": 4,
+      "detail_id": "lesson-4-concept-reference",
+      "title": "درک عمیق Box Model، Width، Padding و Margin",
+      "source_markdown_sha256": "40f7eda0e41b8778c809594ff484cc434fab1cfd393556b0babc88a03311fef4",
+      "rendered_body_sha256": "673444b394d0059e57c6d1f8a05d89e1cff1e6bc4f2f1cb3422b1ce5e99e0ac9",
+      "section_count": 14,
+      "source_character_count": 5061,
+      "rendered_text_character_count": 4826
+    },
+    {
+      "index": 5,
+      "detail_id": "lesson-5-concept-reference",
+      "title": "درک عمیق Flexbox؛ چیدمان یک‌بعدی و رابطهٔ Parent/Item",
+      "source_markdown_sha256": "2550653d2296b77121ab383c358abd088dc55afd0216aa5f2973130267089df3",
+      "rendered_body_sha256": "9570da9763f6056df68468d18bd4d6029b51e1b215015b557b158b360921f10f",
+      "section_count": 14,
+      "source_character_count": 3902,
+      "rendered_text_character_count": 3863
+    },
+    {
+      "index": 6,
+      "detail_id": "lesson-6-concept-reference",
+      "title": "درک عمیق Direction، Justify، Align و Gap",
+      "source_markdown_sha256": "e17118afdbc715b77ccdac1b4a61755fa53b724c5e89b17c0426ad1ba2c32974",
+      "rendered_body_sha256": "82b6b98b464462442b2099fb80b5adb00706a1f294460160237b617552fa745c",
+      "section_count": 14,
+      "source_character_count": 3979,
+      "rendered_text_character_count": 3847
+    },
+    {
+      "index": 7,
+      "detail_id": "lesson-7-concept-reference",
+      "title": "درک عمیق Flex Basis، Grow و Shrink",
+      "source_markdown_sha256": "975e038a6f5ef9b02e24a4f488cbaf6178720f1b013ad49e372a2ae77d957347",
+      "rendered_body_sha256": "d142c601a3c0eef3967e1a75690c49bbf75827043c5b919b8a5ed5632067852a",
+      "section_count": 13,
+      "source_character_count": 4916,
+      "rendered_text_character_count": 4848
+    },
+    {
+      "index": 8,
+      "detail_id": "lesson-8-concept-reference",
+      "title": "درک عمیق Wrap؛ وقتی یک ردیف دیگر جا ندارد",
+      "source_markdown_sha256": "af3d465aae109f8ea5e8ba4f8b9086acfe54589367a53277d9180f3071a2e12c",
+      "rendered_body_sha256": "388dde8a08b799324956835df00c9cd2db5a333ca18369231dce10e3f4a5eb10",
+      "section_count": 11,
+      "source_character_count": 5551,
+      "rendered_text_character_count": 5432
+    },
+    {
+      "index": 9,
+      "detail_id": "lesson-9-concept-reference",
+      "title": "درک عمیق Grid؛ Track، Line، Cell و Area",
+      "source_markdown_sha256": "6987bda4a89af93cba64466f73d8e464e5cb104e56a7664a9534e37a48a23f8a",
+      "rendered_body_sha256": "c4341d3c59e545b353b7732c9ade9fd2fe8f0046968f2e9b9b2dd5625c573610",
+      "section_count": 15,
+      "source_character_count": 5996,
+      "rendered_text_character_count": 5562
+    },
+    {
+      "index": 10,
+      "detail_id": "lesson-10-concept-reference",
+      "title": "درک عمیق Typography؛ متن فقط Font نیست",
+      "source_markdown_sha256": "469ab18fb781f3ea19da2c9e3b1a3ebe68fd8f301d270956b17e9ea4fa3da2df",
+      "rendered_body_sha256": "0e3f1552f47b41015739df940d37dd01cf20557d0fcc3f231ce2760c99e60218",
+      "section_count": 14,
+      "source_character_count": 5417,
+      "rendered_text_character_count": 5298
+    },
+    {
+      "index": 11,
+      "detail_id": "lesson-11-concept-reference",
+      "title": "درک عمیق Image، SVG، Background و Aspect Ratio",
+      "source_markdown_sha256": "9a715a1499c633723de9be7e700d0d8340eb3c485f2210ad153690d6294dbaf8",
+      "rendered_body_sha256": "853f8c12add5b311b9e4726d0fe03e59e6a71d0d7ac9220a75bad07d3258d4c6",
+      "section_count": 14,
+      "source_character_count": 4842,
+      "rendered_text_character_count": 4791
+    },
+    {
+      "index": 12,
+      "detail_id": "lesson-12-concept-reference",
+      "title": "درک عمیق Position؛ Flow، مرجع مختصات و Overlay",
+      "source_markdown_sha256": "4422a12a162cb6094102250f26be58137b3b5b454781c02681575c2ad7c9a8f3",
+      "rendered_body_sha256": "685bdc3c6d36b33dd65cf313adab65f8dbfa70e3c899a3e2d304625627799650",
+      "section_count": 14,
+      "source_character_count": 4774,
+      "rendered_text_character_count": 4758
+    },
+    {
+      "index": 13,
+      "detail_id": "lesson-13-concept-reference",
+      "title": "درک عمیق Z-index، Stacking Context و Overflow",
+      "source_markdown_sha256": "3e827f87dd03729cea161f830143446dbf5fc5d942a08181977a2dc51b144e60",
+      "rendered_body_sha256": "e61445883a74899aad542535fea362f042ed1481c2bc29bfe8db6637c5d463c5",
+      "section_count": 13,
+      "source_character_count": 4614,
+      "rendered_text_character_count": 4589
+    },
+    {
+      "index": 14,
+      "detail_id": "lesson-14-concept-reference",
+      "title": "درک عمیق Responsive؛ Inheritance، Override و Breakpoint",
+      "source_markdown_sha256": "cc24056f7e6407318b1a69797588466a8bc599b98fd96caa368e4fc84da0a568",
+      "rendered_body_sha256": "7b7937aa70fb4811e3902c540956a7c33e33390fe9d4291586cc5ec9ae400958",
+      "section_count": 13,
+      "source_character_count": 5166,
+      "rendered_text_character_count": 5102
+    },
+    {
+      "index": 15,
+      "detail_id": "lesson-15-concept-reference",
+      "title": "درک عمیق RTL و Logical Properties؛ Start و End به‌جای حدس راست و چپ",
+      "source_markdown_sha256": "f092b4b627ba3b4d671d0be14b92afee6bc10c9a2db982e6c3ca813079bc5a3c",
+      "rendered_body_sha256": "379ddb55ce6c2b6aa82bb7d4afe09d9e2206248738d3f09d1bec2695f74c0945",
+      "section_count": 12,
+      "source_character_count": 4804,
+      "rendered_text_character_count": 4666
+    },
+    {
+      "index": 16,
+      "detail_id": "lesson-16-concept-reference",
+      "title": "درک عمیق State؛ Normal، Hover، Focus، Focus Visible و Active",
+      "source_markdown_sha256": "be442ba828a89c0b31bacf730bcdec5f2221ad455f74ab575d4f9cd0b5e23725",
+      "rendered_body_sha256": "a485cdb3ca2b1766c9ab4313b9162b65cacb4dac514e607f6881b1fc7661746d",
+      "section_count": 15,
+      "source_character_count": 4934,
+      "rendered_text_character_count": 4868
+    },
+    {
+      "index": 17,
+      "detail_id": "lesson-17-concept-reference",
+      "title": "درک عمیق Design System؛ رابطهٔ Variable، Class و Component",
+      "source_markdown_sha256": "022f2848417605ebd1dcd6274e87fd0c1b6bcf23eee51b7c0dfdef84865f9893",
+      "rendered_body_sha256": "cba9d99d64019ac7c22fdccf7850cb729fc3c3d4ef1056c086464abaa5127726",
+      "section_count": 12,
+      "source_character_count": 5125,
+      "rendered_text_character_count": 5002
+    },
+    {
+      "index": 18,
+      "detail_id": "lesson-18-concept-reference",
+      "title": "درک عمیق Hybrid V3/V4؛ مهاجرت بدون بازسازی کور",
+      "source_markdown_sha256": "a0193ee736b3b06a742bc91b2e0e6382fffa9ba34f1b2cd9425446975c0de3ad",
+      "rendered_body_sha256": "29076a6665c4f4ddc764054dae5786668561f78a9380b92b65ea4afc297bc6cf",
+      "section_count": 12,
+      "source_character_count": 4263,
+      "rendered_text_character_count": 4236
+    },
+    {
+      "index": 19,
+      "detail_id": "lesson-v17-advanced-concept-reference",
+      "title": "درک عمیق Custom CSS، Attributes و Dynamic Data؛ سه لایهٔ متفاوت",
+      "source_markdown_sha256": "e23c4b55e302f72ef8df06f86d1060ff19b52d1d133cf1fce365966670fd5098",
+      "rendered_body_sha256": "f4c032c1ab5c59de49e1a55c647e14553215652c64de4643d1bdf99ac0ddfa47",
+      "section_count": 13,
+      "source_character_count": 4723,
+      "rendered_text_character_count": 4673
+    },
+    {
+      "index": 20,
+      "detail_id": "lesson-v17-interactions-concept-reference",
+      "title": "درک عمیق Interactions؛ Trigger، Effect و زمان‌بندی",
+      "source_markdown_sha256": "7439ea35b5857a3ff14735cbabe22960ee4d5e35a8a25839e96e53af1da90d0b",
+      "rendered_body_sha256": "8991de68ed91017261f7ee06c5274ac7e3fe9bf56989d9ff9b80280c1a837130",
+      "section_count": 14,
+      "source_character_count": 4331,
+      "rendered_text_character_count": 4316
+    },
+    {
+      "index": 21,
+      "detail_id": "lesson-v17-atomic-forms-concept-reference",
+      "title": "درک عمیق Atomic Form؛ فرم به‌عنوان ساختار و جریان وضعیت",
+      "source_markdown_sha256": "e975130934668914f18038b65ddae917741b57aa4566fc4aeb177f0276d9fd81",
+      "rendered_body_sha256": "f2982e879d695376039de2d4b7097973ed93fa5c8e5488390b35b280b3b2ad1e",
+      "section_count": 14,
+      "source_character_count": 4685,
+      "rendered_text_character_count": 4605
+    },
+    {
+      "index": 22,
+      "detail_id": "lesson-v17-components-concept-reference",
+      "title": "درک عمیق Component، Master و Instance",
+      "source_markdown_sha256": "7bb2f6f9e10b316ba90a70e3c955a68db8c261624e2e281419569013f2f3de86",
+      "rendered_body_sha256": "2680afb4f01f5ed65d8f18facc0e0a4a9a5fbe44fdb6d70ab3879dac708b98e5",
+      "section_count": 13,
+      "source_character_count": 5580,
+      "rendered_text_character_count": 5548
+    },
+    {
+      "index": 23,
+      "detail_id": "lesson-v17-variables-concept-reference",
+      "title": "درک عمیق Variable و Design Token؛ مقدار نام‌دار با دامنهٔ اثر",
+      "source_markdown_sha256": "89198659d93a95102e67ec3f140ee48b1d20a7355a42d32783710d64f9232c0e",
+      "rendered_body_sha256": "413899d780d9c50504ee9eab1e589a4346092579bb03c43b9a71b24c96cf2e5d",
+      "section_count": 13,
+      "source_character_count": 4633,
+      "rendered_text_character_count": 4556
+    },
+    {
+      "index": 24,
+      "detail_id": "lesson-v17-class-manager-concept-reference",
+      "title": "درک عمیق Class Manager؛ سلسله‌مراتب سیستم Style",
+      "source_markdown_sha256": "4d00f7e7fc97f6ceb3428fa496aebed9fc8e0d41743874f57c7f204bb05c7747",
+      "rendered_body_sha256": "4d2ef85f3bff2c4e6ba03336f9c4a4f0b4b05ac882cf11322336d1d7b5a022fb",
+      "section_count": 14,
+      "source_character_count": 5254,
+      "rendered_text_character_count": 5199
+    },
+    {
+      "index": 25,
+      "detail_id": "lesson-19-concept-reference",
+      "title": "درک عمیق Refactor؛ تغییر ساختار بدون گم‌کردن رفتار",
+      "source_markdown_sha256": "50e21efba96b9624bc1bee10a3e9ba3e1d576b86c437e1602d87d1ac8c444e33",
+      "rendered_body_sha256": "dd510e3b2512ca3339b81ca7eaf88b9076023a7b76d18a781bbe044c9f66e582",
+      "section_count": 14,
+      "source_character_count": 4446,
+      "rendered_text_character_count": 4319
+    },
+    {
+      "index": 26,
+      "detail_id": "lesson-20-concept-reference",
+      "title": "درک عمیق Performance، DOM و Audit؛ ساده‌سازی قابل اندازه‌گیری",
+      "source_markdown_sha256": "2301883002f82f94b7c9f22599ca338f0896583bb34477075bc34e3d1519f889",
+      "rendered_body_sha256": "4f0875d610e26b239d97d798281e83bea57e21d5ab808ef28a91bdf89581a2ce",
+      "section_count": 15,
+      "source_character_count": 5239,
+      "rendered_text_character_count": 5134
+    },
+    {
+      "index": 27,
+      "detail_id": "lesson-v19-element-weight-concept-reference",
+      "title": "درک عمیق وزن Element؛ هزینه فقط تعداد Node نیست",
+      "source_markdown_sha256": "d22121d0808facdef0a414545bd1c7695aeda9c6d9814c489c98f48856052722",
+      "rendered_body_sha256": "52674ae44edbee2d734cc2a1f3b5446e9029386f109ea3d5da613f792f1e0229",
+      "section_count": 14,
+      "source_character_count": 4917,
+      "rendered_text_character_count": 4702
+    },
+    {
+      "index": 28,
+      "detail_id": "lesson-21-concept-reference",
+      "title": "درک عمیق ساخت مستقل؛ از مسئله به تصمیم قابل دفاع",
+      "source_markdown_sha256": "c13dd2c2c324e95f6f864a54e5dda3aa27402bc2b253d5f5699bb7a5150d43cd",
+      "rendered_body_sha256": "10044bab7d496367ea05756a4cc51aa69ec021644acccbb76214773b579cb9ea",
+      "section_count": 18,
+      "source_character_count": 6069,
+      "rendered_text_character_count": 5881
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "version": "30.0.0",
+  "performed": true,
+  "browser": "Chromium system executable",
+  "checks": {
+    "page_loaded": {
+      "passed": true,
+      "detail": null
+    },
+    "main_lessons_21": {
+      "passed": true,
+      "detail": 21
+    },
+    "supplementary_lessons_7": {
+      "passed": true,
+      "detail": 7
+    },
+    "stations_6": {
+      "passed": true,
+      "detail": 6
+    },
+    "step_throughs_7": {
+      "passed": true,
+      "detail": 7
+    },
+    "step_throughs_initialized": {
+      "passed": true,
+      "detail": 7
+    },
+    "no_autoplay": {
+      "passed": true,
+      "detail": null
+    },
+    "deep_link_opens_details": {
+      "passed": true,
+      "detail": null
+    },
+    "literal_to_system_next": {
+      "passed": true,
+      "detail": "مرحله 2 از 8"
+    },
+    "literal_to_system_keyboard": {
+      "passed": true,
+      "detail": "مرحله 3 از 8"
+    },
+    "literal_to_system_persistence": {
+      "passed": true,
+      "detail": {
+        "index": 2,
+        "answers": {
+          "literal": {
+            "selected": 1,
+            "revealed": true
+          },
+          "repeat-smell": {
+            "selected": 0,
+            "revealed": true
+          }
+        }
+      }
+    },
+    "literal_to_system_reset": {
+      "passed": true,
+      "detail": "مرحله 1 از 8"
+    },
+    "unit_tradeoff_progress": {
+      "passed": true,
+      "detail": null
+    },
+    "unit_tradeoff_visual_rendered": {
+      "passed": true,
+      "detail": null
+    },
+    "class_simulator_7_states": {
+      "passed": true,
+      "detail": "7"
+    },
+    "class_simulator_custom_css_state": {
+      "passed": true,
+      "detail": "Custom CSS و matched-rule context"
+    },
+    "theme_toggle_operational": {
+      "passed": true,
+      "detail": [
+        "dark-navy",
+        "dark-gray"
+      ]
+    },
+    "focus_mode_operational": {
+      "passed": true,
+      "detail": {
+        "body_attrs": {
+          "focus": null,
+          "cls": "focus-mode"
+        }
+      }
+    },
+    "reduced_motion_media_active": {
+      "passed": true,
+      "detail": true
+    },
+    "print_fallback_visible": {
+      "passed": true,
+      "detail": "block"
+    },
+    "aria_live_present": {
+      "passed": true,
+      "detail": 14
+    },
+    "all_details_have_summary": {
+      "passed": true,
+      "detail": [
+        446,
+        446
+      ]
+    },
+    "no_external_network_requests": {
+      "passed": true,
+      "detail": []
+    },
+    "no_console_errors": {
+      "passed": true,
+      "detail": []
+    },
+    "no_page_errors": {
+      "passed": true,
+      "detail": []
+    }
+  },
+  "console_errors": [],
+  "page_errors": [],
+  "external_requests": [],
+  "status": "passed",
+  "failed_checks": []
+}

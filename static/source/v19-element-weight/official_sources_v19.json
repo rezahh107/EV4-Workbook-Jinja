@@ -1,0 +1,37 @@
+{
+  "status": "official_sources_used_for_alignment",
+  "version": "19.0.0",
+  "sources": [
+    {
+      "title": "Classes in Elementor",
+      "url": "https://elementor.com/help/classes-in-elementor-2/",
+      "claim": "Every element has a local class; class behavior and reuse are core to V4."
+    },
+    {
+      "title": "The Elementor Editor Class Manager",
+      "url": "https://elementor.com/help/the-elementor-editor-class-manager/",
+      "claim": "Class Manager controls class priority, rename, delete, and reorder workflows."
+    },
+    {
+      "title": "Variables",
+      "url": "https://elementor.com/help/variables/",
+      "claim": "Variables can be part of classes and store reusable values."
+    },
+    {
+      "title": "Version 4 FAQs",
+      "url": "https://elementor.com/products/website-builder/v4-faq/",
+      "claim": "Atomic elements are based on pure HTML tags and reduce wrapper layers; hybrid pages may vary."
+    },
+    {
+      "title": "Elementor 3.30 Developers Update",
+      "url": "https://developers.elementor.com/elementor-3-30-developers-update/",
+      "claim": "Optimized markup reduces DOM size by removing unnecessary tags."
+    },
+    {
+      "title": "Lighthouse DOM size guidance",
+      "url": "https://developer.chrome.com/docs/lighthouse/performance/dom-size",
+      "claim": "Large DOM size can affect performance; DOM size is a measurable performance concern."
+    }
+  ],
+  "runtime_measurement": "not_performed"
+}

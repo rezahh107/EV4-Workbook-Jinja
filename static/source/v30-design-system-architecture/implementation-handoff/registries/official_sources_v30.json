@@ -1,0 +1,201 @@
+{
+  "version": "30.0-planning",
+  "sources": [
+    {
+      "id": "E_V4_CSS_FIRST",
+      "title": "Why Elementor is going CSS-first",
+      "url": "https://elementor.com/blog/editor-v4-css-first/",
+      "authority": "official_elementor_blog",
+      "claims": [
+        "V4 uses CSS fundamentals, inheritance and hierarchy",
+        "Variables, Classes and States support reusable styling"
+      ]
+    },
+    {
+      "id": "E_V4_40_DEV",
+      "title": "Elementor Editor 4.0 Developers Update",
+      "url": "https://developers.elementor.com/elementor-editor-4-0-developers-update/",
+      "authority": "official_elementor_developer_docs",
+      "claims": [
+        "V4 foundation includes Atomic Elements, Variables, Classes and Components",
+        "system-based workflow targets consistency and scale"
+      ]
+    },
+    {
+      "id": "E_UNITS",
+      "title": "Units of measurement",
+      "url": "https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "Elementor explains px/em/rem/%/vw/vh",
+        "unit availability is contextual"
+      ]
+    },
+    {
+      "id": "E_VARIABLES",
+      "title": "Variables",
+      "url": "https://elementor.com/help/variables/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "Variable is a nickname/reference for a value",
+        "variables can be used inside classes",
+        "current values include font family, text color and size"
+      ]
+    },
+    {
+      "id": "E_VARIABLES_MANAGER",
+      "title": "Variables Manager",
+      "url": "https://elementor.com/help/variables-manager/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "official variable types are Color, Font and Size",
+        "manager creates, edits and uses variables"
+      ]
+    },
+    {
+      "id": "E_DESIGN_SYSTEM_IO",
+      "title": "How to import and export design systems",
+      "url": "https://elementor.com/help/how-to-import-and-export-design-systems/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "design system ZIP contains variables and classes",
+        "whole-package import/export and name-conflict behavior"
+      ]
+    },
+    {
+      "id": "E_VARIABLE_SYNC",
+      "title": "How to sync variables and global elements",
+      "url": "https://elementor.com/help/how-to-sync-variables-and-global-elements/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "atomic variables can sync to V3 global colors/fonts for hybrid workflows"
+      ]
+    },
+    {
+      "id": "E_CLASSES",
+      "title": "Classes in Elementor",
+      "url": "https://elementor.com/help/classes-in-elementor-2/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "every element has a Local Class",
+        "Global Classes are reusable"
+      ]
+    },
+    {
+      "id": "E_CLASS_PRIORITY",
+      "title": "Prioritize conflicting styles",
+      "url": "https://elementor.com/help/prioritize-conflicting-styles/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "leftmost class has priority",
+        "Local Class remains highest priority"
+      ]
+    },
+    {
+      "id": "E_CLASS_MANAGER",
+      "title": "The Elementor Editor Class Manager",
+      "url": "https://elementor.com/help/the-elementor-editor-class-manager/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "Class Manager order determines Global Class priority"
+      ]
+    },
+    {
+      "id": "E_STATES",
+      "title": "Element states",
+      "url": "https://elementor.com/help/element-states/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "states are edited for a selected class in Style tab"
+      ]
+    },
+    {
+      "id": "E_COMPONENTS",
+      "title": "Components",
+      "url": "https://elementor.com/help/components-2/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "Master and instances are globally synced",
+        "per-instance properties persist",
+        "detach is supported",
+        "Atomic-only, Pro and Admin constraints"
+      ]
+    },
+    {
+      "id": "E_DYNAMIC_V4",
+      "title": "Dynamic tags in V4",
+      "url": "https://elementor.com/help/dynamic-tags-in-v4/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "V4 supports post, site, archive, author, comment and product dynamic tags"
+      ]
+    },
+    {
+      "id": "E_ACF",
+      "title": "Elementor Integration With ACF",
+      "url": "https://elementor.com/help/elementor-acf/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "ACF fields can be selected through Dynamic controls",
+        "supported and unsupported field caveats"
+      ]
+    },
+    {
+      "id": "E_LOOP_GRID",
+      "title": "Loop Grid widget",
+      "url": "https://elementor.com/help/loop-grid/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "Loop Grid uses templates and queries for repeated dynamic listings"
+      ]
+    },
+    {
+      "id": "E_QUERIES",
+      "title": "Create queries",
+      "url": "https://elementor.com/help/create-queries/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "query sources and include/exclude behavior"
+      ]
+    },
+    {
+      "id": "E_INTERACTIONS",
+      "title": "Interactions",
+      "url": "https://elementor.com/help/interactions/",
+      "authority": "official_elementor_help",
+      "claims": [
+        "official triggers and effects",
+        "Duration and Delay use milliseconds"
+      ]
+    },
+    {
+      "id": "CSS_VALUES",
+      "title": "CSS values and units",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Values_and_units",
+      "authority": "mdn",
+      "claims": [
+        "CSS values can be units, keywords, functions, numbers or references"
+      ]
+    },
+    {
+      "id": "CSS_LENGTH",
+      "title": "CSS length data type",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length",
+      "authority": "mdn",
+      "claims": [
+        "relative lengths are font-, container- or viewport-based",
+        "rem is root-font-relative"
+      ]
+    },
+    {
+      "id": "DTCG",
+      "title": "Design Tokens Community Group",
+      "url": "https://www.w3.org/community/design-tokens/",
+      "authority": "w3c_community_group",
+      "claims": [
+        "design tokens are a cross-tool design-system concept"
+      ],
+      "note": "Community Group material is not an official Elementor product contract; use only for derived educational strategy."
+    }
+  ]
+}

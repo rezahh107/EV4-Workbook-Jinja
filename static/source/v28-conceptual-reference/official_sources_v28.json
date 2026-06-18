@@ -1,0 +1,381 @@
+{
+  "version": "28.0.0",
+  "reviewed_at": "2026-06-17",
+  "sources": [
+    {
+      "source_id": "E_V4",
+      "url": "https://elementor.com/help/get-started-with-the-elementor-editor-v4/",
+      "used_by": [
+        "lesson-1",
+        "lesson-18",
+        "lesson-19",
+        "lesson-21"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_DIFF",
+      "url": "https://elementor.com/help/what-are-the-differences-between-the-elementor-editor-3-x-and-v4/",
+      "used_by": [
+        "lesson-1",
+        "lesson-10",
+        "lesson-15",
+        "lesson-18"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_DIV",
+      "url": "https://elementor.com/help/div-block-element/",
+      "used_by": [
+        "lesson-2",
+        "lesson-20",
+        "lesson-v19-element-weight"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_FLEX",
+      "url": "https://elementor.com/help/flexbox-element/",
+      "used_by": [
+        "lesson-2",
+        "lesson-20",
+        "lesson-5",
+        "lesson-v19-element-weight"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_FLEX_WORK",
+      "url": "https://elementor.com/help/how-do-flexbox-containers-work/",
+      "used_by": [
+        "lesson-5",
+        "lesson-7"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_CONTAINER",
+      "url": "https://elementor.com/help/container-layout-tab-settings/",
+      "used_by": [
+        "lesson-4",
+        "lesson-6",
+        "lesson-8"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_SIZE",
+      "url": "https://elementor.com/help/style-tab-size/",
+      "used_by": [
+        "lesson-4",
+        "lesson-7"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_POSITION",
+      "url": "https://elementor.com/help/style-tab-position/",
+      "used_by": [
+        "lesson-12",
+        "lesson-13"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_GRID",
+      "url": "https://elementor.com/help/grid-container-layout-options/",
+      "used_by": [
+        "lesson-2",
+        "lesson-9"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_CLASSES",
+      "url": "https://elementor.com/help/classes-in-elementor-2/",
+      "used_by": [
+        "lesson-1",
+        "lesson-16",
+        "lesson-17",
+        "lesson-21",
+        "lesson-3",
+        "lesson-v17-class-manager",
+        "lesson-v17-components"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_CLASS_MANAGER",
+      "url": "https://elementor.com/help/the-elementor-editor-class-manager/",
+      "used_by": [
+        "lesson-3",
+        "lesson-v17-class-manager"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_CLASS_PRIORITY",
+      "url": "https://elementor.com/help/prioritize-conflicting-styles/",
+      "used_by": [
+        "lesson-3",
+        "lesson-v17-class-manager"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_VARIABLES",
+      "url": "https://elementor.com/help/variables/",
+      "used_by": [
+        "lesson-10",
+        "lesson-17",
+        "lesson-21",
+        "lesson-v17-components",
+        "lesson-v17-variables"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_VAR_MANAGER",
+      "url": "https://elementor.com/help/variables-manager/",
+      "used_by": [
+        "lesson-17",
+        "lesson-v17-variables"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_COMPONENTS",
+      "url": "https://elementor.com/help/components-2/",
+      "used_by": [
+        "lesson-17",
+        "lesson-v17-components"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_RESP",
+      "url": "https://elementor.com/help/responsive-editing/",
+      "used_by": [
+        "lesson-14"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_RESP_INHERIT",
+      "url": "https://elementor.com/help/inherited-responsive-values/",
+      "used_by": [
+        "lesson-14"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_RESP_CONTAINER",
+      "url": "https://elementor.com/help/responsive-design-using-containers/",
+      "used_by": [
+        "lesson-14",
+        "lesson-21",
+        "lesson-8"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_INTERACTIONS",
+      "url": "https://elementor.com/help/interactions/",
+      "used_by": [
+        "lesson-v17-interactions"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_FORM",
+      "url": "https://elementor.com/help/atomic-form-element/",
+      "used_by": [
+        "lesson-v17-atomic-forms"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_CUSTOM_CSS",
+      "url": "https://elementor.com/help/add-custom-css-to-an-element/",
+      "used_by": [
+        "lesson-16",
+        "lesson-v17-advanced"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_ATTRIBUTES",
+      "url": "https://elementor.com/help/add-and-delete-attributes/",
+      "used_by": [
+        "lesson-v17-advanced"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_DYNAMIC",
+      "url": "https://elementor.com/help/dynamic-tags-in-v4/",
+      "used_by": [
+        "lesson-v17-advanced"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_IMAGE",
+      "url": "https://elementor.com/help/style-tab-size/",
+      "used_by": [
+        "lesson-11"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "E_PERF",
+      "url": "https://elementor.com/help/container-performance-a-closer-look/",
+      "used_by": [
+        "lesson-18",
+        "lesson-19",
+        "lesson-20",
+        "lesson-v19-element-weight"
+      ],
+      "authority": "official_elementor_help"
+    },
+    {
+      "source_id": "CSS_DISPLAY",
+      "url": "https://www.w3.org/TR/css-display-3/",
+      "used_by": [
+        "lesson-1",
+        "lesson-2"
+      ],
+      "authority": "csswg_w3c_spec"
+    },
+    {
+      "source_id": "CSS_BOX",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model",
+      "used_by": [
+        "lesson-4"
+      ],
+      "authority": "mdn_educational_reference"
+    },
+    {
+      "source_id": "CSS_FLEX",
+      "url": "https://www.w3.org/TR/css-flexbox-1/",
+      "used_by": [
+        "lesson-15",
+        "lesson-5",
+        "lesson-6",
+        "lesson-7",
+        "lesson-8"
+      ],
+      "authority": "csswg_w3c_spec"
+    },
+    {
+      "source_id": "CSS_GRID",
+      "url": "https://www.w3.org/TR/css-grid-2/",
+      "used_by": [
+        "lesson-9"
+      ],
+      "authority": "csswg_w3c_spec"
+    },
+    {
+      "source_id": "CSS_ALIGN",
+      "url": "https://www.w3.org/TR/css-align-3/",
+      "used_by": [
+        "lesson-6",
+        "lesson-9"
+      ],
+      "authority": "csswg_w3c_spec"
+    },
+    {
+      "source_id": "CSS_POSITION",
+      "url": "https://www.w3.org/TR/css-position-3/",
+      "used_by": [
+        "lesson-12",
+        "lesson-13"
+      ],
+      "authority": "csswg_w3c_spec"
+    },
+    {
+      "source_id": "CSS_OVERFLOW",
+      "url": "https://www.w3.org/TR/css-overflow-3/",
+      "used_by": [
+        "lesson-12",
+        "lesson-13"
+      ],
+      "authority": "csswg_w3c_spec"
+    },
+    {
+      "source_id": "CSS_LOGICAL",
+      "url": "https://www.w3.org/TR/css-logical-1/",
+      "used_by": [
+        "lesson-15"
+      ],
+      "authority": "csswg_w3c_spec"
+    },
+    {
+      "source_id": "CSS_MEDIA",
+      "url": "https://www.w3.org/TR/mediaqueries-5/",
+      "used_by": [
+        "lesson-14"
+      ],
+      "authority": "csswg_w3c_spec"
+    },
+    {
+      "source_id": "CSS_IMAGES",
+      "url": "https://www.w3.org/TR/css-images-4/",
+      "used_by": [
+        "lesson-11"
+      ],
+      "authority": "csswg_w3c_spec"
+    },
+    {
+      "source_id": "CSS_VALUES",
+      "url": "https://www.w3.org/TR/css-values-4/",
+      "used_by": [
+        "lesson-4"
+      ],
+      "authority": "csswg_w3c_spec"
+    },
+    {
+      "source_id": "CSS_CASCADE",
+      "url": "https://www.w3.org/TR/css-cascade-6/",
+      "used_by": [
+        "lesson-3"
+      ],
+      "authority": "csswg_w3c_spec"
+    },
+    {
+      "source_id": "WAI_FOCUS",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
+      "used_by": [
+        "lesson-16",
+        "lesson-v17-atomic-forms",
+        "lesson-v17-interactions"
+      ],
+      "authority": "mdn_educational_reference"
+    },
+    {
+      "source_id": "MDN_TYPO",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Text_styling/Fundamentals",
+      "used_by": [
+        "lesson-10"
+      ],
+      "authority": "mdn_educational_reference"
+    },
+    {
+      "source_id": "MDN_RESP",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+      "used_by": [
+        "lesson-14"
+      ],
+      "authority": "mdn_educational_reference"
+    },
+    {
+      "source_id": "MDN_SVG",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/SVG",
+      "used_by": [
+        "lesson-11"
+      ],
+      "authority": "mdn_educational_reference"
+    }
+  ]
+}

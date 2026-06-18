@@ -1,0 +1,58 @@
+schema_version: 1.0.0
+contract_id: elementor-workbook-llm-edit-contract
+contract_version: 1.0.0
+always_read:
+  - AGENTS.md
+  - llm/model-contract.yaml
+  - llm/TASK.md
+  - README.md
+source_precedence:
+  - llm/TASK.md
+  - AGENTS.md and llm/model-contract.yaml
+  - versioned schemas
+  - content manifest and content units
+  - validated tests and baselines
+  - current implementation
+  - unverified conversational proposals
+generated_paths:
+  - dist/**
+  - release/**
+  - handoff/**
+  - .pytest_cache/**
+  - '**/__pycache__/**'
+protected_by_default:
+  - path: content/data/parity-baseline.json
+    reason: Frozen v31 parity baseline; change requires an explicit approved contract task.
+  - path: schemas/**
+    reason: Versioned public data contracts; change requires explicit schema scope and versioning.
+  - path: src/workbook_builder/**
+    reason: Deterministic generator implementation; content-only tasks must not change it.
+  - path: tests/**
+    reason: Tests may be added or tightened, but must not be weakened to hide regressions.
+  - path: static/source/**
+    reason: Historical evidence and handoff records; preserve unless deletion is explicitly approved.
+default_content_paths:
+  - content/units/**
+  - content/course.yaml
+  - CHANGELOG_FA.md
+required_commands:
+  - python validate.py
+  - python build.py
+  - python -m pytest -q -m "not browser"
+optional_environment_commands:
+  - python -m pytest -q -m browser
+return_contract:
+  format: complete_repository_zip
+  required_files:
+    - AGENTS.md
+    - README.md
+    - llm/TASK.md
+    - llm/model-contract.yaml
+    - content/course.yaml
+    - pyproject.toml
+    - requirements.lock
+    - validate.py
+    - build.py
+    - tools/check_all.py
+    - llm/RETURN_REPORT.md
+  report_path: llm/RETURN_REPORT.md

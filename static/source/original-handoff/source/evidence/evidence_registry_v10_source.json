@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0.0",
+  "course_version": "10.0.0",
+  "generated_date": "2026-06-15",
+  "evidence_policy": {
+    "observed": "Directly present in the supplied screenshot or Elementor export.",
+    "exported": "Stored in the supplied Elementor export.",
+    "proposed": "Course design or refactor suggestion; not the current project state.",
+    "improvement_candidate": "Potential improvement that requires runtime verification before being called a defect.",
+    "legacy_or_hybrid": "Valid mixed V3/V4 structure that may be refactored for the V4-focused course.",
+    "insufficient_evidence": "A final conclusion needs browser runtime evidence or additional fixtures."
+  },
+  "sources": [
+    {
+      "id": "SRC-TUYA-IMAGE",
+      "type": "reference_image",
+      "path": "assets/tuya-reference.jpg",
+      "state": "observed"
+    },
+    {
+      "id": "SRC-FORLESSON",
+      "type": "elementor_export",
+      "source_archive": "ForLesson.zip",
+      "manifest_path": "sources/forlesson-manifest.json",
+      "state": "exported",
+      "elementor_version": "4.1.3",
+      "elementor_pro_version": "4.1.0",
+      "theme": "Blocksy 2.1.45"
+    }
+  ],
+  "facts": [
+    {
+      "id": "EXP-MANIFEST-001",
+      "state": "exported",
+      "source": "SRC-FORLESSON",
+      "claim": "The export contains Home2 page 1315 and Solutions page 1879."
+    },
+    {
+      "id": "EXP-MANIFEST-002",
+      "state": "exported",
+      "source": "SRC-FORLESSON",
+      "claim": "The export declares Elementor 4.1.3, Elementor Pro 4.1.0, atomic elements, classes, variables, components, and V4 opt-in experiments."
+    },
+    {
+      "id": "EXP-MANIFEST-003",
+      "state": "exported",
+      "source": "SRC-FORLESSON",
+      "claim": "The export contains one global class named gradient-number and reports zero variables."
+    },
+    {
+      "id": "CASE-HOME2-GRID-001",
+      "state": "legacy_or_hybrid",
+      "source": "content/page/1315.json",
+      "page": "Home2",
+      "element_id": "750d8565",
+      "observed": [
+        "Legacy container with container_type grid.",
+        "Width is 100vw and minimum height is 100vh.",
+        "Grid column count is 2 and rows are stored as 0.5fr 1fr.",
+        "The subtree also contains V4 e-flexbox, e-heading, e-paragraph, e-svg, and e-button elements."
+      ],
+      "course_use": "Grid, viewport units, hybrid detection, and V4 refactor discussion.",
+      "runtime_status": "insufficient_evidence"
+    },
+    {
+      "id": "CASE-HOME2-DOM-001",
+      "state": "improvement_candidate",
+      "source": "content/page/1315.json",
+      "page": "Home2",
+      "element_ids": ["7f4c99f8", "58899882", "24a44a5b", "5d2f068c", "49dd1cd4"],
+      "observed": "These structural elements have no children in the export.",
+      "course_use": "Ask whether each empty element has a real layout or placeholder responsibility before removing it.",
+      "runtime_status": "insufficient_evidence"
+    },
+    {
+      "id": "CASE-HOME2-REUSE-001",
+      "state": "improvement_candidate",
+      "source": "content/page/1315.json",
+      "page": "Home2",
+      "observed": [
+        "Twelve e-svg local classes share the same exported style signature.",
+        "Twelve e-heading local classes share the same exported style signature.",
+        "Twelve e-paragraph local classes share the same exported style signature."
+      ],
+      "course_use": "Reusable classes and component extraction.",
+      "runtime_status": "static_export_evidence_only"
+    },
+    {
+      "id": "CASE-SOL-ABS-001",
+      "state": "improvement_candidate",
+      "source": "content/page/1879.json",
+      "page": "Solutions",
+      "element_id": "768b396f",
+      "observed": [
+        "Eight V4 flexbox cards share the same exported card style signature.",
+        "The cards are relative, 24% wide, and 20vw high on desktop.",
+        "Each icon is absolute at block-start 32px.",
+        "Each heading is absolute at block-start 190px.",
+        "Each paragraph is absolute at block-start 236px."
+      ],
+      "proposed": "Keep decorative icons positioned if needed, but refactor heading and paragraph into normal flex flow.",
+      "runtime_status": "insufficient_evidence"
+    },
+    {
+      "id": "CASE-SOL-IMAGE-001",
+      "state": "context_dependent",
+      "source": "content/page/1879.json",
+      "page": "Solutions",
+      "element_id": "562a19a0",
+      "observed": [
+        "Four card columns are 25% wide on desktop and 100% wide on mobile.",
+        "Four images share object-fit cover and object-position center center.",
+        "Image height is 15vw with 13rem minimum and 16rem maximum."
+      ],
+      "proposed": "Compare the current height constraints with an aspect-ratio-based V4 pattern.",
+      "runtime_status": "insufficient_evidence"
+    },
+    {
+      "id": "CASE-SOL-HYBRID-001",
+      "state": "legacy_or_hybrid",
+      "source": "content/page/1879.json",
+      "page": "Solutions",
+      "element_id": "2014eab",
+      "observed": [
+        "The subtree contains V4 e-flexbox, e-heading, e-paragraph, e-button, and e-svg elements.",
+        "The same subtree also contains legacy container, heading, text-editor, and icon-list elements."
+      ],
+      "proposed": "Use this section as a guided V4 refactor exercise without treating the mixed document as invalid.",
+      "runtime_status": "static_export_evidence_only"
+    },
+    {
+      "id": "CASE-SOL-REUSE-001",
+      "state": "improvement_candidate",
+      "source": "content/page/1879.json",
+      "page": "Solutions",
+      "observed": [
+        "Nine e-button local classes share one exported style signature.",
+        "Eight capability-card flexboxes share one exported style signature.",
+        "Eight capability icons, headings, and paragraphs each repeat a common exported signature.",
+        "Four image-card flexboxes, images, icons, headings, and paragraphs each repeat common signatures."
+      ],
+      "proposed": "Extract shared reusable classes and, where appropriate, V4 components.",
+      "runtime_status": "static_export_evidence_only"
+    },
+    {
+      "id": "CASE-CONTENT-BR-001",
+      "state": "context_dependent",
+      "source": "content/page/1315.json and content/page/1879.json",
+      "observed": "Several headings and paragraphs contain explicit br elements in their exported content.",
+      "proposed": "Keep semantic or art-directed breaks only when responsive and translation testing justifies them; otherwise allow natural wrapping.",
+      "runtime_status": "insufficient_evidence"
+    }
+  ]
+}

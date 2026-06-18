@@ -1,0 +1,145 @@
+{
+  "sources": {
+    "CSS_FLEX": {
+      "title": "W3C — CSS Flexible Box Layout",
+      "url": "https://www.w3.org/TR/css-flexbox-1/"
+    },
+    "CSS_GRID": {
+      "title": "W3C — CSS Grid Layout",
+      "url": "https://www.w3.org/TR/css-grid-2/"
+    },
+    "CSS_LOGICAL": {
+      "title": "W3C — CSS Logical Properties",
+      "url": "https://www.w3.org/TR/css-logical-1/"
+    },
+    "CSS_POSITION": {
+      "title": "W3C — CSS Positioned Layout",
+      "url": "https://www.w3.org/TR/css-position-3/"
+    },
+    "CSS_TIME": {
+      "title": "W3C — CSS Values time data type",
+      "url": "https://www.w3.org/TR/css-values-4/#time"
+    },
+    "CSS_TRANSFORM": {
+      "title": "W3C — CSS Transforms",
+      "url": "https://www.w3.org/TR/css-transforms-1/"
+    },
+    "CSS_VALUES": {
+      "title": "W3C — CSS Values and Units",
+      "url": "https://www.w3.org/TR/css-values-4/"
+    },
+    "E_CLASSES": {
+      "title": "Elementor V4 — Classes",
+      "url": "https://elementor.com/help/classes-in-elementor-2/"
+    },
+    "E_CLASS_MANAGER": {
+      "title": "Elementor V4 — Class Manager",
+      "url": "https://elementor.com/help/the-elementor-editor-class-manager/"
+    },
+    "E_COMPONENTS": {
+      "title": "Elementor V4 — Components",
+      "url": "https://elementor.com/help/components-2/"
+    },
+    "E_CONTAINER": {
+      "title": "Elementor — Container layout settings",
+      "url": "https://elementor.com/help/container-layout-tab-settings/"
+    },
+    "E_CONTAINER_ADV": {
+      "title": "Elementor — Container advanced settings",
+      "url": "https://elementor.com/help/container-advanced-tab-settings/"
+    },
+    "E_CONTAINER_SIZE": {
+      "title": "Elementor — Flexbox container size and behavior",
+      "url": "https://elementor.com/help/set-flexbox-container-size-behavior/"
+    },
+    "E_CUSTOM_CSS": {
+      "title": "Elementor V4 — Custom CSS",
+      "url": "https://elementor.com/help/add-custom-css-to-an-element/"
+    },
+    "E_DIFF": {
+      "title": "Elementor — Differences between Editor V3 and V4",
+      "url": "https://elementor.com/help/what-are-the-differences-between-the-elementor-editor-3-x-and-v4/"
+    },
+    "E_DYNAMIC": {
+      "title": "Elementor V4 — Dynamic tags",
+      "url": "https://elementor.com/help/dynamic-tags-in-v4/"
+    },
+    "E_EFFECTS": {
+      "title": "Elementor V4 — Style tab: Effects",
+      "url": "https://elementor.com/help/style-tab-effects/"
+    },
+    "E_FLEX_GAP": {
+      "title": "Elementor — Arrange elements in a Flexbox container",
+      "url": "https://elementor.com/help/adjusting-the-contained-elements/"
+    },
+    "E_FORM": {
+      "title": "Elementor V4 — Atomic Form",
+      "url": "https://elementor.com/help/atomic-form-element/"
+    },
+    "E_GRID": {
+      "title": "Elementor — Grid container layout options",
+      "url": "https://elementor.com/help/grid-container-layout-options/"
+    },
+    "E_INTERACTIONS": {
+      "title": "Elementor V4 — Interactions",
+      "url": "https://elementor.com/help/interactions/"
+    },
+    "E_LAYOUT": {
+      "title": "Elementor V4 — Style tab: Layout",
+      "url": "https://elementor.com/help/style-tab-layout/"
+    },
+    "E_POSITION": {
+      "title": "Elementor V4 — Style tab: Position",
+      "url": "https://elementor.com/help/style-tab-position/"
+    },
+    "E_RESP": {
+      "title": "Elementor V4 — Responsive editing",
+      "url": "https://elementor.com/help/responsive-editing/"
+    },
+    "E_SIZE": {
+      "title": "Elementor V4 — Style tab: Size",
+      "url": "https://elementor.com/help/style-tab-size/"
+    },
+    "E_SPACING": {
+      "title": "Elementor V4 — Style tab: Spacing",
+      "url": "https://elementor.com/help/style-tab-spacing/"
+    },
+    "E_TYPO": {
+      "title": "Elementor V4 — Style tab: Typography",
+      "url": "https://elementor.com/help/style-tab-typography/"
+    },
+    "E_TYPO_GENERAL": {
+      "title": "Elementor — Typography and units",
+      "url": "https://elementor.com/help/what-is-typography/"
+    },
+    "E_UNITS": {
+      "title": "Elementor — Units of measurement",
+      "url": "https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/"
+    },
+    "E_VARIABLES": {
+      "title": "Elementor V4 — Variables",
+      "url": "https://elementor.com/help/variables/"
+    },
+    "E_VAR_MANAGER": {
+      "title": "Elementor V4 — Variables Manager",
+      "url": "https://elementor.com/help/variables-manager/"
+    },
+    "MDN_CALC": {
+      "title": "MDN — calc()",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/calc"
+    },
+    "MDN_CLAMP": {
+      "title": "MDN — clamp()",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/clamp"
+    },
+    "MDN_LENGTH": {
+      "title": "MDN — CSS length values",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length"
+    },
+    "MDN_VALUES": {
+      "title": "MDN — CSS values and units",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Values_and_units"
+    }
+  },
+  "version": "29.0.0"
+}

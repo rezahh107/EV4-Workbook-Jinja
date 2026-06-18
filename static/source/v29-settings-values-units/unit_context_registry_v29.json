@@ -1,0 +1,726 @@
+{
+  "lesson_section_count": 28,
+  "lesson_sections": [
+    {
+      "lesson_id": "lesson-1",
+      "source_ids": [
+        "E_DIFF",
+        "E_UNITS",
+        "E_LAYOUT",
+        "CSS_VALUES"
+      ],
+      "title": "نوع مقدار در V4؛ همه‌چیز واحد طول نیست"
+    },
+    {
+      "lesson_id": "lesson-2",
+      "source_ids": [
+        "E_LAYOUT",
+        "E_FLEX_GAP",
+        "CSS_VALUES"
+      ],
+      "title": "Element Tree واحد ندارد؛ Layout داخل آن واحد می‌گیرد"
+    },
+    {
+      "lesson_id": "lesson-3",
+      "source_ids": [
+        "E_CLASSES",
+        "E_CLASS_MANAGER",
+        "E_VARIABLES",
+        "CSS_VALUES"
+      ],
+      "title": "Class واحد ندارد؛ Propertyهای داخل Class واحد دارند"
+    },
+    {
+      "lesson_id": "lesson-4",
+      "source_ids": [
+        "E_CONTAINER_SIZE",
+        "E_CONTAINER_ADV",
+        "E_SPACING",
+        "CSS_VALUES",
+        "MDN_LENGTH"
+      ],
+      "title": "Width، Padding و Margin؛ واحد مشابه، مرجع متفاوت"
+    },
+    {
+      "lesson_id": "lesson-5",
+      "source_ids": [
+        "E_LAYOUT",
+        "E_FLEX_GAP",
+        "E_CONTAINER",
+        "CSS_FLEX"
+      ],
+      "title": "Flexbox؛ موتور با keyword کار می‌کند، فاصله با طول"
+    },
+    {
+      "lesson_id": "lesson-6",
+      "source_ids": [
+        "E_LAYOUT",
+        "E_FLEX_GAP",
+        "CSS_FLEX"
+      ],
+      "title": "Align و Justify واحد ندارند؛ Gap دارد"
+    },
+    {
+      "lesson_id": "lesson-7",
+      "source_ids": [
+        "CSS_FLEX",
+        "E_CONTAINER_ADV",
+        "E_SIZE"
+      ],
+      "title": "Grow و Shrink عدد بدون واحدند؛ Basis و Width اندازه‌اند"
+    },
+    {
+      "lesson_id": "lesson-8",
+      "source_ids": [
+        "E_CONTAINER",
+        "E_FLEX_GAP",
+        "E_SIZE",
+        "CSS_FLEX"
+      ],
+      "title": "Wrap keyword است؛ عرض Logo و Gap واحد می‌گیرند"
+    },
+    {
+      "lesson_id": "lesson-9",
+      "source_ids": [
+        "E_GRID",
+        "CSS_GRID",
+        "E_UNITS"
+      ],
+      "title": "Grid؛ Trackها با fr، طول، درصد و تابع ساخته می‌شوند"
+    },
+    {
+      "lesson_id": "lesson-10",
+      "source_ids": [
+        "E_TYPO",
+        "E_TYPO_GENERAL",
+        "E_UNITS",
+        "MDN_LENGTH",
+        "CSS_VALUES"
+      ],
+      "title": "Typography؛ rem، em، px و vw مرجع‌های متفاوت دارند"
+    },
+    {
+      "lesson_id": "lesson-11",
+      "source_ids": [
+        "E_SIZE",
+        "CSS_VALUES",
+        "MDN_LENGTH"
+      ],
+      "title": "Image؛ Box اندازه دارد، محتوا نسبت و fit دارد"
+    },
+    {
+      "lesson_id": "lesson-12",
+      "source_ids": [
+        "E_POSITION",
+        "CSS_POSITION",
+        "CSS_LOGICAL"
+      ],
+      "title": "Position؛ mode keyword است، inset اندازه و z-index عدد"
+    },
+    {
+      "lesson_id": "lesson-13",
+      "source_ids": [
+        "E_EFFECTS",
+        "E_CONTAINER",
+        "CSS_POSITION",
+        "CSS_VALUES"
+      ],
+      "title": "Layering؛ z-index و opacity طول نیستند"
+    },
+    {
+      "lesson_id": "lesson-14",
+      "source_ids": [
+        "E_RESP",
+        "E_UNITS",
+        "MDN_LENGTH",
+        "CSS_VALUES"
+      ],
+      "title": "Responsive؛ breakpoint با px تعریف می‌شود، طراحی فقط px نیست"
+    },
+    {
+      "lesson_id": "lesson-15",
+      "source_ids": [
+        "CSS_LOGICAL",
+        "E_SPACING",
+        "E_UNITS"
+      ],
+      "title": "RTL؛ واحد همان است، جهت مرجع تغییر می‌کند"
+    },
+    {
+      "lesson_id": "lesson-16",
+      "source_ids": [
+        "E_EFFECTS",
+        "CSS_TRANSFORM",
+        "CSS_TIME",
+        "CSS_VALUES"
+      ],
+      "title": "State و Motion؛ زمان، زاویه، نسبت و طول"
+    },
+    {
+      "lesson_id": "lesson-17",
+      "source_ids": [
+        "E_VARIABLES",
+        "E_VAR_MANAGER",
+        "E_CLASSES",
+        "CSS_VALUES"
+      ],
+      "title": "Design System؛ Size Variable واحد را حمل می‌کند"
+    },
+    {
+      "lesson_id": "lesson-18",
+      "source_ids": [
+        "E_DIFF",
+        "E_RESP",
+        "E_UNITS",
+        "CSS_VALUES"
+      ],
+      "title": "Hybrid V3/V4؛ واحدها را هنگام مهاجرت کورکورانه یکی نکن"
+    },
+    {
+      "lesson_id": "lesson-v17-advanced",
+      "source_ids": [
+        "E_CUSTOM_CSS",
+        "E_DYNAMIC",
+        "MDN_CALC",
+        "MDN_CLAMP",
+        "CSS_VALUES"
+      ],
+      "title": "Custom CSS، Attribute و Dynamic Tag؛ نوع مقدار باید معتبر بماند"
+    },
+    {
+      "lesson_id": "lesson-v17-interactions",
+      "source_ids": [
+        "E_INTERACTIONS",
+        "CSS_TIME",
+        "CSS_TRANSFORM"
+      ],
+      "title": "Interactions؛ Duration و Delay زمان‌اند، Distance طول"
+    },
+    {
+      "lesson_id": "lesson-v17-atomic-forms",
+      "source_ids": [
+        "E_FORM",
+        "E_SIZE",
+        "E_SPACING",
+        "E_TYPO"
+      ],
+      "title": "Atomic Form؛ ساختار فرم بدون واحد است، Style فیلد واحد می‌گیرد"
+    },
+    {
+      "lesson_id": "lesson-v17-components",
+      "source_ids": [
+        "E_COMPONENTS",
+        "E_CLASSES",
+        "CSS_VALUES"
+      ],
+      "title": "Component واحد ندارد؛ Propertyهای Master و Instance دارند"
+    },
+    {
+      "lesson_id": "lesson-v17-variables",
+      "source_ids": [
+        "E_VARIABLES",
+        "E_VAR_MANAGER",
+        "E_UNITS",
+        "CSS_VALUES"
+      ],
+      "title": "Size Variable؛ واحد بخشی از مقدار است"
+    },
+    {
+      "lesson_id": "lesson-v17-class-manager",
+      "source_ids": [
+        "E_CLASS_MANAGER",
+        "E_CLASSES",
+        "CSS_VALUES"
+      ],
+      "title": "Class Manager ترتیب می‌دهد، نه واحد"
+    },
+    {
+      "lesson_id": "lesson-19",
+      "source_ids": [
+        "E_VAR_MANAGER",
+        "E_SIZE",
+        "E_TYPO_GENERAL",
+        "E_UNITS"
+      ],
+      "title": "Refactor؛ واحد را با intent استاندارد کن، نه با سلیقه"
+    },
+    {
+      "lesson_id": "lesson-20",
+      "source_ids": [
+        "E_DIFF",
+        "CSS_TIME",
+        "MDN_LENGTH",
+        "MDN_VALUES"
+      ],
+      "title": "Performance؛ بعضی شاخص‌ها واحد فنی دیگری دارند"
+    },
+    {
+      "lesson_id": "lesson-v19-element-weight",
+      "source_ids": [
+        "E_DIFF",
+        "E_LAYOUT",
+        "CSS_VALUES"
+      ],
+      "title": "وزن Element؛ شمارش و مسئولیت، نه واحد طول"
+    },
+    {
+      "lesson_id": "lesson-21",
+      "source_ids": [
+        "E_SIZE",
+        "E_SPACING",
+        "E_TYPO_GENERAL",
+        "E_EFFECTS",
+        "E_RESP"
+      ],
+      "title": "Boss Fight؛ انتخاب واحد باید قابل توضیح باشد"
+    }
+  ],
+  "step_through": {
+    "goal": "با عددهای واقعی ببین که Property و مرجع محاسبه چگونه نتیجهٔ نهایی را می‌سازند.",
+    "id": "stv2-unit-context-math",
+    "lab_target": "units-atlas-build-test",
+    "lesson_id": "appendix-v29-units-atlas",
+    "renderer": "unit-context",
+    "states": [
+      {
+        "computed": [
+          [
+            "Formula",
+            "2 × 16px"
+          ],
+          [
+            "Computed",
+            "32px"
+          ]
+        ],
+        "elementor": [
+          [
+            "Control",
+            "Typography → Font Size"
+          ],
+          [
+            "Declared",
+            "2 REM"
+          ],
+          [
+            "Root font",
+            "16px"
+          ]
+        ],
+        "evidence": "verified_by_css_spec",
+        "explanation": "rem همیشه از اندازهٔ فونت عنصر ریشه می‌آید؛ این Property فقط می‌گوید طول محاسبه‌شده برای Font Size مصرف شود.",
+        "golden_rule": "rem مرجع root دارد؛ Property محل مصرف را تعیین می‌کند.",
+        "id": "font-rem",
+        "phase": "مرجع Root",
+        "prediction": {
+          "correct": 1,
+          "feedback_correct": "درست است؛ 2 × 18 = 36px.",
+          "feedback_wrong": "مرجع rem اندازهٔ فونت root است.",
+          "options": [
+            "32px",
+            "36px",
+            "18px"
+          ],
+          "prompt": "اگر root از 16px به 18px برسد، 2rem چند px می‌شود؟"
+        },
+        "summary": "۲rem با root برابر ۱۶px به ۳۲px تبدیل می‌شود.",
+        "title": "Font Size با rem",
+        "visual": {
+          "declared": "2rem",
+          "formula": "2 × 16",
+          "kind": "font",
+          "max": 64,
+          "property": "font-size",
+          "reference": "root font-size = 16px",
+          "result": 32
+        }
+      },
+      {
+        "computed": [
+          [
+            "Formula",
+            "2 × 20px"
+          ],
+          [
+            "Computed",
+            "40px"
+          ]
+        ],
+        "elementor": [
+          [
+            "Control",
+            "Typography → Font Size"
+          ],
+          [
+            "Declared",
+            "2 EM"
+          ],
+          [
+            "Parent font",
+            "20px"
+          ]
+        ],
+        "evidence": "verified_by_css_spec",
+        "explanation": "در font-size، em نسبت به font-size والد محاسبه می‌شود؛ nesting می‌تواند scaling زنجیره‌ای بسازد.",
+        "golden_rule": "em در font-size محلی و وابسته به والد است.",
+        "id": "font-em",
+        "phase": "مرجع Parent",
+        "prediction": {
+          "correct": 1,
+          "feedback_correct": "درست است؛ 2 × 18 = 36px.",
+          "feedback_wrong": "برای font-size، em از والد می‌آید.",
+          "options": [
+            "18px",
+            "36px",
+            "32px"
+          ],
+          "prompt": "اگر Parent برابر 18px باشد، 2em چند px است؟"
+        },
+        "summary": "۲em در font-size با Parent برابر ۲۰px به ۴۰px می‌رسد.",
+        "title": "Font Size با em",
+        "visual": {
+          "declared": "2em",
+          "formula": "2 × 20",
+          "kind": "font",
+          "max": 64,
+          "property": "font-size",
+          "reference": "parent font-size = 20px",
+          "result": 40
+        }
+      },
+      {
+        "computed": [
+          [
+            "Formula",
+            "0.5 × 1200"
+          ],
+          [
+            "Computed",
+            "600px"
+          ]
+        ],
+        "elementor": [
+          [
+            "Control",
+            "Style → Size → Width"
+          ],
+          [
+            "Declared",
+            "50%"
+          ],
+          [
+            "Parent width",
+            "1200px"
+          ]
+        ],
+        "evidence": "verified_by_css_spec",
+        "explanation": "درصد همیشه به یک مقدار مرجع وابسته است؛ برای Width معمولاً containing block افقی مبناست.",
+        "golden_rule": "درصد بدون دانستن مرجع ناقص است.",
+        "id": "width-percent",
+        "phase": "مرجع Parent",
+        "prediction": {
+          "correct": 0,
+          "feedback_correct": "درست است؛ 0.5 × 800 = 400px.",
+          "feedback_wrong": "درصد Width به عرض مرجع وابسته است.",
+          "options": [
+            "400px",
+            "600px",
+            "50px"
+          ],
+          "prompt": "همان 50% در Parent با عرض 800px چند px می‌شود؟"
+        },
+        "summary": "۵۰٪ از Parent با عرض ۱۲۰۰px برابر ۶۰۰px است.",
+        "title": "Width با درصد",
+        "visual": {
+          "declared": "50%",
+          "formula": "0.5 × 1200",
+          "kind": "box",
+          "max": 1200,
+          "property": "width",
+          "reference": "parent width = 1200px",
+          "result": 600
+        }
+      },
+      {
+        "computed": [
+          [
+            "Formula",
+            "30 × 16"
+          ],
+          [
+            "Computed",
+            "480px"
+          ]
+        ],
+        "elementor": [
+          [
+            "UI note",
+            "ممکن است این واحد در همهٔ Width controls عرضه نشود"
+          ],
+          [
+            "Custom CSS",
+            "width: 30rem"
+          ],
+          [
+            "Root font",
+            "16px"
+          ]
+        ],
+        "evidence": "verified_by_css_spec",
+        "explanation": "rem برای Width همان مرجع root را دارد؛ فقط نتیجه برای عرض جعبه مصرف می‌شود.",
+        "golden_rule": "معنای rem تغییر نمی‌کند؛ نقش Property تغییر می‌کند.",
+        "id": "width-rem",
+        "phase": "مرجع Root",
+        "prediction": {
+          "correct": 0,
+          "feedback_correct": "درست است؛ 30 × 20 = 600px.",
+          "feedback_wrong": "rem همیشه به root وابسته است.",
+          "options": [
+            "600px",
+            "480px",
+            "30px"
+          ],
+          "prompt": "اگر root برابر 20px شود، width:30rem چند px می‌شود؟"
+        },
+        "summary": "۳۰rem با root برابر ۱۶px، Width برابر ۴۸۰px می‌سازد.",
+        "title": "Width با rem",
+        "visual": {
+          "declared": "30rem",
+          "formula": "30 × 16",
+          "kind": "box",
+          "max": 1200,
+          "property": "width",
+          "reference": "root font-size = 16px",
+          "result": 480
+        }
+      },
+      {
+        "computed": [
+          [
+            "Formula",
+            "0.40 × 1440"
+          ],
+          [
+            "Computed",
+            "576px"
+          ]
+        ],
+        "elementor": [
+          [
+            "Control",
+            "Width controls that expose VW"
+          ],
+          [
+            "Declared",
+            "40 VW"
+          ],
+          [
+            "Viewport width",
+            "1440px"
+          ]
+        ],
+        "evidence": "verified_by_css_spec",
+        "explanation": "هر 1vw برابر یک درصد عرض viewport است. این واحد می‌تواند در نمایشگرهای بسیار کوچک و بزرگ تغییر زیادی بسازد.",
+        "golden_rule": "vw با Parent نمی‌رقصد؛ با viewport می‌رقصد.",
+        "id": "width-vw",
+        "phase": "مرجع Viewport",
+        "prediction": {
+          "correct": 0,
+          "feedback_correct": "درست است؛ 40٪ از 1000 برابر 400 است.",
+          "feedback_wrong": "vw نسبت به عرض viewport است.",
+          "options": [
+            "400px",
+            "576px",
+            "40px"
+          ],
+          "prompt": "در viewport با عرض 1000px، 40vw چند px می‌شود؟"
+        },
+        "summary": "۴۰vw در viewport با عرض ۱۴۴۰px برابر ۵۷۶px است.",
+        "title": "Width با vw",
+        "visual": {
+          "declared": "40vw",
+          "formula": "0.40 × 1440",
+          "kind": "box",
+          "max": 1440,
+          "property": "width",
+          "reference": "viewport width = 1440px",
+          "result": 576
+        }
+      },
+      {
+        "computed": [
+          [
+            "Formula",
+            "0.40 × 780"
+          ],
+          [
+            "Computed",
+            "312px"
+          ]
+        ],
+        "elementor": [
+          [
+            "UI status",
+            "not asserted as available in every control"
+          ],
+          [
+            "Custom CSS",
+            "min-height: 40dvh"
+          ],
+          [
+            "Dynamic viewport",
+            "780px"
+          ]
+        ],
+        "evidence": "verified_by_css_spec",
+        "explanation": "dvh از dynamic viewport height می‌آید. Elementor ممکن است این واحد را در کنترل UI عرضه نکند؛ در اینجا قابلیت CSS/Custom CSS آموزش داده می‌شود.",
+        "golden_rule": "CSS-supported با Elementor-UI-exposed یکی نیست.",
+        "id": "height-dvh",
+        "phase": "Viewport پویا",
+        "prediction": {
+          "correct": 0,
+          "feedback_correct": "درست است؛ 0.4 × 700 = 280px.",
+          "feedback_wrong": "dvh از ارتفاع پویا محاسبه می‌شود.",
+          "options": [
+            "280px",
+            "312px",
+            "400px"
+          ],
+          "prompt": "اگر dynamic viewport height برابر 700px شود، 40dvh چند px است؟"
+        },
+        "summary": "۴۰dvh در viewport پویا با ارتفاع ۷۸۰px برابر ۳۱۲px است.",
+        "title": "Height با dvh",
+        "visual": {
+          "declared": "40dvh",
+          "formula": "0.40 × 780",
+          "kind": "box-height",
+          "max": 780,
+          "property": "min-height",
+          "reference": "dynamic viewport height = 780px",
+          "result": 312
+        }
+      },
+      {
+        "computed": [
+          [
+            "Total fractions",
+            "3"
+          ],
+          [
+            "Tracks",
+            "300px / 600px"
+          ]
+        ],
+        "elementor": [
+          [
+            "Context",
+            "Grid track sizing"
+          ],
+          [
+            "Declared",
+            "1fr 2fr"
+          ],
+          [
+            "Free space",
+            "900px"
+          ]
+        ],
+        "evidence": "verified_by_css_spec",
+        "explanation": "fr سهمی از فضای آزاد Grid است. Gap و Trackهای ثابت پیش از تقسیم فضای آزاد اثر می‌گذارند.",
+        "golden_rule": "fr درصد کل نیست؛ سهم فضای آزاد است.",
+        "id": "grid-fr",
+        "phase": "فضای آزاد Grid",
+        "prediction": {
+          "correct": 0,
+          "feedback_correct": "درست است؛ سه سهم داریم: 400 و 800.",
+          "feedback_wrong": "1fr:2fr یعنی نسبت یک به دو.",
+          "options": [
+            "400px و 800px",
+            "600px و 600px",
+            "300px و 900px"
+          ],
+          "prompt": "اگر فضای آزاد 1200px باشد، 1fr و 2fr چه می‌شوند؟"
+        },
+        "summary": "در ۹۰۰px فضای آزاد، الگوی 1fr 2fr به ۳۰۰px و ۶۰۰px تقسیم می‌شود.",
+        "title": "Track با fr",
+        "visual": {
+          "declared": "1fr 2fr",
+          "formula": "900 ÷ 3",
+          "kind": "grid",
+          "max": 900,
+          "property": "grid-template-columns",
+          "reference": "free space = 900px",
+          "result": 300,
+          "secondary": 600
+        }
+      },
+      {
+        "computed": [
+          [
+            "Formula",
+            "200 ÷ 1000"
+          ],
+          [
+            "Seconds",
+            "0.2s"
+          ]
+        ],
+        "elementor": [
+          [
+            "Control",
+            "Transition / Interaction Duration"
+          ],
+          [
+            "Declared",
+            "200 MS"
+          ],
+          [
+            "Equivalent",
+            "0.2 s"
+          ]
+        ],
+        "evidence": "verified_by_official_elementor_help",
+        "explanation": "واحد زمان به Propertyهای animation/transition/interactions تعلق دارد. Elementor در Effects و Interactions نمونه‌های ms را مستند کرده است.",
+        "golden_rule": "هر عددی طول نیست؛ 200ms یک پنجم ثانیه است.",
+        "id": "time-ms",
+        "phase": "زمان",
+        "prediction": {
+          "correct": 0,
+          "feedback_correct": "درست است؛ 1500 ÷ 1000 = 1.5s.",
+          "feedback_wrong": "هر 1000ms یک ثانیه است.",
+          "options": [
+            "1.5s",
+            "15s",
+            "0.15s"
+          ],
+          "prompt": "1500ms چند ثانیه است؟"
+        },
+        "summary": "۲۰۰ms برابر ۰٫۲s است. این مقدار اندازهٔ جعبه نیست؛ زمان transition است.",
+        "title": "Duration با ms",
+        "visual": {
+          "declared": "200ms",
+          "formula": "200 ÷ 1000",
+          "kind": "time",
+          "max": 1000,
+          "property": "transition-duration",
+          "reference": "1000ms = 1s",
+          "result": 200
+        }
+      }
+    ],
+    "storage_key": "edis-workbook-v29-stv2-unit-context-math",
+    "title": "واحد یکسان، مرجع متفاوت — محاسبه را ببین",
+    "verification": [
+      {
+        "source_id": "E_UNITS",
+        "status": "verified_by_official_elementor_help"
+      },
+      {
+        "source_id": "CSS_VALUES",
+        "status": "verified_by_css_spec"
+      }
+    ],
+    "version": "1.0.0"
+  },
+  "version": "29.0.0"
+}

@@ -1,0 +1,221 @@
+{
+  "version": "30.0.0",
+  "last_reviewed": "2026-06-17",
+  "policy": "Official Elementor Help Center > official developer docs > CSS primary references > validated workbook fixtures > educational models",
+  "sources": [
+    {
+      "id": "E_V4_CSS_FIRST",
+      "title": "Why Elementor is going CSS-first",
+      "url": "https://elementor.com/blog/editor-v4-css-first/",
+      "authority": "official_elementor_blog",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "V4 emphasizes CSS fundamentals, inheritance, hierarchy, reusable Variables, Classes and States"
+      ]
+    },
+    {
+      "id": "E_V4_40_DEV",
+      "title": "Elementor Editor 4.0 Developers Update",
+      "url": "https://developers.elementor.com/elementor-editor-4-0-developers-update/",
+      "authority": "official_elementor_developer_docs",
+      "evidence_label": "verified_by_elementor_developer_docs",
+      "claims": [
+        "V4 foundation includes Atomic Elements, Variables, Classes and Components",
+        "system-based workflow targets consistency and scale"
+      ]
+    },
+    {
+      "id": "E_UNITS",
+      "title": "Units of measurement",
+      "url": "https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "Elementor documents px, em, rem, percentage, vw and vh",
+        "unit availability is contextual"
+      ]
+    },
+    {
+      "id": "E_VARIABLES",
+      "title": "Variables",
+      "url": "https://elementor.com/help/variables/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "A variable is a nickname/reference for a value",
+        "variables can be used across a site and inside classes"
+      ]
+    },
+    {
+      "id": "E_VARIABLES_MANAGER",
+      "title": "Variables Manager",
+      "url": "https://elementor.com/help/variables-manager/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "Official variable types are exactly Color, Font and Size"
+      ]
+    },
+    {
+      "id": "E_DESIGN_SYSTEM_IO",
+      "title": "How to import and export design systems",
+      "url": "https://elementor.com/help/how-to-import-and-export-design-systems/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "Variables and classes export as one ZIP",
+        "individual selective import is unavailable",
+        "name conflicts are handled by replace or keep existing"
+      ]
+    },
+    {
+      "id": "E_VARIABLE_SYNC",
+      "title": "How to sync variables and global elements",
+      "url": "https://elementor.com/help/how-to-sync-variables-and-global-elements/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "Atomic variables can sync to V3 Global Colors or Global Fonts",
+        "font syncing is limited to Typography"
+      ]
+    },
+    {
+      "id": "E_CLASSES",
+      "title": "Classes in Elementor",
+      "url": "https://elementor.com/help/classes-in-elementor-2/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "Every element has a Local Class",
+        "Global Classes are reusable",
+        "Local properties can be converted to a Global Class"
+      ]
+    },
+    {
+      "id": "E_CLASS_PRIORITY",
+      "title": "Prioritize conflicting styles",
+      "url": "https://elementor.com/help/prioritize-conflicting-styles/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "The leftmost class has priority",
+        "Local Class is always leftmost and highest in Elementor class hierarchy"
+      ]
+    },
+    {
+      "id": "E_CLASS_MANAGER",
+      "title": "The Elementor Editor Class Manager",
+      "url": "https://elementor.com/help/the-elementor-editor-class-manager/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "Reordering Global Classes changes their priority"
+      ]
+    },
+    {
+      "id": "E_STATES",
+      "title": "Element states",
+      "url": "https://elementor.com/help/element-states/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "A State is edited for the selected class in the Style tab"
+      ]
+    },
+    {
+      "id": "E_COMPONENTS",
+      "title": "Components",
+      "url": "https://elementor.com/help/components-2/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "Components use Atomic Elements",
+        "creation and editing require Elementor Pro and Admin-level permissions",
+        "only eligible General-tab fields with the property icon can be customized",
+        "Instance overrides persist after Master updates",
+        "Detach Component is supported",
+        "Component nesting remains insufficient_evidence in this package"
+      ]
+    },
+    {
+      "id": "E_DYNAMIC_V4",
+      "title": "Dynamic tags in V4",
+      "url": "https://elementor.com/help/dynamic-tags-in-v4/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "V4 provides Post Custom Field and other official Dynamic Tags"
+      ]
+    },
+    {
+      "id": "E_ACF",
+      "title": "Elementor Integration With ACF",
+      "url": "https://elementor.com/help/elementor-acf/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "Supported ACF fields can be selected through Dynamic controls",
+        "fields omitted from the supported list, including repeater, are unsupported at the review date"
+      ]
+    },
+    {
+      "id": "E_LOOP_GRID",
+      "title": "Loop Grid widget",
+      "url": "https://elementor.com/help/loop-grid/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "Loop Grid uses a template and Query controls",
+        "Source, Include and Exclude control displayed items"
+      ]
+    },
+    {
+      "id": "E_QUERIES",
+      "title": "Create queries",
+      "url": "https://elementor.com/help/create-queries/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "Query Source determines data type",
+        "Include and Exclude filter results"
+      ]
+    },
+    {
+      "id": "E_INTERACTIONS",
+      "title": "Interactions",
+      "url": "https://elementor.com/help/interactions/",
+      "authority": "official_elementor_help",
+      "evidence_label": "verified_by_official_elementor_help",
+      "claims": [
+        "Triggers include Page Load, Scroll Into View, While Scrolling, On Hover and On Click",
+        "Effects include Fade, Slide and Scale",
+        "Types are In and Out",
+        "Duration and Delay are milliseconds",
+        "multiple interactions can be added to one element"
+      ]
+    },
+    {
+      "id": "CSS_VALUES",
+      "title": "CSS values and units",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Values_and_units",
+      "authority": "mdn_primary_css_reference",
+      "evidence_label": "verified_by_css_spec",
+      "claims": [
+        "CSS values include numbers, dimensions, percentages, keywords, functions and references"
+      ]
+    },
+    {
+      "id": "CSS_LENGTH",
+      "title": "CSS length data type",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length",
+      "authority": "mdn_primary_css_reference",
+      "evidence_label": "verified_by_css_spec",
+      "claims": [
+        "rem is root-font-relative",
+        "em is font-relative",
+        "vw/vh/dvh are viewport-relative",
+        "dvh is a CSS unit and is not asserted as exposed in every Elementor control"
+      ]
+    }
+  ]
+}

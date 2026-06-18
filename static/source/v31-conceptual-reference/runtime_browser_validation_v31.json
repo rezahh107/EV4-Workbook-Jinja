@@ -1,0 +1,156 @@
+{
+  "version": "31.0.0",
+  "performed": true,
+  "browser": "Chromium system executable",
+  "checks": {
+    "page_loaded_v31": {
+      "passed": true,
+      "detail": null
+    },
+    "conceptual_references_28": {
+      "passed": true,
+      "detail": 28
+    },
+    "structured_sections_377": {
+      "passed": true,
+      "detail": 377
+    },
+    "all_references_initially_closed": {
+      "passed": true,
+      "detail": 0
+    },
+    "reference_opens_by_click": {
+      "passed": true,
+      "detail": null
+    },
+    "complete_reference_content_loaded": {
+      "passed": true,
+      "detail": 5174
+    },
+    "deep_link_opens_reference": {
+      "passed": true,
+      "detail": null
+    },
+    "deep_link_target_visible": {
+      "passed": true,
+      "detail": null
+    },
+    "step_throughs_initialized_7": {
+      "passed": true,
+      "detail": 7
+    },
+    "theme_toggle_preserved": {
+      "passed": true,
+      "detail": [
+        "dark-navy",
+        "dark-gray"
+      ]
+    },
+    "mobile_page_no_global_horizontal_overflow": {
+      "passed": true,
+      "detail": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "tableWrappers": [
+          {
+            "scrollWidth": 576,
+            "clientWidth": 290
+          }
+        ],
+        "codeBlocks": [
+          {
+            "scrollWidth": 287,
+            "clientWidth": 287
+          },
+          {
+            "scrollWidth": 290,
+            "clientWidth": 290
+          },
+          {
+            "scrollWidth": 485,
+            "clientWidth": 287
+          },
+          {
+            "scrollWidth": 290,
+            "clientWidth": 290
+          },
+          {
+            "scrollWidth": 287,
+            "clientWidth": 287
+          },
+          {
+            "scrollWidth": 587,
+            "clientWidth": 290
+          },
+          {
+            "scrollWidth": 287,
+            "clientWidth": 287
+          }
+        ]
+      }
+    },
+    "mobile_tables_contained": {
+      "passed": true,
+      "detail": [
+        {
+          "scrollWidth": 576,
+          "clientWidth": 290
+        }
+      ]
+    },
+    "mobile_code_contained": {
+      "passed": true,
+      "detail": [
+        {
+          "scrollWidth": 287,
+          "clientWidth": 287
+        },
+        {
+          "scrollWidth": 290,
+          "clientWidth": 290
+        },
+        {
+          "scrollWidth": 485,
+          "clientWidth": 287
+        },
+        {
+          "scrollWidth": 290,
+          "clientWidth": 290
+        },
+        {
+          "scrollWidth": 287,
+          "clientWidth": 287
+        },
+        {
+          "scrollWidth": 587,
+          "clientWidth": 290
+        },
+        {
+          "scrollWidth": 287,
+          "clientWidth": 287
+        }
+      ]
+    },
+    "print_reference_visible": {
+      "passed": true,
+      "detail": "block"
+    },
+    "no_external_network_requests": {
+      "passed": true,
+      "detail": []
+    },
+    "no_console_errors": {
+      "passed": true,
+      "detail": []
+    },
+    "no_page_errors": {
+      "passed": true,
+      "detail": []
+    }
+  },
+  "console_errors": [],
+  "page_errors": [],
+  "external_requests": [],
+  "status": "passed",
+  "failed_checks": []
+}

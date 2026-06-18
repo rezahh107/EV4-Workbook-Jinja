@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:elementor-workbook:schema:unit:1.0.0",
+  "title": "Workbook content unit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "kind",
+    "tag",
+    "classes",
+    "attributes",
+    "source",
+    "format",
+    "title",
+    "allow_raw_html"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]*$",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["lesson", "station", "appendix", "preface"]
+    },
+    "tag": {
+      "type": "string",
+      "enum": ["article", "section"]
+    },
+    "classes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z_][A-Za-z0-9_-]*$"
+      },
+      "uniqueItems": true
+    },
+    "attributes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "propertyNames": {
+        "pattern": "^(aria-[a-z0-9-]+|data-[a-z0-9-]+|role|tabindex|lang|dir)$"
+      }
+    },
+    "source": {
+      "type": "string",
+      "pattern": "^units/[A-Za-z0-9._-]+\\.md$"
+    },
+    "format": {
+      "type": "string",
+      "enum": ["markdown", "trusted_html"]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "allow_raw_html": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"format": {"const": "trusted_html"}},
+        "required": ["format"]
+      },
+      "then": {
+        "properties": {"allow_raw_html": {"const": true}}
+      }
+    },
+    {
+      "if": {
+        "properties": {"format": {"const": "markdown"}},
+        "required": ["format"]
+      },
+      "then": {
+        "properties": {"allow_raw_html": {"const": false}}
+      }
+    }
+  ]
+}

@@ -1,0 +1,1287 @@
+/* ============================================================
+   PersianNew — HTML Viewer Adapter
+   Base: PersianNew Production Ready Typora Theme
+   Author: رضا
+   Adapter Version: 13.4 — هماهنگ‌شده با HTML Viewer دوره
+   ============================================================ */
+
+/* ============================================================
+   0) Font System
+   نکته: فونت‌ها داخل بسته قرار داده نشده‌اند. اگر فایل‌ها را داری،
+   پوشهٔ fonts را کنار همین HTML/CSS قرار بده.
+   ============================================================ */
+
+@font-face {
+  font-family: 'PersianNew-UI';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/AmazonEmberDisplay_Rg.ttf') format('truetype');
+  unicode-range:
+    U+0020-007F, U+00A0-00FF, U+0100-024F, U+02BB-02BC,
+    U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070-209F,
+    U+20A0-20CF, U+2100-214F, U+2190-21FF, U+2200-22FF,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'PersianNew-UI';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/AmazonEmberDisplay_Md.ttf') format('truetype');
+  unicode-range:
+    U+0020-007F, U+00A0-00FF, U+0100-024F, U+02BB-02BC,
+    U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070-209F,
+    U+20A0-20CF, U+2100-214F, U+2190-21FF, U+2200-22FF,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'PersianNew-UI';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/Vazir-Regular.woff2') format('woff2');
+  unicode-range:
+    U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF,
+    U+FE70-FEFF, U+200C-200F, U+202A-202E, U+2066-2069;
+}
+
+@font-face {
+  font-family: 'PersianNew-UI';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/Vazir-Bold.woff2') format('woff2');
+  unicode-range:
+    U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF,
+    U+FE70-FEFF, U+200C-200F, U+202A-202E, U+2066-2069;
+}
+
+@font-face {
+  font-family: 'PersianCodeFallback';
+  src: local('Tahoma');
+  unicode-range:
+    U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF,
+    U+FE70-FEFF, U+200C-200F, U+202A-202E, U+2066-2069;
+}
+
+/* ============================================================
+   1) Design Tokens
+   ============================================================ */
+
+:root {
+  color-scheme: light dark;
+
+  --font-ui:
+    'PersianNew-UI', 'Vazirmatn', 'Tahoma',
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+
+  --font-code:
+    'PersianCodeFallback',
+    'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'Cascadia Mono',
+    'Consolas', 'Courier New', monospace;
+
+  --monospace: var(--font-code);
+
+  --ui-font-size: 15.5px;
+  --text-size: 1rem;
+  --text-size-small: 0.92rem;
+  --text-size-table: 0.92rem;
+  --text-size-code: 8pt;
+  --text-size-inline-code: 0.86em;
+
+  --line-height-text: 1.82;
+  --line-height-heading: 1.42;
+  --line-height-code: 1.62;
+
+  --h1-size: 2rem;
+  --h2-size: 1.62rem;
+  --h3-size: 1.34rem;
+  --h4-size: 1.14rem;
+  --h5-size: 1.02rem;
+  --h6-size: 0.95rem;
+
+  --write-width: 980px;
+  --write-width-lg: 1080px;
+  --write-width-xl: 1180px;
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+
+  --bg-color: #ffffff;
+  --bg-subtle: #f8fafc;
+  --bg-soft: #f1f5f9;
+  --bg-hover: #eef2ff;
+
+  --text-color: #374151;
+  --text-muted: #6b7280;
+  --text-faint: #9ca3af;
+
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: #eff6ff;
+
+  --border-color: #e5e7eb;
+  --border-strong: #d1d5db;
+
+  --code-bg: #f8fafc;
+  --code-text: #334155;
+  --code-inline-color: #be185d;
+  --code-border: #e2e8f0;
+
+  --quote-bg: #f8fafc;
+  --quote-border: #2563eb;
+
+  --table-stripe: #fafafa;
+  --table-hover: #f4f7ff;
+
+  --selection-bg: #bfdbfe;
+  --selection-text: #1e3a8a;
+
+  --shadow-sm: rgba(0, 0, 0, 0.06);
+  --shadow-md: rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================================
+   2) Base / Layout
+   ============================================================ */
+
+html {
+  font-size: var(--ui-font-size);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  direction: rtl;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: var(--line-height-text);
+  font-weight: 400;
+  font-synthesis: none;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  caret-color: var(--accent-color);
+  overflow-x: hidden;
+}
+
+#write {
+  position: relative;
+  direction: rtl;
+  text-align: right;
+  width: auto;
+  max-width: min(var(--write-width), 100%);
+  margin: 0 auto;
+  padding: 2rem 3.25rem 4rem;
+  font-size: var(--text-size);
+  line-height: var(--line-height-text);
+  color: var(--text-color);
+  background: var(--bg-color);
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+@media only screen and (min-width: 1400px) {
+  #write { max-width: min(var(--write-width-lg), 100%); }
+}
+@media only screen and (min-width: 1700px) {
+  #write { max-width: min(var(--write-width-xl), 100%); }
+}
+@media only screen and (max-width: 768px) {
+  #write { max-width: 100%; padding: 1.25rem; }
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================================
+   3) Typography
+   ============================================================ */
+
+#write :is(p, li, blockquote, blockquote p, table, th, td,
+           h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-ui) !important;
+  direction: rtl;
+  text-align: right;
+}
+
+#write :is(strong, b, em, i, mark, a) {
+  font-family: var(--font-ui) !important;
+}
+
+#write p,
+#write li {
+  font-size: var(--text-size);
+  line-height: var(--line-height-text);
+  margin-top: 0;
+  margin-bottom: 1.1em;
+}
+
+#write :is(h1, h2, h3, h4, h5, h6) {
+  font-weight: 700;
+  line-height: var(--line-height-heading);
+  color: var(--text-color);
+  letter-spacing: 0;
+}
+
+#write h1 {
+  font-size: var(--h1-size);
+  margin: 1.35em 0 0.65em;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+#write h2 {
+  font-size: var(--h2-size);
+  margin: 1.25em 0 0.6em;
+  padding-bottom: 0.28em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#write h3 {
+  font-size: var(--h3-size);
+  margin: 1.15em 0 0.55em;
+  color: var(--accent-color);
+}
+
+#write h4 { font-size: var(--h4-size); margin: 1.05em 0 0.5em; }
+#write h5 { font-size: var(--h5-size); margin: 1em 0 0.45em; }
+#write h6 { font-size: var(--h6-size); margin: 1em 0 0.45em; color: var(--text-muted); }
+
+#write strong,
+#write b {
+  font-weight: 700;
+}
+
+em, i { font-style: italic; }
+
+mark {
+  background-color: #fef08a;
+  color: #374151;
+  border-radius: 3px;
+  padding: 0 0.22em;
+}
+
+/* ============================================================
+   4) Links / HR / Images
+   ============================================================ */
+
+#write a {
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+#write a:hover {
+  color: var(--accent-hover);
+  border-bottom-color: currentColor;
+}
+
+#write hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(
+    to left,
+    transparent,
+    var(--border-color) 18%,
+    var(--border-color) 82%,
+    transparent
+  );
+  margin: 2.2rem 0;
+}
+
+#write img {
+  display: block;
+  margin: 1.4rem auto;
+  border-radius: var(--radius);
+}
+
+/* ============================================================
+   5) Lists / Tasks
+   ============================================================ */
+
+#write ul,
+#write ol {
+  direction: rtl;
+  text-align: right;
+  padding-right: 1.8em;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 1.1em;
+  list-style-position: outside;
+}
+
+#write li {
+  margin: 0.42rem 0;
+}
+
+#write li > ul,
+#write li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+#write input[type="checkbox"] {
+  accent-color: var(--accent-color);
+}
+
+/* ============================================================
+   6) Blockquote
+   ============================================================ */
+
+#write blockquote {
+  margin: 1.4em 0;
+  padding: 0.9em 1.25em 0.9em 0.9em;
+  background-color: var(--quote-bg);
+  border-right: 4px solid var(--quote-border);
+  border-left: none;
+  border-radius: var(--radius);
+  color: var(--text-color);
+}
+
+#write blockquote p { margin: 0; }
+#write blockquote p + p { margin-top: 0.7em; }
+
+/* ============================================================
+   7) Tables
+   ============================================================ */
+
+#write table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  margin: 1.8em 0;
+  direction: rtl;
+  text-align: right;
+  font-size: var(--text-size-table);
+  line-height: 1.55;
+}
+
+#write table th,
+#write table td {
+  border: 1px solid var(--border-color);
+  padding: 0.72rem 0.95rem;
+  text-align: right;
+  vertical-align: top;
+}
+
+#write table th {
+  background-color: var(--bg-subtle);
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-strong);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  #write table {
+    display: block;
+    overflow-x: auto;
+  }
+  #write table th {
+    white-space: normal;
+  }
+}
+
+#write table tbody tr:nth-child(even) { background-color: var(--table-stripe); }
+#write table tbody tr:hover { background-color: var(--table-hover); }
+
+/* ============================================================
+   8) English helpers
+   ============================================================ */
+
+#write .latin,
+#write .en,
+#write span[lang="en"],
+#write span[lang="en-US"],
+#write span[lang="en-GB"],
+#write span[lang^="en-"] {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+}
+
+/* ============================================================
+   9) Code — HTML Viewer + PersianNew RTL hardening
+   ============================================================ */
+
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--font-code);
+}
+
+/* Inline code */
+#write code:not(pre code) {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+  display: inline-block;
+  font-family: var(--font-code);
+  font-size: var(--text-size-inline-code);
+  line-height: 1.45;
+  color: var(--code-inline-color);
+  background-color: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-sm);
+  padding: 0.14em 0.42em;
+}
+
+/* Real source-code blocks remain LTR */
+#write pre:not(.edis-rtl-text-block),
+#write pre:not(.edis-rtl-text-block) code,
+#write pre:not(.edis-rtl-text-block) * {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
+  font-family: var(--font-code) !important;
+}
+
+#write pre:not(.edis-rtl-text-block) {
+  font-size: var(--text-size-code);
+  line-height: var(--line-height-code);
+  color: var(--code-text);
+  background-color: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-left: 4px solid var(--accent-color);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin: 1.4em 0;
+  white-space: pre;
+  word-break: normal;
+  overflow-x: auto;
+  max-width: 100%;
+  box-shadow: 0 1px 4px var(--shadow-sm);
+  font-variant-numeric: normal;
+  font-feature-settings: normal;
+  letter-spacing: 0;
+}
+
+/* Persian instructional and ASCII blocks are RTL and right aligned */
+#write pre.edis-rtl-text-block,
+#write pre.edis-rtl-text-block code,
+#write pre.edis-rtl-text-block * {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: plaintext !important;
+  writing-mode: horizontal-tb !important;
+  white-space: pre-wrap !important;
+  font-family: var(--font-code) !important;
+  font-feature-settings: "kern" 0, "liga" 0, "clig" 0, "calt" 0;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeSpeed;
+}
+
+#write pre.edis-rtl-text-block {
+  font-size: var(--text-size-code);
+  line-height: var(--line-height-code);
+  color: var(--code-text);
+  background-color: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-right: 4px solid var(--accent-color);
+  border-left: 1px solid var(--code-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin: 1.4em 0;
+  overflow-x: auto;
+  max-width: 100%;
+  box-shadow: 0 1px 4px var(--shadow-sm);
+}
+
+#write pre.edis-ascii-visual {
+  background: linear-gradient(180deg, var(--code-bg), var(--bg-subtle));
+  border-right-color: #4ECDC4;
+}
+
+/* ============================================================
+   10) Details / Summary
+   ============================================================ */
+
+#write details {
+  margin: 1.2em 0;
+  padding: 0.9em 1.1em;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-subtle);
+}
+
+#write summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+/* ============================================================
+   11) Scrollbars
+   ============================================================ */
+
+body,
+#write,
+#write pre,
+#write table {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+body::-webkit-scrollbar,
+#write::-webkit-scrollbar,
+#write pre::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+body::-webkit-scrollbar-track,
+#write::-webkit-scrollbar-track,
+#write pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb,
+#write::-webkit-scrollbar-thumb,
+#write pre::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 4px;
+}
+
+/* ============================================================
+   12) Dark Mode
+   ============================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #292929;
+    --bg-subtle: #1f1f1f;
+    --bg-soft: #333333;
+    --bg-hover: #353535;
+    --text-color: #f8f8f2;
+    --text-muted: #a1a1aa;
+    --text-faint: #71717a;
+    --accent-color: #fcba03;
+    --accent-hover: #fbbf24;
+    --accent-soft: rgba(252, 186, 3, 0.12);
+    --border-color: #3d3d3d;
+    --border-strong: #555555;
+    --code-bg: #1a1a1a;
+    --code-text: #e2e8f0;
+    --code-inline-color: #f3b3f8;
+    --code-border: #3d3d3d;
+    --quote-bg: #333333;
+    --quote-border: #fcba03;
+    --table-stripe: #242424;
+    --table-hover: #2e2e2e;
+    --selection-bg: rgba(59, 130, 246, 0.45);
+    --selection-text: #ffffff;
+    --shadow-sm: rgba(0, 0, 0, 0.25);
+    --shadow-md: rgba(0, 0, 0, 0.45);
+  }
+
+  mark {
+    background-color: #854d0e;
+    color: #fef9c3;
+  }
+}
+
+/* ============================================================
+   13) Accessibility / Print
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --border-color: var(--text-color);
+    --border-strong: var(--text-color);
+    --text-muted: var(--text-color);
+    --shadow-sm: transparent;
+    --shadow-md: transparent;
+  }
+
+  #write pre,
+  #write code:not(pre code),
+  #write table th,
+  #write table td {
+    border-width: 2px;
+  }
+
+  #write blockquote {
+    border-right-width: 5px;
+  }
+
+  #write a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+}
+
+@media print {
+  body {
+    direction: rtl;
+    text-align: right;
+    background: white;
+    color: black;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  #write {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: black;
+  }
+
+  #write a {
+    color: black;
+    border-bottom: 1px solid black;
+  }
+
+  #write a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+  }
+
+  #write pre {
+    background: #f8f8f8;
+    color: black;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    white-space: pre-wrap;
+    word-break: break-word;
+    page-break-inside: avoid;
+  }
+
+  #write blockquote {
+    background: #f8f8f8;
+    color: black;
+    border-right-color: #ccc;
+  }
+
+  #write table,
+  #write img,
+  #write pre {
+    page-break-inside: avoid;
+  }
+}
+
+
+/* ============================================================
+   14) Version 13.4 — Persian instructional blocks use UI/Vazir
+   ============================================================ */
+
+#write pre.edis-rtl-text-block,
+#write pre.edis-rtl-text-block code,
+#write pre.edis-rtl-text-block * {
+  font-family: var(--font-ui) !important;
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+/* Real source-code blocks remain monospace and LTR. */
+#write pre:not(.edis-rtl-text-block),
+#write pre:not(.edis-rtl-text-block) code,
+#write pre:not(.edis-rtl-text-block) * {
+  font-family: var(--font-code) !important;
+}
+
+/* ============================================================
+   15) Version 13.4 — Visual Cards replace fragile ASCII art
+   ============================================================ */
+
+#write .visual-card {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-ui) !important;
+  margin: 1.4rem 0 1.8rem;
+  padding: 1.1rem;
+  border: 1px solid var(--border-color);
+  border-right: 5px solid #4ECDC4;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, var(--bg-subtle), var(--bg-color));
+  box-shadow: 0 3px 12px var(--shadow-sm);
+}
+
+#write .visual-card * {
+  font-family: var(--font-ui) !important;
+}
+
+#write .visual-card-title {
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.9rem;
+  font-size: 1.05rem;
+}
+
+#write .visual-note {
+  margin: 0.9rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+#write .visual-stage {
+  position: relative;
+  padding: 1rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--bg-color);
+}
+
+#write .visual-layer {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 0.8rem;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  color: var(--text-color);
+}
+
+#write .visual-badge,
+#write .visual-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+#write .visual-two-columns,
+#write .visual-flow-grid,
+#write .break-panels,
+#write .tree-children {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+#write .visual-panel,
+#write .visual-box,
+#write .break-panel,
+#write .tree-node {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--bg-subtle);
+  padding: 0.85rem;
+}
+
+#write .visual-panel-head {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+#write .visual-panel-sub,
+#write .visual-box span,
+#write .tree-node span,
+#write .bad-chip span {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+#write .visual-content-box,
+#write .visual-overlap-box {
+  margin-top: 0.75rem;
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  border: 1px dashed var(--border-strong);
+}
+
+#write .visual-content-box {
+  background: #ecfdf5;
+}
+
+#write .visual-overlap-box {
+  background: #fff7ed;
+}
+
+#write .visual-flow-row {
+  display: flex;
+  gap: 0.8rem;
+}
+
+#write .visual-copy,
+#write .visual-stage-box {
+  flex: 1;
+  min-height: 90px;
+}
+
+#write .orbit {
+  position: relative;
+  width: min(260px, 100%);
+  aspect-ratio: 1;
+  margin: 0.6rem auto 0;
+  border: 2px dashed var(--border-strong);
+  border-radius: 50%;
+  background: var(--bg-color);
+}
+
+#write .orbit-core,
+#write .orbit-node {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-subtle);
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+#write .orbit-core {
+  inset: 38%;
+  background: var(--accent-soft);
+  color: var(--accent-color);
+}
+
+#write .orbit-node {
+  width: 58px;
+  height: 34px;
+  font-size: 0.85rem;
+}
+
+#write .orbit-node.top { top: 8px; left: 50%; transform: translateX(-50%); }
+#write .orbit-node.right { right: 8px; top: 50%; transform: translateY(-50%); }
+#write .orbit-node.bottom { bottom: 8px; left: 50%; transform: translateX(-50%); }
+#write .orbit-node.left { left: 8px; top: 50%; transform: translateY(-50%); }
+
+#write .visual-danger-card {
+  border-right-color: #ef4444;
+}
+
+#write .bad-absolute-layout {
+  position: relative;
+  min-height: 260px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--bg-color);
+  overflow: hidden;
+}
+
+#write .bad-section-label {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+#write .bad-chip {
+  position: absolute;
+  padding: 0.45rem 0.55rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-subtle);
+  min-width: 120px;
+  box-shadow: 0 2px 6px var(--shadow-sm);
+}
+
+#write .bad-text { top: 58px; right: 44px; }
+#write .bad-feature { top: 118px; right: 80px; }
+#write .bad-logo { top: 178px; right: 40px; }
+#write .bad-core { top: 85px; left: 70px; }
+#write .bad-node { top: 30px; left: 205px; }
+
+#write .visual-warning-list {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+#write .visual-warning-list span {
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-sm);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.22);
+}
+
+#write .break-title {
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.6rem;
+}
+
+#write .break-section,
+#write .break-mobile {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  padding: 0.8rem;
+  background: var(--bg-color);
+}
+
+#write .break-text {
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+}
+
+#write .break-collision,
+#write .break-out {
+  margin-top: 0.6rem;
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: var(--text-color);
+}
+
+#write .break-mobile {
+  max-width: 260px;
+  margin-inline: auto;
+}
+
+#write .break-mobile > div {
+  margin: 0.35rem 0;
+  padding: 0.45rem;
+  background: var(--bg-soft);
+  border-radius: var(--radius-sm);
+}
+
+#write .visual-tree {
+  display: grid;
+  gap: 0.7rem;
+}
+
+#write .tree-node {
+  font-weight: 700;
+  border-right: 4px solid var(--accent-color);
+}
+
+#write .tree-node span {
+  display: block;
+  font-weight: 400;
+}
+
+#write .tree-branch {
+  margin-right: 1.2rem;
+  padding-right: 1rem;
+  border-right: 2px dashed var(--border-strong);
+}
+
+#write .tree-children.nested {
+  grid-template-columns: 1fr;
+  margin-top: 0.7rem;
+}
+
+@media (max-width: 760px) {
+  #write .visual-two-columns,
+  #write .visual-flow-grid,
+  #write .break-panels,
+  #write .tree-children {
+    grid-template-columns: 1fr;
+  }
+
+  #write .visual-flow-row {
+    flex-direction: column;
+  }
+
+  #write .bad-absolute-layout {
+    min-height: 420px;
+  }
+
+  #write .bad-core { top: 260px; left: 30px; }
+  #write .bad-node { top: 315px; left: 90px; }
+}
+
+/* Dark-mode refinements for semantic visual cards. */
+@media (prefers-color-scheme: dark) {
+  #write .visual-content-box {
+    background: rgba(16, 185, 129, 0.10);
+  }
+  #write .visual-overlap-box {
+    background: rgba(251, 146, 60, 0.12);
+  }
+}
+
+
+/* ============================================================
+   16) Version 14 — HTML-first learning components
+   ============================================================ */
+
+#write .html-first-hero,
+#write .learning-lab,
+#write .concept-lab {
+  margin: 1.8rem 0 2.2rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: linear-gradient(180deg, var(--bg-subtle), var(--bg-color));
+  box-shadow: 0 4px 16px var(--shadow-sm);
+}
+
+#write .html-first-hero {
+  border-right: 6px solid #4ECDC4;
+}
+
+#write .hero-eyebrow {
+  color: var(--accent-color);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+#write .hero-pills,
+#write .state-row,
+#write .class-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+#write .hero-pills span,
+#write .state-row span,
+#write .class-stack span,
+#write .step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  background: var(--accent-soft);
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+#write .practice-card,
+#write .elementor-panel-demo,
+#write .compare-card,
+#write .smart-note-card {
+  margin: 1.1rem 0;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  background: var(--bg-color);
+}
+
+#write .practice-card header,
+#write .elementor-panel-demo header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.7rem;
+}
+
+#write .practice-card h3,
+#write .elementor-panel-demo h3 {
+  margin: 0;
+}
+
+#write .check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+
+#write .check-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "check title"
+    "check desc";
+  gap: 0.15rem 0.55rem;
+  padding: 0.85rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  background: var(--bg-subtle);
+  cursor: pointer;
+}
+
+#write .check-card input {
+  grid-area: check;
+  margin-top: 0.25rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  accent-color: var(--accent-color);
+}
+
+#write .check-card strong {
+  grid-area: title;
+  color: var(--accent-color);
+}
+
+#write .check-card span {
+  grid-area: desc;
+  color: var(--text-muted);
+  font-size: 0.93rem;
+}
+
+#write .check-card:has(input:checked) {
+  border-color: var(--accent-color);
+  background: var(--accent-soft);
+}
+
+#write .mini-result-card {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  border-right: 4px solid #4ECDC4;
+  background: var(--bg-subtle);
+}
+
+#write .elementor-panel {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-subtle);
+}
+
+#write .panel-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border-color);
+}
+
+#write .panel-tab {
+  border: 0;
+  padding: 0.7rem 0.9rem;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#write .panel-tab.active {
+  color: var(--accent-color);
+  background: var(--bg-color);
+  box-shadow: inset 0 -3px 0 var(--accent-color);
+}
+
+#write .panel-body {
+  padding: 1rem;
+}
+
+#write .panel-section {
+  display: none;
+}
+
+#write .panel-section.active {
+  display: block;
+}
+
+#write .field-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#write .compare-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+#write .compare-card.good {
+  border-right: 5px solid #10b981;
+}
+
+#write .compare-card.risky {
+  border-right: 5px solid #ef4444;
+}
+
+#write .flow-demo {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  border: 1px dashed var(--border-strong);
+  background: var(--bg-subtle);
+}
+
+#write .flow-item {
+  padding: 0.65rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+}
+
+#write .absolute-demo {
+  position: relative;
+  min-height: 210px;
+  border-radius: var(--radius);
+  border: 1px dashed var(--border-strong);
+  background: var(--bg-subtle);
+  overflow: hidden;
+}
+
+#write .abs-chip {
+  position: absolute;
+  padding: 0.45rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-color);
+  box-shadow: 0 2px 8px var(--shadow-sm);
+  font-weight: 700;
+}
+
+#write .abs-chip.one { top: 22px; right: 24px; }
+#write .abs-chip.two { top: 108px; right: 70px; }
+#write .abs-chip.three { top: 60px; left: 65px; }
+#write .abs-chip.four { top: 142px; left: 25px; }
+
+#write .smart-note-card {
+  border-right: 4px solid var(--accent-color);
+  background: var(--bg-subtle);
+}
+
+#write .smart-note-card ul {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  #write .check-grid,
+  #write .compare-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* HTML-first prefers UI font for learning cards. */
+#write .html-first-hero *,
+#write .learning-lab *,
+#write .concept-lab *,
+#write .smart-note-card * {
+  font-family: var(--font-ui) !important;
+}

@@ -1,0 +1,1120 @@
+{
+  "schema_version": "1.0.0",
+  "simulators": [
+    {
+      "goal": "ببین چرا margin ممکن است اعمال شده باشد اما فاصلهٔ انتهایی به overflow تبدیل شود.",
+      "id": "stv2-width-margin-overflow",
+      "lab_target": "lesson-4-responsive-build-test",
+      "lesson_id": "lesson-4",
+      "renderer": "width-overflow",
+      "schema_version": "1.0.0",
+      "states": [
+        {
+          "computed": [
+            [
+              "Parent inline-size",
+              "320px — مدل آموزشی"
+            ],
+            [
+              "Child used width",
+              "320px"
+            ],
+            [
+              "Outer inline-size",
+              "320px"
+            ]
+          ],
+          "elementor": [
+            [
+              "Width",
+              "Full / فضای موجود"
+            ],
+            [
+              "Margin inline",
+              "0"
+            ],
+            [
+              "Overflow والد",
+              "Default"
+            ]
+          ],
+          "evidence": "simulated_explanation",
+          "explanation": "این حالت مبناست. هنوز فاصلهٔ بیرونی به عرض جعبه اضافه نشده است.",
+          "golden_rule": "قبل از افزودن فاصله، used width و فضای موجود والد را بشناس.",
+          "id": "baseline-full",
+          "phase": "مشاهده",
+          "prediction": {
+            "correct": 1,
+            "feedback_correct": "درست است؛ width و marginها باید با هم در outer size دیده شوند.",
+            "feedback_wrong": "دوباره Box Model را بخوان: margin بیرون border قرار می‌گیرد.",
+            "options": [
+              "همان 320px می‌ماند",
+              "تقریباً 368px می‌شود",
+              "به 272px کاهش می‌یابد"
+            ],
+            "prompt": "اگر به Child با عرض کامل، 24px margin در هر دو سمت اضافه شود، outer size چه می‌شود؟"
+          },
+          "summary": "Child فضای موجود را پر می‌کند و outer size از Parent بزرگ‌تر نیست.",
+          "title": "عرض کامل، بدون margin",
+          "visual": {
+            "margin": 0,
+            "mode": "baseline",
+            "padding": 0
+          }
+        },
+        {
+          "computed": [
+            [
+              "Parent inline-size",
+              "320px — مدل آموزشی"
+            ],
+            [
+              "Child used width",
+              "320px"
+            ],
+            [
+              "Outer inline-size",
+              "368px"
+            ],
+            [
+              "Overflow",
+              "48px"
+            ]
+          ],
+          "elementor": [
+            [
+              "Width",
+              "Full / 100%"
+            ],
+            [
+              "Margin inline",
+              "24px + 24px"
+            ],
+            [
+              "Overflow والد",
+              "Default"
+            ]
+          ],
+          "evidence": "verified_by_real_fixture",
+          "explanation": "نشانهٔ «margin کار نمی‌کند» می‌تواند در واقع overflow باشد. Computed Style باید قبل از نتیجه‌گیری بررسی شود.",
+          "golden_rule": "اعمال‌شدن property را با دیده‌شدن نتیجهٔ بصری یکی ندان.",
+          "id": "full-plus-margin",
+          "phase": "علت و معلول",
+          "prediction": {
+            "correct": 1,
+            "feedback_correct": "دقیقاً؛ Hidden می‌تواند علامت را ببرد، نه علت را.",
+            "feedback_wrong": "Overflow نوع فاصله یا width را تغییر نمی‌دهد؛ فقط نمایش بخش بیرون‌زده را کنترل می‌کند.",
+            "options": [
+              "اصلاح می‌شود",
+              "پنهان می‌شود اما باقی می‌ماند",
+              "margin به padding تبدیل می‌شود"
+            ],
+            "prompt": "اگر فقط overflow والد را Hidden کنیم، علت sizing چه می‌شود؟"
+          },
+          "summary": "margin اعمال شده، اما outer size از Parent بزرگ‌تر شده و سمت پایان بیرون می‌رود.",
+          "title": "عرض کامل + margin دوطرفه",
+          "visual": {
+            "margin": 24,
+            "mode": "overflow",
+            "padding": 0
+          }
+        },
+        {
+          "computed": [
+            [
+              "Outer inline-size",
+              "368px"
+            ],
+            [
+              "Clipping",
+              "فعال"
+            ],
+            [
+              "Sizing cause",
+              "بدون تغییر"
+            ]
+          ],
+          "elementor": [
+            [
+              "Width",
+              "Full / 100%"
+            ],
+            [
+              "Margin inline",
+              "24px + 24px"
+            ],
+            [
+              "Overflow والد",
+              "Hidden"
+            ]
+          ],
+          "evidence": "verified_by_css_spec",
+          "explanation": "این مرحله عمداً نشان می‌دهد که حذف نشانه با اصلاح ساختار تفاوت دارد.",
+          "golden_rule": "Overflow Hidden آخرین راه بررسی نیست؛ ابتدا عنصر overflowکننده را پیدا کن.",
+          "id": "clipped-symptom",
+          "phase": "خرابی عمدی",
+          "prediction": {
+            "correct": 1,
+            "feedback_correct": "درست است؛ padding فضای داخل Shell را می‌سازد.",
+            "feedback_wrong": "هدف فاصلهٔ داخلی است؛ property باید همان رابطه را بیان کند.",
+            "options": [
+              "margin روی Main تمام‌عرض",
+              "padding-inline روی Shell",
+              "z-index روی Main"
+            ],
+            "prompt": "برای ساخت فاصلهٔ داخلی Shell تمام‌عرض، کدام انتخاب مستقیم‌تر است؟"
+          },
+          "summary": "اسکرول یا بیرون‌زدگی دیده نمی‌شود، ولی outer size نامناسب همچنان وجود دارد.",
+          "title": "پنهان‌کردن علامت با Overflow Hidden",
+          "visual": {
+            "margin": 24,
+            "mode": "clipped",
+            "padding": 0
+          }
+        },
+        {
+          "computed": [
+            [
+              "Used width",
+              "بر اساس context بازحساب می‌شود"
+            ],
+            [
+              "Shrink-to-fit",
+              "همیشه قابل ادعا نیست"
+            ],
+            [
+              "Matched rule",
+              "برای قطعیت لازم است"
+            ]
+          ],
+          "elementor": [
+            [
+              "Width",
+              "Auto"
+            ],
+            [
+              "Margin inline",
+              "24px + 24px"
+            ],
+            [
+              "Parent context",
+              "باید بررسی شود"
+            ]
+          ],
+          "evidence": "verified_by_real_fixture",
+          "explanation": "Auto در همهٔ layoutها برابر shrink-to-fit نیست. اینجا به‌عنوان workaround واقعی ثبت شده، نه نسخهٔ همیشگی.",
+          "golden_rule": "از یک رفع مشکل واقعی، قانون عمومی نساز؛ context و matched rule را ثبت کن.",
+          "id": "auto-observed-workaround",
+          "phase": "مرزبندی شواهد",
+          "prediction": {
+            "correct": 1,
+            "feedback_correct": "درست است؛ منبع قانون در Styles/Computed تعیین‌کننده است.",
+            "feedback_wrong": "بدون selector و فایل منبع، نسبت‌دادن رفتار به Theme یا Elementor قطعی نیست.",
+            "options": [
+              "فقط پنل Elementor",
+              "Matched CSS rule در DevTools",
+              "رنگ Background"
+            ],
+            "prompt": "برای اثبات اینکه Theme یا Elementor width را تعیین کرده، کجا باید نگاه کنی؟"
+          },
+          "summary": "در مسئلهٔ واقعی رضا، انتخاب صریح Auto رفتار sizing را تغییر داد؛ نتیجه به layout context وابسته است.",
+          "title": "Width Auto — workaround مشاهده‌شده، نه قانون جهانی",
+          "visual": {
+            "margin": 24,
+            "mode": "auto",
+            "padding": 0
+          }
+        },
+        {
+          "computed": [
+            [
+              "Shell content width",
+              "272px — مدل آموزشی"
+            ],
+            [
+              "Main outer width",
+              "272px"
+            ],
+            [
+              "Overflow",
+              "0"
+            ]
+          ],
+          "elementor": [
+            [
+              "Shell > Padding inline",
+              "24px"
+            ],
+            [
+              "Main > Width",
+              "Full / 100%"
+            ],
+            [
+              "Main > Margin inline",
+              "0"
+            ]
+          ],
+          "evidence": "verified_by_official_elementor_help",
+          "explanation": "این الگو رابطهٔ Page Padding و Main Content را روشن‌تر می‌کند و برای پروژهٔ TUYA قابل آزمایش است.",
+          "golden_rule": "Shell فاصلهٔ صفحه را می‌سازد؛ Main داخل فضای باقی‌مانده چیدمان می‌شود.",
+          "id": "shell-padding",
+          "phase": "انتقال به TUYA",
+          "prediction": {
+            "correct": 1,
+            "feedback_correct": "دقیقاً؛ مسئولیت spacing در Shell باقی می‌ماند.",
+            "feedback_wrong": "به نقش معماری لایه‌ها نگاه کن: Shell فاصلهٔ صفحه را کنترل می‌کند.",
+            "options": [
+              "Margin فرزند",
+              "Padding والد",
+              "Z-index"
+            ],
+            "prompt": "در این الگو، اگر عرض viewport کم شود، کدام بخش مسئول فاصلهٔ کناری است؟"
+          },
+          "summary": "Shell فاصلهٔ صفحه را کنترل می‌کند و Main بدون افزودن outer margin داخل آن قرار می‌گیرد.",
+          "title": "الگوی پایدار: Padding والد + Child با Width مناسب",
+          "visual": {
+            "margin": 0,
+            "mode": "padding",
+            "padding": 24
+          }
+        }
+      ],
+      "storage_key": "elementor-v4-workbook:v27:stv2:width-margin-overflow",
+      "title": "Width، Margin و Overflow — از نشانه تا علت",
+      "type": "cause_effect_debug",
+      "verification": [
+        {
+          "source_id": "ELEMENTOR_CONTAINER_SIZE",
+          "status": "verified_by_official_elementor_help"
+        },
+        {
+          "source_id": "CSS2_USED_WIDTH",
+          "status": "verified_by_css_spec"
+        },
+        {
+          "source_id": "REZA_MARGIN_OBSERVATION",
+          "status": "verified_by_real_fixture"
+        }
+      ]
+    },
+    {
+      "goal": "با تغییر Direction ببین main axis و cross axis چگونه جابه‌جا می‌شوند.",
+      "id": "stv2-flex-axis-alignment",
+      "lab_target": "lesson-6-responsive-build-test",
+      "lesson_id": "lesson-6",
+      "renderer": "flex-axis",
+      "schema_version": "1.0.0",
+      "states": [
+        {
+          "computed": [
+            [
+              "Main axis",
+              "Inline / افقی"
+            ],
+            [
+              "Cross axis",
+              "Block / عمودی"
+            ],
+            [
+              "Free-space distribution",
+              "شروع محور اصلی"
+            ]
+          ],
+          "elementor": [
+            [
+              "Direction",
+              "Row"
+            ],
+            [
+              "Justify Content",
+              "Start"
+            ],
+            [
+              "Align Items",
+              "Center"
+            ]
+          ],
+          "evidence": "verified_by_css_spec",
+          "explanation": "در Row، Justify جای عناصر را در امتداد ردیف و Align جای آن‌ها را در ارتفاع Container کنترل می‌کند.",
+          "golden_rule": "Justify را با نام افقی حفظ نکن؛ آن را به main axis وصل کن.",
+          "id": "row-start-center",
+          "phase": "مشاهده",
+          "prediction": {
+            "correct": 0,
+            "feedback_correct": "درست است؛ Justify فضای آزاد main axis را توزیع می‌کند.",
+            "feedback_wrong": "ابتدا main axis را از Direction استخراج کن.",
+            "options": [
+              "فضای آزاد محور اصلی",
+              "ارتفاع تک‌تک عناصر",
+              "z-index عناصر"
+            ],
+            "prompt": "اگر Justify را Space Between کنیم، کدام فضا توزیع می‌شود؟"
+          },
+          "summary": "Direction روی Row است؛ main axis افقی و cross axis عمودی است.",
+          "title": "Row: Justify روی محور افقی",
+          "visual": {
+            "align": "center",
+            "direction": "row",
+            "justify": "flex-start",
+            "order": [
+              "Visual",
+              "Copy",
+              "Logos"
+            ]
+          }
+        },
+        {
+          "computed": [
+            [
+              "Main axis",
+              "افقی"
+            ],
+            [
+              "justify-content",
+              "space-between"
+            ],
+            [
+              "align-items",
+              "center"
+            ]
+          ],
+          "elementor": [
+            [
+              "Direction",
+              "Row"
+            ],
+            [
+              "Justify Content",
+              "Space Between"
+            ],
+            [
+              "Align Items",
+              "Center"
+            ]
+          ],
+          "evidence": "verified_by_css_spec",
+          "explanation": "اگر Flex Grow تمام فضای آزاد را مصرف کند، ممکن است چیزی برای Justify باقی نماند؛ بنابراین sizing و alignment را جدا بررسی کن.",
+          "golden_rule": "Alignment بعد از sizing خوانده می‌شود.",
+          "id": "row-space-between",
+          "phase": "تغییر حالت",
+          "prediction": {
+            "correct": 0,
+            "feedback_correct": "بله؛ با Column، main axis عمودی می‌شود.",
+            "feedback_wrong": "Direction تعریف‌کنندهٔ main axis است.",
+            "options": [
+              "در محور عمودی",
+              "همچنان فقط افقی",
+              "فقط روی رنگ‌ها"
+            ],
+            "prompt": "اگر Direction به Column تغییر کند ولی همین Justify حفظ شود، اثر اصلی کجا دیده می‌شود؟"
+          },
+          "summary": "آیتم اول و آخر به دو انتهای main axis می‌روند و فضای آزاد میان آن‌ها پخش می‌شود.",
+          "title": "Row: Space Between",
+          "visual": {
+            "align": "center",
+            "direction": "row",
+            "justify": "space-between",
+            "order": [
+              "Visual",
+              "Copy",
+              "Logos"
+            ]
+          }
+        },
+        {
+          "computed": [
+            [
+              "Main axis",
+              "Block / عمودی"
+            ],
+            [
+              "Cross axis",
+              "Inline / افقی"
+            ],
+            [
+              "Order",
+              "بدون تغییر"
+            ]
+          ],
+          "elementor": [
+            [
+              "Direction",
+              "Column"
+            ],
+            [
+              "Justify Content",
+              "Space Between"
+            ],
+            [
+              "Align Items",
+              "Center"
+            ]
+          ],
+          "evidence": "verified_by_official_elementor_help",
+          "explanation": "نام Control ثابت است، اما جهت اثر آن با Direction تغییر می‌کند. این یکی از منابع رایج سردرگمی Responsive است.",
+          "golden_rule": "بعد از هر Row → Column، Align و Justify را از نو تفسیر کن.",
+          "id": "column-same-controls",
+          "phase": "بازخوانی محور",
+          "prediction": {
+            "correct": 0,
+            "feedback_correct": "درست است؛ Order می‌تواند ترتیب بصری breakpoint را تغییر دهد.",
+            "feedback_wrong": "هدف بازچینی است، نه پنهان‌کردن یا حذف ساختار.",
+            "options": [
+              "Custom Order در breakpoint",
+              "فقط opacity",
+              "حذف Element Tree"
+            ],
+            "prompt": "برای نزدیک‌شدن به طرح Mobile TUYA، بدون Duplicate کردن سکشن چه چیزی را می‌توان بررسی کرد؟"
+          },
+          "summary": "Justify اکنون عمودی و Align اکنون افقی عمل می‌کند.",
+          "title": "Column: همان نام‌ها، محورهای تازه",
+          "visual": {
+            "align": "center",
+            "direction": "column",
+            "justify": "space-between",
+            "order": [
+              "Visual",
+              "Copy",
+              "Logos"
+            ]
+          }
+        },
+        {
+          "computed": [
+            [
+              "Visual order",
+              "1"
+            ],
+            [
+              "Copy order",
+              "2"
+            ],
+            [
+              "Logo order",
+              "3"
+            ],
+            [
+              "DOM order",
+              "باید جداگانه بررسی شود"
+            ]
+          ],
+          "elementor": [
+            [
+              "Direction",
+              "Column"
+            ],
+            [
+              "Visual > Order",
+              "1"
+            ],
+            [
+              "Copy > Order",
+              "2"
+            ],
+            [
+              "Logo Strip > Order",
+              "3"
+            ]
+          ],
+          "evidence": "verified_by_official_elementor_help",
+          "explanation": "Custom Order ابزار بصری است؛ ترتیب DOM و دسترسی‌پذیری باید مستقل ارزیابی شوند.",
+          "golden_rule": "ترتیب بصری را تغییر بده، اما ترتیب خواندن را فراموش نکن.",
+          "id": "column-custom-order",
+          "phase": "انتقال",
+          "prediction": {
+            "correct": 0,
+            "feedback_correct": "درست است؛ visual order الزاماً reading order را تغییر نمی‌دهد.",
+            "feedback_wrong": "بازچینی بصری باید با ترتیب معنایی مقایسه شود.",
+            "options": [
+              "DOM و ترتیب Focus",
+              "فقط border-radius",
+              "فقط سایه"
+            ],
+            "prompt": "بعد از تغییر Order، برای دسترسی‌پذیری چه چیزی باید بررسی شود؟"
+          },
+          "summary": "Visual پیش از Copy نمایش داده می‌شود، در حالی که یک ساختار اصلی حفظ می‌شود.",
+          "title": "Column + Order برای Mobile TUYA",
+          "visual": {
+            "align": "stretch",
+            "direction": "column",
+            "justify": "flex-start",
+            "order": [
+              "Visual",
+              "Copy",
+              "Logos"
+            ]
+          }
+        }
+      ],
+      "storage_key": "elementor-v4-workbook:v27:stv2:flex-axis-alignment",
+      "title": "Flex Direction، Justify و Align — محور را دوباره بخوان",
+      "type": "state_change",
+      "verification": [
+        {
+          "source_id": "ELEMENTOR_CONTAINER_LAYOUT",
+          "status": "verified_by_official_elementor_help"
+        },
+        {
+          "source_id": "CSS_FLEXBOX_AXES",
+          "status": "verified_by_css_spec"
+        }
+      ]
+    },
+    {
+      "goal": "منبع هر مقدار را در Desktop، Tablet و Mobile ببین و Reset را با حذف تصادفی اشتباه نگیر.",
+      "id": "stv2-responsive-inheritance",
+      "lab_target": "lesson-14-responsive-build-test",
+      "lesson_id": "lesson-14",
+      "renderer": "responsive-inheritance",
+      "schema_version": "1.0.0",
+      "states": [
+        {
+          "computed": [
+            [
+              "Desktop used value",
+              "48px"
+            ],
+            [
+              "Tablet source",
+              "Desktop"
+            ],
+            [
+              "Mobile source",
+              "Desktop"
+            ]
+          ],
+          "elementor": [
+            [
+              "Desktop Padding",
+              "48px"
+            ],
+            [
+              "Tablet",
+              "Inherited"
+            ],
+            [
+              "Mobile",
+              "Inherited"
+            ]
+          ],
+          "evidence": "verified_by_official_elementor_help",
+          "explanation": "در مدل پیش‌فرض، مقدار بزرگ‌تر به کوچک‌تر cascade می‌شود مگر override ایجاد شود.",
+          "golden_rule": "وجود مقدار در Mobile الزاماً به معنی تنظیم مستقیم در Mobile نیست.",
+          "id": "desktop-source",
+          "phase": "منبع",
+          "prediction": {
+            "correct": 1,
+            "feedback_correct": "درست است؛ Mobile از نزدیک‌ترین breakpoint بزرگ‌ترِ دارای مقدار ارث می‌برد.",
+            "feedback_wrong": "Cascade را از بزرگ‌تر به کوچک‌تر و مرحله‌به‌مرحله دنبال کن.",
+            "options": [
+              "48px از Desktop",
+              "32px از Tablet",
+              "0px"
+            ],
+            "prompt": "اگر Tablet را روی 32px override کنیم و Mobile مقدار مستقیم نداشته باشد، Mobile چه می‌گیرد؟"
+          },
+          "summary": "Padding روی Desktop برابر 48px است و breakpointهای کوچک‌تر هنوز override ندارند.",
+          "title": "Desktop مقدار پایه را تعریف می‌کند",
+          "visual": {
+            "devices": [
+              {
+                "name": "Desktop",
+                "source": "local",
+                "value": "48px"
+              },
+              {
+                "name": "Tablet",
+                "source": "inherited",
+                "value": "48px"
+              },
+              {
+                "name": "Mobile",
+                "source": "inherited",
+                "value": "48px"
+              }
+            ]
+          }
+        },
+        {
+          "computed": [
+            [
+              "Desktop source",
+              "Desktop"
+            ],
+            [
+              "Tablet source",
+              "Tablet"
+            ],
+            [
+              "Mobile source",
+              "Tablet"
+            ]
+          ],
+          "elementor": [
+            [
+              "Desktop Padding",
+              "48px"
+            ],
+            [
+              "Tablet Padding",
+              "32px — مستقیم"
+            ],
+            [
+              "Mobile Padding",
+              "32px — inherited"
+            ]
+          ],
+          "evidence": "verified_by_official_elementor_help",
+          "explanation": "رنگ یا حالت muted در Editor به تشخیص مقدار inherited کمک می‌کند.",
+          "golden_rule": "عدد را تنها نبین؛ منبع عدد را هم بخوان.",
+          "id": "tablet-override",
+          "phase": "Override",
+          "prediction": {
+            "correct": 1,
+            "feedback_correct": "درست است؛ تغییر breakpoint کوچک‌تر به بزرگ‌تر برنمی‌گردد.",
+            "feedback_wrong": "Cascade Responsive به‌طور پیش‌فرض از بزرگ‌تر به کوچک‌تر است، نه برعکس.",
+            "options": [
+              "20px",
+              "48px باقی می‌ماند",
+              "به Auto تبدیل می‌شود"
+            ],
+            "prompt": "اگر فقط Mobile را روی 20px تنظیم کنیم، Desktop چه می‌شود؟"
+          },
+          "summary": "Tablet برابر 32px شده و Mobile همان 32px را به‌صورت inherited می‌بیند.",
+          "title": "Tablet Override، Mobile Inherited",
+          "visual": {
+            "devices": [
+              {
+                "name": "Desktop",
+                "source": "local",
+                "value": "48px"
+              },
+              {
+                "name": "Tablet",
+                "source": "override",
+                "value": "32px"
+              },
+              {
+                "name": "Mobile",
+                "source": "inherited",
+                "value": "32px"
+              }
+            ]
+          }
+        },
+        {
+          "computed": [
+            [
+              "Desktop used",
+              "48px"
+            ],
+            [
+              "Tablet used",
+              "32px"
+            ],
+            [
+              "Mobile used",
+              "20px"
+            ]
+          ],
+          "elementor": [
+            [
+              "Desktop",
+              "48px"
+            ],
+            [
+              "Tablet",
+              "32px"
+            ],
+            [
+              "Mobile",
+              "20px — مستقیم"
+            ]
+          ],
+          "evidence": "verified_by_official_elementor_help",
+          "explanation": "این مرحله نشان می‌دهد Responsive correction باید فقط جایی انجام شود که طرح واقعاً نیاز دارد.",
+          "golden_rule": "Override را حداقلی و هدفمند نگه دار.",
+          "id": "mobile-override",
+          "phase": "Override کوچک‌تر",
+          "prediction": {
+            "correct": 0,
+            "feedback_correct": "بله؛ با حذف override، inheritance دوباره فعال می‌شود.",
+            "feedback_wrong": "Reset را به‌عنوان بازگشت به زنجیرهٔ inheritance ببین.",
+            "options": [
+              "از Tablet، یعنی 32px",
+              "همیشه صفر می‌شود",
+              "از Theme بدون بررسی"
+            ],
+            "prompt": "اگر Mobile override را Reset کنیم، مقدار Mobile از کجا می‌آید؟"
+          },
+          "summary": "Mobile برابر 20px است؛ Desktop و Tablet بدون تغییر می‌مانند.",
+          "title": "Mobile Override مستقل",
+          "visual": {
+            "devices": [
+              {
+                "name": "Desktop",
+                "source": "local",
+                "value": "48px"
+              },
+              {
+                "name": "Tablet",
+                "source": "override",
+                "value": "32px"
+              },
+              {
+                "name": "Mobile",
+                "source": "override",
+                "value": "20px"
+              }
+            ]
+          }
+        },
+        {
+          "computed": [
+            [
+              "Mobile used value",
+              "32px"
+            ],
+            [
+              "Value source",
+              "Tablet"
+            ],
+            [
+              "Desktop effect",
+              "بدون تغییر"
+            ]
+          ],
+          "elementor": [
+            [
+              "Mobile direct value",
+              "Reset / حذف"
+            ],
+            [
+              "Mobile displayed value",
+              "32px muted"
+            ],
+            [
+              "Source indicator",
+              "Tablet"
+            ]
+          ],
+          "evidence": "verified_by_official_elementor_help",
+          "explanation": "پاک‌کردن یک مقدار responsive لزوماً به صفر منجر نمی‌شود؛ ممکن است مقدار inherited دوباره ظاهر شود.",
+          "golden_rule": "بعد از Reset، منبع جدید مقدار را بررسی کن.",
+          "id": "mobile-reset",
+          "phase": "خطایابی",
+          "prediction": {
+            "correct": 0,
+            "feedback_correct": "درست است؛ خود Editor منبع inherited را قابل مشاهده می‌کند.",
+            "feedback_wrong": "عدد یکسان کافی نیست؛ حالت نمایش و منبع را بررسی کن.",
+            "options": [
+              "نمایش muted و indicator منبع",
+              "فقط نام دستگاه",
+              "فقط رنگ Background"
+            ],
+            "prompt": "برای تشخیص مقدار inherited در Editor V4، به چه نشانه‌ای توجه می‌کنی؟"
+          },
+          "summary": "20px حذف می‌شود و Mobile دوباره 32px را از Tablet دریافت می‌کند.",
+          "title": "Reset Mobile و بازگشت مقدار Inherited",
+          "visual": {
+            "devices": [
+              {
+                "name": "Desktop",
+                "source": "local",
+                "value": "48px"
+              },
+              {
+                "name": "Tablet",
+                "source": "override",
+                "value": "32px"
+              },
+              {
+                "name": "Mobile",
+                "source": "inherited",
+                "value": "32px"
+              }
+            ]
+          }
+        }
+      ],
+      "storage_key": "elementor-v4-workbook:v27:stv2:responsive-inheritance",
+      "title": "Responsive Inheritance — مقدار از کجا آمده است؟",
+      "type": "layer_reveal_debug",
+      "verification": [
+        {
+          "source_id": "ELEMENTOR_RESPONSIVE_EDITING",
+          "status": "verified_by_official_elementor_help"
+        },
+        {
+          "source_id": "ELEMENTOR_INHERITED_VALUES",
+          "status": "verified_by_official_elementor_help"
+        }
+      ]
+    },
+    {
+      "goal": "اولویت Local Class و ترتیب Global Classها را بدون تکیه بر زمان افزودن کلاس‌ها بفهم.",
+      "id": "stv2-class-priority",
+      "lab_target": "class-priority-build-test",
+      "lesson_id": "lesson-v17-class-manager",
+      "renderer": "class-priority",
+      "schema_version": "1.0.0",
+      "states": [
+        {
+          "computed": [
+            [
+              "Winning source",
+              "Local Class"
+            ],
+            [
+              "Scope",
+              "همین Element"
+            ]
+          ],
+          "elementor": [
+            [
+              "Classes Field",
+              "Local Class"
+            ],
+            [
+              "Local text color",
+              "Navy"
+            ],
+            [
+              "Global Classes",
+              "هیچ"
+            ]
+          ],
+          "evidence": "verified_by_official_elementor_help",
+          "explanation": "Local Class مخصوص Element انتخاب‌شده است و در hierarchy بالاترین اولویت را دارد.",
+          "golden_rule": "Local Class لباس اختصاصی همین Element است.",
+          "id": "local-only",
+          "phase": "پایه",
+          "prediction": {
+            "correct": 1,
+            "feedback_correct": "درست است؛ Local Class بالاترین priority را دارد.",
+            "feedback_wrong": "در hierarchy رسمی Elementor، Local Class همیشه در بالاترین اولویت است.",
+            "options": [
+              "Global Class",
+              "Local Class",
+              "کلاسی که دیرتر اضافه شده"
+            ],
+            "prompt": "اگر Global Class متعارض اضافه شود ولی Local همان property را تعیین کند، کدام برنده است؟"
+          },
+          "summary": "Style اختصاصی همان Element از Local Class می‌آید.",
+          "title": "هر Element یک Local Class دارد",
+          "visual": {
+            "chips": [
+              {
+                "kind": "local",
+                "name": "Local",
+                "priority": 1
+              }
+            ],
+            "result": "Navy",
+            "second": "بدون تغییر",
+            "winner": "Local"
+          }
+        },
+        {
+          "computed": [
+            [
+              "Winning source",
+              "Local"
+            ],
+            [
+              "Indicator meaning",
+              "Local override"
+            ]
+          ],
+          "elementor": [
+            [
+              "Classes",
+              "Local + Green_text"
+            ],
+            [
+              "Local color",
+              "Navy"
+            ],
+            [
+              "Green_text color",
+              "Green"
+            ]
+          ],
+          "evidence": "verified_by_official_elementor_help",
+          "explanation": "وجود Global Class به‌تنهایی Local property متعارض را کنار نمی‌زند.",
+          "golden_rule": "برای دیدن اثر Global، property متعارض Local را پاک یا بازطراحی کن.",
+          "id": "local-over-global",
+          "phase": "Conflict",
+          "prediction": {
+            "correct": 0,
+            "feedback_correct": "درست است؛ Class Manager hierarchy را تعیین می‌کند.",
+            "feedback_wrong": "Elementor priority را از Class Manager بازتاب می‌دهد، نه از زمان افزودن.",
+            "options": [
+              "Class Manager",
+              "زمان کلیک کاربر",
+              "ترتیب DOM"
+            ],
+            "prompt": "اگر رنگ Local را پاک کنیم و دو Global Class متعارض بمانند، اولویت از کجا می‌آید؟"
+          },
+          "summary": "Global Class رنگ سبز دارد، اما Local Class همچنان Navy را اعمال می‌کند.",
+          "title": "Local Class روی Global Class غلبه می‌کند",
+          "visual": {
+            "chips": [
+              {
+                "kind": "local",
+                "name": "Local",
+                "priority": 1
+              },
+              {
+                "kind": "global",
+                "name": "Green_text",
+                "priority": 2
+              }
+            ],
+            "result": "Navy",
+            "second": "Green",
+            "winner": "Local"
+          }
+        },
+        {
+          "computed": [
+            [
+              "Winning global",
+              "Green_text"
+            ],
+            [
+              "Reason",
+              "Manager priority / left position"
+            ]
+          ],
+          "elementor": [
+            [
+              "Classes Field",
+              "Local(empty) | Green_text | Red_text"
+            ],
+            [
+              "Class Manager order",
+              "Green_text بالاتر از Red_text"
+            ]
+          ],
+          "evidence": "verified_by_official_elementor_help",
+          "explanation": "حتی اگر Green_text بعدتر اضافه شده باشد، Manager order می‌تواند آن را به سمت چپ و اولویت بالاتر ببرد.",
+          "golden_rule": "زمان افزودن را با priority اشتباه نگیر.",
+          "id": "global-manager-order",
+          "phase": "Hierarchy",
+          "prediction": {
+            "correct": 0,
+            "feedback_correct": "بله؛ hierarchy Global Classها تغییر می‌کند.",
+            "feedback_wrong": "تغییر Manager order روی تعارض Global Classها اثر می‌گذارد، نه DOM یا وجود Local.",
+            "options": [
+              "Global winner می‌تواند Red_text شود",
+              "Local Class حذف می‌شود",
+              "DOM order تغییر می‌کند"
+            ],
+            "prompt": "اگر در Class Manager، Red_text بالاتر از Green_text قرار گیرد، چه چیزی تغییر می‌کند؟"
+          },
+          "summary": "Green_text در Class Manager بالاتر است و در Classes Field سمت چپ Red_text قرار می‌گیرد.",
+          "title": "دو Global Class: کلاس سمت چپ اولویت دارد",
+          "visual": {
+            "chips": [
+              {
+                "kind": "local-empty",
+                "name": "Local (empty)",
+                "priority": 1
+              },
+              {
+                "kind": "global winner",
+                "name": "Green_text",
+                "priority": 2
+              },
+              {
+                "kind": "global",
+                "name": "Red_text",
+                "priority": 3
+              }
+            ],
+            "result": "Green",
+            "second": "Green",
+            "winner": "Green_text"
+          }
+        },
+        {
+          "computed": [
+            [
+              "Winning global",
+              "Red_text"
+            ],
+            [
+              "Local override",
+              "ندارد"
+            ]
+          ],
+          "elementor": [
+            [
+              "Class Manager order",
+              "Red_text بالاتر"
+            ],
+            [
+              "Classes Field",
+              "Local(empty) | Red_text | Green_text"
+            ]
+          ],
+          "evidence": "verified_by_official_elementor_help",
+          "explanation": "تغییر hierarchy تصمیمی سیستمی است و می‌تواند روی تمام Elementهای دارای هر دو Class اثر بگذارد.",
+          "golden_rule": "Reorder کلاس، تغییر محلی کوچک نیست؛ اثر سیستم طراحی را بررسی کن.",
+          "id": "global-reordered",
+          "phase": "علت و معلول",
+          "prediction": {
+            "correct": 0,
+            "feedback_correct": "درست است؛ Global hierarchy می‌تواند چندین Element را تغییر دهد.",
+            "feedback_wrong": "Global Class بخشی از سیستم طراحی است و دامنهٔ آن فراتر از Element فعلی است.",
+            "options": [
+              "Elementهای دیگری که هر دو Class را دارند",
+              "فقط نام صفحهٔ فعلی",
+              "فقط breakpoint Mobile"
+            ],
+            "prompt": "پیش از Reorder کردن Global Class در سایت واقعی، چه چیزی باید بررسی شود؟"
+          },
+          "summary": "Red_text به اولویت بالاتر منتقل شده و در نبود Local override، نتیجه قرمز است.",
+          "title": "Reorder در Class Manager، نتیجهٔ Global را تغییر می‌دهد",
+          "visual": {
+            "chips": [
+              {
+                "kind": "local-empty",
+                "name": "Local (empty)",
+                "priority": 1
+              },
+              {
+                "kind": "global winner",
+                "name": "Red_text",
+                "priority": 2
+              },
+              {
+                "kind": "global",
+                "name": "Green_text",
+                "priority": 3
+              }
+            ],
+            "result": "Red",
+            "second": "Red",
+            "winner": "Red_text"
+          }
+        }
+      ],
+      "storage_key": "elementor-v4-workbook:v27:stv2:class-priority",
+      "title": "Local Class، Global Class و Priority — برنده چگونه تعیین می‌شود؟",
+      "type": "decision_propagation",
+      "verification": [
+        {
+          "source_id": "ELEMENTOR_CLASSES",
+          "status": "verified_by_official_elementor_help"
+        },
+        {
+          "source_id": "ELEMENTOR_CLASS_PRIORITY",
+          "status": "verified_by_official_elementor_help"
+        }
+      ]
+    }
+  ],
+  "version": "27.0.0"
+}

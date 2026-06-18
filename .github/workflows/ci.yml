@@ -1,0 +1,46 @@
+name: Workbook CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -r requirements.lock
+      - run: python tools/check_all.py
+      - run: python package.py
+      - uses: actions/upload-artifact@v6
+        with:
+          name: offline-workbook-build
+          path: |
+            release/*.zip
+            release/*.sha256
+          if-no-files-found: error
+
+  browser-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -r requirements.lock
+      - run: python -m playwright install --with-deps chromium
+      - run: python tools/check_all.py --browser-only
