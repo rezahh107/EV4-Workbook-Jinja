@@ -1,204 +1,512 @@
-<article class="lesson card-surface" data-lesson="6" id="lesson-6"><h2 class="lesson-title former-h1">درس 6 — Direction، Align، Justify و Gap</h2><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-6-lesson-compass-1" role="heading">🧭 قطب‌نمای درس</span></summary><section aria-labelledby="lesson-6-lesson-compass-1" class="disclosure-content lesson-section lesson-compass"><p><strong>در این درس یاد می‌گیری:</strong> محور اصلی و فرعی و نقش Direction، Align، Justify و Gap را.</p><p><strong>در این درس هنوز یاد نمی‌گیری:</strong> اندازهٔ نهایی ستون‌ها را.</p><p><strong>در پایان باید بتوانی:</strong> دو ستون را با محور درست تراز و فاصله‌گذاری کنی.</p></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" id="lesson-6-lesson-meta-2" role="heading">زمان، سنگینی و نوع فعالیت</span></summary><section aria-labelledby="lesson-6-lesson-meta-2" class="lesson-meta disclosure-content lesson-section"><div aria-label="جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت" class="table-wrap" role="region" tabindex="0"><table class="data-table educational-table edu-table"><caption>جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت</caption><thead><tr><th scope="col">مورد</th><th scope="col">پیشنهاد</th></tr></thead><tbody><tr><th scope="row">سنگینی</th><td>🟡 متوسط</td></tr><tr><th scope="row">نوع فعالیت</th><td>🧠 مفهومی + 🛠 اجرایی</td></tr><tr><th scope="row">هستهٔ فهم</th><td>۲۰–۲۵ دقیقه</td></tr><tr><th scope="row">تثبیت و تمرین</th><td>۲۰–۳۰ دقیقه</td></tr><tr><th scope="row">عمق اختیاری</th><td>۱۵–۲۰ دقیقه</td></tr></tbody></table></div><aside aria-label="راهنمای معلم" class="teacher-note"><p><strong>راهنمای معلم:</strong> محورها و تراز نیازمند مشاهدهٔ دقیق‌اند.</p></aside><p class="status-line"><code class="inline-code" dir="ltr">status: proposed_until_real_learner_pilot</code></p></section></details><section aria-labelledby="lesson-6-lesson-understand-4" class="lesson-section lesson-understand lesson-core-concept" data-core-concept="true"><h2 id="lesson-6-lesson-understand-4">A. بفهم</h2><h3>🧠 مدل ریل</h3><section aria-labelledby="section-hidden-99-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-99-heading">بخش آموزشی</h2><dl class="term-grid"><dt>Direction</dt><dd>جهت ریل</dd><dt>Justify</dt><dd>توزیع روی ریل</dd><dt>Align</dt><dd>تراز عمود بر ریل</dd><dt>Gap</dt><dd>فاصلهٔ بین فرزندان</dd></dl></section><p>در Row:</p><section aria-labelledby="section-hidden-100-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-100-heading">بخش آموزشی</h2><ul><li>Main Axis  → افقی</li>
-<li>Cross Axis ↓ عمودی</li></ul></section><p>در Column این نقش‌ها می‌چرخند.</p><hr/></section><details class="lesson-disclosure conceptual-reference" data-concept-version="31.0.0" data-source-sha256="e17118afdbc715b77ccdac1b4a61755fa53b724c5e89b17c0426ad1ba2c32974" id="lesson-6-concept-reference"><summary>📚 مرجع مفهومی کامل — درک عمیق Direction، Justify، Align و Gap</summary><div class="concept-reference-body concept-reference-v31" data-concept-index="6" data-source-version="31.0.0"><p class="concept-reference-lead">این مرجع کامل برای ساخت مدل ذهنی، عیب‌یابی و تصمیم‌گیری مستقل نوشته شده است. متن اصلی درس، کارت‌ها، آزمون‌ها و Step‑Throughها همچنان در جای خود باقی مانده‌اند.</p><section aria-labelledby="concept-v31-06-section-01" class="concept-reference-part concept-reference-traps"><h3 id="concept-v31-06-section-01">بزرگ‌ترین اشتباه حفظی</h3><p>بعضی‌ها می‌گویند:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">Justify = افقی
-Align = عمودی
-</code></pre></figure><p>این فقط در <code class="inline-code" dir="ltr">flex-direction: row</code> غالباً درست به نظر می‌رسد. با Column همه‌چیز عوض می‌شود.</p><hr/></section><section aria-labelledby="concept-v31-06-section-02" class="concept-reference-part concept-reference-analogy"><h3 id="concept-v31-06-section-02">تشبیه: ریل قطار و سکوی ایستگاه</h3><ul>
-<li>Direction = جهت ریل</li>
-<li>Main Axis = طول ریل</li>
-<li>Cross Axis = عرض سکو</li>
-<li>Justify = توزیع قطارها در طول ریل</li>
-<li>Align = قرارگیری قطارها در عرض سکو</li>
-<li>Gap = فاصلهٔ ثابت میان قطارها</li>
-</ul><hr/></section><section aria-labelledby="concept-v31-06-section-03" class="concept-reference-part concept-reference-definition"><h3 id="concept-v31-06-section-03">Direction محور را تعریف می‌کند</h3><h4>Row</h4><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">Main Axis:  شروع → پایان
-Cross Axis: بالا ↓ پایین
-</code></pre></figure><h4>Column</h4><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">Main Axis:  بالا ↓ پایین
-Cross Axis: شروع → پایان
-</code></pre></figure><p>در RTL، Start و End افقی ممکن است نسبت به LTR جابه‌جا شوند. به همین دلیل بهتر است محور را مفهومی بخوانی، نه صرفاً چپ و راست.</p><hr/></section><section aria-labelledby="concept-v31-06-section-04" class="concept-reference-part"><h3 id="concept-v31-06-section-04">تصویر محور چرخان</h3><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Row                         Column
-Main  ─────────────→        Cross ─────────────→
-Cross ↓                     Main  ↓
-</code></pre></figure><p>با تغییر Direction، تعریف Justify و Align عوض نمی‌شود؛ خودِ محور می‌چرخد. <code class="inline-code" dir="ltr">justify-content</code> همیشه روی Main Axis است و <code class="inline-code" dir="ltr">align-items</code> همیشه روی Cross Axis. در <code class="inline-code" dir="ltr">row-reverse</code> و <code class="inline-code" dir="ltr">column-reverse</code> محور عوض نمی‌شود؛ فقط جهت Start و End همان محور برعکس می‌شود.</p><p>در Chrome DevTools، Badge مربوط به <code class="inline-code" dir="ltr">flex</code> را کنار Container فعال کن تا محور، فاصله و جای Childها را به‌صورت Overlay ببینی.</p></section><section aria-labelledby="concept-v31-06-section-05" class="concept-reference-part"><h3 id="concept-v31-06-section-05">Justify Content</h3><p>Justify فضای آزاد روی Main Axis را توزیع می‌کند.</p><p>نمونه‌ها:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">flex-start:    [A][B][C].........
-center:        ....[A][B][C].....
-space-between: [A].....[B].....[C]
-</code></pre></figure><h4>نکتهٔ حیاتی</h4><p>اگر فضای آزاد وجود نداشته باشد، Justify چیزی برای توزیع ندارد.</p><p>مثلاً اگر Itemها با Grow تمام عرض را مصرف کرده‌اند، <code class="inline-code" dir="ltr">space-between</code> ممکن است اثر مورد انتظار را نشان ندهد.</p><hr/></section><section aria-labelledby="concept-v31-06-section-06" class="concept-reference-part"><h3 id="concept-v31-06-section-06">Align Items</h3><p>Align Items جای Itemها را روی Cross Axis کنترل می‌کند.</p><p>در Row:</p><ul>
-<li>Cross Axis معمولاً عمودی است.</li>
-</ul><p>در Column:</p><ul>
-<li>Cross Axis معمولاً افقی است.</li>
-</ul><p><code class="inline-code" dir="ltr">stretch</code> می‌تواند Itemها را در Cross Axis کش دهد، به‌شرط اینکه اندازهٔ صریح مانع آن نشود.</p><hr/></section><section aria-labelledby="concept-v31-06-section-07" class="concept-reference-part"><h3 id="concept-v31-06-section-07">Align Self</h3><p>اگر فقط یک Item باید متفاوت باشد، Align Self روی همان Item اعمال می‌شود.</p><p>مثل دانش‌آموزی که در یک صف، جای خاص خود را دارد.</p><hr/></section><section aria-labelledby="concept-v31-06-section-08" class="concept-reference-part"><h3 id="concept-v31-06-section-08">Gap</h3><p>Gap فاصلهٔ بین Itemها یا Lineهاست و به خود Item خاصی تعلق ندارد.</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-css inline-code" dir="ltr">.stack {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-</code></pre></figure><p>مزیت Gap نسبت به Margin:</p><ul>
-<li>روی ابتدا و انتهای گروه فاصلهٔ اضافه ایجاد نمی‌کند.</li>
-<li>با حذف یا اضافه‌شدن Item منطق تمیزتری دارد.</li>
-<li>رابطهٔ Parent با Siblingها را بیان می‌کند.</li>
-</ul><hr/></section><section aria-labelledby="concept-v31-06-section-09" class="concept-reference-part concept-reference-elementor"><h3 id="concept-v31-06-section-09">مثال Elementor: نوار دکمه‌ها</h3><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Actions — Flex Row
-├── Primary Button
-└── Secondary Button
-</code></pre></figure><p>تنظیم:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Direction: Row
-Justify: Start
-Align: Center
-Gap: 12px
-</code></pre></figure><p>روی Mobile:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Direction: Column
-Align: Stretch
-</code></pre></figure><p>بدون تغییر HTML، دکمه‌ها زیر هم و تمام‌عرض می‌شوند.</p><hr/></section><section aria-labelledby="concept-v31-06-section-10" class="concept-reference-part concept-reference-workflow"><h3 id="concept-v31-06-section-10">روش عیب‌یابی چهارمرحله‌ای</h3><ol>
+<article class="lesson card-surface" data-lesson="6" id="lesson-6">
+
+<h2 class="lesson-title former-h1">درس 6 — Direction، Align، Justify و Gap</h2>
+
+<details class="lesson-disclosure" open>
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-6-lesson-compass-1" role="heading">🧭 قطب‌نمای درس</span>
+</summary>
+<section aria-labelledby="lesson-6-lesson-compass-1" class="disclosure-content lesson-section lesson-compass">
+<p><strong>در این درس یاد می‌گیری:</strong> بعد از Flex کردن Shell، محور اصلی و فرعی را درست بخوانی و بفهمی Direction، Justify، Align و Gap دقیقاً روی چه چیزی اثر می‌گذارند.</p>
+<p><strong>در این درس هنوز یاد نمی‌گیری:</strong> Grow/Shrink عمیق، Order نهایی Mobile، Position نهایی Nodeها، Visual Stage کامل، یا مقدار قطعی فاصله‌ها از روی Screenshot.</p>
+<p><strong>در پایان باید بتوانی:</strong> بعد از تغییر Row به Column، دوباره تشخیص بدهی Justify و Align روی کدام محور اثر می‌گذارند و فاصلهٔ بین Copy و Visual را با Gap کنترل کنی.</p>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" id="lesson-6-lesson-meta-2" role="heading">زمان، سنگینی و نوع فعالیت</span>
+</summary>
+<section aria-labelledby="lesson-6-lesson-meta-2" class="lesson-meta disclosure-content lesson-section">
+<div aria-label="جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت" class="table-wrap" role="region" tabindex="0">
+<table class="data-table educational-table edu-table">
+<caption>جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت</caption>
+<thead><tr><th scope="col">مورد</th><th scope="col">پیشنهاد</th></tr></thead>
+<tbody>
+<tr><th scope="row">سنگینی</th><td>🟡 متوسط</td></tr>
+<tr><th scope="row">نوع فعالیت</th><td>🧠 مفهومی + 🛠 اجرایی + 👁 مشاهدهٔ محور</td></tr>
+<tr><th scope="row">هستهٔ فهم</th><td>۲۰–۲۵ دقیقه</td></tr>
+<tr><th scope="row">تثبیت و تمرین</th><td>۲۵–۳۵ دقیقه</td></tr>
+<tr><th scope="row">عمق اختیاری</th><td>۱۵–۲۰ دقیقه</td></tr>
+</tbody>
+</table>
+</div>
+<aside aria-label="راهنمای معلم" class="teacher-note">
+<p><strong>راهنمای معلم:</strong> خطای رایج این درس حفظ‌کردن «Justify یعنی افقی» و «Align یعنی عمودی» است. باید هنرجو را مجبور کرد اول Direction را بخواند، سپس Main Axis و Cross Axis را دوباره استخراج کند.</p>
+</aside>
+<p class="status-line"><code class="inline-code" dir="ltr">status: revised_axis_alignment_context</code></p>
+</section>
+</details>
+
+<section aria-labelledby="lesson-6-lesson-understand-4" class="lesson-section lesson-understand lesson-core-concept" data-core-concept="true">
+<h2 id="lesson-6-lesson-understand-4">A. بفهم</h2>
+
+<h3>پیوند با درس‌های قبلی</h3>
+<p>در درس ۵، Shell را به Flex Container تبدیل کردی تا Copy و Visual در Desktop کنار هم قرار بگیرند. حالا در درس ۶ باید یاد بگیری وقتی Direction عوض می‌شود، معنی عملی Justify و Align هم از نظر محور عوض می‌شود.</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Context
+↓
+Structure
+↓
+Class Scope
+↓
+Box Model
+↓
+Flex Container
+↓
+Axis / Direction / Justify / Align / Gap</code></pre>
+</figure>
+
+<h3>بزرگ‌ترین اشتباه حفظی</h3>
+<p>این جمله ناقص و خطرناک است:</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Justify = افقی
+Align = عمودی</code></pre>
+</figure>
+<p>این فقط وقتی ظاهراً درست دیده می‌شود که Direction روی Row باشد. اگر Direction به Column تغییر کند، Main Axis عمودی می‌شود و Justify هم روی محور عمودی اثر می‌گذارد.</p>
+
+<h3>مدل ریل</h3>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<dl class="term-grid">
+<dt>Direction</dt><dd>جهت ریل را تعیین می‌کند: Row یا Column.</dd>
+<dt>Main Axis</dt><dd>طول ریل؛ Justify روی این محور کار می‌کند.</dd>
+<dt>Cross Axis</dt><dd>محور عمود بر ریل؛ Align روی این محور کار می‌کند.</dd>
+<dt>Justify Content</dt><dd>فضای آزاد را روی Main Axis توزیع می‌کند.</dd>
+<dt>Align Items</dt><dd>Itemها را روی Cross Axis تراز می‌کند.</dd>
+<dt>Gap</dt><dd>فاصلهٔ ثابت بین Flex Itemها؛ به Parent تعلق دارد، نه به یک Item خاص.</dd>
+</dl>
+</section>
+
+<h3>محورها در Row و Column</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Axes in row and column">
+<table class="data-table educational-table edu-table">
+<caption>محورها با تغییر Direction</caption>
+<thead><tr><th scope="col">Direction</th><th scope="col">Main Axis</th><th scope="col">Justify روی کجا اثر دارد؟</th><th scope="col">Cross Axis</th><th scope="col">Align روی کجا اثر دارد؟</th></tr></thead>
+<tbody>
+<tr><th scope="row">Row</th><td>افقی / Inline</td><td>افقی، در امتداد ردیف</td><td>عمودی / Block</td><td>عمودی</td></tr>
+<tr><th scope="row">Column</th><td>عمودی / Block</td><td>عمودی، در امتداد ستون</td><td>افقی / Inline</td><td>افقی</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>RTL را با چپ و راست حفظ نکن</h3>
+<p>در زبان‌های RTL، Start و End افقی ممکن است نسبت به LTR جابه‌جا شوند. بنابراین بهتر است به‌جای حفظ‌کردن چپ و راست، از واژه‌های Main Axis، Cross Axis، Start و End استفاده کنی.</p>
+
+<h3>Justify فقط وقتی چیزی برای توزیع وجود داشته باشد اثر می‌گذارد</h3>
+<p>اگر Itemها تمام فضای Parent را مصرف کرده باشند، Justify ممکن است اثر آشکاری نشان ندهد. بنابراین قبل از اینکه بگویی «Justify کار نمی‌کند»، باید Size/Basis/Grow و فضای آزاد Parent را بررسی کنی.</p>
+
+<h3>Gap با Margin فرق دارد</h3>
+<p>Gap فاصلهٔ بین Itemهای یک Parent است. Margin فاصلهٔ بیرونی یک Item است. برای فاصلهٔ منظم بین Copy و Visual در Shell، Gap نقطهٔ شروع تمیزتری است.</p>
+<hr/>
+</section>
+
+<details class="lesson-disclosure conceptual-reference" data-concept-version="tuya-revised-6.0.0" id="lesson-6-concept-reference">
+<summary>📚 مرجع مفهومی کامل — Direction، Main/Cross Axis، Justify، Align و Gap</summary>
+<div class="concept-reference-body concept-reference-v31" data-concept-index="6" data-source-version="tuya-revised-6.0.0">
+
+<p class="concept-reference-lead">این مرجع، هستهٔ مفهومی درس را حفظ می‌کند و آن را به تمرین واقعی TUYA وصل می‌کند. هدف این نیست که همهٔ کنترل‌های Flex را حفظ کنی؛ هدف این است که هر بار بعد از تغییر Direction، محور را دوباره بخوانی.</p>
+
+<section class="concept-reference-part concept-reference-traps" aria-labelledby="lesson-6-trap">
+<h3 id="lesson-6-trap">۱. چرا حفظ افقی/عمودی خطرناک است؟</h3>
+<p>در Row، Justify معمولاً افقی دیده می‌شود و Align معمولاً عمودی. اما در Column این برداشت می‌شکند. پس تعریف واقعی این است:</p>
+<ul>
+<li><strong>Justify:</strong> همیشه روی Main Axis.</li>
+<li><strong>Align:</strong> همیشه روی Cross Axis.</li>
+<li><strong>Direction:</strong> تعیین می‌کند Main Axis کدام جهت باشد.</li>
+</ul>
+</section>
+
+<section class="concept-reference-part concept-reference-analogy" aria-labelledby="lesson-6-train">
+<h3 id="lesson-6-train">۲. تشبیه ریل و سکو</h3>
+<ul>
+<li><strong>Direction:</strong> جهت ریل.</li>
+<li><strong>Main Axis:</strong> طول ریل.</li>
+<li><strong>Cross Axis:</strong> عرض سکو.</li>
+<li><strong>Justify:</strong> پخش‌کردن قطارها در طول ریل.</li>
+<li><strong>Align:</strong> قرار دادن قطارها در عرض سکو.</li>
+<li><strong>Gap:</strong> فاصلهٔ ثابت بین قطارها.</li>
+</ul>
+<p>اگر ریل را بچرخانی، تعریف Justify عوض نمی‌شود؛ خود ریل چرخیده است.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-6-axis-diagram">
+<h3 id="lesson-6-axis-diagram">۳. نمودار محور چرخان</h3>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Row:
+Main  ─────────────→
+Cross ↓
+
+Column:
+Cross ─────────────→
+Main  ↓</code></pre>
+</figure>
+<p>در <code dir="ltr">row-reverse</code> و <code dir="ltr">column-reverse</code> محور اصلی همچنان همان محور است، اما جهت Start و End برعکس می‌شود.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-6-justify">
+<h3 id="lesson-6-justify">۴. Justify Content</h3>
+<p>Justify فضای آزاد را روی Main Axis توزیع می‌کند:</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">flex-start:     [A][B][C].........
+center:         ....[A][B][C].....
+space-between:  [A].....[B].....[C]</code></pre>
+</figure>
+<p>اگر فضای آزاد وجود نداشته باشد، Justify چیزی برای پخش‌کردن ندارد. این معمولاً وقتی رخ می‌دهد که Itemها با basis/grow/min-width فضا را پر کرده‌اند.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-6-align">
+<h3 id="lesson-6-align">۵. Align Items و Align Self</h3>
+<p>Align Items روی همهٔ Childهای مستقیم Flex Container و در Cross Axis اثر می‌گذارد. Align Self فقط یک Item را متفاوت می‌کند.</p>
+<p>در TUYA، اگر فقط Visual باید نسبت به Copy تراز متفاوتی داشته باشد، اول بررسی کن آیا مشکل از Align Items روی Shell است یا نیاز واقعی به Align Self روی Visual وجود دارد.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-6-gap">
+<h3 id="lesson-6-gap">۶. Gap</h3>
+<p>Gap فاصلهٔ بین Itemهاست و به Parent تعلق دارد. مزیت Gap نسبت به Margin:</p>
+<ul>
+<li>ابتدا و انتهای گروه فاصلهٔ اضافه ایجاد نمی‌کند.</li>
+<li>با کم‌وزیاد شدن Itemها منظم‌تر می‌ماند.</li>
+<li>قانون فاصله را روی Parent نگه می‌دارد.</li>
+</ul>
+<p>برای فاصلهٔ بین Copy و Visual، اول Gap را بررسی کن؛ Margin را فقط وقتی استفاده کن که دلیل روشن بیرونی داری.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-6-tuya">
+<h3 id="lesson-6-tuya">۷. خواندن محور در TUYA</h3>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Desktop:
+TUYA Shell = Flex Row
+Main Axis  = افقی
+Cross Axis = عمودی
+Justify    = توزیع افقی فضای آزاد
+Align      = تراز عمودی Copy و Visual
+Gap        = فاصلهٔ بین Copy و Visual
+
+Mobile:
+TUYA Shell = Flex Column
+Main Axis  = عمودی
+Cross Axis = افقی
+Justify    = توزیع عمودی فضای آزاد
+Align      = تراز افقی Copy و Visual
+Gap        = فاصلهٔ عمودی بین Copy و Visual</code></pre>
+</figure>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-6-debug">
+<h3 id="lesson-6-debug">۸. روش عیب‌یابی چهارمرحله‌ای</h3>
+<ol>
 <li>Direction چیست؟</li>
 <li>Main Axis کدام است؟</li>
 <li>آیا فضای آزاد وجود دارد؟</li>
-<li>می‌خواهم روی Main Axis تغییر دهم یا Cross Axis؟</li>
-</ol><p>پس از پاسخ، Justify یا Align را انتخاب کن.</p><hr/></section><section aria-labelledby="concept-v31-06-section-11" class="concept-reference-part concept-reference-traps"><h3 id="concept-v31-06-section-11">تله‌های رایج</h3><ul>
-<li>حفظ‌کردن افقی/عمودی به‌جای Main/Cross</li>
-<li>استفاده از Margin برای فاصلهٔ یکنواخت Siblingها</li>
-<li>انتظار اثر از Justify بدون فضای آزاد</li>
-<li>انتظار Stretch وقتی Item Width/Height صریح دارد</li>
-<li>اشتباه‌گرفتن Align Items با Align Content</li>
-</ul><hr/></section><section aria-labelledby="concept-v31-06-section-12" class="concept-reference-part"><h3 id="concept-v31-06-section-12">Align Content چه زمانی مهم می‌شود؟</h3><p>وقتی Flex چند Line دارد و Container در Cross Axis فضای اضافه دارد. Align Content خود Lineها را توزیع می‌کند؛ Align Items، Itemهای داخل هر Line را.</p><hr/></section><section aria-labelledby="concept-v31-06-section-13" class="concept-reference-part concept-reference-analogy"><h3 id="concept-v31-06-section-13">تصویر ذهنی نهایی</h3><p>Direction ریل را می‌چرخاند. Justify قطارها را روی طول ریل جابه‌جا می‌کند و Align جای آن‌ها را روی عرض سکو تعیین می‌کند. تعریف‌ها ثابت‌اند؛ این محور است که می‌چرخد.</p></section><section aria-labelledby="concept-v31-06-section-14" class="concept-reference-part concept-reference-golden"><h3 id="concept-v31-06-section-14">قوانین طلایی</h3><ul>
-<li><strong>«Direction را بخوان؛ بعد دربارهٔ Justify و Align تصمیم بگیر.»</strong></li>
-<li><strong>«Justify همیشه روی Main Axis است، نه همیشه افقی.»</strong></li>
-<li><strong>«Align Items همیشه روی Cross Axis است، نه همیشه عمودی.»</strong></li>
-<li><strong>«بدون فضای آزاد، توزیع فضای آزاد معنی ندارد.»</strong></li>
-<li><strong>«Gap رابطهٔ میان Siblingهاست؛ Margin ویژگی بیرونی یک Box.»</strong></li>
-</ul></section><footer class="concept-reference-evidence"><h3>منابع رسمی و وضعیت اعتبار این فصل</h3><p>رفتارهای CSS و مرورگر از استانداردها و مستندات رسمی، رفتار Elementor از Help Center رسمی، و تشبیه‌ها به‌عنوان <code class="inline-code" dir="ltr">derived_explanation</code> ارائه شده‌اند.</p><ul>
-<li>CSS Box Alignment Module</li>
-<li>CSS Flexbox specification</li>
-<li>MDN: Box alignment in flexbox</li>
-<li>Elementor Help: Container layout and arrangement controls</li>
-</ul><hr/></footer></div></details><details class="lesson-disclosure settings-values-units" id="lesson-6-settings-values-units">
-<summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" id="lesson-6-settings-values-units-heading" role="heading">⚙️ تنظیمات، مقدارها و واحدها — Align و Justify واحد ندارند؛ Gap دارد</span></summary>
+<li>می‌خواهم روی Main Axis تغییر بدهم یا Cross Axis؟</li>
+</ol>
+<p>اگر این چهار سؤال را نپرسی، ممکن است Align را عوض کنی در حالی که باید Justify را تغییر می‌دادی، یا برعکس.</p>
+</section>
+
+<section class="concept-reference-part concept-reference-golden" aria-labelledby="lesson-6-golden">
+<h3 id="lesson-6-golden">۹. قوانین طلایی</h3>
+<ul>
+<li><strong>Justify را با «افقی» حفظ نکن؛ آن را به Main Axis وصل کن.</strong></li>
+<li><strong>Align را با «عمودی» حفظ نکن؛ آن را به Cross Axis وصل کن.</strong></li>
+<li><strong>بعد از هر Row → Column، محورها را از نو بخوان.</strong></li>
+<li><strong>Gap فاصلهٔ بین Siblingهاست، نه فاصلهٔ داخل یک Item.</strong></li>
+<li><strong>اگر Justify اثر ندارد، اول فضای آزاد، Basis و Grow/Shrink را بررسی کن.</strong></li>
+<li><strong>Order بصری را با reading/focus order قاطی نکن.</strong></li>
+<li><strong>در این درس مقدارهای Gap و Alignment تا قبل از تست Responsive، provisional هستند.</strong></li>
+</ul>
+</section>
+
+<footer class="concept-reference-evidence">
+<h3>منابع و وضعیت اعتبار</h3>
+<p>مفهوم Main Axis، Cross Axis، Justify، Align و Gap بر پایهٔ رفتار CSS Flexbox و مستندات رسمی Elementor دربارهٔ کنترل‌های Flexbox نوشته شده است. تصمیم‌های عددی TUYA تا قبل از UI واقعی و Breakpoint Validation قطعی نیستند.</p>
+<ul>
+<li><a href="https://elementor.com/help/adjusting-the-contained-elements/" rel="noopener noreferrer" target="_blank">Elementor — Arrange elements in a Flexbox container</a></li>
+<li><a href="https://elementor.com/help/style-tab-layout/" rel="noopener noreferrer" target="_blank">Elementor — Style tab: Layout</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" rel="noopener noreferrer" target="_blank">MDN — CSS Flexible Box Layout</a></li>
+</ul>
+</footer>
+
+</div>
+</details>
+
+<details class="lesson-disclosure settings-values-units" id="lesson-6-settings-values-units">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" id="lesson-6-settings-values-units-heading" role="heading">⚙️ تنظیمات، مقدارها و واحدها — Keywordها، Gap و محورها</span>
+</summary>
 <section aria-labelledby="lesson-6-settings-values-units-heading" class="disclosure-content settings-units-body">
-<p class="settings-units-lead">Align و Justify محل توزیع را با keyword تعیین می‌کنند؛ Gap اندازهٔ فاصله را می‌دهد. تغییر Direction معنای محور را عوض می‌کند، نه واحد Gap را.</p>
-<aside class="unit-analogy"><strong>🧠 تصویر ذهنی:</strong> رهبر صف می‌گوید «ابتدا، وسط یا انتها بایستید»؛ متر فقط فاصلهٔ بین افراد را تعیین می‌کند.</aside>
-<div aria-label="جدول تنظیمات و واحدهای این درس" class="table-wrap units-table-wrap" role="region" tabindex="0">
+<p class="settings-units-lead">در این درس بعضی کنترل‌ها عدد نیستند. Direction، Justify و Align معمولاً keyword هستند. Gap مقدار طولی می‌گیرد، ولی اثرش وابسته به Direction و محور است.</p>
+<div aria-label="جدول تنظیمات و واحدهای درس ۶" class="table-wrap units-table-wrap" role="region" tabindex="0">
 <table class="data-table educational-table units-context-table">
-<caption>تنظیمات، نوع مقدار، مرجع محاسبه و راهنمای انتخاب</caption>
-<thead><tr><th scope="col">تنظیم</th><th scope="col">CSS / مفهوم</th><th scope="col">مقدار یا واحد</th><th scope="col">مرجع</th><th scope="col">کاربرد پیشنهادی</th><th scope="col">تله</th><th scope="col">شاهد</th></tr></thead>
-<tbody><tr><th scope="row">Justify Content</th><td><code dir="ltr">justify-content</code></td><td>start / center / end / space-*</td><td>keyword</td><td>توزیع روی main axis.</td><td>با تغییر Row به Column محور عوض می‌شود.</td><td><code dir="ltr">E_LAYOUT</code></td></tr><tr><th scope="row">Align Items</th><td><code dir="ltr">align-items</code></td><td>start / center / end / stretch</td><td>keyword</td><td>تراز روی cross axis.</td><td>Stretch ممکن است اندازهٔ Child را عوض کند.</td><td><code dir="ltr">E_LAYOUT</code></td></tr><tr><th scope="row">Gap</th><td><code dir="ltr">gap</code></td><td>PX، %، VW در Flexbox Help</td><td>Parent یا viewport</td><td>فاصلهٔ منظم بین Childها.</td><td>Margin تک‌تک Childها را جایگزین بی‌دلیل Gap نکن.</td><td><code dir="ltr">E_FLEX_GAP</code></td></tr></tbody>
+<caption>تنظیمات، نوع مقدار، مرجع و تله</caption>
+<thead><tr><th scope="col">تنظیم</th><th scope="col">نوع مقدار</th><th scope="col">اثر</th><th scope="col">تله</th></tr></thead>
+<tbody>
+<tr><th scope="row">Direction</th><td>keyword</td><td>تعریف Main Axis</td><td>بعد از تغییر به Column، Justify/Align را با معنی قبلی بخوانی.</td></tr>
+<tr><th scope="row">Justify Content</th><td>keyword</td><td>توزیع فضای آزاد روی Main Axis</td><td>وقتی فضای آزاد نیست، انتظار اثر بزرگ داشته باشی.</td></tr>
+<tr><th scope="row">Align Items</th><td>keyword</td><td>تراز روی Cross Axis</td><td>آن را همیشه عمودی فرض کنی.</td></tr>
+<tr><th scope="row">Gap</th><td>length / responsive length</td><td>فاصلهٔ بین Itemها</td><td>با Padding یا Margin اشتباه گرفته شود.</td></tr>
+<tr><th scope="row">Order</th><td>number</td><td>ترتیب بصری در Flex</td><td>با ترتیب خواندن و Focus یکی فرض شود.</td></tr>
+</tbody>
 </table>
 </div>
 <div class="unit-guidance-grid">
-<section><h3>🧮 محاسبهٔ راهگشا</h3><p>Parent=1000px، دو Child=47.5% یعنی هرکدام 475px و Gap=5%=50px؛ جمع 1000px.</p></section>
-<section><h3>📱 در Responsive</h3><p>در Mobile معمولاً justify/align keyword و Gap value تغییر می‌کند؛ ابتدا axis جدید را بفهم.</p></section>
-<section><h3>🔬 در DevTools</h3><p>Flex overlay مرورگر، main/cross axis و computed gap را بررسی کن.</p></section>
+<section><h3>🧮 محاسبهٔ راهگشا</h3><p>not_applicable_for_alignment — اول محور را بخوان. اگر Justify اثر ندارد، فضای آزاد و اندازهٔ Itemها را بررسی کن.</p></section>
+<section><h3>📱 در Responsive</h3><p>با Row → Column، Gap ممکن است از فاصلهٔ افقی به فاصلهٔ عمودی تبدیل شود. مقدار Desktop را بدون بررسی به Mobile منتقل نکن.</p></section>
+<section><h3>🔬 در DevTools</h3><p>Flex overlay مرورگر می‌تواند محور، Gap و محل Itemها را نشان دهد. از آن برای تأیید استفاده کن، نه برای حدس‌زدن مقدار قطعی.</p></section>
 </div>
-<p class="unit-atlas-link"><a href="#appendix-v29-units-atlas">📐 بازگشت به اطلس مرکزی مقدارها و واحدها</a></p>
-<footer class="settings-units-evidence"><strong>وضعیت:</strong> <code dir="ltr">verified_by_official_help_and_css_sources</code><br/><strong>منابع:</strong> <a href="https://elementor.com/help/style-tab-layout/" rel="noopener noreferrer" target="_blank">Elementor V4 — Style tab: Layout</a>، <a href="https://elementor.com/help/adjusting-the-contained-elements/" rel="noopener noreferrer" target="_blank">Elementor — Arrange elements in a Flexbox container</a>، <a href="https://www.w3.org/TR/css-flexbox-1/" rel="noopener noreferrer" target="_blank">W3C — CSS Flexible Box Layout</a></footer>
 </section>
-</details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-6-lesson-practice-5" role="heading">B. بساز و امتحان کن</span></summary><section aria-labelledby="lesson-6-lesson-practice-5" class="disclosure-content lesson-practice lesson-section"><h3>🏗 پروژهٔ TUYA</h3><p>Platform Main:</p><section aria-labelledby="section-hidden-102-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-102-heading">بخش آموزشی</h2><dl class="term-grid"><dt>Direction</dt><dd>Row</dd><dt>Align Items</dt><dd>Center</dd><dt>Justify Content</dt><dd>Start</dd><dt>Gap</dt><dd>مقدار سیال پیشنهادی</dd></dl></section><p>حالا Platform Copy را Flexbox Column کن تا Intro، Feature List و Logo Strip بعداً زیر هم قرار بگیرند.</p><p>وقتی Platform Copy واقعاً به Flexbox تبدیل شد، Class موجود <code class="inline-code" dir="ltr">c-platform-copy</code> را نگه دار؛ Class جدید صرفاً به‌خاطر تبدیل Element نساز.</p><h3>❓ سؤال توقف</h3><p>در Direction=Column، <code class="inline-code" dir="ltr">justify-content:center</code> در چه جهتی اثر می‌گذارد؟</p><details class="disclosure-card"><summary>پاسخ</summary>در امتداد عمودی Main Axis.</details><h3>⚠️ تلهٔ اصلی</h3><p><strong>تله:</strong> فکر کنی Justify همیشه چپ و راست است.</p><p><strong>اولین بررسی:</strong> Direction Parent.</p><h3>🧪 عمداً خرابش کن</h3><p>Direction Main را Column کن، اما Justify و Align را دست نزن.</p><h4>👀 انتظار داری ببینی</h4><ul>
-<li>Copy و Visual زیر هم می‌روند؛</li>
-<li>Justify و Align جهت دیگری را کنترل می‌کنند؛</li>
-<li>تنظیمی که قبلاً منطقی بود ممکن است عجیب دیده شود.</li>
-</ul><p>سپس Row را برگردان.</p><h3>Checkpoint</h3><section aria-labelledby="section-hidden-103-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-103-heading">بخش آموزشی</h2><form class="interactive-form checklist-form" data-persist-group="checklist-31"><fieldset><legend>Checkpoint</legend><label class="choice-row"><input data-persist="checkbox" id="chk-31-1" name="chk-31-1" type="checkbox"/><span>Main در Row است</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-31-2" name="chk-31-2" type="checkbox"/><span>دو ستون عمودی Center شده‌اند</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-31-3" name="chk-31-3" type="checkbox"/><span>فاصله با Gap والد ساخته شده</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-31-4" name="chk-31-4" type="checkbox"/><span>Copy در Column آمادهٔ محتواست</span></label></fieldset></form></section><h3>Exit Ticket — قبل از ادامه</h3><p><strong>بازیابی کوتاه:</strong> Justify و Align روی کدام محورها کار می‌کنند؟</p><p><strong>انتقال به یک موقعیت تازه:</strong> Direction روی Column است و می‌خواهی Itemها افقی وسط شوند؛ کدام Control را تغییر می‌دهی؟</p><details class="disclosure-card">
-<summary>راهنمای خودسنجی اختصاصی همین درس</summary>
-<h3>آناتومی پاسخ خوب</h3>
-<form class="interactive-form checklist-form" data-persist-group="checklist-32"><fieldset><legend>آناتومی پاسخ خوب</legend><label class="choice-row"><input data-persist="checkbox" id="chk-32-1" name="chk-32-1" type="checkbox"/><span>Direction فعلی و Main/Cross Axis را مشخص کرده است.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-32-2" name="chk-32-2" type="checkbox"/><span>Justify، Align و Gap را با مسئولیت درست نام برده است.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-32-3" name="chk-32-3" type="checkbox"/><span>پاسخ با تغییر Row/Column همچنان منطقی می‌ماند.</span></label></fieldset></form>
-<p>پاسخ کامل لازم نیست طولانی باشد؛ باید نشان بدهد <strong>چه چیزی را بررسی می‌کنی، چرا، و چگونه نتیجه را اثبات می‌کنی</strong>.</p>
-</details></section></details><details aria-labelledby="lesson-6-lesson-deep-dive-7" class="lesson-section lesson-deep-dive lesson-disclosure"><summary class="lesson-disclosure-summary" id="lesson-6-lesson-deep-dive-7">C. عمیق‌تر نگاه کن — CASE-HOME2-DOM-001</summary><h3>📂 CASE-HOME2-DOM-001 — Empty Flexbox، Spacer یا پنل تصویری؟</h3><p><strong>status:</strong> <code class="inline-code" dir="ltr">observed_from_ForLesson_export + teacher_evaluation</code></p><p>نسخهٔ قبلی خیلی سریع می‌گفت «اگر Flexbox خالی فقط برای فاصله ساخته شده باشد، Gap یا Padding بهتر است». در Export واقعی Home2، ما عمیق‌تر نگاه کردیم: سه Flexbox خالی واقعاً فقط Spacer نیستند؛ آن‌ها پنل‌های خاکستری بصری با اندازه و Background هستند.</p><div aria-label="جدول CASE-HOME2-DOM-001" class="table-wrap" role="region" tabindex="0"><table class="data-table educational-table edu-table"><caption>Evidence واقعی از Export Home2</caption><thead><tr><th scope="col">Element ID</th><th scope="col">Path</th><th scope="col">Width</th><th scope="col">Height</th><th scope="col">Background</th><th scope="col">Radius</th><th scope="col">برداشت</th></tr></thead><tbody><tr><th scope="row"><code class="inline-code" dir="ltr">24a44a5b</code></th><td><code class="inline-code" dir="ltr">2/1/0</code></td><td><code class="inline-code" dir="ltr">33.33vw</code></td><td><code class="inline-code" dir="ltr">56vh</code></td><td><code class="inline-code" dir="ltr">#b2b2b2</code></td><td><code class="inline-code" dir="ltr">8px</code></td><td>پنل تصویری/Placeholder</td></tr><tr><th scope="row"><code class="inline-code" dir="ltr">5d2f068c</code></th><td><code class="inline-code" dir="ltr">2/1/1</code></td><td><code class="inline-code" dir="ltr">33.33vw</code></td><td><code class="inline-code" dir="ltr">56vh</code></td><td><code class="inline-code" dir="ltr">#b2b2b2</code></td><td><code class="inline-code" dir="ltr">8px</code></td><td>پنل تصویری/Placeholder</td></tr><tr><th scope="row"><code class="inline-code" dir="ltr">49dd1cd4</code></th><td><code class="inline-code" dir="ltr">2/1/2</code></td><td><code class="inline-code" dir="ltr">33.33vw</code></td><td><code class="inline-code" dir="ltr">56vh</code></td><td><code class="inline-code" dir="ltr">#b2b2b2</code></td><td><code class="inline-code" dir="ltr">8px</code></td><td>پنل تصویری/Placeholder</td></tr></tbody></table></div><h3>🔬 واحدها را مثل استاد بخوان</h3><section class="smart-note-card" dir="rtl" lang="fa"><h2>تفسیر واحدها</h2><dl class="term-grid"><dt><code class="inline-code" dir="ltr">33.33vw</code></dt><dd>یعنی هر پنل یک‌سوم عرض viewport است. سه پنل کنار هم تقریباً <code class="inline-code" dir="ltr">100vw</code> می‌شوند. اگر Parent خودش Padding یا Gap داشته باشد، خطر Overflow افقی ایجاد می‌شود.</dd><dt><code class="inline-code" dir="ltr">56vh</code></dt><dd>ارتفاع به ارتفاع پنجره وابسته است، نه به محتوا. روی موبایل و مرورگرهایی با نوار آدرس متغیر ممکن است خیلی بلند، خیلی کوتاه یا ناپایدار شود.</dd><dt><code class="inline-code" dir="ltr">8px</code></dt><dd>برای Radius قابل قبول است؛ اما در Design System بهتر است به Variable مثل <code class="inline-code" dir="ltr">radius-card</code> تبدیل شود.</dd><dt><code class="inline-code" dir="ltr">#b2b2b2</code></dt><dd>اگر فقط رنگ موقت Wireframe است، مشکلی ندارد. اگر رنگ واقعی برند است، باید Variable رنگ داشته باشد.</dd></dl></section><h3>👨‍🏫 نظر استاد: آیا این انتخاب درست است؟</h3><p><strong>پاسخ کوتاه:</strong> به‌عنوان Placeholder تصویری یا اسکلت Wireframe قابل دفاع است؛ به‌عنوان Spacer یا راه‌حل نهایی تمیز نیست.</p><p>اگر هدف این سه Flexbox، فقط ایجاد فاصله بوده، باید حذف شوند و فاصله با <strong>Gap</strong> یا <strong>Padding</strong> روی Parent کنترل شود. اما چون در Export واقعی Width، Height، Background و Radius دارند، به احتمال زیاد نقش «پنل بصری» دارند، نه فاصلهٔ خالی. پس حذف قطعی بدون Runtime و Screenshot درست نیست.</p><h3>⚠️ مشکل‌های احتمالی</h3><ul><li><strong>Overflow افقی:</strong> سه پنل <code class="inline-code" dir="ltr">33.33vw</code> تقریباً تمام viewport را پر می‌کنند؛ با Padding/GAP ممکن است از صفحه بیرون بزنند.</li><li><strong>ارتفاع ناپایدار:</strong> <code class="inline-code" dir="ltr">56vh</code> روی موبایل می‌تواند بخش زیادی از صفحه را بگیرد.</li><li><strong>DOM بی‌معنا:</strong> Empty Flexbox اگر محتوای واقعی ندارد، برای صفحه‌خوان و نگهداری طراحی معنا ندارد.</li><li><strong>Design System ناقص:</strong> رنگ و Radius مستقیم تنظیم شده‌اند و در Export فعلی Variables صفر است.</li></ul><h3>✅ نسخهٔ بهتر پیشنهادی</h3><div aria-label="جدول تصمیم اصلاحی" class="table-wrap" role="region" tabindex="0"><table class="data-table educational-table edu-table"><caption>تصمیم اصلاحی برای Empty Flexbox</caption><thead><tr><th scope="col">هدف واقعی</th><th scope="col">راه‌حل بهتر</th><th scope="col">دلیل</th></tr></thead><tbody><tr><th scope="row">فقط فاصله</th><td>حذف Flexbox و استفاده از Gap/Padding روی Parent</td><td>DOM کمتر و رفتار Responsive تمیزتر</td></tr><tr><th scope="row">پنل تصویری موقت</th><td>نام‌گذاری کلاس مثل <code class="inline-code" dir="ltr">c-hero-visual-panel</code></td><td>هدف عنصر برای خودت و هنرجو روشن می‌شود</td></tr><tr><th scope="row">تصویر واقعی</th><td>Image یا Background با Aspect Ratio و Object Fit</td><td>محتوا و تصویر واقعی بهتر از بلوک خالی است</td></tr><tr><th scope="row">الگوی تکراری</th><td>Global Class + Variables</td><td>Radius، رنگ و اندازه از یک جای قابل مدیریت کنترل می‌شوند</td></tr></tbody></table></div><h3>🧪 تمرین عملی</h3><ol><li>یکی از سه Flexbox خالی را انتخاب کن و بپرس: «اگر حذفش کنم، فقط فاصله تغییر می‌کند یا یک پنل بصری از بین می‌رود؟»</li><li>Width را موقتاً از <code class="inline-code" dir="ltr">33.33vw</code> به <code class="inline-code" dir="ltr">33.33%</code> تغییر بده و Preview را بررسی کن.</li><li>Height را از <code class="inline-code" dir="ltr">56vh</code> به یک مقدار محدودتر یا Aspect Ratio نزدیک‌تر تبدیل کن و Mobile را ببین.</li><li>Radius و Background را در یک Global Class یا Variable پیشنهادی ثبت کن.</li></ol><details class="disclosure-card"><summary>قانون تصمیم</summary><p>اگر عنصر خالی «معنا، تصویر، پس‌زمینه یا نقش بصری» ندارد، احتمالاً نباید Element مستقل باشد. اگر نقش بصری دارد، باید نام، کلاس، واحد و رفتار Responsive آن قابل توضیح باشد.</p></details><hr/></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="memory-gap-margin-heading" role="heading">🧠 لایهٔ حافظه — Gap در برابر Margin</span></summary><section aria-labelledby="memory-gap-margin-heading" class="memory-layer disclosure-content lesson-section"><p><strong>🧠 استعارهٔ ماندگار:</strong> Gap فاصلهٔ بین صندلی‌های یک ردیف است؛ Margin فاصلهٔ خود یک صندلی از بیرون است.</p><p><strong>🧩 در Elementor V4 یعنی چه؟</strong> وقتی چند child مستقیم داخل Flex/Grid فاصلهٔ یکنواخت می‌خواهند، اول Gap را بررسی کن.</p><p><strong>⚠️ تله رایج:</strong> Marginهای پراکنده باعث می‌شوند یک child استثنا بسازد و Responsive سخت شود.</p><p class="golden-rule"><strong>📜 قانون طلایی:</strong> فاصلهٔ بین هم‌سطح‌ها با Gap؛ فاصلهٔ یک جعبه از بیرون با Margin.</p></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-6-lesson-pass-criteria-8" role="heading">✅ معیار عبور اختصاصی این درس</span></summary><section aria-labelledby="lesson-6-lesson-pass-criteria-8" class="disclosure-content lesson-section lesson-pass-criteria"><p>برای رفتن به درس بعد، <strong>سطح ۱ و ۲ اجباری‌اند</strong>. سطح ۳ در ایستگاه جمع‌بندی تثبیت می‌شود.</p><h3>سطح ۱ — فهمیدم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-34"><fieldset><legend>سطح ۱ — فهمیدم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-34-1" name="chk-34-1" type="checkbox"/><span>می‌توانی فرق مسئولیت Direction، Justify Content، Align Items و Gap را توضیح بدهی.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-34-2" name="chk-34-2" type="checkbox"/><span>می‌توانی بگویی چرا با تغییر Row به Column معنای جهت Justify و Align تغییر می‌کند.</span></label></fieldset></form><h3>سطح ۲ — می‌توانم انجام بدهم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-35"><fieldset><legend>سطح ۲ — می‌توانم انجام بدهم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-35-1" name="chk-35-1" type="checkbox"/><span>دو ستون TUYA را روی محور فرعی Center می‌کنی و فاصلهٔ آن‌ها را با Gap کنترل می‌کنی.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-35-2" name="chk-35-2" type="checkbox"/><span>بدون استفاده از Marginهای پراکنده، فاصلهٔ میان فرزندان را تنظیم می‌کنی.</span></label></fieldset></form><h3>سطح ۳ — می‌توانم منتقل کنم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-36"><fieldset><legend>سطح ۳ — می‌توانم منتقل کنم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-36-1" name="chk-36-1" type="checkbox"/><span>در سناریوی «Itemها افقی وسط نمی‌شوند» می‌توانی اول Direction و سپس محور مربوط را بررسی کنی.</span></label></fieldset></form></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-6-lesson-stop-point-9" role="heading">⏸ اینجا توقف کن</span></summary><section aria-labelledby="lesson-6-lesson-stop-point-9" class="lesson-stop-point lesson-section disclosure-content"><p>در درس بعد مشخص می‌کنیم هر ستون چقدر رشد، کوچک و محدود شود.</p><hr/></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" role="heading">ثبت پایان درس 6</span></summary><form class="disclosure-content lesson-completion-form interactive-form" data-persist-group="lesson-6-completion"><fieldset><legend>ثبت پایان درس 6</legend><label class="choice-row completion-choice"><input data-persist="checkbox" id="lesson-6-complete" name="lesson-6-complete" type="checkbox"/><span>این درس را با معیارهای عبور مرور کردم.</span></label></fieldset></form></details>
-<details class="lesson-disclosure" id="lesson-6-practical-findings"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-6-practical-findings-heading" role="heading">🔎 یافتهٔ عملی و خطایابی</span></summary><section aria-labelledby="lesson-6-practical-findings-heading" class="disclosure-content practical-findings">
-<p class="finding-scope">این بخش فقط ادعاهایی را آموزش می‌دهد که یا در مشاهدهٔ واقعی ثبت شده‌اند یا Help Center رسمی Elementor آن‌ها را صریحاً پشتیبانی می‌کند. نتیجه‌های وابسته به Theme، نسخه یا ساختار DOM با دامنهٔ اعتبار نوشته شده‌اند.</p>
-<article class="finding-card" data-verification="verified_by_official_help" id="finding-direction-changes-alignment">
-<div class="evidence-badges"><span class="evidence-badge official">تأیید Help Center</span></div>
-<h3>چرا بعد از تغییر Row به Column، همان Alignment نتیجهٔ دیگری می‌دهد؟</h3>
-<p><strong>برداشت اشتباه:</strong> Align همیشه «چپ و راست» یا همیشه «بالا و پایین» را کنترل می‌کند.</p>
-<p><strong>قاعدهٔ رسمی:</strong> معنای Alignment به Direction وابسته است. در Row، محور cross معمولاً عمودی است؛ در Column، cross معمولاً افقی می‌شود. Justify نیز روی main axis کار می‌کند.</p>
-<div class="finding-checks">
-<section><h4>در Elementor</h4><p>اول Direction را بخوان، بعد Justify و Align را تفسیر کن؛ ترتیب برعکس، منبع رایج سردرگمی است.</p></section>
-<section><h4>در DevTools</h4><p><code dir="ltr">flex-direction</code>، <code dir="ltr">justify-content</code> و <code dir="ltr">align-items</code> را کنار هم ببین.</p></section>
-</div>
-<p class="golden-rule"><strong>قانون طلایی:</strong> با چرخیدن ریل Flex، معنای main axis و cross axis هم می‌چرخد.</p>
-<details class="more-know"><summary>منبع رسمی</summary><p><a href="https://elementor.com/help/how-do-flexbox-containers-work/">Understanding how Flexbox containers work</a></p></details>
-</article>
-</section></details>
-<details class="lesson-disclosure" id="lesson-6-responsive-checkpoint"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" role="heading">📱 ایست بازرسی Responsive — پس از Row → Column دوباره Align و Justify را بخوان</span></summary><section class="disclosure-content lesson-section responsive-checkpoint">
-<p class="status-chip"><strong>status:</strong> verified_and_scoped</p>
-<p>با تغییر Direction، محور اصلی و فرعی عوض می‌شوند. بنابراین مقدار Desktop برای <code>justify-content</code> و <code>align-items</code> را کورکورانه نگه ندار.</p>
-<p>در Mobile TUYA معمولاً Center کردن Visual و محدودکردن عرض Copy تصمیمی جدا از چیدمان Desktop است؛ مقدار دقیق باید در breakpoint واقعی آزمایش شود.</p>
-<details class="more-know"><summary>منابع رسمی این ایست</summary>
-<ul>
-<li><a href="https://elementor.com/help/responsive-editing/">Responsive editing — Editor V4</a></li>
-<li><a href="https://elementor.com/help/responsive-design-using-containers/">Create responsive design with containers</a></li>
-<li><a href="https://elementor.com/help/mobile-editing/">Responsive editing for mobile and tablets</a></li>
-</ul>
 </details>
-</section></details><details class="lesson-disclosure step-through-v2-disclosure" id="stv2-flex-axis-alignment">
+
+<details class="lesson-disclosure step-through-v2" id="lesson-6-axis-step-through">
 <summary class="lesson-disclosure-summary">
-<span aria-level="2" class="disclosure-title" id="stv2-flex-axis-alignment-heading" role="heading">▶ Step‑Through v2 — Flex Direction، Justify و Align — محور را دوباره بخوان</span>
+<span aria-level="2" class="disclosure-title" role="heading">🧭 Step‑Through — محور را با تغییر Direction دوباره بخوان</span>
 </summary>
-<section aria-labelledby="stv2-flex-axis-alignment-heading" class="disclosure-content step-through-v2" data-step-through-v2="" data-stv2-id="stv2-flex-axis-alignment" data-stv2-renderer="flex-axis" tabindex="0">
-<header class="stv2-header">
-<p class="stv2-kicker">چرخهٔ فعال: ببین ← پیش‌بینی کن ← بررسی کن ← خراب کن ← انتقال بده</p>
-<p><strong>🎯 هدف:</strong> با تغییر Direction ببین main axis و cross axis چگونه جابه‌جا می‌شوند.</p>
-<div aria-label="وضعیت شواهد" class="stv2-evidence-row"><span class="stv2-evidence-badge">تأییدشده با Help Center رسمی Elementor</span><span class="stv2-evidence-badge">تأییدشده با استاندارد CSS</span></div>
-</header>
-<div class="stv2-progress-row">
-<span class="stv2-step-count" data-stv2-count="">مرحله ۱</span>
-<progress data-stv2-progress="" max="4" value="1">1/4</progress>
-<span class="stv2-phase" data-stv2-phase=""></span>
-</div>
-<div class="stv2-three-view">
-<section aria-labelledby="stv2-flex-axis-alignment-visual-title" class="stv2-card stv2-visual-card">
-<h3 id="stv2-flex-axis-alignment-visual-title">👁 نتیجهٔ بصری</h3>
-<div aria-label="نمای بصری مرحله" class="stv2-visual" data-stv2-visual=""></div>
-</section>
-<section aria-labelledby="stv2-flex-axis-alignment-elementor-title" class="stv2-card">
-<h3 id="stv2-flex-axis-alignment-elementor-title">🧩 تنظیم Elementor</h3>
-<dl class="stv2-definition-list" data-stv2-elementor=""></dl>
-</section>
-<section aria-labelledby="stv2-flex-axis-alignment-computed-title" class="stv2-card">
-<h3 id="stv2-flex-axis-alignment-computed-title">🔬 Computed / مدل محاسباتی</h3>
-<dl class="stv2-definition-list" data-stv2-computed=""></dl>
-<p class="stv2-model-note">اعداد نمایشی ممکن است مدل آموزشی باشند؛ برچسب شواهد هر مرحله را ببین.</p>
-</section>
-</div>
-<section aria-labelledby="stv2-flex-axis-alignment-state-title" class="stv2-explanation">
-<h3 data-stv2-title="" id="stv2-flex-axis-alignment-state-title"></h3>
-<p data-stv2-summary=""></p>
-<p data-stv2-explanation=""></p>
-<p class="golden-rule"><strong>📜 قانون طلایی:</strong> <span data-stv2-golden=""></span></p>
-<p><strong>وضعیت این مرحله:</strong> <code class="inline-code" data-stv2-evidence="" dir="ltr"></code></p>
-</section>
-<section aria-labelledby="stv2-flex-axis-alignment-prediction-title" class="stv2-prediction">
-<h3 id="stv2-flex-axis-alignment-prediction-title">❓ پیش‌بینی کن</h3>
-<p data-stv2-prompt=""></p>
-<div aria-label="گزینه‌های پیش‌بینی" class="stv2-prediction-options" data-stv2-options="" role="group"></div>
-<p aria-live="polite" class="stv2-feedback" data-stv2-feedback="" role="status"></p>
-</section>
-<div aria-label="کنترل مراحل" class="stv2-actions">
-<button class="ui-btn" data-stv2-prev="" type="button">مرحلهٔ قبل</button>
-<button class="ui-btn" data-stv2-reveal="" type="button">نمایش پاسخ</button>
-<button class="ui-btn" data-stv2-next="" type="button">مرحلهٔ بعد</button>
-<button class="ui-btn" data-stv2-reset="" type="button">شروع دوباره</button>
-</div>
-<p aria-live="polite" class="stv2-status" data-stv2-status="" role="status"></p>
-<p class="stv2-lab-link"><a href="#lesson-6-responsive-build-test">🧪 همین مفهوم را در «بساز و امتحان کن» اجرا کن</a></p>
-<section aria-label="خلاصهٔ همهٔ مراحل برای چاپ" class="stv2-print-all"><div class="table-wrap" role="region" tabindex="0"><table class="data-table educational-table"><caption>خلاصهٔ همهٔ مراحل Step‑Through v2</caption><thead><tr><th scope="col">مرحله</th><th scope="col">نتیجه</th><th scope="col">وضعیت شواهد</th><th scope="col">قانون طلایی</th></tr></thead><tbody><tr><th scope="row">1 — Row: Justify روی محور افقی</th><td>Direction روی Row است؛ main axis افقی و cross axis عمودی است.</td><td><code class="inline-code" dir="ltr">verified_by_css_spec</code></td><td>Justify را با نام افقی حفظ نکن؛ آن را به main axis وصل کن.</td></tr><tr><th scope="row">2 — Row: Space Between</th><td>آیتم اول و آخر به دو انتهای main axis می‌روند و فضای آزاد میان آن‌ها پخش می‌شود.</td><td><code class="inline-code" dir="ltr">verified_by_css_spec</code></td><td>Alignment بعد از sizing خوانده می‌شود.</td></tr><tr><th scope="row">3 — Column: همان نام‌ها، محورهای تازه</th><td>Justify اکنون عمودی و Align اکنون افقی عمل می‌کند.</td><td><code class="inline-code" dir="ltr">verified_by_official_elementor_help</code></td><td>بعد از هر Row → Column، Align و Justify را از نو تفسیر کن.</td></tr><tr><th scope="row">4 — Column + Order برای Mobile TUYA</th><td>Visual پیش از Copy نمایش داده می‌شود، در حالی که یک ساختار اصلی حفظ می‌شود.</td><td><code class="inline-code" dir="ltr">verified_by_official_elementor_help</code></td><td>ترتیب بصری را تغییر بده، اما ترتیب خواندن را فراموش نکن.</td></tr></tbody></table></div></section>
-<noscript><p class="warning-box">برای تعامل مرحله‌ای JavaScript محلی باید فعال باشد؛ خلاصهٔ چاپی همهٔ مراحل در همین بخش موجود است.</p></noscript>
-<script class="stv2-config" type="application/json">{"goal":"با تغییر Direction ببین main axis و cross axis چگونه جابه‌جا می‌شوند.","id":"stv2-flex-axis-alignment","lab_target":"lesson-6-responsive-build-test","lesson_id":"lesson-6","renderer":"flex-axis","schema_version":"1.0.0","states":[{"computed":[["Main axis","Inline / افقی"],["Cross axis","Block / عمودی"],["Free-space distribution","شروع محور اصلی"]],"elementor":[["Direction","Row"],["Justify Content","Start"],["Align Items","Center"]],"evidence":"verified_by_css_spec","explanation":"در Row، Justify جای عناصر را در امتداد ردیف و Align جای آن‌ها را در ارتفاع Container کنترل می‌کند.","golden_rule":"Justify را با نام افقی حفظ نکن؛ آن را به main axis وصل کن.","id":"row-start-center","phase":"مشاهده","prediction":{"correct":0,"feedback_correct":"درست است؛ Justify فضای آزاد main axis را توزیع می‌کند.","feedback_wrong":"ابتدا main axis را از Direction استخراج کن.","options":["فضای آزاد محور اصلی","ارتفاع تک‌تک عناصر","z-index عناصر"],"prompt":"اگر Justify را Space Between کنیم، کدام فضا توزیع می‌شود؟"},"summary":"Direction روی Row است؛ main axis افقی و cross axis عمودی است.","title":"Row: Justify روی محور افقی","visual":{"align":"center","direction":"row","justify":"flex-start","order":["Visual","Copy","Logos"]}},{"computed":[["Main axis","افقی"],["justify-content","space-between"],["align-items","center"]],"elementor":[["Direction","Row"],["Justify Content","Space Between"],["Align Items","Center"]],"evidence":"verified_by_css_spec","explanation":"اگر Flex Grow تمام فضای آزاد را مصرف کند، ممکن است چیزی برای Justify باقی نماند؛ بنابراین sizing و alignment را جدا بررسی کن.","golden_rule":"Alignment بعد از sizing خوانده می‌شود.","id":"row-space-between","phase":"تغییر حالت","prediction":{"correct":0,"feedback_correct":"بله؛ با Column، main axis عمودی می‌شود.","feedback_wrong":"Direction تعریف‌کنندهٔ main axis است.","options":["در محور عمودی","همچنان فقط افقی","فقط روی رنگ‌ها"],"prompt":"اگر Direction به Column تغییر کند ولی همین Justify حفظ شود، اثر اصلی کجا دیده می‌شود؟"},"summary":"آیتم اول و آخر به دو انتهای main axis می‌روند و فضای آزاد میان آن‌ها پخش می‌شود.","title":"Row: Space Between","visual":{"align":"center","direction":"row","justify":"space-between","order":["Visual","Copy","Logos"]}},{"computed":[["Main axis","Block / عمودی"],["Cross axis","Inline / افقی"],["Order","بدون تغییر"]],"elementor":[["Direction","Column"],["Justify Content","Space Between"],["Align Items","Center"]],"evidence":"verified_by_official_elementor_help","explanation":"نام Control ثابت است، اما جهت اثر آن با Direction تغییر می‌کند. این یکی از منابع رایج سردرگمی Responsive است.","golden_rule":"بعد از هر Row → Column، Align و Justify را از نو تفسیر کن.","id":"column-same-controls","phase":"بازخوانی محور","prediction":{"correct":0,"feedback_correct":"درست است؛ Order می‌تواند ترتیب بصری breakpoint را تغییر دهد.","feedback_wrong":"هدف بازچینی است، نه پنهان‌کردن یا حذف ساختار.","options":["Custom Order در breakpoint","فقط opacity","حذف Element Tree"],"prompt":"برای نزدیک‌شدن به طرح Mobile TUYA، بدون Duplicate کردن سکشن چه چیزی را می‌توان بررسی کرد؟"},"summary":"Justify اکنون عمودی و Align اکنون افقی عمل می‌کند.","title":"Column: همان نام‌ها، محورهای تازه","visual":{"align":"center","direction":"column","justify":"space-between","order":["Visual","Copy","Logos"]}},{"computed":[["Visual order","1"],["Copy order","2"],["Logo order","3"],["DOM order","باید جداگانه بررسی شود"]],"elementor":[["Direction","Column"],["Visual > Order","1"],["Copy > Order","2"],["Logo Strip > Order","3"]],"evidence":"verified_by_official_elementor_help","explanation":"Custom Order ابزار بصری است؛ ترتیب DOM و دسترسی‌پذیری باید مستقل ارزیابی شوند.","golden_rule":"ترتیب بصری را تغییر بده، اما ترتیب خواندن را فراموش نکن.","id":"column-custom-order","phase":"انتقال","prediction":{"correct":0,"feedback_correct":"درست است؛ visual order الزاماً reading order را تغییر نمی‌دهد.","feedback_wrong":"بازچینی بصری باید با ترتیب معنایی مقایسه شود.","options":["DOM و ترتیب Focus","فقط border-radius","فقط سایه"],"prompt":"بعد از تغییر Order، برای دسترسی‌پذیری چه چیزی باید بررسی شود؟"},"summary":"Visual پیش از Copy نمایش داده می‌شود، در حالی که یک ساختار اصلی حفظ می‌شود.","title":"Column + Order برای Mobile TUYA","visual":{"align":"stretch","direction":"column","justify":"flex-start","order":["Visual","Copy","Logos"]}}],"storage_key":"elementor-v4-workbook:v27:stv2:flex-axis-alignment","title":"Flex Direction، Justify و Align — محور را دوباره بخوان","type":"state_change","verification":[{"source_id":"ELEMENTOR_CONTAINER_LAYOUT","status":"verified_by_official_elementor_help"},{"source_id":"CSS_FLEXBOX_AXES","status":"verified_by_css_spec"}]}</script>
-</section>
-</details><details class="lesson-disclosure responsive-build-test" id="lesson-6-responsive-build-test">
-<summary class="lesson-disclosure-summary"><span aria-level="3" role="heading">📱 بساز و امتحان کن — Responsive: محورهای Align و Justify پس از تغییر Direction</span></summary>
-<section class="disclosure-content lesson-section responsive-build-test-content">
-<p class="status-chip"><strong>status:</strong> verified_by_official_documentation</p>
-<p class="exercise-goal"><strong>هدف:</strong> با تغییر Row به Column، main axis و cross axis را دوباره تشخیص بده.</p>
-<div class="responsive-exercise-grid">
-<section class="exercise-step"><h4>۱. بساز</h4><ol><li>سه کارت کوچک داخل Flexbox Container بساز.</li><li>Desktop را Row و Mobile را Column کن.</li><li>در هر حالت justify-content و align-items را جداگانه تغییر بده و نتیجه را ثبت کن.</li></ol></section>
-<section class="exercise-step"><h4>۲. پیش‌بینی کن</h4><p>قبل از هر تغییر بگو کدام کنترل روی محور افقی و کدام روی محور عمودی اثر می‌گذارد.</p></section>
-<section class="exercise-step exercise-break"><h4>۳. خرابی عمدی</h4><p>مقدار Desktop را بدون بررسی در Mobile نگه دار و ناهماهنگی را مشاهده کن.</p></section>
-<section class="exercise-step"><h4>۴. امتحان و خطایابی</h4><p>Direction، Justify Content، Align Items و Flex overlay مرورگر.</p></section>
-</div>
-<p class="exercise-pass"><strong>معیار قبولی:</strong> می‌توانی بدون حفظ کردن نام کنترل، نتیجه را از روی main/cross axis پیش‌بینی کنی.</p>
-<fieldset class="responsive-exercise-log">
-<legend>ثبت انجام تمرین</legend>
-<label for="lesson-6-responsive-build-test-done-build"><input data-persist="" id="lesson-6-responsive-build-test-done-build" name="lesson-6-responsive-build-test-done-build" type="checkbox"/> ساخت را انجام دادم و قبل از مشاهده پیش‌بینی نوشتم.</label>
-<label for="lesson-6-responsive-build-test-done-test"><input data-persist="" id="lesson-6-responsive-build-test-done-test" name="lesson-6-responsive-build-test-done-test" type="checkbox"/> Desktop، Tablet، Mobile و یک عرض بین breakpointها را آزمودم.</label>
-<label for="lesson-6-responsive-build-test-done-debug"><input data-persist="" id="lesson-6-responsive-build-test-done-debug" name="lesson-6-responsive-build-test-done-debug" type="checkbox"/> حداقل یک مقدار را در Computed Style یا Box Model بررسی کردم.</label>
-<label class="exercise-note-label" for="lesson-6-responsive-build-test-note">نتیجهٔ یک‌خطی من
-        <input data-persist="" id="lesson-6-responsive-build-test-note" name="lesson-6-responsive-build-test-note" placeholder="مثلاً: مقدار Mobile از Tablet ارث می‌گرفت." type="text"/>
-</label>
-</fieldset>
-<p class="evidence-line"><strong>مبنای رسمی:</strong> <a href="https://elementor.com/help/how-do-flexbox-containers-work/">Help Center رسمی Elementor</a>. نتیجهٔ مشاهده‌شدهٔ تمرین به محیط، محتوا و breakpointهای پروژه وابسته است.</p>
-<p class="stv2-back-link"><a href="#stv2-flex-axis-alignment">↩ مفهوم را با Step‑Through v2 مرور کن</a></p></section>
-</details><details class="lesson-disclosure design-system-decision" id="lesson-6-design-system-decision-v30">
-<summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" role="heading">🏛 تصمیم Design System — Direction، Align، Justify و Gap</span></summary>
 <section class="disclosure-content lesson-section">
-<ul class="decision-questions"><li>این مقدار باید direct literal بماند یا Variable شود؟</li><li>declaration در Local Class می‌ماند یا reuse آن Global Class را توجیه می‌کند؟</li><li>فقط Style reuse داریم یا Structure نیز تکرار شده است؟</li><li>آیا Component واقعاً توجیه دارد، یا Class/Variable کافی است؟</li></ul>
-<p><code dir="ltr">proposed_strategy</code> — پاسخ وابسته به intent، scope، reuse و هزینهٔ propagation است.</p>
-</section></details></article>
+<p>این Step‑Through برای حفظ روح نسخهٔ تعاملی درس آمده است: هر مرحله را پیش‌بینی کن، بعد نتیجه را بخوان.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Step Through Axis">
+<table class="data-table educational-table edu-table">
+<caption>خلاصهٔ مراحل محور و تراز</caption>
+<thead><tr><th scope="col">مرحله</th><th scope="col">وضعیت</th><th scope="col">پیش‌بینی</th><th scope="col">قانون طلایی</th><th scope="col">وضعیت شواهد</th></tr></thead>
+<tbody>
+<tr><th scope="row">۱</th><td>Row + Justify Start + Align Center</td><td>Justify روی کدام فضا اثر دارد؟</td><td>Justify را به Main Axis وصل کن.</td><td><code dir="ltr">verified_by_css_spec</code></td></tr>
+<tr><th scope="row">۲</th><td>Row + Space Between</td><td>اگر فضای آزاد نباشد چه می‌شود؟</td><td>Alignment بعد از sizing خوانده می‌شود.</td><td><code dir="ltr">verified_by_css_spec</code></td></tr>
+<tr><th scope="row">۳</th><td>Column با همان کنترل‌ها</td><td>Justify حالا کجا اثر دارد؟</td><td>بعد از Row → Column، محور را از نو بخوان.</td><td><code dir="ltr">verified_by_official_help_and_css_spec</code></td></tr>
+<tr><th scope="row">۴</th><td>Column + بررسی Order</td><td>Order بصری چه چیزی را تغییر نمی‌دهد؟</td><td>Visual order و reading/focus order را جدا بررسی کن.</td><td><code dir="ltr">provisional_until_accessibility_check</code></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-6-lesson-practice-5" role="heading">B. بساز و امتحان کن</span>
+</summary>
+<section aria-labelledby="lesson-6-lesson-practice-5" class="disclosure-content lesson-practice lesson-section">
+
+<h3>🏗 پروژهٔ TUYA — محور، تراز و فاصلهٔ Copy/Visual</h3>
+<p>در این تمرین، همان Shell درس ۵ را بررسی می‌کنی. هدف فقط خواندن محور و تنظیم Gap/Align/Justify است. هنوز Position، Nodeها، Visual Stage positioning، Shadow/Glow و Order نهایی نداریم.</p>
+
+<h3>مرحلهٔ ۰ — Evidence Gate</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Evidence Gate درس ۶">
+<table class="data-table educational-table edu-table">
+<caption>Evidence Gate قبل از تنظیم محور و فاصله</caption>
+<thead><tr><th scope="col">برچسب</th><th scope="col">در این تمرین</th><th scope="col">نتیجه</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code dir="ltr">confirmed</code></th><td>Shell در درس ۵ Flex Container شد.</td><td>Direction/Justify/Align/Gap روی Shell بررسی می‌شوند.</td></tr>
+<tr><th scope="row"><code dir="ltr">confirmed</code></th><td>Copy و Visual Child مستقیم Shell هستند.</td><td>Gap بین همین دو Item اثر می‌کند.</td></tr>
+<tr><th scope="row"><code dir="ltr">provisional</code></th><td>Gap، Align و Justify دقیق برای TUYA.</td><td>فقط مقدار شروع تست هستند.</td></tr>
+<tr><th scope="row"><code dir="ltr">unknown</code></th><td>Breakpoint دقیق Column، ترتیب نهایی Mobile، ترتیب خواندن و Focus.</td><td>در این درس قطعی نمی‌شوند.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>مرحلهٔ ۱ — اول Direction را بخوان</h3>
+<aside class="implementation-step-card" aria-label="اقدام کوچک درس شش">
+<h4>فقط یک اقدام کوچک</h4>
+<p><strong>هدف:</strong> خواندن محور، نه طراحی نهایی.</p>
+<p><strong>مسیر:</strong> Elementor Editor → انتخاب <code dir="ltr">TUYA Shell</code> → Style/Layout → Flex controls.</p>
+<p><strong>Element هدف:</strong> فقط <code dir="ltr">TUYA Shell</code>.</p>
+<p><strong>Class فعال:</strong> همان Class Shell؛ Global جدید نساز.</p>
+<p><strong>Property:</strong> Direction / Gap / Justify Content / Align Items.</p>
+<p><strong>نباید تغییر کند:</strong> Position، Nodeها، Order نهایی، Shadow/Glow، Background نهایی، Typography، Button Style.</p>
+<p><strong>عبارت تأیید پایانی:</strong> «بعد از خواندن Direction، Main Axis و Cross Axis را دوباره مشخص کردم.»</p>
+</aside>
+
+<h3>مرحلهٔ ۲ — مقدارهای شروع را تست کن</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Provisional axis values">
+<table class="data-table educational-table edu-table">
+<caption>مقدارهای شروع برای محور و فاصله</caption>
+<thead><tr><th scope="col">تنظیم</th><th scope="col">Desktop شروع</th><th scope="col">Mobile شروع</th><th scope="col">وضعیت</th></tr></thead>
+<tbody>
+<tr><th scope="row">Direction</th><td><code dir="ltr">Row</code></td><td><code dir="ltr">Column</code></td><td><code dir="ltr">confirmed_contract</code></td></tr>
+<tr><th scope="row">Gap</th><td><code dir="ltr">24px</code> تا <code dir="ltr">40px</code></td><td><code dir="ltr">20px</code> تا <code dir="ltr">32px</code></td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Justify</th><td><code dir="ltr">Start</code> یا <code dir="ltr">Space Between</code> فقط با فضای آزاد واقعی</td><td><code dir="ltr">Start</code></td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Align</th><td><code dir="ltr">Center</code> یا <code dir="ltr">Stretch</code> طبق ارتفاع/visual</td><td><code dir="ltr">Stretch</code> یا <code dir="ltr">Center</code> طبق تست</td><td><code dir="ltr">provisional</code></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>مرحلهٔ ۳ — پیش‌بینی کن، بعد تغییر بده</h3>
+<ol>
+<li>در Desktop با Row بگو Main Axis کدام است.</li>
+<li>قبل از تغییر Justify، بگو اثر باید افقی باشد یا عمودی.</li>
+<li>Direction را ذهنی به Column تغییر بده.</li>
+<li>حالا دوباره بگو Justify و Align کجا اثر دارند.</li>
+<li>فقط بعد از پیش‌بینی، مقدار را تغییر بده و نتیجه را ثبت کن.</li>
+</ol>
+
+<h3>مرحلهٔ ۴ — سؤال توقف</h3>
+<p>اگر Direction از Row به Column تغییر کند، Justify روی کدام محور اثر می‌گذارد؟</p>
+<form class="interactive-form stop-question-form" data-persist-group="stop-question-6">
+<fieldset>
+<legend>چک‌لیست یادگیری</legend>
+<label class="choice-row"><input data-persist="radio" id="radio-6-a" name="stop-question-6" type="radio" value="A"/><span>A) همچنان فقط افقی</span></label>
+<label class="choice-row"><input data-persist="radio" id="radio-6-b" name="stop-question-6" type="radio" value="B"/><span>B) روی Main Axis جدید، یعنی عمودی</span></label>
+<label class="choice-row"><input data-persist="radio" id="radio-6-c" name="stop-question-6" type="radio" value="C"/><span>C) روی z-index</span></label>
+</fieldset>
+</form>
+<details class="disclosure-card">
+<summary>پاسخ با دلیل</summary>
+<p><strong>B درست است.</strong> Justify همیشه روی Main Axis اثر می‌گذارد. وقتی Direction به Column تبدیل می‌شود، Main Axis عمودی می‌شود.</p>
+</details>
+
+<h3>⚠️ تلهٔ اصلی</h3>
+<p><strong>تله:</strong> فکر کنی Align همیشه عمودی و Justify همیشه افقی است.</p>
+<p><strong>نشانه:</strong> در Mobile چند بار Align را تغییر می‌دهی اما فاصلهٔ عمودی درست نمی‌شود.</p>
+<p><strong>قاعده:</strong> اول Direction، بعد Main Axis، بعد Justify/Align.</p>
+
+<h3>🧪 عمداً خرابش کن — روی کاغذ</h3>
+<p>این خطا را تصور کن:</p>
+<figure class="visual-figure ascii-figure">
+<figcaption>خواندن اشتباه محور بعد از Column</figcaption>
+<pre class="ascii-diagram" dir="ltr"><code class="language-text inline-code" dir="ltr">Mobile:
+Direction = Column
+
+اشتباه:
+Justify را افقی فرض می‌کنم
+Align را عمودی فرض می‌کنم
+
+نتیجه:
+فاصله و تراز را با کنترل اشتباه تعمیر می‌کنم</code></pre>
+</figure>
+
+<h3>Checkpoint</h3>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<form class="interactive-form checklist-form" data-persist-group="checklist-31">
+<fieldset>
+<legend>Checkpoint درس ۶</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-31-1" name="chk-31-1" type="checkbox"/><span>می‌توانم در Row، Main Axis و Cross Axis را مشخص کنم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-31-2" name="chk-31-2" type="checkbox"/><span>می‌توانم در Column، Main Axis و Cross Axis را دوباره مشخص کنم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-31-3" name="chk-31-3" type="checkbox"/><span>Gap را برای فاصلهٔ بین Copy و Visual روی Shell بررسی کرده‌ام.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-31-4" name="chk-31-4" type="checkbox"/><span>Order نهایی و دسترسی‌پذیری Mobile را هنوز قطعی نکرده‌ام.</span></label>
+</fieldset>
+</form>
+</section>
+
+<h3>Exit Ticket — قبل از ادامه</h3>
+<p><strong>بازیابی کوتاه:</strong> در Row و Column بگو Justify و Align روی کدام محور کار می‌کنند.</p>
+<p><strong>انتقال به موقعیت تازه:</strong> اگر یک لیست Feature در Mobile زیر هم شده، برای فاصلهٔ عمودی بین آیتم‌ها اول Gap را بررسی می‌کنی یا Margin تک‌تک آیتم‌ها را؟ چرا؟</p>
+<details class="disclosure-card">
+<summary>راهنمای خودسنجی اختصاصی همین درس</summary>
+<p>پاسخ خوب باید بگوید Direction محور را تعیین می‌کند، Justify روی Main Axis و Align روی Cross Axis است، و Gap فاصلهٔ بین Siblingها را تمیزتر از Marginهای پراکنده کنترل می‌کند.</p>
+</details>
+
+</section>
+</details>
+
+<details class="lesson-disclosure" id="lesson-6-responsive-build-test">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" role="heading">📱 ایست بازرسی Responsive — محورهای Align و Justify پس از تغییر Direction</span>
+</summary>
+<section class="disclosure-content lesson-section responsive-build-test-content">
+<p class="status-chip"><strong>status:</strong> <code dir="ltr">verified_method_provisional_values</code></p>
+<p class="exercise-goal"><strong>هدف:</strong> با تغییر Row به Column، Main Axis و Cross Axis را دوباره تشخیص بده.</p>
+<ul>
+<li>Desktop را Row بخوان: Justify روی افق، Align روی عمود.</li>
+<li>Mobile را Column بخوان: Justify روی عمود، Align روی افق.</li>
+<li>Gap در Row فاصلهٔ افقی بین ستون‌هاست؛ در Column فاصلهٔ عمودی بین بخش‌هاست.</li>
+<li>اگر Order را تغییر دادی، reading order و focus order را جداگانه بررسی کن.</li>
+</ul>
+</section>
+</details>
+
+<details aria-labelledby="lesson-6-lesson-deep-dive-7" class="lesson-section lesson-deep-dive lesson-disclosure">
+<summary class="lesson-disclosure-summary" id="lesson-6-lesson-deep-dive-7">C. عمیق‌تر نگاه کن — اختیاری</summary>
+
+<h3>📂 Case Study — Align اثر مورد انتظار ندارد</h3>
+<p><strong>هدف:</strong> 🔍 عیب‌یابی کن<br/>
+<strong>وضعیت:</strong> <code class="inline-code" dir="ltr">debug_first</code></p>
+<p>سناریو: در Mobile، Align را تغییر می‌دهی اما فاصلهٔ عمودی Copy و Visual تغییر نمی‌کند.</p>
+<p>قبل از تغییر مقدار جدید، این‌ها را ثبت کن:</p>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<ul>
+<li>Direction فعلی چیست؟</li>
+<li>Main Axis کدام است؟</li>
+<li>Cross Axis کدام است؟</li>
+<li>فاصله‌ای که می‌خواهی تغییر بدهی روی Main Axis است یا Cross Axis؟</li>
+<li>Gap روی Parent تنظیم شده یا Marginهای پراکنده روی Childها؟</li>
+<li>آیا Itemها فضای آزاد باقی گذاشته‌اند؟</li>
+</ul>
+</section>
+<p>نتیجهٔ درست: اول محور را بخوان؛ بعد کنترل درست را انتخاب کن.</p>
+
+<h3>🔬 پشت صحنه</h3>
+<p>Flex overlay در مرورگر می‌تواند محور و Gap را نشان بدهد. این ابزار برای تأیید مفید است، اما تصمیم آموزشی همچنان از Direction و Tree شروع می‌شود.</p>
+<hr/>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-6-lesson-pass-criteria-8" role="heading">✅ معیار عبور اختصاصی این درس</span>
+</summary>
+<section aria-labelledby="lesson-6-lesson-pass-criteria-8" class="disclosure-content lesson-section lesson-pass-criteria">
+<p>برای رفتن به درس بعد، سطح ۱ و ۲ اجباری‌اند. سطح ۳ در ایستگاه‌های بعدی تثبیت می‌شود.</p>
+
+<h3>سطح ۱ — فهمیدم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-34">
+<fieldset>
+<legend>سطح ۱ — فهمیدم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-34-1" name="chk-34-1" type="checkbox"/><span>می‌توانم توضیح بدهم Direction چگونه Main Axis را تعیین می‌کند.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-34-2" name="chk-34-2" type="checkbox"/><span>می‌دانم Justify همیشه روی Main Axis و Align همیشه روی Cross Axis کار می‌کند.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-34-3" name="chk-34-3" type="checkbox"/><span>می‌توانم فرق Gap و Margin را در یک Flex Container توضیح بدهم.</span></label>
+</fieldset>
+</form>
+
+<h3>سطح ۲ — می‌توانم انجام بدهم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-35">
+<fieldset>
+<legend>سطح ۲ — می‌توانم انجام بدهم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-35-1" name="chk-35-1" type="checkbox"/><span>در TUYA Shell، Direction، Justify، Align و Gap را فقط بعد از خواندن محور تغییر می‌دهم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-35-2" name="chk-35-2" type="checkbox"/><span>بعد از Row → Column، اثر Justify و Align را دوباره پیش‌بینی می‌کنم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-35-3" name="chk-35-3" type="checkbox"/><span>اگر Justify اثر ندارد، فضای آزاد و sizing را بررسی می‌کنم.</span></label>
+</fieldset>
+</form>
+
+<h3>سطح ۳ — می‌توانم منتقل کنم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-36">
+<fieldset>
+<legend>سطح ۳ — می‌توانم منتقل کنم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-36-1" name="chk-36-1" type="checkbox"/><span>برای یک لیست Feature در Mobile می‌توانم تصمیم بگیرم فاصلهٔ آیتم‌ها با Gap بهتر کنترل می‌شود یا Margin.</span></label>
+</fieldset>
+</form>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" role="heading">🏛 تصمیم Design System — Direction، Align، Justify و Gap</span>
+</summary>
+<section class="disclosure-content lesson-section">
+<ul class="decision-questions">
+<li>Gap این گروه direct literal بماند یا Variable spacing شود؟</li>
+<li>این مقدار در Local Class می‌ماند یا reuse آن Global Class را توجیه می‌کند؟</li>
+<li>فقط Style reuse داریم یا Structure نیز تکرار شده است؟</li>
+<li>آیا Component واقعاً توجیه دارد، یا Class/Variable کافی است؟</li>
+</ul>
+<p><code dir="ltr">proposed_strategy</code> — در این درس، پاسخ وابسته به intent، scope، reuse و هزینهٔ propagation است. مقدارها را هنوز قطعی نکن.</p>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-6-lesson-stop-point-9" role="heading">⏸ اینجا توقف کن</span>
+</summary>
+<section aria-labelledby="lesson-6-lesson-stop-point-9" class="lesson-stop-point lesson-section disclosure-content">
+<p>در درس بعد، می‌توانیم به اندازهٔ Itemها، Basis/Grow/Shrink یا ادامهٔ Responsive Layout برویم. هنوز Position نهایی Nodeها و Visual Stage کامل را انجام نمی‌دهیم.</p>
+<hr/>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" role="heading">ثبت پایان درس 6</span>
+</summary>
+<form class="disclosure-content lesson-completion-form interactive-form" data-persist-group="lesson-6-completion">
+<fieldset>
+<legend>ثبت پایان درس 6</legend>
+<label class="choice-row completion-choice"><input data-persist="checkbox" id="lesson-6-complete" name="lesson-6-complete" type="checkbox"/><span>این درس را با معیارهای عبور مرور کردم.</span></label>
+</fieldset>
+</form>
+</details>
+
+</article>

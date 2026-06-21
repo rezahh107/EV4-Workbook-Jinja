@@ -1,205 +1,566 @@
-<article class="lesson card-surface" data-lesson="11" id="lesson-11"><h2 class="lesson-title former-h1">درس 11 — Image، SVG، Background، Aspect Ratio و Object Fit</h2><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-11-lesson-compass-1" role="heading">🧭 قطب‌نمای درس</span></summary><section aria-labelledby="lesson-11-lesson-compass-1" class="disclosure-content lesson-section lesson-compass"><p><strong>در این درس یاد می‌گیری:</strong> برای هر رسانه Element و رفتار نمایشی مناسب انتخاب کنی.</p><p><strong>در این درس هنوز یاد نمی‌گیری:</strong> بهینه‌سازی پیشرفته فرمت‌های تصویر را.</p><p><strong>در پایان باید بتوانی:</strong> Logoها را سالم نمایش بدهی و Visual Stage را مربع نگه داری.</p></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" id="lesson-11-lesson-meta-2" role="heading">زمان، سنگینی و نوع فعالیت</span></summary><section aria-labelledby="lesson-11-lesson-meta-2" class="lesson-meta disclosure-content lesson-section"><div aria-label="جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت" class="table-wrap" role="region" tabindex="0"><table class="data-table educational-table edu-table"><caption>جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت</caption><thead><tr><th scope="col">مورد</th><th scope="col">پیشنهاد</th></tr></thead><tbody><tr><th scope="row">سنگینی</th><td>🟡 متوسط</td></tr><tr><th scope="row">نوع فعالیت</th><td>🧠 مفهومی + 🛠 اجرایی + ♿ دسترسی‌پذیری</td></tr><tr><th scope="row">هستهٔ فهم</th><td>۲۰–۳۰ دقیقه</td></tr><tr><th scope="row">تثبیت و تمرین</th><td>۲۵–۴۰ دقیقه</td></tr><tr><th scope="row">عمق اختیاری</th><td>۱۵–۲۵ دقیقه</td></tr></tbody></table></div><aside aria-label="راهنمای معلم" class="teacher-note"><p><strong>راهنمای معلم:</strong> رسانه، Fit و معنی محتوا هم‌زمان بررسی می‌شوند.</p></aside><p class="status-line"><code class="inline-code" dir="ltr">status: proposed_until_real_learner_pilot</code></p></section></details><section aria-labelledby="lesson-11-lesson-understand-4" class="lesson-section lesson-understand lesson-core-concept" data-core-concept="true"><h2 id="lesson-11-lesson-understand-4">A. بفهم</h2><h3>Decision Tree رسانه</h3><details class="more-know ascii-disclosure"><summary>نمای متنی ساده / ASCII اختیاری</summary><figure class="visual-figure ascii-figure"><figcaption>نمودار یا یادداشت دیداری</figcaption><pre class="ascii-diagram" dir="rtl">◇ تصویر معنی محتوایی دارد؟
-   ├─ بله → □ Image + Alt
-   └─ خیر
-       ◇ تزئین Background است؟
-          ├─ بله → □ Background
-          └─ خیر → □ SVG/Icon مناسب</pre></figure></details><h3>Cover و Contain</h3><section class="beginner-explainer global-visual-scaffold" data-beginner-section="راهنمای مبتدی برای Cover، Contain و Aspect Ratio">
-<h4>راهنمای مبتدی برای Cover، Contain و Aspect Ratio</h4>
-<p>تصویر را مثل عکس داخل قاب ببین: یا کل قاب را پر می‌کند، یا کامل دیده می‌شود، یا نسبتش باید حفظ شود.</p>
-<div class="concept-card-grid">
-<article class="concept-card" data-concept="Cover">
-<h4><span class="term-en" dir="ltr">Cover</span> — پر کردن قاب</h4>
-<ol class="concept-steps">
-<li><strong>۱. ساده‌ترین معنی:</strong> تصویر قاب را پر می‌کند، حتی اگر بخشی از تصویر بریده شود.</li>
-<li><strong>۲. مثال روزمره:</strong> مثل عکس پس‌زمینهٔ جلد مجله.</li>
-<li><strong>۳. در Screenshot یعنی کدام بخش؟</strong> Hero Image یا Background که باید قاب را کامل پر کند.</li>
-<li><strong>۴. در Elementor یعنی کدام Element / ظرف والد / Setting؟</strong> Object Fit: Cover یا Background Size: Cover.</li>
-<li><strong>۵. اشتباه رایج مبتدی:</strong> برای لوگو از Cover استفاده می‌کنم و لوگو بریده می‌شود.</li>
-<li><strong>۶. تصمیم درست:</strong> Cover برای عکس تزئینی یا Hero مناسب‌تر است، نه لوگو.</li>
-<li><strong>۷. تمرین کوچک:</strong> یک لوگو را در قاب کوچک تصور کن؛ آیا بریدن آن قابل قبول است؟</li>
-</ol>
-</article>
-<article class="concept-card" data-concept="Contain">
-<h4><span class="term-en" dir="ltr">Contain</span> — کامل دیده شدن</h4>
-<ol class="concept-steps">
-<li><strong>۱. ساده‌ترین معنی:</strong> کل تصویر داخل قاب دیده می‌شود، حتی اگر اطرافش فضای خالی بماند.</li>
-<li><strong>۲. مثال روزمره:</strong> مثل قرار دادن یک پوستر کامل داخل قاب.</li>
-<li><strong>۳. در Screenshot یعنی کدام بخش؟</strong> لوگوها و آیکن‌هایی که نباید بریده شوند.</li>
-<li><strong>۴. در Elementor یعنی کدام Element / ظرف والد / Setting؟</strong> Object Fit: Contain یا تنظیم اندازهٔ تصویر.</li>
-<li><strong>۵. اشتباه رایج مبتدی:</strong> می‌خواهم قاب حتماً پر شود و لوگو را قربانی می‌کنم.</li>
-<li><strong>۶. تصمیم درست:</strong> برای Logo معمولاً Contain امن‌تر است.</li>
-<li><strong>۷. تمرین کوچک:</strong> یک لوگو را پیدا کن و تصمیم بگیر: Cover یا Contain؟</li>
-</ol>
-</article>
-<article class="concept-card" data-concept="Aspect Ratio">
-<h4><span class="term-en" dir="ltr">Aspect Ratio</span> — نسبت عرض به ارتفاع</h4>
-<ol class="concept-steps">
-<li><strong>۱. ساده‌ترین معنی:</strong> نسبت ثابت شکل تصویر یا قاب است.</li>
-<li><strong>۲. مثال روزمره:</strong> مثل قاب ۴×۳ یا ۱۶×۹ تلویزیون.</li>
-<li><strong>۳. در Screenshot یعنی کدام بخش؟</strong> کارت‌ها یا Logo frameهایی که باید اندازهٔ قابل پیش‌بینی داشته باشند.</li>
-<li><strong>۴. در Elementor یعنی کدام Element / ظرف والد / Setting؟</strong> Aspect Ratio در ظرف والد/Image یا CSS.</li>
-<li><strong>۵. اشتباه رایج مبتدی:</strong> فقط عرض را تنظیم می‌کنم و ارتفاع تصادفی می‌شود.</li>
-<li><strong>۶. تصمیم درست:</strong> قاب‌های تکراری را با نسبت مشخص نگه دار.</li>
-<li><strong>۷. تمرین کوچک:</strong> برای یک Logo frame نسبت تقریبی را حدس بزن و یادداشت کن.</li>
-</ol>
-</article></div>
-<dl class="term-translation"><dt dir="ltr">Cover</dt><dd>پرکردن قاب با احتمال بریدگی</dd>
-<dt dir="ltr">Contain</dt><dd>نمایش کامل تصویر با احتمال فضای خالی</dd>
-<dt dir="ltr">Aspect Ratio</dt><dd>نسبت عرض و ارتفاع</dd></dl>
-<aside aria-label="قبل از ساخت در Elementor" class="before-elementor-card">
-<h4>قبل از اینکه در Elementor چیزی بسازی</h4>
-<p>اول با مداد یا ذهن خودت این سه سؤال را جواب بده؛ بعد وارد پنل Elementor شو:</p>
-<ol>
-<li>کدام بخش اسکلت است؟</li>
-<li>کدام بخش محتواست؟</li>
-<li>کدام بخش واقعاً باید هم‌پوشانی داشته باشد؟</li>
-</ol>
-<p class="why-note">قبل از انتخاب Cover/Contain بپرس: «بریدن تصویر اشکال دارد یا نه؟»</p>
+<article class="lesson card-surface" data-lesson="11" id="lesson-11">
+
+<h2 class="lesson-title former-h1">درس 11 — Image، SVG، Background، Aspect Ratio و Object Fit</h2>
+
+<details class="lesson-disclosure" open>
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-11-lesson-compass-1" role="heading">🧭 قطب‌نمای درس</span>
+</summary>
+<section aria-labelledby="lesson-11-lesson-compass-1" class="disclosure-content lesson-section lesson-compass">
+<p><strong>در این درس یاد می‌گیری:</strong> برای هر رسانه، نقش درست انتخاب کنی: آیا تصویر محتواست، تزئین است، لوگو/SVG است، Background است یا بخشی از Visual Stage؟ سپس Aspect Ratio و Object Fit را با همان نقش تنظیم کنی.</p>
+<p><strong>در این درس هنوز یاد نمی‌گیری:</strong> بهینه‌سازی پیشرفته فرمت‌ها، srcset/sizes دستی، pipeline کامل Performance، SVG sanitization عمیق، یا Position نهایی Orbit Nodeها.</p>
+<p><strong>در پایان باید بتوانی:</strong> Logoها را بدون Crop نمایش بدهی، Visual Stage را با Aspect Ratio قابل پیش‌بینی نگه داری، و تشخیص بدهی چه چیزی Image Element است و چه چیزی Background تزئینی.</p>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" id="lesson-11-lesson-meta-2" role="heading">زمان، سنگینی و نوع فعالیت</span>
+</summary>
+<section aria-labelledby="lesson-11-lesson-meta-2" class="lesson-meta disclosure-content lesson-section">
+<div aria-label="جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت" class="table-wrap" role="region" tabindex="0">
+<table class="data-table educational-table edu-table">
+<caption>جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت</caption>
+<thead><tr><th scope="col">مورد</th><th scope="col">پیشنهاد</th></tr></thead>
+<tbody>
+<tr><th scope="row">سنگینی</th><td>🟡 متوسط</td></tr>
+<tr><th scope="row">نوع فعالیت</th><td>🧠 مفهومی + 🛠 اجرایی + ♿ دسترسی‌پذیری + 🔍 Performance-aware</td></tr>
+<tr><th scope="row">هستهٔ فهم</th><td>۲۰–۳۰ دقیقه</td></tr>
+<tr><th scope="row">تثبیت و تمرین</th><td>۲۵–۴۰ دقیقه</td></tr>
+<tr><th scope="row">عمق اختیاری</th><td>۱۵–۲۵ دقیقه</td></tr>
+</tbody>
+</table>
+</div>
+<aside aria-label="راهنمای معلم" class="teacher-note">
+<p><strong>راهنمای معلم:</strong> رسانه را هم‌زمان از سه زاویه ببین: معنی محتوا، رفتار قاب و هزینهٔ بارگذاری. هنرجو نباید برای هر چیز شبیه تصویر یک تصمیم واحد بگیرد.</p>
 </aside>
-</section><section aria-labelledby="section-hidden-165-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-165-heading">بخش آموزشی</h2><dl class="term-grid"><dt>Cover</dt><dd>قاب را پر می‌کند؛ ممکن است Crop کند</dd><dt>Contain</dt><dd>کل تصویر را نشان می‌دهد؛ ممکن است فضای خالی بماند</dd></dl></section><p>Logo معمولاً Contain؛ عکس Card معمولاً Cover.</p><h3>Aspect Ratio</h3><p>Ratio باعث می‌شود Box با تغییر Width شکل خود را حفظ کند.</p><hr/></section><details class="lesson-disclosure conceptual-reference" data-concept-version="31.0.0" data-source-sha256="9a715a1499c633723de9be7e700d0d8340eb3c485f2210ad153690d6294dbaf8" id="lesson-11-concept-reference"><summary>📚 مرجع مفهومی کامل — درک عمیق Image، SVG، Background و Aspect Ratio</summary><div class="concept-reference-body concept-reference-v31" data-concept-index="11" data-source-version="31.0.0"><p class="concept-reference-lead">این مرجع کامل برای ساخت مدل ذهنی، عیب‌یابی و تصمیم‌گیری مستقل نوشته شده است. متن اصلی درس، کارت‌ها، آزمون‌ها و Step‑Throughها همچنان در جای خود باقی مانده‌اند.</p><section aria-labelledby="concept-v31-11-section-01" class="concept-reference-part concept-reference-problem"><h3 id="concept-v31-11-section-01">مسئله‌ای که این مفهوم حل می‌کند</h3><p>همهٔ چیزهایی که شبیه تصویر دیده می‌شوند نقش یکسان ندارند.</p><ul>
-<li>تصویر محصول بخشی از محتواست.</li>
-<li>بافت طلایی پشت Hero تزئینی است.</li>
-<li>لوگو ممکن است SVG باشد.</li>
-<li>عکس کارت باید Crop شود.</li>
-<li>Hero Image ممکن است عنصر LCP باشد.</li>
-</ul><p>انتخاب اشتباه میان Image و Background روی Accessibility، Responsive، Performance و نگهداری اثر می‌گذارد.</p><hr/></section><section aria-labelledby="concept-v31-11-section-02" class="concept-reference-part concept-reference-analogy"><h3 id="concept-v31-11-section-02">تشبیه به دنیای واقعی: عکس قاب‌شده و کاغذدیواری</h3><p>یک اتاق را تصور کن:</p><ul>
-<li>عکس خانوادگی داخل قاب، معنای مستقل دارد؛ اگر حذف شود بخشی از محتوا از بین می‌رود. این <strong>Image Element</strong> است.</li>
-<li>طرح روی دیوار فقط فضا را زیباتر می‌کند؛ اگر حذف شود پیام اصلی هنوز باقی است. این <strong>Background</strong> است.</li>
-<li>نقشهٔ معماری که با خطوط رسم شده و در هر اندازه واضح است، شبیه <strong>SVG</strong> است.</li>
-</ul><hr/></section><section aria-labelledby="concept-v31-11-section-03" class="concept-reference-part"><h3 id="concept-v31-11-section-03">Image یا Background؟</h3><p>از خودت بپرس:</p><blockquote>
-<p>اگر تصویر Load نشود، آیا کاربر بخشی از اطلاعات را از دست می‌دهد؟</p>
-</blockquote><p>اگر بله، معمولاً Image Element و متن جایگزین مناسب لازم است.</p><p>اگر تصویر صرفاً تزئینی است، Background می‌تواند درست‌تر باشد.</p><p>این قانون مطلق نیست، اما نقطهٔ شروع قابل دفاعی است.</p><hr/></section><section aria-labelledby="concept-v31-11-section-04" class="concept-reference-part"><h3 id="concept-v31-11-section-04">Aspect Ratio؛ شکل قاب پیش از رسیدن عکس</h3><p>مرورگر باید بداند جعبهٔ تصویر چه شکلی است. اگر تا Load شدن فایل هیچ فضایی رزرو نشود، محتوا بعداً جابه‌جا می‌شود.</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-css inline-code" dir="ltr">.media {
+<p class="status-line"><code class="inline-code" dir="ltr">status: revised_media_decision_context</code></p>
+</section>
+</details>
+
+<section aria-labelledby="lesson-11-lesson-understand-4" class="lesson-section lesson-understand lesson-core-concept" data-core-concept="true">
+<h2 id="lesson-11-lesson-understand-4">A. بفهم</h2>
+
+<h3>پیوند با درس‌های قبلی</h3>
+<p>تا اینجا Structure، Layout، Text و Logo Strip را ساختی. حالا باید رسانه‌ها را درست وارد کنی: Logoها نباید بریده شوند، Visual Stage باید شکل قابل پیش‌بینی داشته باشد، و Backgroundهای تزئینی نباید با Imageهای محتوایی اشتباه شوند.</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Structure / Layout / Text
+↓
+Media Role
+↓
+Image vs Background vs SVG
+↓
+Aspect Ratio
+↓
+Object Fit / Object Position
+↓
+Accessibility / Performance</code></pre>
+</figure>
+
+<h3>Decision Tree رسانه</h3>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<ul>
+<li>◇ اگر تصویر Load نشود، کاربر اطلاعاتی از دست می‌دهد؟</li>
+<li>├─ بله → <strong>Image Element + alt مناسب</strong></li>
+<li>└─ خیر</li>
+<li>◇ آیا فقط تزئین بصری، بافت، گرادیان یا ornament است؟</li>
+<li>├─ بله → <strong>Background یا Decoration</strong></li>
+<li>└─ خیر</li>
+<li>◇ آیا Logo/Icon/Illustration برداری است؟</li>
+<li>├─ بله → <strong>SVG/Icon مناسب، با viewBox سالم</strong></li>
+<li>└─ دوباره نقش محتوایی را بررسی کن</li>
+</ul>
+</section>
+
+<h3>Image یا Background؟</h3>
+<p>Image وقتی مناسب‌تر است که خود تصویر بخشی از محتوا باشد: محصول، چهره، Logo معنی‌دار، نمودار یا تصویری که نبودنش پیام را ناقص می‌کند. Background وقتی مناسب‌تر است که نقش تزئینی دارد: بافت، رنگ، گرادیان، ornament یا فضای بصری.</p>
+<p>قاعدهٔ کوتاه: <strong>محتوا را Image کن؛ تزئین را Background.</strong></p>
+
+<h3>Cover و Contain</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Cover vs Contain">
+<table class="data-table educational-table edu-table">
+<caption>Cover و Contain</caption>
+<thead><tr><th scope="col">Fit</th><th scope="col">رفتار</th><th scope="col">مناسب برای</th><th scope="col">تله</th></tr></thead>
+<tbody>
+<tr><th scope="row">Cover</th><td>قاب را پر می‌کند؛ ممکن است تصویر Crop شود.</td><td>Hero Photo، Card Image، Background تصویری</td><td>برای Logo استفاده شود و لوگو بریده شود.</td></tr>
+<tr><th scope="row">Contain</th><td>کل تصویر دیده می‌شود؛ ممکن است فضای خالی بماند.</td><td>Logo، Icon، Illustration مهم</td><td>برای Hero Photo استفاده شود و قاب خالی بماند.</td></tr>
+<tr><th scope="row">Object Position</th><td>نقطهٔ کانونی Crop را کنترل می‌کند.</td><td>تصویر با سوژهٔ مشخص</td><td>با center center صورت یا محصول بریده شود.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Aspect Ratio؛ شکل قاب قبل از رسیدن تصویر</h3>
+<p>Aspect Ratio کمک می‌کند Box رسانه از قبل شکل خود را داشته باشد. این باعث می‌شود Layout قابل پیش‌بینی‌تر بماند و با Load شدن تصویر، صفحه ناگهانی نپرد.</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-css inline-code" dir="ltr">.media-box {
   aspect-ratio: 4 / 3;
+}</code></pre>
+</figure>
+
+<h3>SVG چیست و چرا ساده نیست؟</h3>
+<p>SVG تصویر برداری است و برای Logo، Icon و Illustration خطی مناسب است. اما هر SVG خودبه‌خود سبک، امن یا تمیز نیست. یک SVG می‌تواند Pathهای زیاد، Filter سنگین، Metadata اضافه یا viewBox خراب داشته باشد.</p>
+
+<h3>Logoها چه Fit می‌خواهند؟</h3>
+<p>Logo معمولاً نباید بریده شود. بنابراین نقطهٔ شروع سالم برای Logoها معمولاً <code dir="ltr">contain</code> و کنترل <code dir="ltr">max-width / max-height</code> است. اگر Logo در قاب پر نشود، فضای خالی قابل قبول‌تر از بریدن برند است.</p>
+
+<h3>Visual Stage چه می‌خواهد؟</h3>
+<p>Visual Stage در TUYA باید شکل قابل پیش‌بینی داشته باشد تا بعداً Core و Orbit Nodes نسبت به یک محدودهٔ پایدار قرار بگیرند. در این درس فقط قاب Stage را با Aspect Ratio تثبیت می‌کنی؛ هنوز Nodeها را Position نمی‌کنی.</p>
+
+<h3>Lazy Load و LCP را با هم قاطی نکن</h3>
+<p>تصاویر پایین صفحه معمولاً می‌توانند Lazy Load شوند. اما اگر تصویر بالای صفحه و کاندید LCP است، Lazy Load بی‌دلیل می‌تواند شروع دانلود را عقب بیندازد. در این درس فقط اصل تصمیم را می‌آموزیم؛ Audit کامل Performance بعداً می‌آید.</p>
+<hr/>
+</section>
+
+<details class="lesson-disclosure conceptual-reference" data-concept-version="tuya-revised-11.0.0" id="lesson-11-concept-reference">
+<summary>📚 مرجع مفهومی کامل — Image، SVG، Background، Aspect Ratio و Object Fit</summary>
+<div class="concept-reference-body concept-reference-v31" data-concept-index="11" data-source-version="tuya-revised-11.0.0">
+
+<p class="concept-reference-lead">این مرجع، بخش مفهومی کامل درس را حفظ می‌کند و آن را به پروژهٔ TUYA وصل می‌کند. هدف، انتخاب دقیق نقش رسانه است؛ نه فقط جا دادن فایل تصویر در صفحه.</p>
+
+<section class="concept-reference-part concept-reference-problem" aria-labelledby="lesson-11-ref-problem">
+<h3 id="lesson-11-ref-problem">۱. مسئله‌ای که این مفهوم حل می‌کند</h3>
+<p>همهٔ چیزهایی که شبیه تصویر دیده می‌شوند نقش یکسان ندارند:</p>
+<ul>
+<li>تصویر محصول بخشی از محتواست.</li>
+<li>بافت پشت Hero تزئینی است.</li>
+<li>Logo ممکن است SVG باشد.</li>
+<li>عکس کارت ممکن است نیاز به Crop داشته باشد.</li>
+<li>Hero Image ممکن است عنصر LCP باشد.</li>
+</ul>
+<p>انتخاب اشتباه میان Image، Background و SVG روی Accessibility، Responsive، Performance و نگهداری اثر می‌گذارد.</p>
+</section>
+
+<section class="concept-reference-part concept-reference-analogy" aria-labelledby="lesson-11-room">
+<h3 id="lesson-11-room">۲. تشبیه عکس قاب‌شده و کاغذدیواری</h3>
+<ul>
+<li><strong>عکس قاب‌شده:</strong> معنا دارد؛ اگر حذف شود، بخشی از محتوا از بین می‌رود. این Image Element است.</li>
+<li><strong>کاغذدیواری:</strong> فضا را زیباتر می‌کند؛ اگر حذف شود، پیام اصلی هنوز باقی است. این Background است.</li>
+<li><strong>نقشهٔ برداری:</strong> با خطوط و مسیرها مقیاس‌پذیر است. این شبیه SVG است.</li>
+</ul>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-11-aspect">
+<h3 id="lesson-11-aspect">۳. Aspect Ratio و رزرو فضا</h3>
+<p>اگر جعبهٔ تصویر قبل از Load شدن فایل شکل مشخصی نداشته باشد، محتوای پایین ممکن است بعد از Load تصویر جابه‌جا شود. Aspect Ratio یا width/height واقعی برای Image کمک می‌کند مرورگر زودتر شکل قاب را بداند.</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-css inline-code" dir="ltr">.visual-stage {
+  aspect-ratio: 1 / 1;
 }
-</code></pre></figure><p>این یعنی حتی پیش از Load کامل تصویر، Box نسبت ۴ به ۳ دارد.</p><p>برای <code class="inline-code" dir="ltr">&lt;img&gt;</code>، تعیین <code class="inline-code" dir="ltr">width</code> و <code class="inline-code" dir="ltr">height</code> واقعی نیز به مرورگر کمک می‌کند نسبت را از ابتدا محاسبه کند.</p><hr/></section><section aria-labelledby="concept-v31-11-section-05" class="concept-reference-part"><h3 id="concept-v31-11-section-05"><code class="inline-code" dir="ltr">object-fit</code>؛ عکس چگونه داخل قاب بنشیند؟</h3><h4><code class="inline-code" dir="ltr">cover</code></h4><p>قاب کاملاً پر می‌شود؛ بخشی از تصویر ممکن است Crop شود.</p><h4><code class="inline-code" dir="ltr">contain</code></h4><p>تمام تصویر دیده می‌شود؛ ممکن است اطراف آن فضای خالی بماند.</p><h4><code class="inline-code" dir="ltr">object-position</code></h4><p>نقطهٔ کانونی Crop را تعیین می‌کند.</p><p>مثلاً اگر چهره در سمت راست عکس است، <code class="inline-code" dir="ltr">center center</code> شاید صورت را ببرد. باید موقعیت را متناسب با سوژه تنظیم کنی.</p><hr/></section><section aria-labelledby="concept-v31-11-section-06" class="concept-reference-part"><h3 id="concept-v31-11-section-06">SVG چیست؟</h3><p>SVG به‌جای شبکه‌ای از Pixelها، شکل را با مسیرها و بردارها توصیف می‌کند. برای آیکون، لوگو و Illustration خطی مناسب است.</p><p>اما «SVG همیشه سبک است» درست نیست. یک SVG پیچیده می‌تواند:</p><ul>
-<li>هزاران Path داشته باشد؛</li>
-<li>Filter سنگین اجرا کند؛</li>
-<li>کد یا Metadata اضافی داشته باشد؛</li>
-<li>از نظر امنیت نیازمند Sanitization باشد.</li>
-</ul><p><code class="inline-code" dir="ltr">viewBox</code> باید درست باشد تا مقیاس‌پذیری قابل پیش‌بینی بماند.</p><hr/></section><section aria-labelledby="concept-v31-11-section-07" class="concept-reference-part"><h3 id="concept-v31-11-section-07">Responsive Images</h3><p>یک تصویر ۲۵۰۰px برای کارت ۳۲۰px اتلاف پهنای باند است. مرورگر با <code class="inline-code" dir="ltr">srcset</code> و <code class="inline-code" dir="ltr">sizes</code> می‌تواند نسخه مناسب‌تری انتخاب کند.</p><p>در WordPress و Elementor معمولاً اندازه‌های مختلف Media Library در این فرایند نقش دارند، اما باید در Network Panel بررسی کنی چه فایل واقعی دانلود شده است.</p><hr/></section><section aria-labelledby="concept-v31-11-section-08" class="concept-reference-part"><h3 id="concept-v31-11-section-08">Lazy Loading و تصویر LCP</h3><p>تصاویر پایین صفحه معمولاً می‌توانند Lazy Load شوند.</p><p>اما تصویر اصلی بالای صفحه که احتمالاً LCP است، نباید بی‌دلیل Lazy Load شود؛ چون شروع دانلود آن عقب می‌افتد.</p><p>تصویر ذهنی:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">زیر Fold → دیرتر بارگذاری‌شدن معمولاً مفید
-تصویر اصلی Hero → باید زود کشف و دانلود شود
-</code></pre></figure><hr/></section><section aria-labelledby="concept-v31-11-section-09" class="concept-reference-part concept-reference-elementor"><h3 id="concept-v31-11-section-09">در Elementor V4</h3><p>برای هر تصویر این قرارداد را ثبت کن:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Role: content / decorative
-Source: media / dynamic
-Aspect ratio: 16:9
-Fit: cover
-Focal point: inline-start center
-Alt: meaningful / empty for decorative equivalent
-Responsive source: verified
-Loading priority: above-fold / below-fold
-</code></pre></figure><p>Background را روی Box مسئول تزئین قرار بده. اگر یک Wrapper فقط برای نگه‌داشتن Background ساخته‌ای، بپرس آیا همان Parent موجود می‌تواند این مسئولیت را بگیرد یا نه.</p><hr/></section><section aria-labelledby="concept-v31-11-section-10" class="concept-reference-part"><h3 id="concept-v31-11-section-10">مثال واقعی: کارت محصول</h3><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Product Card
-├── Media Box (aspect-ratio: 4/3)
-│   └── Product Image (object-fit: cover)
-├── Title
-├── Price
-└── Button
-</code></pre></figure><p>اگر تصویر Dynamic خالی بود:</p><ul>
-<li>Fallback Image داری؟</li>
-<li>Media Box باید پنهان شود؟</li>
-<li>Gap باقی می‌ماند؟</li>
-<li>ارتفاع کارت‌ها از هم جدا می‌شود؟</li>
-</ul><p>این دیگر فقط موضوع تصویر نیست؛ Dynamic Data و Layout نیز دخیل‌اند.</p><hr/></section><section aria-labelledby="concept-v31-11-section-11" class="concept-reference-part concept-reference-devtools"><h3 id="concept-v31-11-section-11">پل به DevTools</h3><p>در Network Panel ببین کدام فایل تصویر دانلود شده و اندازه آن چقدر است. در Elements/Computed این موارد را بررسی کن:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">width / height
+
+.logo-frame {
+  aspect-ratio: 3 / 1;
+}</code></pre>
+</figure>
+<p>برای TUYA، Visual Stage می‌تواند در این مرحله مربع یا نزدیک‌به‌مربع تست شود، اما مقدار نهایی تا قبل از Screenshot و Breakpoint Validation قطعی نیست.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-11-fit">
+<h3 id="lesson-11-fit">۴. Object Fit و Object Position</h3>
+<p><code dir="ltr">object-fit</code> می‌گوید تصویر چگونه داخل قاب بنشیند. <code dir="ltr">object-position</code> می‌گوید اگر Crop رخ دهد، نقطهٔ کانونی کجا باشد.</p>
+<ul>
+<li><strong>cover:</strong> قاب پر می‌شود، احتمال بریدگی هست.</li>
+<li><strong>contain:</strong> کل تصویر دیده می‌شود، احتمال فضای خالی هست.</li>
+<li><strong>object-position:</strong> مرکز توجه Crop را تنظیم می‌کند.</li>
+</ul>
+<p>برای چهره یا محصول، Cover بدون Focal Point می‌تواند سوژه را ببرد. برای Logo، Cover معمولاً خطرناک است.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-11-svg">
+<h3 id="lesson-11-svg">۵. SVG؛ برداری، اما نه همیشه سبک و امن</h3>
+<p>SVG برای Logo و Icon عالی است، چون با Scale شدن شارپ می‌ماند. اما قبل از استفاده باید این‌ها را بررسی کنی:</p>
+<ul>
+<li>viewBox درست است؟</li>
+<li>Pathها بیش از حد زیاد نیستند؟</li>
+<li>Filter یا افکت سنگین ندارد؟</li>
+<li>Metadata اضافه یا کد ناخواسته ندارد؟</li>
+<li>از منبع معتبر آمده است؟</li>
+<li>در UI واقعی به‌درستی مقیاس می‌شود؟</li>
+</ul>
+<p>در این درس Sanitization عمیق را انجام نمی‌دهیم، اما فرض سبک و امن بودن هر SVG ممنوع است.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-11-alt">
+<h3 id="lesson-11-alt">۶. Alt Text و نقش محتوا</h3>
+<p>برای Image محتوایی، alt باید معنی تصویر را منتقل کند. برای تصویر تزئینی، alt خالی یا مدیریت تزئینی مناسب‌تر است تا Screen Reader محتوای بی‌ارزش نخواند.</p>
+<p>برای Logo، تصمیم به نقش صفحه بستگی دارد:</p>
+<ul>
+<li>Logo برند/مشتری/همکار که پیام اعتمادسازی دارد → معمولاً محتوایی است و alt معنی‌دار لازم دارد.</li>
+<li>Logo صرفاً تزئینی و تکراری → ممکن است decorative باشد.</li>
+<li>Logo لینک‌دار → alt باید مقصد یا برند را روشن کند.</li>
+</ul>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-11-responsive-images">
+<h3 id="lesson-11-responsive-images">۷. Responsive Images و فایل واقعی</h3>
+<p>یک تصویر ۲۵۰۰px برای قاب ۳۲۰px معمولاً اتلاف پهنای باند است. در WordPress/Elementor، Media Library می‌تواند اندازه‌های مختلف تصویر بسازد، اما باید در Network Panel دید واقعاً چه فایل دانلود شده است.</p>
+<p>در این درس فقط اصل را می‌گیریم: اندازهٔ فایل واقعی باید با اندازهٔ نمایش منطقی باشد. Audit کامل srcset/sizes در درس Performance انجام می‌شود.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-11-lcp">
+<h3 id="lesson-11-lcp">۸. Lazy Load و تصویر بالای صفحه</h3>
+<p>Lazy Loading برای تصاویر پایین صفحه مفید است؛ اما تصویر اصلی بالای صفحه که احتمالاً LCP است، نباید بی‌دلیل Lazy Load شود. این تصمیم باید با مشاهدهٔ واقعی صفحه و DevTools/Performance انجام شود.</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">Below fold → lazy loading معمولاً مفید
+Hero / LCP candidate → اولویت بارگذاری را بررسی کن</code></pre>
+</figure>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-11-tuya-contract">
+<h3 id="lesson-11-tuya-contract">۹. قرارداد TUYA برای رسانه‌ها</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="TUYA media contract">
+<table class="data-table educational-table edu-table">
+<caption>قرارداد رسانه در TUYA</caption>
+<thead><tr><th scope="col">رسانه</th><th scope="col">نقش</th><th scope="col">Element / Fit</th><th scope="col">وضعیت</th></tr></thead>
+<tbody>
+<tr><th scope="row">Logoهای Logo Strip</th><td>اعتمادسازی یا برند؛ نیازمند تصمیم alt</td><td>Image/SVG با contain و max-size</td><td><code dir="ltr">provisional_until_assets</code></td></tr>
+<tr><th scope="row">Visual Stage</th><td>قاب بصری اصلی</td><td>Container با aspect-ratio</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Core Cloud</th><td>Illustration/SVG مرکزی</td><td>SVG/Image با contain</td><td><code dir="ltr">provisional_until_asset</code></td></tr>
+<tr><th scope="row">Background ornament</th><td>تزئینی</td><td>Background یا pseudo/decorative</td><td><code dir="ltr">unknown_until_design</code></td></tr>
+<tr><th scope="row">Orbit Node icon</th><td>Icon معنی‌دار یا تزئینی، بسته به متن همراه</td><td>SVG/Icon</td><td><code dir="ltr">unknown_until_node_content</code></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-11-devtools">
+<h3 id="lesson-11-devtools">۱۰. Debug رسانه در DevTools</h3>
+<p>در Elements/Computed این‌ها را بررسی کن:</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">width / height
 aspect-ratio
 object-fit
 object-position
 background-size
 background-position
-</code></pre></figure><p>برای CLS، گزینهٔ Layout Shift Regions در DevTools می‌تواند جابه‌جایی‌ها را نشان دهد.</p><hr/></section><section aria-labelledby="concept-v31-11-section-12" class="concept-reference-part concept-reference-traps"><h3 id="concept-v31-11-section-12">اشتباهات رایج</h3><ul>
-<li>Background برای تصویر محتوایی</li>
-<li>Alt نامناسب یا تکرار متن اطراف</li>
-<li>نداشتن ابعاد اولیه</li>
-<li><code class="inline-code" dir="ltr">cover</code> بدون نقطه کانونی</li>
-<li>Lazy Load روی Hero Image</li>
-<li>فایل بسیار بزرگ برای نمایش کوچک</li>
-<li>فرض سبک و امن بودن هر SVG</li>
-<li>ساخت Duplicate Image برای هر Device بدون نیاز واقعی</li>
-</ul><hr/></section><section aria-labelledby="concept-v31-11-section-13" class="concept-reference-part concept-reference-analogy"><h3 id="concept-v31-11-section-13">تصویر ذهنی نهایی</h3><p>Image عکس قاب‌شده است؛ Background کاغذدیواری. Aspect Ratio قبل از رسیدن عکس، جای قاب را نگه می‌دارد و Object Fit تعیین می‌کند عکس چگونه داخل آن بنشیند.</p><hr/></section><section aria-labelledby="concept-v31-11-section-14" class="concept-reference-part concept-reference-golden"><h3 id="concept-v31-11-section-14">قوانین طلایی</h3><ul>
-<li><strong>«محتوا را Image کن؛ تزئین را Background.»</strong></li>
-<li><strong>«Aspect Ratio شکل Box را می‌سازد؛ Object Fit تصویر داخل آن را جا می‌دهد.»</strong></li>
-<li><strong>«فضای تصویر را از ابتدا رزرو کن تا صفحه نپرد.»</strong></li>
-<li><strong>«تصویر LCP را بی‌دلیل Lazy Load نکن.»</strong></li>
-<li><strong>«SVG برداری است، اما خودبه‌خود سبک و امن نیست.»</strong></li>
-</ul></section><footer class="concept-reference-evidence"><h3>منابع رسمی و وضعیت اعتبار این فصل</h3><p>رفتارهای CSS و مرورگر از استانداردها و مستندات رسمی، رفتار Elementor از Help Center رسمی، و تشبیه‌ها به‌عنوان <code class="inline-code" dir="ltr">derived_explanation</code> ارائه شده‌اند.</p><ul>
-<li>Elementor Help: Image element and V4 style controls</li>
-<li>CSS Images / CSS Sizing specifications</li>
-<li>web.dev: Optimize CLS and LCP</li>
-</ul><hr/></footer></div></details><details class="lesson-disclosure settings-values-units" id="lesson-11-settings-values-units">
-<summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" id="lesson-11-settings-values-units-heading" role="heading">⚙️ تنظیمات، مقدارها و واحدها — Image؛ Box اندازه دارد، محتوا نسبت و fit دارد</span></summary>
+natural image size
+rendered image size</code></pre>
+</figure>
+<p>در Network Panel ببین چه فایل واقعی دانلود شده است. برای Layout Shift، ابزارهای Performance/Layout Shift Regions می‌توانند نشان بدهند تصویر باعث پرش شده یا نه.</p>
+</section>
+
+<section class="concept-reference-part concept-reference-traps" aria-labelledby="lesson-11-traps">
+<h3 id="lesson-11-traps">۱۱. اشتباهات رایج</h3>
+<ul>
+<li>استفاده از Background برای تصویر محتوایی.</li>
+<li>Alt نامناسب یا تکرار متن اطراف.</li>
+<li>نداشتن ابعاد اولیه یا Aspect Ratio.</li>
+<li>استفاده از Cover برای Logo و بریدن برند.</li>
+<li>Cover بدون object-position برای تصویر دارای سوژه.</li>
+<li>Lazy Load روی Hero/LCP candidate بدون دلیل.</li>
+<li>فایل بسیار بزرگ برای نمایش کوچک.</li>
+<li>فرض سبک و امن بودن هر SVG.</li>
+<li>ساخت Duplicate Image برای هر Device بدون نیاز واقعی.</li>
+</ul>
+</section>
+
+<section class="concept-reference-part concept-reference-golden" aria-labelledby="lesson-11-golden">
+<h3 id="lesson-11-golden">۱۲. قوانین طلایی</h3>
+<ul>
+<li><strong>محتوا را Image کن؛ تزئین را Background.</strong></li>
+<li><strong>Aspect Ratio شکل Box را می‌سازد؛ Object Fit تصویر داخل آن را جا می‌دهد.</strong></li>
+<li><strong>Logo معمولاً Contain می‌خواهد، نه Cover.</strong></li>
+<li><strong>فضای تصویر را از ابتدا رزرو کن تا صفحه نپرد.</strong></li>
+<li><strong>تصویر LCP را بی‌دلیل Lazy Load نکن.</strong></li>
+<li><strong>SVG برداری است، اما خودبه‌خود سبک و امن نیست.</strong></li>
+<li><strong>Visual Stage را فعلاً قاب‌بندی کن؛ Nodeها را هنوز Position نکن.</strong></li>
+</ul>
+</section>
+
+<footer class="concept-reference-evidence">
+<h3>منابع و وضعیت اعتبار</h3>
+<p>رفتارهای Image، Background، aspect-ratio، object-fit، SVG و Lazy Loading بر پایهٔ CSS/HTML و رفتار مرورگر نوشته شده‌اند. تصمیم‌های TUYA تا پیش از مشاهدهٔ assetهای واقعی، Network و Breakpoint Validation قطعی نیستند.</p>
+<ul>
+<li><a href="https://elementor.com/help/style-tab-background/" rel="noopener noreferrer" target="_blank">Elementor — Style tab: Background</a></li>
+<li><a href="https://elementor.com/help/style-tab-layout/" rel="noopener noreferrer" target="_blank">Elementor — Style tab: Layout</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio" rel="noopener noreferrer" target="_blank">MDN — aspect-ratio</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit" rel="noopener noreferrer" target="_blank">MDN — object-fit</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG" rel="noopener noreferrer" target="_blank">MDN — SVG</a></li>
+</ul>
+</footer>
+
+</div>
+</details>
+
+<details class="lesson-disclosure settings-values-units" id="lesson-11-settings-values-units">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" id="lesson-11-settings-values-units-heading" role="heading">⚙️ تنظیمات، مقدارها و واحدها — Aspect Ratio، Fit، Position و Image Size</span>
+</summary>
 <section aria-labelledby="lesson-11-settings-values-units-heading" class="disclosure-content settings-units-body">
-<p class="settings-units-lead">Width و Height Box تصویر را می‌سازند؛ Aspect Ratio نسبت است و Object Fit keyword. این سه نوع مقدار را جدا نگه دار.</p>
-<aside class="unit-analogy"><strong>🧠 تصویر ذهنی:</strong> قاب عکس اندازه دارد، نسبت قاب یک کسر است و روش بریدن عکس یک دستور مثل Cover یا Contain.</aside>
-<div aria-label="جدول تنظیمات و واحدهای این درس" class="table-wrap units-table-wrap" role="region" tabindex="0">
+<p class="settings-units-lead">Aspect Ratio عدد نسبت است؛ Object Fit keyword است؛ Width/Height/Max Size واحد طول دارند؛ File Size و Rendered Size را باید جدا ببینی.</p>
+<div aria-label="جدول تنظیمات و واحدهای درس ۱۱" class="table-wrap units-table-wrap" role="region" tabindex="0">
 <table class="data-table educational-table units-context-table">
-<caption>تنظیمات، نوع مقدار، مرجع محاسبه و راهنمای انتخاب</caption>
-<thead><tr><th scope="col">تنظیم</th><th scope="col">CSS / مفهوم</th><th scope="col">مقدار یا واحد</th><th scope="col">مرجع</th><th scope="col">کاربرد پیشنهادی</th><th scope="col">تله</th><th scope="col">شاهد</th></tr></thead>
-<tbody><tr><th scope="row">Width / Min / Max</th><td><code dir="ltr">width / min-width / max-width</code></td><td>مثال رسمی: % برای width و px برای min/max</td><td>Parent یا طول ثابت</td><td>% + min/max برای تصویر سیال با حد.</td><td>height و width مستقل می‌توانند تصویر را بکشند.</td><td><code dir="ltr">E_SIZE</code></td></tr><tr><th scope="row">Aspect Ratio</th><td><code dir="ltr">aspect-ratio</code></td><td>نسبت مانند 16 / 9</td><td>بدون واحد طول</td><td>برای حفظ شکل Box.</td><td>نسبت با Width برابر نیست.</td><td><code dir="ltr">E_SIZE</code></td></tr><tr><th scope="row">Object Fit</th><td><code dir="ltr">object-fit</code></td><td>fill / cover / contain…</td><td>keyword</td><td>نحوهٔ جاگیری پیکسل‌های تصویر داخل Box.</td><td>Cover ممکن است بخش مهم تصویر را crop کند.</td><td><code dir="ltr">E_SIZE</code></td></tr><tr><th scope="row">Object Position</th><td><code dir="ltr">object-position</code></td><td>keyword، درصد یا طول در CSS</td><td>Content box</td><td>برای focal point.</td><td>بدون تست Mobile نقطهٔ کانونی ممکن است گم شود.</td><td><code dir="ltr">CSS_VALUES</code></td></tr></tbody>
+<caption>تنظیمات، نوع مقدار، مرجع و تله</caption>
+<thead><tr><th scope="col">تنظیم</th><th scope="col">نوع مقدار</th><th scope="col">مرجع</th><th scope="col">تله</th></tr></thead>
+<tbody>
+<tr><th scope="row">Aspect Ratio</th><td>ratio مثل <code dir="ltr">1/1</code> یا <code dir="ltr">16/9</code></td><td>قاب Media Box</td><td>فقط Width را بدهی و ارتفاع تصادفی شود.</td></tr>
+<tr><th scope="row">Object Fit</th><td>keyword: cover / contain</td><td>Image داخل قاب</td><td>Cover برای Logo استفاده شود.</td></tr>
+<tr><th scope="row">Object Position</th><td>keyword / %</td><td>نقطهٔ Crop</td><td>سوژه با center center بریده شود.</td></tr>
+<tr><th scope="row">Max Width / Height</th><td>px / rem / %</td><td>حد رشد رسانه</td><td>فایل واقعی با نمایش کوچک ناسازگار باشد.</td></tr>
+<tr><th scope="row">Background Size</th><td>cover / contain / length</td><td>Background painting area</td><td>Background برای محتوای معنی‌دار استفاده شود.</td></tr>
+</tbody>
 </table>
 </div>
 <div class="unit-guidance-grid">
-<section><h3>🧮 محاسبهٔ راهگشا</h3><p>قاب 360px با aspect-ratio:16/9 → height تقریبی 202.5px.</p></section>
-<section><h3>📱 در Responsive</h3><p>Width معمولاً سیال می‌شود و Max Width سقف می‌گذارد؛ ارتفاع را تا حد امکان از ratio/auto بگیر.</p></section>
-<section><h3>🔬 در DevTools</h3><p>natural size، rendered size، aspect-ratio، object-fit و object-position را بررسی کن.</p></section>
+<section><h3>🧮 محاسبهٔ راهگشا</h3><p>قاب 1/1 با عرض 320px یعنی ارتفاع مؤثر 320px. قاب 16/9 با عرض 320px یعنی ارتفاع حدود 180px. نسبت قاب را قبل از Fit تعیین کن.</p></section>
+<section><h3>📱 در Responsive</h3><p>Visual Stage ممکن است در Desktop مربع باشد، اما در Mobile نیاز به نسبت متفاوت یا max-size داشته باشد. مقدار نهایی را قطعی نکن.</p></section>
+<section><h3>🔬 در DevTools</h3><p>natural size، rendered size، object-fit، aspect-ratio، background-size و Network downloaded file را کنار هم ببین.</p></section>
 </div>
-<p class="unit-atlas-link"><a href="#appendix-v29-units-atlas">📐 بازگشت به اطلس مرکزی مقدارها و واحدها</a></p>
-<footer class="settings-units-evidence"><strong>وضعیت:</strong> <code dir="ltr">verified_by_official_help_and_css_sources</code><br/><strong>منابع:</strong> <a href="https://elementor.com/help/style-tab-size/" rel="noopener noreferrer" target="_blank">Elementor V4 — Style tab: Size</a>، <a href="https://www.w3.org/TR/css-values-4/" rel="noopener noreferrer" target="_blank">W3C — CSS Values and Units</a>، <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length" rel="noopener noreferrer" target="_blank">MDN — CSS length values</a></footer>
 </section>
-</details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-11-lesson-practice-5" role="heading">B. بساز و امتحان کن</span></summary><section aria-labelledby="lesson-11-lesson-practice-5" class="disclosure-content lesson-practice lesson-section"><h3>🏗 پروژهٔ TUYA — Logoها</h3><p>برای Imageهای Logo:</p><section aria-labelledby="section-hidden-167-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-167-heading">بخش آموزشی</h2><dl class="term-grid"><dt>Width</dt><dd>100% داخل Frame</dd><dt>Height</dt><dd>کنترل‌شده</dd><dt>Object Fit</dt><dd>Contain</dd></dl></section><p>حالا Platform Visual را آماده کن:</p><section aria-labelledby="section-hidden-168-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-168-heading">بخش آموزشی</h2><dl class="term-grid"><dt>Width</dt><dd>100%</dd><dt>Max Width</dt><dd>کنترل‌شده</dd><dt>Aspect Ratio</dt><dd>1 / 1</dd></dl></section><p>هنوز Core و Node نساز؛ فقط Stage مربع را ببین.</p><h3>❓ سؤال توقف</h3><p>برای Logo برند، Cover یا Contain؟</p><details class="disclosure-card"><summary>پاسخ</summary>Contain.</details><h3>⚠️ تلهٔ اصلی</h3><p><strong>تله:</strong> Width و Height Image را طوری تنظیم کنی که نسبت طبیعی کشیده شود.</p><p><strong>نشانه:</strong> Logo یا چهره دفرمه می‌شود.</p><h3>🧪 عمداً خرابش کن</h3><p>Logo را روی <code class="inline-code" dir="ltr">object-fit: cover</code> بگذار و Frame را مربع کن.</p><h4>👀 انتظار داری ببینی</h4><ul>
-<li>بخشی از Logo ممکن است Crop شود؛</li>
-<li>نام برند ناقص دیده شود؛</li>
-<li>فضای Frame پر می‌شود، اما محتوا آسیب می‌بیند.</li>
-</ul><p>Contain را برگردان.</p><p>Aspect Ratio Stage را حذف کن و Width را تغییر بده.</p><h4>👀 انتظار دوم</h4><p>Stage ممکن است بیضی یا نامتناسب شود و مختصات Nodeهای آینده قابل اتکا نباشد.</p><h3>Checkpoint</h3><section aria-labelledby="section-hidden-169-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-169-heading">بخش آموزشی</h2><form class="interactive-form checklist-form" data-persist-group="checklist-61"><fieldset><legend>Checkpoint</legend><label class="choice-row"><input data-persist="checkbox" id="chk-61-1" name="chk-61-1" type="checkbox"/><span>Logoها کامل دیده می‌شوند</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-61-2" name="chk-61-2" type="checkbox"/><span>Visual Stage مربع باقی می‌ماند</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-61-3" name="chk-61-3" type="checkbox"/><span>Image محتوایی Alt مناسب دارد</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-61-4" name="chk-61-4" type="checkbox"/><span>Background تزئینی با Image محتوایی اشتباه نشده</span></label></fieldset></form></section><h3>Exit Ticket — قبل از ادامه</h3><p><strong>بازیابی کوتاه:</strong> Cover و Contain چه تفاوتی دارند؟</p><p><strong>انتقال به یک موقعیت تازه:</strong> برای Logo، عکس محصول و Pattern تزئینی ابزار رسانه‌ای مناسب را انتخاب کن.</p><details class="disclosure-card">
-<summary>راهنمای خودسنجی اختصاصی همین درس</summary>
-<h3>آناتومی پاسخ خوب</h3>
-<form class="interactive-form checklist-form" data-persist-group="checklist-62"><fieldset><legend>آناتومی پاسخ خوب</legend><label class="choice-row"><input data-persist="checkbox" id="chk-62-1" name="chk-62-1" type="checkbox"/><span>محتوایی یا تزئینی‌بودن رسانه را تشخیص داده است.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-62-2" name="chk-62-2" type="checkbox"/><span>Image/SVG/Background و Cover/Contain را با دلیل انتخاب کرده است.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-62-3" name="chk-62-3" type="checkbox"/><span>Alt، Aspect Ratio یا Object Position مرتبط را در نظر گرفته است.</span></label></fieldset></form>
-<p>پاسخ کامل لازم نیست طولانی باشد؛ باید نشان بدهد <strong>چه چیزی را بررسی می‌کنی، چرا، و چگونه نتیجه را اثبات می‌کنی</strong>.</p>
-</details></section></details><details aria-labelledby="lesson-11-lesson-deep-dive-7" class="lesson-section lesson-deep-dive lesson-disclosure"><summary class="lesson-disclosure-summary" id="lesson-11-lesson-deep-dive-7">C. عمیق‌تر نگاه کن — اختیاری</summary><h3>📂 CASE-SOL-IMAGE-001</h3><p><strong>هدف:</strong> ⚖️ دو روش را مقایسه کن<br/>
-<strong>وضعیت:</strong> <code class="inline-code" dir="ltr">context_dependent</code></p><p>چهار Image Card دارای Cover، ارتفاع 15vw و Min/Max Height هستند. تمرین:</p><section aria-labelledby="section-hidden-172-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-172-heading">بخش آموزشی</h2><ul><li>روش فعلی چند محدودیتی</li>
-<li>در برابر</li>
-<li>Media Frame با Aspect Ratio</li></ul></section><p>نتیجه فقط پس از تست Desktop، Tablet و Mobile معتبر است.</p><h3>🔬 پشت صحنه</h3><pre class="code-block" dir="ltr" tabindex="0"><code class="language-text language-css" dir="ltr">aspect-ratio: 1;
-object-fit: contain;
-</code></pre><hr/></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-11-lesson-pass-criteria-8" role="heading">✅ معیار عبور اختصاصی این درس</span></summary><section aria-labelledby="lesson-11-lesson-pass-criteria-8" class="disclosure-content lesson-section lesson-pass-criteria"><p>برای رفتن به درس بعد، <strong>سطح ۱ و ۲ اجباری‌اند</strong>. سطح ۳ در ایستگاه جمع‌بندی تثبیت می‌شود.</p><h3>سطح ۱ — فهمیدم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-64"><fieldset><legend>سطح ۱ — فهمیدم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-64-1" name="chk-64-1" type="checkbox"/><span>می‌توانی Image، SVG و Background را براساس محتوایی یا تزئینی بودن انتخاب کنی.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-64-2" name="chk-64-2" type="checkbox"/><span>می‌توانی Cover، Contain، Aspect Ratio و Object Position را از هم جدا کنی.</span></label></fieldset></form><h3>سطح ۲ — می‌توانم انجام بدهم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-65"><fieldset><legend>سطح ۲ — می‌توانم انجام بدهم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-65-1" name="chk-65-1" type="checkbox"/><span>قاب Logoها را با Contain و Visual Stage را با Aspect Ratio پایدار می‌سازی.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-65-2" name="chk-65-2" type="checkbox"/><span>برای Image محتوایی Alt مناسب تعیین می‌کنی و تصویر تزئینی را درست علامت می‌زنی.</span></label></fieldset></form><h3>سطح ۳ — می‌توانم منتقل کنم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-66"><fieldset><legend>سطح ۳ — می‌توانم منتقل کنم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-66-1" name="chk-66-1" type="checkbox"/><span>برای عکس محصول، Logo برند و Pattern پس‌زمینه می‌توانی سه انتخاب متفاوت و دلیل هرکدام را بیان کنی.</span></label></fieldset></form></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-11-lesson-stop-point-9" role="heading">⏸ اینجا توقف کن</span></summary><section aria-labelledby="lesson-11-lesson-stop-point-9" class="lesson-stop-point lesson-section disclosure-content"><p>ایستگاه C کامل شد. ستون محتوا، Logoها و Stage مربع را بدون راهنما بازسازی کن.</p><hr/><hr/></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" role="heading">ثبت پایان درس 11</span></summary><form class="disclosure-content lesson-completion-form interactive-form" data-persist-group="lesson-11-completion"><fieldset><legend>ثبت پایان درس 11</legend><label class="choice-row completion-choice"><input data-persist="checkbox" id="lesson-11-complete" name="lesson-11-complete" type="checkbox"/><span>این درس را با معیارهای عبور مرور کردم.</span></label></fieldset></form></details>
-<details class="lesson-disclosure" id="lesson-11-end-comparisons"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" role="heading">🆚 پایان درس: Image Element در برابر Background Image</span></summary><section class="disclosure-content lesson-end-comparisons">
-<div class="inline-compare-grid">
-<section class="inline-compare-card"><h3>Image Element</h3><p>Image Element مثل قاب عکس روی دیوار است: اگر تصویر پیام، محتوا، محصول یا اطلاعات دارد، باید به‌عنوان تصویر واقعی وارد صفحه شود و alt مناسب داشته باشد.</p></section>
-<section class="inline-compare-card"><h3>Background Image</h3><p>Background مثل کاغذ دیواری است: برای تزئین، texture، atmosphere یا تصویر غیرمحتوایی مناسب است.</p><p class="golden-rule">قانون طلایی: تصویر محتوایی را background نکن؛ تصویر تزئینی را بی‌دلیل Image Element نکن.</p></section>
-</div>
-</section></details>
-<details class="lesson-disclosure" id="lesson-11-responsive-checkpoint"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" role="heading">📱 ایست بازرسی Responsive — تصویر، Crop و Visual Stage</span></summary><section class="disclosure-content lesson-section responsive-checkpoint">
-<p class="status-chip"><strong>status:</strong> verified_and_scoped</p>
-<p>تصویر خانه در Mobile نسبت به Desktop crop متفاوتی دارد. تصمیم‌های زیر باید در breakpoint Mobile بررسی شوند: <code>object-fit</code>، <code>object-position</code>، aspect ratio و focal point.</p>
-<p>فایل مرجع Mobile یک تصویر طراحی است؛ از آن نمی‌توان نتیجه گرفت که تصویر باید Background باشد یا Image Element. این تصمیم باید با معنا و دسترسی‌پذیری تعیین شود.</p>
-<details class="more-know"><summary>منابع رسمی این ایست</summary>
-<ul>
-<li><a href="https://elementor.com/help/responsive-editing/">Responsive editing — Editor V4</a></li>
-<li><a href="https://elementor.com/help/responsive-design-using-containers/">Create responsive design with containers</a></li>
-<li><a href="https://elementor.com/help/mobile-editing/">Responsive editing for mobile and tablets</a></li>
-</ul>
 </details>
-</section></details><details class="lesson-disclosure responsive-build-test" id="lesson-11-responsive-build-test">
-<summary class="lesson-disclosure-summary"><span aria-level="3" role="heading">📱 بساز و امتحان کن — Responsive: Crop تصویر و Aspect Ratio در Mobile</span></summary>
-<section class="disclosure-content lesson-section responsive-build-test-content">
-<p class="status-chip"><strong>status:</strong> verified_by_official_documentation</p>
-<p class="exercise-goal"><strong>هدف:</strong> تفاوت تغییر اندازهٔ عنصر و تغییر crop تصویر را عملاً ببین.</p>
-<div class="responsive-exercise-grid">
-<section class="exercise-step"><h4>۱. بساز</h4><ol><li>تصویر خانهٔ TUYA را در Visual Stage قرار بده.</li><li>دو حالت Image Element و Background را جدا آزمایش کن.</li><li>در Mobile object-fit/background-size و position را طوری تنظیم کن که نقطهٔ کانونی حفظ شود.</li></ol></section>
-<section class="exercise-step"><h4>۲. پیش‌بینی کن</h4><p>پیش‌بینی کن در حالت Cover کدام قسمت تصویر حذف می‌شود.</p></section>
-<section class="exercise-step exercise-break"><h4>۳. خرابی عمدی</h4><p>ارتفاع Stage را ثابت و بسیار کم کن و Cover را نگه دار.</p></section>
-<section class="exercise-step"><h4>۴. امتحان و خطایابی</h4><p>ابعاد intrinsic، rendered size، object-fit/object-position یا background-size/position.</p></section>
-</div>
-<p class="exercise-pass"><strong>معیار قبولی:</strong> Crop آگاهانه است، نسبت تصویر بی‌دلیل کشیده نشده و سوژهٔ اصلی در Mobile باقی مانده است.</p>
-<fieldset class="responsive-exercise-log">
-<legend>ثبت انجام تمرین</legend>
-<label for="lesson-11-responsive-build-test-done-build"><input data-persist="" id="lesson-11-responsive-build-test-done-build" name="lesson-11-responsive-build-test-done-build" type="checkbox"/> ساخت را انجام دادم و قبل از مشاهده پیش‌بینی نوشتم.</label>
-<label for="lesson-11-responsive-build-test-done-test"><input data-persist="" id="lesson-11-responsive-build-test-done-test" name="lesson-11-responsive-build-test-done-test" type="checkbox"/> Desktop، Tablet، Mobile و یک عرض بین breakpointها را آزمودم.</label>
-<label for="lesson-11-responsive-build-test-done-debug"><input data-persist="" id="lesson-11-responsive-build-test-done-debug" name="lesson-11-responsive-build-test-done-debug" type="checkbox"/> حداقل یک مقدار را در Computed Style یا Box Model بررسی کردم.</label>
-<label class="exercise-note-label" for="lesson-11-responsive-build-test-note">نتیجهٔ یک‌خطی من
-        <input data-persist="" id="lesson-11-responsive-build-test-note" name="lesson-11-responsive-build-test-note" placeholder="مثلاً: مقدار Mobile از Tablet ارث می‌گرفت." type="text"/>
-</label>
-</fieldset>
-<p class="evidence-line"><strong>مبنای رسمی:</strong> <a href="https://elementor.com/help/responsive-editing/">Help Center رسمی Elementor</a>. نتیجهٔ مشاهده‌شدهٔ تمرین به محیط، محتوا و breakpointهای پروژه وابسته است.</p>
-</section>
-</details><details class="lesson-disclosure design-system-decision" id="lesson-11-design-system-decision-v30">
-<summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" role="heading">🏛 تصمیم Design System — Aspect Ratio و media sizing</span></summary>
+
+<details class="lesson-disclosure step-through-v2" id="lesson-11-media-step-through">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" role="heading">🧭 Step‑Through — Image، Background، Cover یا Contain؟</span>
+</summary>
 <section class="disclosure-content lesson-section">
-<ul class="decision-questions"><li>این مقدار باید direct literal بماند یا Variable شود؟</li><li>declaration در Local Class می‌ماند یا reuse آن Global Class را توجیه می‌کند؟</li><li>فقط Style reuse داریم یا Structure نیز تکرار شده است؟</li><li>آیا Component واقعاً توجیه دارد، یا Class/Variable کافی است؟</li></ul>
-<p><code dir="ltr">proposed_strategy</code> — پاسخ وابسته به intent، scope، reuse و هزینهٔ propagation است.</p>
-</section></details></article>
+<p>هر مورد را اول تصمیم بگیر، بعد پاسخ را بخوان.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Step Through Media Decision">
+<table class="data-table educational-table edu-table">
+<caption>خلاصهٔ تصمیم‌های رسانه</caption>
+<thead><tr><th scope="col">مورد</th><th scope="col">تصمیم اولیه</th><th scope="col">دلیل</th><th scope="col">وضعیت</th></tr></thead>
+<tbody>
+<tr><th scope="row">Logo برند در Logo Strip</th><td>Image/SVG + contain</td><td>نباید بریده شود و ممکن است محتوا باشد.</td><td><code dir="ltr">provisional_until_alt_decision</code></td></tr>
+<tr><th scope="row">بافت تزئینی پشت Hero</th><td>Background</td><td>حذفش پیام اصلی را نابود نمی‌کند.</td><td><code dir="ltr">provisional_until_design</code></td></tr>
+<tr><th scope="row">عکس کارت محصول</th><td>Image + cover</td><td>تصویر محتواست، ولی Crop کنترل‌شده ممکن است لازم باشد.</td><td><code dir="ltr">content_dependent</code></td></tr>
+<tr><th scope="row">Visual Stage TUYA</th><td>Container + aspect-ratio</td><td>قاب پایدار برای Illustration/Nodeهای بعدی.</td><td><code dir="ltr">provisional_until_stage_lesson</code></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-11-lesson-practice-5" role="heading">B. بساز و امتحان کن</span>
+</summary>
+<section aria-labelledby="lesson-11-lesson-practice-5" class="disclosure-content lesson-practice lesson-section">
+
+<h3>🏗 پروژهٔ TUYA — Media Role Audit و قاب‌بندی Visual Stage</h3>
+<p>در این تمرین، فقط رسانه‌ها را نقش‌گذاری و قاب‌بندی می‌کنی. هنوز Orbit Nodeها، Position نهایی، Animation، Shadow/Glow، Performance audit کامل یا Optimization پیشرفته انجام نمی‌دهی.</p>
+
+<h3>مرحلهٔ ۰ — Evidence Gate</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Evidence Gate lesson 11">
+<table class="data-table educational-table edu-table">
+<caption>Evidence Gate قبل از کار با رسانه</caption>
+<thead><tr><th scope="col">برچسب</th><th scope="col">در این تمرین</th><th scope="col">نتیجه</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code dir="ltr">confirmed</code></th><td>Logoها نباید Crop شوند.</td><td>Contain و max-size نقطهٔ شروع سالم است.</td></tr>
+<tr><th scope="row"><code dir="ltr">confirmed</code></th><td>Visual Stage باید قاب قابل پیش‌بینی داشته باشد.</td><td>Aspect Ratio را روی Stage تست می‌کنیم.</td></tr>
+<tr><th scope="row"><code dir="ltr">provisional</code></th><td>Aspect Ratio دقیق Stage، max-size Logoها، alt text و Loading priority.</td><td>با asset واقعی و UI واقعی تست می‌شود.</td></tr>
+<tr><th scope="row"><code dir="ltr">unknown</code></th><td>فایل‌های واقعی SVG/PNG، viewBox، اندازهٔ دانلود، LCP واقعی.</td><td>در این درس قطعی نمی‌شود.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>مرحلهٔ ۱ — رسانه‌ها را فقط نقش‌گذاری کن</h3>
+<aside class="implementation-step-card" aria-label="اقدام کوچک درس یازده">
+<h4>فقط یک اقدام کوچک</h4>
+<p><strong>هدف:</strong> تشخیص نقش رسانه و قاب اولیه، نه طراحی نهایی.</p>
+<p><strong>مسیر:</strong> Elementor Editor → Structure → بررسی <code dir="ltr">Logo Strip</code> و <code dir="ltr">TUYA Visual</code>.</p>
+<p><strong>Element هدف:</strong> فقط Logoها، Visual Stage و رسانه‌های داخل آن.</p>
+<p><strong>Class فعال:</strong> Classهای محلی رسانه؛ Global جدید نساز مگر reuse واقعی ثابت شود.</p>
+<p><strong>Property:</strong> Role / alt decision / aspect-ratio / object-fit / max-size.</p>
+<p><strong>نباید تغییر کند:</strong> Copy typography، Shell layout، Grid آزمایشی، Node position، Shadow/Glow، Background نهایی.</p>
+<p><strong>عبارت تأیید پایانی:</strong> «هر رسانه نقش‌گذاری شد؛ Logoها Crop نمی‌شوند و Visual Stage فقط قاب‌بندی شده است.»</p>
+</aside>
+
+<h3>مرحلهٔ ۲ — قرارداد رسانه را ثبت کن</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Media inventory">
+<table class="data-table educational-table edu-table">
+<caption>دفترچهٔ رسانه‌های TUYA</caption>
+<thead><tr><th scope="col">رسانه</th><th scope="col">Role</th><th scope="col">Fit/Ratio</th><th scope="col">Accessibility</th><th scope="col">وضعیت</th></tr></thead>
+<tbody>
+<tr><th scope="row">Logo Strip Logos</th><td>brand/trust یا decorative؟</td><td><code dir="ltr">contain</code> + max-size</td><td>alt تصمیم‌گیری شود</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Visual Stage</th><td>قاب بصری</td><td><code dir="ltr">aspect-ratio: 1/1</code> شروع تست</td><td>container است، نه image</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Core Cloud</th><td>illustration/icon مرکزی</td><td><code dir="ltr">contain</code></td><td>بسته به متن همراه</td><td><code dir="ltr">unknown_until_asset</code></td></tr>
+<tr><th scope="row">Background Ornament</th><td>decorative</td><td>Background</td><td>نباید alt خوانده شود</td><td><code dir="ltr">unknown_until_design</code></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>مرحلهٔ ۳ — مقدارهای شروع را تست کن</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Provisional media values">
+<table class="data-table educational-table edu-table">
+<caption>مقدارهای شروع رسانه</caption>
+<thead><tr><th scope="col">تنظیم</th><th scope="col">مقدار شروع</th><th scope="col">وضعیت</th><th scope="col">یادداشت</th></tr></thead>
+<tbody>
+<tr><th scope="row">Logo Fit</th><td><code dir="ltr">contain</code></td><td><code dir="ltr">recommended_start</code></td><td>Logo نباید Crop شود.</td></tr>
+<tr><th scope="row">Logo max width</th><td><code dir="ltr">80px</code> تا <code dir="ltr">120px</code></td><td><code dir="ltr">provisional</code></td><td>به فایل واقعی بستگی دارد.</td></tr>
+<tr><th scope="row">Logo max height</th><td><code dir="ltr">28px</code> تا <code dir="ltr">40px</code></td><td><code dir="ltr">provisional</code></td><td>نسبت تصویر حفظ شود.</td></tr>
+<tr><th scope="row">Visual Stage Ratio</th><td><code dir="ltr">1 / 1</code> شروع تست</td><td><code dir="ltr">provisional</code></td><td>برای قاب پایدار Nodeهای بعدی.</td></tr>
+<tr><th scope="row">Core Cloud Fit</th><td><code dir="ltr">contain</code></td><td><code dir="ltr">provisional</code></td><td>اگر SVG/Illustration نباید بریده شود.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>مرحلهٔ ۴ — تست Crop</h3>
+<ol>
+<li>یک Logo را داخل قاب کوچک‌تر تصور یا تست کن.</li>
+<li>Cover را ذهنی اعمال کن؛ آیا بخشی از برند حذف می‌شود؟</li>
+<li>Contain را اعمال کن؛ آیا فضای خالی قابل قبول است؟</li>
+<li>اگر Logo ناخواناست، اندازهٔ قاب و max-size را بررسی کن، نه اینکه Cover بزنی.</li>
+</ol>
+
+<h3>مرحلهٔ ۵ — سؤال توقف</h3>
+<p>برای Logo برند داخل Logo Strip، انتخاب اولیهٔ امن‌تر چیست؟</p>
+<form class="interactive-form stop-question-form" data-persist-group="stop-question-11">
+<fieldset>
+<legend>چک‌لیست یادگیری</legend>
+<label class="choice-row"><input data-persist="radio" id="radio-11-a" name="stop-question-11" type="radio" value="A"/><span>A) Cover، چون قاب را پر می‌کند.</span></label>
+<label class="choice-row"><input data-persist="radio" id="radio-11-b" name="stop-question-11" type="radio" value="B"/><span>B) Contain، چون کل Logo باید دیده شود.</span></label>
+<label class="choice-row"><input data-persist="radio" id="radio-11-c" name="stop-question-11" type="radio" value="C"/><span>C) Background، چون همهٔ تصویرها باید Background باشند.</span></label>
+</fieldset>
+</form>
+<details class="disclosure-card">
+<summary>پاسخ با دلیل</summary>
+<p><strong>B درست است.</strong> برای Logo، دیده‌شدن کامل برند معمولاً مهم‌تر از پرکردن قاب است. Cover ممکن است بخشی از Logo را ببرد.</p>
+</details>
+
+<h3>⚠️ تلهٔ اصلی</h3>
+<p><strong>تله:</strong> چون یک تصویر زیباست، آن را Background کنی؛ یا چون SVG است، آن را خودبه‌خود سبک و امن فرض کنی.</p>
+<p><strong>نشانه:</strong> Alt از دست می‌رود، Performance بد می‌شود، یا Logo در مقیاس‌های مختلف خراب می‌شود.</p>
+<p><strong>قاعده:</strong> اول Role، بعد Element، بعد Ratio/Fit، بعد Performance.</p>
+
+<h3>🧪 عمداً خرابش کن — روی کاغذ</h3>
+<p>این تصمیم خراب را تصور کن:</p>
+<figure class="visual-figure ascii-figure">
+<figcaption>تصمیم رسانهٔ خراب</figcaption>
+<pre class="ascii-diagram" dir="ltr"><code class="language-text inline-code" dir="ltr">Logo brand:
+- background-image
+- background-size: cover
+- no alt
+- no max size
+
+نتیجه:
+- برند Crop می‌شود
+- Screen Reader چیزی نمی‌فهمد
+- کنترل اندازه سخت‌تر می‌شود</code></pre>
+</figure>
+
+<h3>Checkpoint</h3>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<form class="interactive-form checklist-form" data-persist-group="checklist-61">
+<fieldset>
+<legend>Checkpoint درس ۱۱</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-61-1" name="chk-61-1" type="checkbox"/><span>برای هر رسانه Role نوشته‌ام: content، decorative، SVG/icon یا stage container.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-61-2" name="chk-61-2" type="checkbox"/><span>Logoها با Contain و max-size بررسی شده‌اند.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-61-3" name="chk-61-3" type="checkbox"/><span>Visual Stage فقط Aspect Ratio گرفته و هنوز Nodeها Position نشده‌اند.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-61-4" name="chk-61-4" type="checkbox"/><span>Alt decision و decorative decision را provisional ثبت کرده‌ام.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-61-5" name="chk-61-5" type="checkbox"/><span>SVG را خودبه‌خود سبک/امن فرض نکرده‌ام.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-61-6" name="chk-61-6" type="checkbox"/><span>Performance/LCP کامل را هنوز قطعی نکرده‌ام.</span></label>
+</fieldset>
+</form>
+</section>
+
+<h3>Exit Ticket — قبل از ادامه</h3>
+<p><strong>بازیابی کوتاه:</strong> Image و Background را با یک مثال توضیح بده.</p>
+<p><strong>انتقال به موقعیت تازه:</strong> برای یک کارت محصول، تصویر محصول باید Image باشد یا Background؟ چرا؟</p>
+<details class="disclosure-card">
+<summary>راهنمای خودسنجی اختصاصی همین درس</summary>
+<p>پاسخ خوب باید نقش محتوا را محور قرار دهد، نه ظاهر. اگر نبود تصویر باعث از دست‌رفتن اطلاعات شود، Image Element با alt مناسب معمولاً انتخاب قابل دفاع‌تری است.</p>
+</details>
+
+</section>
+</details>
+
+<details class="lesson-disclosure" id="lesson-11-responsive-checkpoint">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" role="heading">📱 ایست بازرسی Responsive — Ratio و Fit در اندازه‌های مختلف</span>
+</summary>
+<section class="disclosure-content lesson-section responsive-checkpoint">
+<p class="status-chip"><strong>status:</strong> <code dir="ltr">provisional_until_asset_validation</code></p>
+<ul>
+<li>Logoها را در Desktop، Tablet و Mobile با Contain تست کن.</li>
+<li>اگر فضای خالی زیاد شد، قاب یا max-size را اصلاح کن؛ Cover نزن مگر Crop قابل قبول باشد.</li>
+<li>Visual Stage را با نسبت شروع 1/1 تست کن، اما نسبت نهایی را قطعی نکن.</li>
+<li>Core Cloud را بدون Crop تست کن.</li>
+<li>اگر رسانه بالای صفحه است، Loading Priority/LCP را بعداً با DevTools بررسی کن.</li>
+</ul>
+</section>
+</details>
+
+<details aria-labelledby="lesson-11-lesson-deep-dive-7" class="lesson-section lesson-deep-dive lesson-disclosure">
+<summary class="lesson-disclosure-summary" id="lesson-11-lesson-deep-dive-7">C. عمیق‌تر نگاه کن — اختیاری</summary>
+
+<h3>📂 Case Study — تصویر درست دیده می‌شود ولی تصمیم اشتباه است</h3>
+<p><strong>هدف:</strong> 🔍 عیب‌یابی تصمیم رسانه<br/>
+<strong>وضعیت:</strong> <code class="inline-code" dir="ltr">decision_audit</code></p>
+<p>سناریو: Logoها ظاهراً داخل قاب دیده می‌شوند، اما به‌عنوان Background با Cover ساخته شده‌اند.</p>
+<p>قبل از پذیرش، این‌ها را ثبت کن:</p>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<ul>
+<li>آیا Logo محتواست یا تزئین؟</li>
+<li>آیا alt لازم دارد؟</li>
+<li>آیا Cover بخشی از Logo را در breakpoint دیگر می‌برد؟</li>
+<li>آیا Background باعث سخت‌تر شدن کنترل اندازه و نسبت شده؟</li>
+<li>آیا SVG viewBox سالم است؟</li>
+<li>آیا فایل واقعی در Network منطقی است؟</li>
+</ul>
+</section>
+<p>نتیجهٔ درست: ظاهر فعلی کافی نیست؛ role، accessibility و رفتار responsive را هم بررسی کن.</p>
+
+<h3>🔬 پشت صحنه</h3>
+<p>در DevTools، natural size و rendered size را با هم بخوان. اگر تصویر ۲۰۰۰px برای نمایش ۱۰۰px دانلود شده، ظاهر درست است اما Performance تصمیم خوبی نیست.</p>
+<hr/>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-11-lesson-pass-criteria-8" role="heading">✅ معیار عبور اختصاصی این درس</span>
+</summary>
+<section aria-labelledby="lesson-11-lesson-pass-criteria-8" class="disclosure-content lesson-section lesson-pass-criteria">
+<p>برای رفتن به درس بعد، سطح ۱ و ۲ اجباری‌اند. سطح ۳ در ایستگاه‌های بعدی تثبیت می‌شود.</p>
+
+<h3>سطح ۱ — فهمیدم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-64">
+<fieldset>
+<legend>سطح ۱ — فهمیدم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-64-1" name="chk-64-1" type="checkbox"/><span>می‌توانم Image و Background را براساس نقش محتوا از هم جدا کنم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-64-2" name="chk-64-2" type="checkbox"/><span>می‌توانم Cover، Contain و Aspect Ratio را توضیح بدهم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-64-3" name="chk-64-3" type="checkbox"/><span>می‌دانم SVG خودبه‌خود سبک و امن نیست.</span></label>
+</fieldset>
+</form>
+
+<h3>سطح ۲ — می‌توانم انجام بدهم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-65">
+<fieldset>
+<legend>سطح ۲ — می‌توانم انجام بدهم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-65-1" name="chk-65-1" type="checkbox"/><span>برای Logo Strip از Contain و max-size استفاده می‌کنم و Crop را رد می‌کنم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-65-2" name="chk-65-2" type="checkbox"/><span>برای Visual Stage فقط Aspect Ratio شروع را تنظیم می‌کنم و Nodeها را هنوز Position نمی‌کنم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-65-3" name="chk-65-3" type="checkbox"/><span>Alt/decorative decision را برای هر رسانه ثبت می‌کنم.</span></label>
+</fieldset>
+</form>
+
+<h3>سطح ۳ — می‌توانم منتقل کنم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-66">
+<fieldset>
+<legend>سطح ۳ — می‌توانم منتقل کنم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-66-1" name="chk-66-1" type="checkbox"/><span>برای کارت محصول می‌توانم تصمیم بگیرم تصویر محصول Image Element باشد یا Background، و دلیل Accessibility/Performance آن را توضیح بدهم.</span></label>
+</fieldset>
+</form>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-11-lesson-stop-point-9" role="heading">⏸ اینجا توقف کن</span>
+</summary>
+<section aria-labelledby="lesson-11-lesson-stop-point-9" class="lesson-stop-point lesson-section disclosure-content">
+<p>در درس بعد طبق ترتیب واقعی جزوه ادامه می‌دهیم. تا اینجا رسانه‌ها فقط نقش‌گذاری و قاب‌بندی شده‌اند؛ Position نهایی Nodeها هنوز انجام نشده است.</p>
+<hr/>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" role="heading">ثبت پایان درس 11</span>
+</summary>
+<form class="disclosure-content lesson-completion-form interactive-form" data-persist-group="lesson-11-completion">
+<fieldset>
+<legend>ثبت پایان درس 11</legend>
+<label class="choice-row completion-choice"><input data-persist="checkbox" id="lesson-11-complete" name="lesson-11-complete" type="checkbox"/><span>این درس را با معیارهای عبور مرور کردم.</span></label>
+</fieldset>
+</form>
+</details>
+
+</article>

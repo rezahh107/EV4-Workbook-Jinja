@@ -1,286 +1,557 @@
-<article class="lesson card-surface" data-lesson="15" id="lesson-15"><h2 class="lesson-title former-h1">درس 15 — RTL، Start و End</h2><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-15-lesson-compass-1" role="heading">🧭 قطب‌نمای درس</span></summary><section aria-labelledby="lesson-15-lesson-compass-1" class="disclosure-content lesson-section lesson-compass"><p><strong>در این درس یاد می‌گیری:</strong> جهت نوشتار و مفهوم Start/End را در Layout بفهمی.</p><p><strong>در این درس هنوز یاد نمی‌گیری:</strong> تمام جزئیات Unicode Bidirectional Algorithm را.</p><p><strong>در پایان باید بتوانی:</strong> Layout را بدون وابستگی بی‌دلیل به Left/Right برای فارسی و انگلیسی آماده کنی.</p></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" id="lesson-15-lesson-meta-2" role="heading">زمان، سنگینی و نوع فعالیت</span></summary><section aria-labelledby="lesson-15-lesson-meta-2" class="lesson-meta disclosure-content lesson-section"><div aria-label="جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت" class="table-wrap" role="region" tabindex="0"><table class="data-table educational-table edu-table"><caption>جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت</caption><thead><tr><th scope="col">مورد</th><th scope="col">پیشنهاد</th></tr></thead><tbody><tr><th scope="row">سنگینی</th><td>🟡 متوسط</td></tr><tr><th scope="row">نوع فعالیت</th><td>🧠 مفهومی + 🛠 اجرایی + RTL</td></tr><tr><th scope="row">هستهٔ فهم</th><td>۲۰–۲۵ دقیقه</td></tr><tr><th scope="row">تثبیت و تمرین</th><td>۲۵–۳۵ دقیقه</td></tr><tr><th scope="row">عمق اختیاری</th><td>۱۵–۲۰ دقیقه</td></tr></tbody></table></div><aside aria-label="راهنمای معلم" class="teacher-note"><p><strong>راهنمای معلم:</strong> جهت منطقی را روی دو زبان بررسی می‌کنی.</p></aside><p class="status-line"><code class="inline-code" dir="ltr">status: proposed_until_real_learner_pilot</code></p></section></details><section aria-labelledby="lesson-15-lesson-understand-4" class="lesson-section lesson-understand lesson-core-concept" data-core-concept="true"><h2 id="lesson-15-lesson-understand-4">A. بفهم</h2><h3>مسئله</h3><p>طرح در انگلیسی درست است، اما در فارسی فاصله، Icon یا Alignment وارونه می‌شود.</p><h3>مدل ذهنی</h3><section class="beginner-explainer global-visual-scaffold" data-beginner-section="راهنمای مبتدی برای RTL و Logical Properties">
-<h4>راهنمای مبتدی برای RTL و Logical Properties</h4>
-<p>RTL فقط راست‌چین‌کردن متن نیست؛ یعنی جهت خواندن، فاصله‌ها و شروع/پایان باید با زبان فارسی هماهنگ باشند.</p>
-<div class="concept-card-grid">
-<article class="concept-card" data-concept="RTL">
-<h4><span class="term-en" dir="ltr">RTL</span> — راست به چپ</h4>
-<ol class="concept-steps">
-<li><strong>۱. ساده‌ترین معنی:</strong> جهت طبیعی خواندن فارسی و عربی است.</li>
-<li><strong>۲. مثال روزمره:</strong> مثل شروع خواندن کتاب فارسی از سمت راست.</li>
-<li><strong>۳. در Screenshot یعنی کدام بخش؟</strong> متن‌ها، ناوبری، دکمه‌ها و ترتیب معنایی فارسی.</li>
-<li><strong>۴. در Elementor یعنی کدام Element / ظرف والد / Setting؟</strong> dir="rtl" و تنظیمات alignment منطقی.</li>
-<li><strong>۵. اشتباه رایج مبتدی:</strong> فقط text-align:right می‌زنم و فکر می‌کنم RTL کامل شده.</li>
-<li><strong>۶. تصمیم درست:</strong> ساختار document باید dir و lang درست داشته باشد.</li>
-<li><strong>۷. تمرین کوچک:</strong> یک بخش فارسی را پیدا کن و بگو شروع متن کدام سمت است.</li>
-</ol>
-</article>
-<article class="concept-card" data-concept="Logical Properties">
-<h4><span class="term-en" dir="ltr">Logical Properties</span> — شروع/پایان منطقی</h4>
-<ol class="concept-steps">
-<li><strong>۱. ساده‌ترین معنی:</strong> به‌جای left/right از start/end استفاده می‌کنی تا در RTL و LTR درست بماند.</li>
-<li><strong>۲. مثال روزمره:</strong> مثل گفتن «سمت شروع مسیر» به‌جای «سمت چپ».</li>
-<li><strong>۳. در Screenshot یعنی کدام بخش؟</strong> Padding و Margin سمت شروع متن فارسی.</li>
-<li><strong>۴. در Elementor یعنی کدام Element / ظرف والد / Setting؟</strong> margin-inline-start/end، padding-inline، inset-inline.</li>
-<li><strong>۵. اشتباه رایج مبتدی:</strong> left/right را hard-code می‌کنم و در RTL جابه‌جا می‌شود.</li>
-<li><strong>۶. تصمیم درست:</strong> برای فاصله‌های مرتبط با متن از logical استفاده کن.</li>
-<li><strong>۷. تمرین کوچک:</strong> یک margin-left را پیدا کن و بپرس آیا باید margin-inline-start باشد؟</li>
-</ol>
-</article>
-<article class="concept-card" data-concept="Inline Direction">
-<h4><span class="term-en" dir="ltr">Inline Direction</span> — جهت خط</h4>
-<ol class="concept-steps">
-<li><strong>۱. ساده‌ترین معنی:</strong> مسیر حرکت متن در یک خط است.</li>
-<li><strong>۲. مثال روزمره:</strong> مثل خط نوشتن روی کاغذ فارسی.</li>
-<li><strong>۳. در Screenshot یعنی کدام بخش؟</strong> متن فارسی RTL و کد انگلیسی LTR داخل همان درس.</li>
-<li><strong>۴. در Elementor یعنی کدام Element / ظرف والد / Setting؟</strong> dir="ltr" برای کد واقعی، dir="rtl" برای توضیح فارسی.</li>
-<li><strong>۵. اشتباه رایج مبتدی:</strong> کد را RTL می‌کنم و خواندن CSS/HTML خراب می‌شود.</li>
-<li><strong>۶. تصمیم درست:</strong> کد واقعی LTR بماند؛ توضیح فارسی RTL بماند.</li>
-<li><strong>۷. تمرین کوچک:</strong> یک code block را پیدا کن و جهتش را بررسی کن.</li>
-</ol>
-</article></div>
-<dl class="term-translation"><dt dir="ltr">RTL</dt><dd>جهت راست‌به‌چپ برای فارسی</dd>
-<dt dir="ltr">Logical Properties</dt><dd>start/end به‌جای left/right</dd>
-<dt dir="ltr">Inline Direction</dt><dd>جهت حرکت متن در یک خط</dd></dl>
-<aside aria-label="قبل از ساخت در Elementor" class="before-elementor-card">
-<h4>قبل از اینکه در Elementor چیزی بسازی</h4>
-<p>اول با مداد یا ذهن خودت این سه سؤال را جواب بده؛ بعد وارد پنل Elementor شو:</p>
-<ol>
-<li>کدام بخش اسکلت است؟</li>
-<li>کدام بخش محتواست؟</li>
-<li>کدام بخش واقعاً باید هم‌پوشانی داشته باشد؟</li>
-</ol>
-<p class="why-note">قبل از تنظیم فاصله بپرس: «این فاصله سمت چپ است یا سمت شروع متن؟»</p>
-</aside>
-</section><section aria-labelledby="section-hidden-221-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-221-heading">بخش آموزشی</h2><dl class="term-grid"><dt>Inline Start / End</dt><dd>ابتدا و انتهای خط</dd><dt>Block Start / End</dt><dd>ابتدا و انتهای جریان بلوکی</dd></dl></section><p>Start و End با Direction تغییر می‌کنند؛ Left و Right فیزیکی‌اند.</p><h3>مثال</h3><pre class="code-block" dir="ltr" tabindex="0"><code class="language-text" dir="ltr">LTR: Start = left
-RTL: Start = right
-</code></pre><p>برای Spacing و Position مرتبط با جریان متن، Logical Direction معمولاً مقاوم‌تر است.</p><hr/></section><details class="lesson-disclosure conceptual-reference" data-concept-version="31.0.0" data-source-sha256="f092b4b627ba3b4d671d0be14b92afee6bc10c9a2db982e6c3ca813079bc5a3c" id="lesson-15-concept-reference"><summary>📚 مرجع مفهومی کامل — درک عمیق RTL و Logical Properties؛ Start و End به‌جای حدس راست و چپ</summary><div class="concept-reference-body concept-reference-v31" data-concept-index="15" data-source-version="31.0.0"><p class="concept-reference-lead">این مرجع کامل برای ساخت مدل ذهنی، عیب‌یابی و تصمیم‌گیری مستقل نوشته شده است. متن اصلی درس، کارت‌ها، آزمون‌ها و Step‑Throughها همچنان در جای خود باقی مانده‌اند.</p><section aria-labelledby="concept-v31-15-section-01" class="concept-reference-part concept-reference-problem"><h3 id="concept-v31-15-section-01">مسئله‌ای که RTL حل می‌کند</h3><p>در یک صفحهٔ فارسی، جهت نوشتن از راست به چپ است. اما Layout فقط متن نیست. فاصله، Icon، Border، Position و ترتیب بصری نیز باید با جهت سند سازگار باشند.</p><p>اگر طراحی را فقط با <code class="inline-code" dir="ltr">left</code> و <code class="inline-code" dir="ltr">right</code> بسازی، ممکن است:</p><ul>
-<li>نسخهٔ انگلیسی برعکس شود؛</li>
-<li>Icon سمت نادرست بماند؛</li>
-<li>Marginها در RTL و LTR نیازمند دو CSS جدا شوند؛</li>
-<li>Component قابل استفاده مجدد نباشد.</li>
-</ul><hr/></section><section aria-labelledby="concept-v31-15-section-02" class="concept-reference-part concept-reference-analogy"><h3 id="concept-v31-15-section-02">تشبیه به دنیای واقعی: درِ ورودی و خروجی</h3><p>فرض کن یک سالن دو در دارد، اما به‌جای اینکه بگویی «در سمت راست»، می‌گویی:</p><ul>
-<li>درِ شروع مسیر</li>
-<li>درِ پایان مسیر</li>
-</ul><p>در سالن فارسی، شروع از راست است. در سالن انگلیسی، شروع از چپ.</p><p>Logical Propertyها نیز به‌جای مختصات فیزیکی، نقش جهت را بیان می‌کنند.</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">LTR: inline-start = left
-RTL: inline-start = right
-</code></pre></figure><hr/></section><section aria-labelledby="concept-v31-15-section-03" class="concept-reference-part"><h3 id="concept-v31-15-section-03">محور Inline و Block</h3><p>در نوشتار معمول افقی:</p><ul>
-<li>Inline Axis مسیر حرکت متن است.</li>
-<li>Block Axis مسیر روی‌هم‌قرارگرفتن سطرها و پاراگراف‌هاست.</li>
-</ul><p>برای فارسی:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">Inline: از راست به چپ
-Block: از بالا به پایین
-</code></pre></figure><p>Logical Propertyها با این دو محور کار می‌کنند.</p><hr/></section><section aria-labelledby="concept-v31-15-section-04" class="concept-reference-part"><h3 id="concept-v31-15-section-04">تبدیل‌های مهم</h3><div aria-label="جدول آموزشی مرجع مفهومی" class="table-scroll concept-table-scroll" role="region" tabindex="0"><table class="data-table educational-table concept-reference-table"><caption>جدول آموزشی مرجع مفهومی</caption>
-<thead>
-<tr>
-<th>Physical Property</th>
-<th>Logical Property</th>
-<th>معنی</th>
-</tr>
-</thead>
+<article class="lesson card-surface" data-lesson="15" id="lesson-15">
+
+<h2 class="lesson-title former-h1">درس 15 — RTL، Start و End</h2>
+
+<details class="lesson-disclosure" open>
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-15-lesson-compass-1" role="heading">🧭 قطب‌نمای درس</span>
+</summary>
+<section aria-labelledby="lesson-15-lesson-compass-1" class="disclosure-content lesson-section lesson-compass">
+<p><strong>در این درس یاد می‌گیری:</strong> RTL را فقط راست‌چین‌کردن متن نبینی؛ جهت سند، محور Inline، Start/End، Logical Properties و محتوای دوجهته را درست تحلیل کنی.</p>
+<p><strong>در این درس هنوز یاد نمی‌گیری:</strong> تمام جزئیات Unicode Bidirectional Algorithm، پیاده‌سازی کامل CSS logical fallback، یا پشتیبانی دقیق همهٔ propertyها در تمام مرورگرها.</p>
+<p><strong>در پایان باید بتوانی:</strong> در TUYA تشخیص بدهی کدام فاصله، inset، icon order یا text direction باید logical باشد و کدام واقعاً فیزیکی است.</p>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" id="lesson-15-lesson-meta-2" role="heading">زمان، سنگینی و نوع فعالیت</span>
+</summary>
+<section aria-labelledby="lesson-15-lesson-meta-2" class="lesson-meta disclosure-content lesson-section">
+<div aria-label="جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت" class="table-wrap" role="region" tabindex="0">
+<table class="data-table educational-table edu-table">
+<caption>جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت</caption>
+<thead><tr><th scope="col">مورد</th><th scope="col">پیشنهاد</th></tr></thead>
 <tbody>
-<tr>
-<td><code class="inline-code" dir="ltr">margin-left/right</code></td>
-<td><code class="inline-code" dir="ltr">margin-inline-start/end</code></td>
-<td>فاصله در آغاز/پایان مسیر متن</td>
-</tr>
-<tr>
-<td><code class="inline-code" dir="ltr">padding-left/right</code></td>
-<td><code class="inline-code" dir="ltr">padding-inline-start/end</code></td>
-<td>فضای داخلی آغاز/پایان</td>
-</tr>
-<tr>
-<td><code class="inline-code" dir="ltr">top/bottom</code></td>
-<td><code class="inline-code" dir="ltr">inset-block-start/end</code></td>
-<td>جای‌گذاری در محور Block</td>
-</tr>
-<tr>
-<td><code class="inline-code" dir="ltr">left/right</code></td>
-<td><code class="inline-code" dir="ltr">inset-inline-start/end</code></td>
-<td>جای‌گذاری در محور Inline</td>
-</tr>
-<tr>
-<td><code class="inline-code" dir="ltr">width</code></td>
-<td><code class="inline-code" dir="ltr">inline-size</code></td>
-<td>اندازه در مسیر Inline</td>
-</tr>
-<tr>
-<td><code class="inline-code" dir="ltr">height</code></td>
-<td><code class="inline-code" dir="ltr">block-size</code></td>
-<td>اندازه در مسیر Block</td>
-</tr>
-<tr>
-<td><code class="inline-code" dir="ltr">border-left/right</code></td>
-<td><code class="inline-code" dir="ltr">border-inline-start/end</code></td>
-<td>Border منطقی</td>
-</tr>
+<tr><th scope="row">سنگینی</th><td>🟡 متوسط</td></tr>
+<tr><th scope="row">نوع فعالیت</th><td>🧠 مفهومی + 🛠 اجرایی + 🔍 RTL Audit</td></tr>
+<tr><th scope="row">هستهٔ فهم</th><td>۲۰–۳۰ دقیقه</td></tr>
+<tr><th scope="row">تثبیت و تمرین</th><td>۲۵–۴۰ دقیقه</td></tr>
+<tr><th scope="row">عمق اختیاری</th><td>۱۵–۲۵ دقیقه</td></tr>
 </tbody>
-</table></div><p>این جایگزینی همیشه اجباری نیست؛ گاهی واقعاً «سمت فیزیکی چپ صفحه» منظور است. اما برای Componentهای جهت‌پذیر، Logical Property معمولاً بیان بهتری است.</p><hr/></section><section aria-labelledby="concept-v31-15-section-05" class="concept-reference-part concept-reference-definition"><h3 id="concept-v31-15-section-05"><code class="inline-code" dir="ltr">direction</code> چیست و چه چیزی نیست؟</h3><p><code class="inline-code" dir="ltr">direction: rtl</code> جهت پایهٔ متن و بعضی رفتارهای Inline را تعیین می‌کند. اما نباید از آن برای برعکس‌کردن تصادفی Layout استفاده کنی.</p><p>برای Flexbox:</p><ul>
-<li><code class="inline-code" dir="ltr">direction</code> سند روی Start/End اثر دارد.</li>
-<li><code class="inline-code" dir="ltr">flex-direction</code> محور و ترتیب Flex را تعیین می‌کند.</li>
-</ul><p>این دو را با هم قاطی نکن.</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">Document direction = زبان و جریان نوشتن
-Flex direction = جهت چیدمان Itemها در Container
-</code></pre></figure><hr/></section><section aria-labelledby="concept-v31-15-section-06" class="concept-reference-part"><h3 id="concept-v31-15-section-06">محتوای دوطرفه یا Bidi</h3><p>در متن فارسی ممکن است این موارد کنار هم باشند:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">نسخه 4.1.3
+</table>
+</div>
+<aside aria-label="راهنمای معلم" class="teacher-note">
+<p><strong>راهنمای معلم:</strong> این درس باید عادت «راست/چپ» را به «شروع/پایان مسیر متن» تبدیل کند. هنرجو نباید با <code dir="ltr">text-align:right</code> یا <code dir="ltr">row-reverse</code> همهٔ مشکلات RTL را حل‌شده فرض کند.</p>
+</aside>
+<p class="status-line"><code class="inline-code" dir="ltr">status: revised_rtl_logical_direction_context</code></p>
+</section>
+</details>
+
+<section aria-labelledby="lesson-15-lesson-understand-4" class="lesson-section lesson-understand lesson-core-concept" data-core-concept="true">
+<h2 id="lesson-15-lesson-understand-4">A. بفهم</h2>
+
+<h3>پیوند با درس‌های قبلی</h3>
+<p>تا درس ۱۴، TUYA را با یک DOM، Flow سالم، Layout responsive، Typography و Media ساختی. حالا باید مطمئن شوی همین ساختار برای فارسی، انگلیسی و محتوای مخلوط قابل نگهداری است. این درس روی جهت و منطق Start/End تمرکز دارد.</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Semantic content
+↓
+Typography / Layout
+↓
+Responsive
+↓
+RTL / LTR Direction
+↓
+Logical Start / End
+↓
+Bidi-safe content</code></pre>
+</figure>
+
+<h3>مسئله</h3>
+<p>طرح ممکن است در فارسی ظاهراً درست باشد، اما با تغییر زبان یا محتوای مخلوط خراب شود: Icon در سمت اشتباه بماند، Margin سمت نادرست اعمال شود، URL ترتیب جمله را به‌هم بزند، یا کد و عدد داخل متن فارسی بد نمایش داده شود.</p>
+
+<h3>RTL فقط text-align:right نیست</h3>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<ul>
+<li><strong>RTL:</strong> جهت پایهٔ خواندن و جریان Inline برای زبان‌هایی مثل فارسی.</li>
+<li><strong>text-align:right:</strong> فقط تراز متن به سمت راست؛ جایگزین RTL نیست.</li>
+<li><strong>Start/End:</strong> شروع و پایان منطقی مسیر متن؛ در RTL و LTR عوض می‌شود.</li>
+<li><strong>Left/Right:</strong> سمت فیزیکی صفحه؛ با زبان عوض نمی‌شود.</li>
+</ul>
+</section>
+
+<h3>Start و End با Direction تغییر می‌کنند</h3>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code">LTR: inline-start = left
+RTL: inline-start = right
+
+LTR: inline-end = right
+RTL: inline-end = left</code></pre>
+</figure>
+<p>پس اگر فاصله به «شروع متن» مربوط است، بهتر است به‌جای left/right به Inline Start/End فکر کنی.</p>
+
+<h3>Inline و Block</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Inline and Block axis">
+<table class="data-table educational-table edu-table">
+<caption>محورهای منطقی در نوشتار افقی فارسی</caption>
+<thead><tr><th scope="col">محور</th><th scope="col">معنی</th><th scope="col">در فارسی معمول</th><th scope="col">مثال</th></tr></thead>
+<tbody>
+<tr><th scope="row">Inline Axis</th><td>مسیر حرکت متن در یک خط</td><td>راست به چپ</td><td><code dir="ltr">margin-inline-start</code></td></tr>
+<tr><th scope="row">Block Axis</th><td>مسیر چیده‌شدن سطرها/پاراگراف‌ها</td><td>بالا به پایین</td><td><code dir="ltr">margin-block-start</code></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Physical به Logical</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Physical to Logical properties">
+<table class="data-table educational-table edu-table">
+<caption>جایگزین‌های منطقی رایج</caption>
+<thead><tr><th scope="col">Physical</th><th scope="col">Logical</th><th scope="col">زمان مناسب</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code dir="ltr">margin-left/right</code></th><td><code dir="ltr">margin-inline-start/end</code></td><td>فاصلهٔ مرتبط با شروع/پایان متن</td></tr>
+<tr><th scope="row"><code dir="ltr">padding-left/right</code></th><td><code dir="ltr">padding-inline-start/end</code></td><td>Padding افقی وابسته به جهت متن</td></tr>
+<tr><th scope="row"><code dir="ltr">left/right</code></th><td><code dir="ltr">inset-inline-start/end</code></td><td>Position وابسته به جهت نوشتار</td></tr>
+<tr><th scope="row"><code dir="ltr">top/bottom</code></th><td><code dir="ltr">inset-block-start/end</code></td><td>Position در محور Block</td></tr>
+<tr><th scope="row"><code dir="ltr">width</code></th><td><code dir="ltr">inline-size</code></td><td>اندازه در مسیر Inline</td></tr>
+<tr><th scope="row"><code dir="ltr">height</code></th><td><code dir="ltr">block-size</code></td><td>اندازه در مسیر Block</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>direction و flex-direction یکی نیستند</h3>
+<p><code dir="ltr">direction:rtl</code> جهت پایهٔ متن و بعضی رفتارهای Inline را تعیین می‌کند. <code dir="ltr">flex-direction</code> چیدمان Flex Itemها را تعیین می‌کند. اگر فقط برای جابه‌جایی یک Icon، direction کل Parent را دستکاری کنی، ممکن است متن، اعداد و محتوای دوجهته خراب شود.</p>
+
+<h3>row-reverse ابزار خطرناک است</h3>
+<p><code dir="ltr">row-reverse</code> فقط ظاهر ترتیب را برعکس می‌کند. DOM order، reading order و focus order الزاماً مطابق ظاهر جدید نمی‌شوند. اگر فقط برای اینکه Icon «سمت درست» بیاید row-reverse بزنی، احتمالاً مسئله را با ابزار اشتباه حل کرده‌ای.</p>
+
+<h3>محتوای دوجهته یا Bidi</h3>
+<p>در فارسی معمولاً متن‌هایی مثل نسخه، URL، CSS، ایمیل، نام محصول انگلیسی یا شماره تلفن وارد جمله می‌شوند:</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code">نسخه 4.1.3
 CSS: flex: 1 1 0
 example.com/path
-شماره 0912...
-</code></pre></figure><p>الگوریتم Bidi مرورگر تلاش می‌کند ترتیب نمایش را درست کند، اما عبارت‌های Inline با جهت متفاوت گاهی نیاز به Isolation دارند.</p><p>برای متن Dynamic ناشناخته، <code class="inline-code" dir="ltr">dir="auto"</code> یا Elementهایی مانند <code class="inline-code" dir="ltr">bdi</code> می‌توانند کمک کنند. هدف این است که جهت یک عبارت خارجی، ترتیب جملهٔ اطراف را خراب نکند.</p><hr/></section><section aria-labelledby="concept-v31-15-section-07" class="concept-reference-part concept-reference-elementor"><h3 id="concept-v31-15-section-07">در Elementor V4</h3><p>برای طراحی فارسی:</p><ol>
-<li>زبان و <code class="inline-code" dir="ltr">dir</code> سند را درست تنظیم کن.</li>
-<li>Alignment را با نقش محتوا انتخاب کن، نه فقط با عادت «همه‌چیز راست».</li>
-<li>Utility Classهای فاصله را Logical بساز.</li>
-<li>Badgeهای Absolute را با <code class="inline-code" dir="ltr">inset-inline-start/end</code> قرار بده.</li>
-<li>Icon و متن Button را در RTL و LTR آزمایش کن.</li>
-<li>Dynamic Tagهای عددی، URL و عنوان‌های ترکیبی را بررسی کن.</li>
-</ol><p>مثال Utility:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-css inline-code" dir="ltr">.u-space-after {
-  margin-inline-end: 1rem;
-}
-</code></pre></figure><p>همین Class در RTL و LTR معنای «بعد از عنصر» را حفظ می‌کند.</p><hr/></section><section aria-labelledby="concept-v31-15-section-08" class="concept-reference-part"><h3 id="concept-v31-15-section-08">Flexbox و Start/End</h3><p>در <code class="inline-code" dir="ltr">row</code>، Main Start به Direction نوشتار وابسته است. در صفحهٔ RTL، Row از سمت راست آغاز می‌شود. اما <code class="inline-code" dir="ltr">row-reverse</code> ترتیب Main Axis را دوباره برعکس می‌کند.</p><p>به‌جای حفظ‌کردن چهار حالت، محور را روی کاغذ بکش:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">RTL + row:          ← مسیر دیداری از start راست به end چپ
-RTL + row-reverse:  → برعکس همان محور
-</code></pre></figure><p>ترتیب DOM و ترتیب دیداری را نیز جدا بررسی کن؛ Reverse کردن Layout نباید معنای محتوا یا ترتیب Focus را خراب کند.</p><hr/></section><section aria-labelledby="concept-v31-15-section-09" class="concept-reference-part concept-reference-traps"><h3 id="concept-v31-15-section-09">اشتباهات رایج</h3><ul>
-<li><code class="inline-code" dir="ltr">text-align: right</code> به‌عنوان راه‌حل تمام RTL</li>
-<li>استفاده از Margin Left/Right برای Component قابل ترجمه</li>
-<li>تغییر <code class="inline-code" dir="ltr">direction</code> برای جابه‌جایی یک Icon</li>
-<li>استفاده افراطی از <code class="inline-code" dir="ltr">row-reverse</code></li>
-<li>ندیدن ترتیب Focus و Screen Reader</li>
-<li>ترکیب عدد، URL و فارسی بدون تست Bidi</li>
-<li>ترجمهٔ UI بدون تغییر <code class="inline-code" dir="ltr">lang</code> و <code class="inline-code" dir="ltr">dir</code></li>
-</ul><hr/></section><section aria-labelledby="concept-v31-15-section-10" class="concept-reference-part concept-reference-devtools"><h3 id="concept-v31-15-section-10">پل به DevTools</h3><p>در Elements Panel مقدارهای <code class="inline-code" dir="ltr">dir</code> و <code class="inline-code" dir="ltr">lang</code> را روی Ancestorها ببین. سپس در Computed Style این موارد را بررسی کن:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">direction
-writing-mode
-margin-inline-*
-padding-inline-*
-inset-inline-*
-text-align
-flex-direction
-</code></pre></figure><p>اگر یک Property منطقی به مقدار فیزیکی تبدیل شده، Computed Style جهت نهایی را نشان می‌دهد.</p><hr/></section><section aria-labelledby="concept-v31-15-section-11" class="concept-reference-part concept-reference-analogy"><h3 id="concept-v31-15-section-11">تصویر ذهنی نهایی</h3><p>به‌جای گفتن «سمت راست سالن»، بگو «ابتدای مسیر». راست و چپ با زبان عوض می‌شوند؛ Start و End نقش خود را حفظ می‌کنند.</p><hr/></section><section aria-labelledby="concept-v31-15-section-12" class="concept-reference-part concept-reference-golden"><h3 id="concept-v31-15-section-12">قوانین طلایی</h3><ul>
-<li><strong>«RTL فقط راست‌چین‌کردن متن نیست؛ جهت یک قرارداد سراسری است.»</strong></li>
-<li><strong>«برای Component قابل‌حمل، Start و End از Left و Right معنایی‌ترند.»</strong></li>
-<li><strong>«<code class="inline-code" dir="ltr">direction</code> سند و <code class="inline-code" dir="ltr">flex-direction</code> دو مسئولیت متفاوت دارند.»</strong></li>
-<li><strong>«Reverse دیداری را با ترتیب معنایی DOM اشتباه نگیر.»</strong></li>
-<li><strong>«فارسی، عدد، URL و کد را کنار هم آزمایش کن.»</strong></li>
-</ul></section><footer class="concept-reference-evidence"><h3>منابع رسمی و وضعیت اعتبار این فصل</h3><p>رفتارهای CSS و مرورگر از استانداردها و مستندات رسمی، رفتار Elementor از Help Center رسمی، و تشبیه‌ها به‌عنوان <code class="inline-code" dir="ltr">derived_explanation</code> ارائه شده‌اند.</p><ul>
-<li>CSS Logical Properties and Values</li>
-<li>W3C Internationalization guidance for inline bidi markup</li>
-<li>CSS Flexible Box Layout specification</li>
-</ul><hr/></footer></div></details><details class="lesson-disclosure settings-values-units" id="lesson-15-settings-values-units">
-<summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" id="lesson-15-settings-values-units-heading" role="heading">⚙️ تنظیمات، مقدارها و واحدها — RTL؛ واحد همان است، جهت مرجع تغییر می‌کند</span></summary>
+شماره 0912...</code></pre>
+</figure>
+<p>برای عبارت‌های خارجی، از <code dir="ltr">dir="ltr"</code>، <code dir="ltr">dir="auto"</code> یا isolation مثل <code dir="ltr">&lt;bdi&gt;</code> بر اساس نوع محتوا استفاده کن. هدف این است که جهت عبارت خارجی، جملهٔ فارسی اطراف را خراب نکند.</p>
+
+<h3>قاعدهٔ این درس</h3>
+<p>در TUYA، هرجا فاصله یا Position به جریان متن مربوط است، اول logical فکر کن. هرجا واقعاً موقعیت فیزیکی صفحه منظور است، physical می‌تواند قابل دفاع باشد. تصمیم را ثبت کن.</p>
+<hr/>
+</section>
+
+<details class="lesson-disclosure conceptual-reference" data-concept-version="tuya-revised-15.0.0" id="lesson-15-concept-reference">
+<summary>📚 مرجع مفهومی کامل — RTL و Logical Properties؛ Start و End به‌جای حدس راست و چپ</summary>
+<div class="concept-reference-body concept-reference-v31" data-concept-index="15" data-source-version="tuya-revised-15.0.0">
+
+<p class="concept-reference-lead">این مرجع، بخش مفهومی فعلی درس را حفظ می‌کند و آن را به پروژهٔ TUYA وصل می‌کند. هدف ساخت ذهنیت دو‌زبانه و جهت‌پذیر است، نه فقط راست‌چین‌کردن متن.</p>
+
+<section class="concept-reference-part concept-reference-problem" aria-labelledby="lesson-15-ref-problem">
+<h3 id="lesson-15-ref-problem">۱. مسئله‌ای که RTL حل می‌کند</h3>
+<p>در صفحهٔ فارسی، جهت خواندن از راست به چپ است، اما Layout فقط متن نیست. فاصله، Icon، Border، Position، Order، Focus و Dynamic Text هم باید با جهت سند سازگار باشند.</p>
+<p>اگر طراحی را فقط با <code dir="ltr">left</code> و <code dir="ltr">right</code> بسازی، ممکن است:</p>
+<ul>
+<li>نسخهٔ انگلیسی برعکس یا پرهزینه شود؛</li>
+<li>Icon سمت نادرست بماند؛</li>
+<li>Marginها برای RTL و LTR دو CSS جدا بخواهند؛</li>
+<li>Component قابل استفادهٔ مجدد نباشد؛</li>
+<li>متن Dynamic مخلوط ترتیب جمله را خراب کند.</li>
+</ul>
+</section>
+
+<section class="concept-reference-part concept-reference-analogy" aria-labelledby="lesson-15-door">
+<h3 id="lesson-15-door">۲. تشبیه درِ شروع و پایان</h3>
+<p>در یک سالن، به‌جای «در سمت راست» می‌توانی بگویی «در شروع مسیر». در سالن فارسی شروع مسیر از راست است؛ در سالن انگلیسی از چپ. Logical Propertyها نیز نقش مسیر را بیان می‌کنند، نه سمت فیزیکی را.</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code">LTR: inline-start = left
+RTL: inline-start = right</code></pre>
+</figure>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-15-elementor">
+<h3 id="lesson-15-elementor">۳. در Elementor V4 چگونه فکر کن؟</h3>
+<p>در Elementor، UI ممکن است بسیاری از کنترل‌ها را با عنوان‌های بصری نشان دهد، اما ذهن تو باید direction-aware باشد:</p>
+<ol>
+<li>زبان و جهت سند/بخش را درست تشخیص بده.</li>
+<li>Alignment را با نقش محتوا انتخاب کن، نه عادت «همه‌چیز راست».</li>
+<li>فاصله‌های مرتبط با متن را logical طراحی کن.</li>
+<li>Badgeها و Nodeهای وابسته به متن را با inset-inline فکر کن.</li>
+<li>Icon و Text داخل Button را در RTL و LTR تست کن.</li>
+<li>Dynamic Tagهای عددی، URL و عنوان‌های ترکیبی را تست کن.</li>
+</ol>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-15-button">
+<h3 id="lesson-15-button">۴. Icon و Text داخل Button</h3>
+<p>در دکمهٔ فارسی، شاید Icon باید بعد از متن بیاید، نه الزاماً سمت چپ یا راست فیزیکی. برای دکمهٔ دو‌زبانه، بهتر است رابطهٔ Icon/Text را با start/end یا order معنایی مدیریت کنی، نه با left/right کور.</p>
+<p>اما مراقب باش: تغییر visual order نباید focus order و خواندن محتوا را بی‌معنی کند. اگر DOM order برای accessibility مهم است، فقط ظاهر را با احتیاط تغییر بده.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-15-position">
+<h3 id="lesson-15-position">۵. Position در RTL</h3>
+<p>از درس Position می‌دانی Nodeها داخل Stage absolute می‌شوند. حالا باید بپرسی:</p>
+<ul>
+<li>این Node واقعاً باید سمت فیزیکی چپ Stage باشد؟</li>
+<li>یا باید در انتهای Inline جریان متن قرار بگیرد؟</li>
+<li>آیا با تغییر زبان، جای آن باید تغییر کند؟</li>
+</ul>
+<p>اگر پاسخ به جهت زبان وابسته است، logical inset را بررسی کن. اگر پاسخ واقعاً فیزیکی است، left/right قابل دفاع است.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-15-bidi">
+<h3 id="lesson-15-bidi">۶. Bidi و Isolation</h3>
+<p>الگوریتم Bidi مرورگر بیشتر موارد را حل می‌کند، اما ترکیب فارسی با عدد، URL، کد و نام انگلیسی می‌تواند پیچیده شود. نمونه‌های حساس:</p>
+<ul>
+<li>Version number: <code dir="ltr">v4.1.3</code></li>
+<li>CSS fragment: <code dir="ltr">flex: 1 1 0</code></li>
+<li>URL: <code dir="ltr">example.com/path</code></li>
+<li>English product name inside Persian sentence</li>
+</ul>
+<p>ابزارهای رایج:</p>
+<ul>
+<li><code dir="ltr">dir="ltr"</code> برای عبارت واضحاً انگلیسی/کد؛</li>
+<li><code dir="ltr">dir="auto"</code> برای متن dynamic ناشناخته؛</li>
+<li><code dir="ltr">&lt;bdi&gt;</code> برای isolate کردن قطعه‌ای که نباید جهت جملهٔ اطراف را خراب کند؛</li>
+<li>code blockها همیشه LTR بمانند.</li>
+</ul>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-15-tuya-contract">
+<h3 id="lesson-15-tuya-contract">۷. قرارداد RTL برای TUYA</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="TUYA RTL contract">
+<table class="data-table educational-table edu-table">
+<caption>RTL Contract پیشنهادی TUYA</caption>
+<thead><tr><th scope="col">بخش</th><th scope="col">تصمیم</th><th scope="col">وضعیت</th></tr></thead>
+<tbody>
+<tr><th scope="row">TUYA Section</th><td>lang و dir باید با محتوای فارسی هماهنگ باشد.</td><td><code dir="ltr">confirmed_need</code></td></tr>
+<tr><th scope="row">Copy Text</th><td>RTL طبیعی؛ code/URL/English fragments ایزوله شوند.</td><td><code dir="ltr">provisional_until_text</code></td></tr>
+<tr><th scope="row">Feature List</th><td>Dot/Icon و Text با gap منطقی؛ نه margin-left/right کور.</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Button</th><td>Icon/Text order با معنا و accessibility تست شود.</td><td><code dir="ltr">unknown_until_cta</code></td></tr>
+<tr><th scope="row">Logo Strip</th><td>خود Logoها معمولاً جهت‌ناپذیرند، اما spacing گروه باید منطقی باشد.</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Visual Stage Nodes</th><td>اگر وابسته به زبان/جریان متن نیستند، physical می‌تواند قابل دفاع باشد؛ اگر وابسته‌اند، logical بررسی شود.</td><td><code dir="ltr">case_by_case</code></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-15-traps">
+<h3 id="lesson-15-traps">۸. اشتباهات رایج</h3>
+<ul>
+<li><code dir="ltr">text-align:right</code> به‌عنوان راه‌حل کامل RTL؛</li>
+<li>استفاده از margin-left/right برای Component قابل ترجمه؛</li>
+<li>تغییر direction فقط برای جابه‌جایی Icon؛</li>
+<li>استفاده افراطی از row-reverse؛</li>
+<li>نادیده گرفتن order خواندن و focus؛</li>
+<li>RTL کردن code block یا CSS snippet؛</li>
+<li>نادیده گرفتن URL، شماره نسخه و اعداد داخل متن فارسی؛</li>
+<li>فرض اینکه همهٔ Positionها باید logical شوند، حتی وقتی واقعاً فیزیکی‌اند.</li>
+</ul>
+</section>
+
+<section class="concept-reference-part concept-reference-golden" aria-labelledby="lesson-15-golden">
+<h3 id="lesson-15-golden">۹. قوانین طلایی</h3>
+<ul>
+<li><strong>RTL فقط راست‌چین‌کردن متن نیست.</strong></li>
+<li><strong>Start/End با Direction تغییر می‌کند؛ Left/Right فیزیکی‌اند.</strong></li>
+<li><strong>برای Componentهای دو‌زبانه، logical properties معمولاً مقاوم‌ترند.</strong></li>
+<li><strong>direction سند را با flex-direction قاطی نکن.</strong></li>
+<li><strong>row-reverse را برای حل سریع Icon order افراطی استفاده نکن.</strong></li>
+<li><strong>کد واقعی، URL و قطعه‌های لاتین را LTR/isolated نگه دار.</strong></li>
+<li><strong>هر left/right را کورکورانه جایگزین نکن؛ اول بپرس فیزیکی است یا منطقی.</strong></li>
+</ul>
+</section>
+
+<footer class="concept-reference-evidence">
+<h3>منابع و وضعیت اعتبار</h3>
+<p>مفاهیم RTL، logical properties، writing mode، Bidi isolation و direction بر پایهٔ CSS/HTML و رفتار مرورگر نوشته شده‌اند. تصمیم‌های TUYA باید با محتوای واقعی فارسی/انگلیسی و Dynamic Text تست شوند.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values" rel="noopener noreferrer" target="_blank">MDN — CSS Logical Properties and Values</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir" rel="noopener noreferrer" target="_blank">MDN — HTML dir global attribute</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi" rel="noopener noreferrer" target="_blank">MDN — bdi element</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/direction" rel="noopener noreferrer" target="_blank">MDN — CSS direction</a></li>
+</ul>
+</footer>
+
+</div>
+</details>
+
+<details class="lesson-disclosure settings-values-units" id="lesson-15-settings-values-units">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" id="lesson-15-settings-values-units-heading" role="heading">⚙️ تنظیمات، مقدارها و واحدها — Logical Properties، Direction و Bidi</span>
+</summary>
 <section aria-labelledby="lesson-15-settings-values-units-heading" class="disclosure-content settings-units-body">
-<p class="settings-units-lead">`1rem` در RTL کوچک یا بزرگ نمی‌شود. آنچه تغییر می‌کند نگاشت Start/End به ضلع فیزیکی و جهت محور inline است.</p>
-<aside class="unit-analogy"><strong>🧠 تصویر ذهنی:</strong> متر همان متر است؛ فقط نقطهٔ شروع مسیر از سمت دیگر خوانده می‌شود.</aside>
-<div aria-label="جدول تنظیمات و واحدهای این درس" class="table-wrap units-table-wrap" role="region" tabindex="0">
+<p class="settings-units-lead">در این درس، مقدار فقط عدد نیست؛ جهت و محور مرجع مهم است. <code dir="ltr">inline-start</code> در RTL و LTR به سمت فیزیکی متفاوت اشاره می‌کند.</p>
+<div aria-label="جدول تنظیمات و واحدهای درس ۱۵" class="table-wrap units-table-wrap" role="region" tabindex="0">
 <table class="data-table educational-table units-context-table">
-<caption>تنظیمات، نوع مقدار، مرجع محاسبه و راهنمای انتخاب</caption>
-<thead><tr><th scope="col">تنظیم</th><th scope="col">CSS / مفهوم</th><th scope="col">مقدار یا واحد</th><th scope="col">مرجع</th><th scope="col">کاربرد پیشنهادی</th><th scope="col">تله</th><th scope="col">شاهد</th></tr></thead>
-<tbody><tr><th scope="row">Direction</th><td><code dir="ltr">direction</code></td><td>rtl / ltr</td><td>keyword</td><td>جهت inline و متن.</td><td>Direction Flex و direction متن را یکی ندان.</td><td><code dir="ltr">CSS_LOGICAL</code></td></tr><tr><th scope="row">Logical spacing</th><td><code dir="ltr">margin/padding-inline-*</code></td><td>همان واحدهای Spacing</td><td>inline start/end</td><td>برای layout دوطرفه.</td><td>ترکیب physical و logical می‌تواند cascade مبهم بسازد.</td><td><code dir="ltr">E_SPACING</code></td></tr><tr><th scope="row">Logical inset</th><td><code dir="ltr">inset-inline-*</code></td><td>length / percentage / auto در CSS</td><td>containing block و direction</td><td>برای Position سازگار با جهت.</td><td>Start همیشه Right نیست؛ writing-mode مؤثر است.</td><td><code dir="ltr">CSS_LOGICAL</code></td></tr></tbody>
+<caption>تنظیمات، نوع مقدار، مرجع و تله</caption>
+<thead><tr><th scope="col">تنظیم</th><th scope="col">نوع مقدار</th><th scope="col">مرجع</th><th scope="col">تله</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code dir="ltr">dir</code></th><td>rtl / ltr / auto</td><td>زبان محتوا</td><td>برای جابه‌جایی ظاهری استفاده شود.</td></tr>
+<tr><th scope="row"><code dir="ltr">direction</code></th><td>rtl / ltr</td><td>جریان Inline و متن</td><td>با flex-direction قاطی شود.</td></tr>
+<tr><th scope="row"><code dir="ltr">margin-inline-start</code></th><td>length</td><td>شروع Inline</td><td>وقتی منظور فیزیکی چپ است استفاده شود.</td></tr>
+<tr><th scope="row"><code dir="ltr">padding-inline</code></th><td>length</td><td>محور Inline</td><td>با padding-left/right کور جایگزین شود.</td></tr>
+<tr><th scope="row"><code dir="ltr">inset-inline-start</code></th><td>length / %</td><td>Containing Block + جهت Inline</td><td>برای Node فیزیکی غیرزبانی استفاده شود.</td></tr>
+<tr><th scope="row"><code dir="ltr">bdi</code></th><td>HTML element</td><td>قطعهٔ محتوای دوجهته</td><td>به‌جای حل ساختاری، همه‌جا بی‌دلیل استفاده شود.</td></tr>
+</tbody>
 </table>
 </div>
 <div class="unit-guidance-grid">
-<section><h3>🧮 محاسبهٔ راهگشا</h3><p>padding-inline:1rem با root=16px در هر دو جهت 16px است؛ فقط start/end به ضلع فیزیکی متفاوت نگاشت می‌شود.</p></section>
-<section><h3>📱 در Responsive</h3><p>RTL را در همهٔ breakpointها تست کن؛ wrapping و order ممکن است خطا را فقط در Mobile نشان دهد.</p></section>
-<section><h3>🔬 در DevTools</h3><p>direction، writing-mode، logical property و مقدار physical computed را کنار هم ببین.</p></section>
+<section><h3>🧮 محاسبهٔ راهگشا</h3><p>در RTL، <code dir="ltr">margin-inline-start: 16px</code> سمت راست را فاصله می‌دهد. در LTR همان declaration سمت چپ را فاصله می‌دهد. معنی declaration ثابت است: فاصله از شروع متن.</p></section>
+<section><h3>📱 در Responsive</h3><p>با تغییر Row/Column، مفهوم Start/End را دوباره با Direction و Axis بخوان. Reverse کردن Visual order را با reading/focus order قاطی نکن.</p></section>
+<section><h3>🔬 در DevTools</h3><p>Computed value ممکن است physical شود. source rule را هم ببین تا بفهمی declaration logical بوده یا left/right فیزیکی.</p></section>
 </div>
-<p class="unit-atlas-link"><a href="#appendix-v29-units-atlas">📐 بازگشت به اطلس مرکزی مقدارها و واحدها</a></p>
-<footer class="settings-units-evidence"><strong>وضعیت:</strong> <code dir="ltr">verified_by_official_help_and_css_sources</code><br/><strong>منابع:</strong> <a href="https://www.w3.org/TR/css-logical-1/" rel="noopener noreferrer" target="_blank">W3C — CSS Logical Properties</a>، <a href="https://elementor.com/help/style-tab-spacing/" rel="noopener noreferrer" target="_blank">Elementor V4 — Style tab: Spacing</a>، <a href="https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/" rel="noopener noreferrer" target="_blank">Elementor — Units of measurement</a></footer>
 </section>
-</details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-15-lesson-practice-5" role="heading">B. بساز و امتحان کن</span></summary><section aria-labelledby="lesson-15-lesson-practice-5" class="disclosure-content lesson-practice lesson-section"><h3>🏗 پروژهٔ TUYA — RTL Audit</h3><p>Direction صفحه را RTL کن و موارد زیر را بررسی کن:</p><details class="more-know ascii-disclosure"><summary>نمای متنی ساده / ASCII اختیاری</summary><figure class="visual-figure ascii-figure"><figcaption>نمودار یا یادداشت دیداری</figcaption><pre class="ascii-diagram" dir="ltr">Platform Main
-Feature Item
-Logo Strip
-Paragraph alignment
-Node positions</pre></figure></details><p>نکته: Nodeهای شعاعی Decoration هستند و مختصاتشان ممکن است نیاز به تصمیم طراحی جدا داشته باشد. آن‌ها را کورکورانه Mirror نکن.</p><h3>❓ سؤال توقف</h3><p><code class="inline-code" dir="ltr">margin-inline-start</code> در RTL به کدام سمت فیزیکی اشاره می‌کند؟</p><details class="disclosure-card"><summary>پاسخ</summary>معمولاً سمت راست.</details><h3>⚠️ تلهٔ اصلی</h3><p><strong>تله:</strong> تمام Offsetها را با Left/Right ثابت بسازی.</p><p><strong>نشانه:</strong> نسخهٔ فارسی به Overrideهای متعدد نیاز دارد.</p><h3>🧪 عمداً خرابش کن</h3><p>Feature Dot را با Margin Left ثابت فاصله بده و Direction را RTL کن.</p><h4>👀 انتظار داری ببینی</h4><ul>
-<li>فاصله در سمت نادرست قرار می‌گیرد؛</li>
-<li>Icon و Text ممکن است به هم بچسبند؛</li>
-<li>نیاز به Override جدا ایجاد می‌شود.</li>
-</ul><p>از Gap یا Logical Spacing استفاده کن.</p><h3>Checkpoint</h3><section aria-labelledby="section-hidden-223-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-223-heading">بخش آموزشی</h2><form class="interactive-form checklist-form" data-persist-group="checklist-84"><fieldset><legend>Checkpoint</legend><label class="choice-row"><input data-persist="checkbox" id="chk-84-1" name="chk-84-1" type="checkbox"/><span>متن فارسی Alignment منطقی دارد</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-84-2" name="chk-84-2" type="checkbox"/><span>Feature Item در RTL سالم است</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-84-3" name="chk-84-3" type="checkbox"/><span>Logo Strip به Direction وابستگی شکننده ندارد</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-84-4" name="chk-84-4" type="checkbox"/><span>Nodeها با تصمیم طراحی بررسی شده‌اند</span></label></fieldset></form></section><h3>Exit Ticket — قبل از ادامه</h3><p><strong>بازیابی کوتاه:</strong> Start و End چه مزیتی نسبت به Left و Right دارند؟</p><p><strong>انتقال به یک موقعیت تازه:</strong> دکمه‌ای در RTL درست و در LTR اشتباه است. دنبال چه نوع تنظیمی می‌گردی؟</p><details class="disclosure-card">
-<summary>راهنمای خودسنجی اختصاصی همین درس</summary>
-<h3>آناتومی پاسخ خوب</h3>
-<form class="interactive-form checklist-form" data-persist-group="checklist-85"><fieldset><legend>آناتومی پاسخ خوب</legend><label class="choice-row"><input data-persist="checkbox" id="chk-85-1" name="chk-85-1" type="checkbox"/><span>Start/End را از Left/Right جدا کرده است.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-85-2" name="chk-85-2" type="checkbox"/><span>Writing Direction و Logical Property مرتبط را مشخص کرده است.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-85-3" name="chk-85-3" type="checkbox"/><span>پاسخ در RTL و LTR آزمایش‌پذیر است.</span></label></fieldset></form>
-<p>پاسخ کامل لازم نیست طولانی باشد؛ باید نشان بدهد <strong>چه چیزی را بررسی می‌کنی، چرا، و چگونه نتیجه را اثبات می‌کنی</strong>.</p>
-</details></section></details><details aria-labelledby="lesson-15-lesson-deep-dive-7" class="lesson-section lesson-deep-dive lesson-disclosure"><summary class="lesson-disclosure-summary" id="lesson-15-lesson-deep-dive-7">C. عمیق‌تر نگاه کن — اختیاری</summary><h3>📂 Case Study — Hard-coded physical offsets</h3><p><strong>هدف:</strong> 🔍 عیب‌یابی کن</p><p>هرجا Offset یا Margin فیزیکی ذخیره شده، سؤال کن آیا آن مقدار باید با زبان تغییر کند یا نه. همهٔ Left/Rightها اشتباه نیستند؛ بعضی Decorationها فیزیکی‌اند.</p><h3>🔬 پشت صحنه</h3><pre class="code-block" dir="ltr" tabindex="0"><code class="language-text language-css" dir="ltr">margin-inline-start: ...;
-inset-inline-end: ...;
-</code></pre><p>کد را حفظ نکن؛ مفهوم Start/End را در پنل و طراحی دنبال کن.</p><hr/></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="reza-tuya-margin-heading" role="heading">🧪 آزمایش واقعی رضا — مشکل margin-inline-start/end در TUYA</span></summary><section aria-labelledby="reza-tuya-margin-heading" class="real-reza-experiment disclosure-content lesson-section">
-<ol class="case-steps">
-<li><strong>چیزی که رضا دید:</strong> برای سکشن TUYA کد زیر را گذاشت، اما سمت راست از لبه فاصلهٔ واضح نگرفت.</li>
-<li><strong>حدس اشتباه مبتدی:</strong> «در RTL، margin-inline-start کار نمی‌کند.»</li>
-<li><strong>قانون CSS / Elementor V4:</strong> در RTL معمولاً <code dir="ltr">margin-inline-start</code> به سمت راست و <code dir="ltr">margin-inline-end</code> به سمت چپ نگاشت می‌شود؛ اما این نگاشت به <code dir="ltr">direction</code> و <code dir="ltr">writing-mode</code> وابسته است. اگر خود عنصر <code dir="ltr">width: 100%</code> یا stretch باشد، <code dir="ltr">100% + 80px + 80px</code> می‌تواند overflow بسازد و یک سمت چسبیده به نظر برسد.</li>
-<li><strong>در پنل Elementor کجا چک کنم؟</strong> Advanced / Spacing برای Margin و Padding، Layout برای Width/Full Width، و Direction والد/صفحه را بررسی کن.</li>
-<li><strong>در DevTools / Computed Style کجا چک کنم؟</strong> Box Model، Computed <code dir="ltr">direction</code>، <code dir="ltr">writing-mode</code>، <code dir="ltr">width</code>، <code dir="ltr">margin-inline-start</code> و <code dir="ltr">margin-inline-end</code> را ببین.</li>
-<li><strong>راه‌حل درست:</strong> اگر هدف فاصلهٔ داخلی است، <code dir="ltr">padding-inline</code> بده. اگر هدف آوردن کل جعبه به داخل صفحه است، padding را روی parent/shell بده یا برای خود Main از عرض محاسبه‌شده/Max Width همراه با <code dir="ltr">margin-inline: auto</code> استفاده کن.</li>
-<li><strong>قانون طلایی:</strong> Margin جعبه را از بیرون دور می‌کند؛ Padding محتوای داخل جعبه را دور می‌کند. اگر جعبه خودش 100٪ عرض دارد، margin دوطرفه ممکن است overflow بسازد.</li>
+</details>
+
+<details class="lesson-disclosure step-through-v2" id="lesson-15-rtl-step-through">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" role="heading">🧭 Step‑Through — Left/Right یا Start/End؟</span>
+</summary>
+<section class="disclosure-content lesson-section">
+<p>هر حالت را پیش‌بینی کن، بعد پاسخ را بخوان.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="RTL Step Through">
+<table class="data-table educational-table edu-table">
+<caption>خلاصهٔ تصمیم‌های RTL</caption>
+<thead><tr><th scope="col">حالت</th><th scope="col">وضعیت</th><th scope="col">تصمیم بهتر</th><th scope="col">دلیل</th></tr></thead>
+<tbody>
+<tr><th scope="row">Feature Dot کنار متن</th><td>فاصله بین Dot و Text</td><td>Gap یا margin-inline</td><td>رابطهٔ آیتم‌ها جهت‌پذیر است.</td></tr>
+<tr><th scope="row">Badge همیشه گوشهٔ فیزیکی تصویر</th><td>وابسته به زبان نیست</td><td>left/right قابل دفاع</td><td>موقعیت واقعاً فیزیکی است.</td></tr>
+<tr><th scope="row">Icon قبل/بعد متن Button</th><td>وابسته به زبان و معنا</td><td>start/end یا order مستند</td><td>باید RTL/LTR و focus تست شود.</td></tr>
+<tr><th scope="row">Code snippet داخل متن فارسی</th><td>لاتین/کد</td><td><code dir="ltr">dir="ltr"</code> و isolation</td><td>خوانایی کد باید حفظ شود.</td></tr>
+<tr><th scope="row">URL dynamic</th><td>محتوای ناشناخته/لاتین</td><td><code dir="ltr">dir="auto"</code> یا <code dir="ltr">bdi</code></td><td>جهت عبارت نباید جمله را خراب کند.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-15-lesson-practice-5" role="heading">B. بساز و امتحان کن</span>
+</summary>
+<section aria-labelledby="lesson-15-lesson-practice-5" class="disclosure-content lesson-practice lesson-section">
+
+<h3>🏗 پروژهٔ TUYA — RTL Audit بدون بازطراحی</h3>
+<p>در این تمرین فقط جهت و logical بودن تصمیم‌ها را Audit می‌کنی. هنوز Layout را بازطراحی نمی‌کنی، Nodeهای نهایی را جابه‌جا نمی‌کنی و همهٔ CSS را به logical تبدیل نمی‌کنی.</p>
+
+<h3>مرحلهٔ ۰ — Evidence Gate</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Evidence Gate lesson 15">
+<table class="data-table educational-table edu-table">
+<caption>Evidence Gate قبل از RTL Audit</caption>
+<thead><tr><th scope="col">برچسب</th><th scope="col">در این تمرین</th><th scope="col">نتیجه</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code dir="ltr">confirmed</code></th><td>TUYA محتوای فارسی/RTL دارد.</td><td>dir/lang و Start/End باید بررسی شوند.</td></tr>
+<tr><th scope="row"><code dir="ltr">confirmed</code></th><td>Code، CSS، URL و نسخه‌های لاتین باید LTR بمانند.</td><td>ایزولیشن لازم است.</td></tr>
+<tr><th scope="row"><code dir="ltr">provisional</code></th><td>Icon order، button order، logical insetهای Node.</td><td>با محتوای واقعی و UX تست می‌شوند.</td></tr>
+<tr><th scope="row"><code dir="ltr">unknown</code></th><td>نسخهٔ انگلیسی نهایی، dynamic tags، URLها، CTA واقعی.</td><td>بدون دادهٔ واقعی قطعی نشود.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>مرحلهٔ ۱ — فقط RTL Audit انجام بده</h3>
+<aside class="implementation-step-card" aria-label="اقدام کوچک درس پانزده">
+<h4>فقط یک اقدام کوچک</h4>
+<p><strong>هدف:</strong> یافتن left/rightهای مشکوک و محتوای bidi، نه تغییر گستردهٔ پروژه.</p>
+<p><strong>مسیر:</strong> Elementor Editor → TUYA Section → بررسی Copy، Feature List، Button، Logo Strip، Visual Stage.</p>
+<p><strong>Element هدف:</strong> فقط مواردی که فاصله یا جهت آن‌ها به متن وابسته است.</p>
+<p><strong>Class فعال:</strong> Classهای موجود؛ Global/Utility جدید نساز مگر pattern واقعی تکرار شود.</p>
+<p><strong>Property:</strong> direction، alignment، gap، margin/padding inline، inset-inline، dir/auto/bdi برای متن dynamic.</p>
+<p><strong>نباید تغییر کند:</strong> DOM اصلی، Responsive Contract، Position نهایی Nodeها، Layer Map نهایی، Typography System نهایی.</p>
+<p><strong>عبارت تأیید پایانی:</strong> «RTL Audit انجام شد؛ هر left/right به فیزیکی یا logical طبقه‌بندی شد.»</p>
+</aside>
+
+<h3>مرحلهٔ ۲ — RTL Audit Table</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="RTL Audit Table">
+<table class="data-table educational-table edu-table">
+<caption>جدول Audit جهت و Logical Properties</caption>
+<thead><tr><th scope="col">مورد</th><th scope="col">سؤال</th><th scope="col">تصمیم اولیه</th><th scope="col">وضعیت</th></tr></thead>
+<tbody>
+<tr><th scope="row">Feature Dot/Text</th><td>فاصله بین Icon و Text جهت‌پذیر است؟</td><td>Gap یا inline spacing</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Button Icon/Text</th><td>Icon قبل/بعد متن با زبان تغییر می‌کند؟</td><td>order مستند، نه row-reverse کور</td><td><code dir="ltr">unknown_until_cta</code></td></tr>
+<tr><th scope="row">Visual Node</th><td>جای Node فیزیکی است یا منطقی؟</td><td>case-by-case</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Code/URL</th><td>قطعهٔ LTR داخل فارسی است؟</td><td><code dir="ltr">dir="ltr"</code> یا <code dir="ltr">bdi/auto</code></td><td><code dir="ltr">confirmed_need</code></td></tr>
+<tr><th scope="row">Logo Strip Gap</th><td>فاصلهٔ گروه وابسته به جریان است؟</td><td>Gap روی Parent</td><td><code dir="ltr">confirmed_method</code></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>مرحلهٔ ۳ — تست دو زبانه ذهنی</h3>
+<ol>
+<li>یک Feature Item را در فارسی بخوان: شروع متن کجاست؟</li>
+<li>همان را انگلیسی تصور کن: start به کجا می‌رود؟</li>
+<li>اگر فاصله با margin-left/right ساخته شده، آیا هنوز درست است؟</li>
+<li>اگر با gap یا margin-inline ساخته شده، آیا intent حفظ می‌شود؟</li>
+<li>نتیجه را ثبت کن.</li>
 </ol>
-<pre class="code-block" dir="ltr"><code>.elementor .e-e3036d8 {
-  height: 40vh;
-  margin-inline-start: 80px;
-  margin-inline-end: 80px;
-  background-color: var(--solidf1);
-  flex-direction: row;
-  row-gap: 16px;
-  border-radius: var(--border_radios);
-}</code></pre>
-<div class="code-pair-grid">
-<section aria-labelledby="tuya-fix-padding-heading" class="code-fix-card"><h3 id="tuya-fix-padding-heading">وقتی هدف فاصلهٔ صفحه است</h3><pre class="code-block" dir="ltr"><code>.platform-section {
-  padding-inline: 80px;
+
+<h3>مرحلهٔ ۴ — تست Bidi</h3>
+<p>این متن‌ها را در Copy یا نمونهٔ آزمایشی بررسی کن:</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">نسخه v4.1.3 برای Elementor
+کلاس CSS: .tuya-node { flex: 1 1 0; }
+آدرس: example.com/docs/fa
+شماره تماس: 0912...</code></pre>
+</figure>
+<p>اگر ترتیب نشانه‌ها یا جمله خراب شد، isolation را بررسی کن.</p>
+
+<h3>مرحلهٔ ۵ — سؤال توقف</h3>
+<p>برای فاصلهٔ بین Icon و Text در یک Feature Item دو‌زبانه، انتخاب مقاوم‌تر چیست؟</p>
+<form class="interactive-form stop-question-form" data-persist-group="stop-question-15">
+<fieldset>
+<legend>چک‌لیست یادگیری</legend>
+<label class="choice-row"><input data-persist="radio" id="radio-15-a" name="stop-question-15" type="radio" value="A"/><span>A) margin-left ثابت</span></label>
+<label class="choice-row"><input data-persist="radio" id="radio-15-b" name="stop-question-15" type="radio" value="B"/><span>B) gap روی Parent یا margin-inline متناسب با نقش</span></label>
+<label class="choice-row"><input data-persist="radio" id="radio-15-c" name="stop-question-15" type="radio" value="C"/><span>C) تغییر direction فقط برای جابه‌جایی Icon</span></label>
+</fieldset>
+</form>
+<details class="disclosure-card">
+<summary>پاسخ با دلیل</summary>
+<p><strong>B درست است.</strong> اگر فاصله به رابطهٔ Icon/Text مربوط است، بهتر است از Gap یا inline spacing استفاده شود. margin-left ثابت در LTR/RTL معنای متفاوتی پیدا می‌کند و direction برای جابه‌جایی Icon ابزار درستی نیست.</p>
+</details>
+
+<h3>⚠️ تلهٔ اصلی</h3>
+<p><strong>تله:</strong> با <code dir="ltr">text-align:right</code> یا <code dir="ltr">row-reverse</code> فکر کنی کل RTL حل شده است.</p>
+<p><strong>نشانه:</strong> متن خوب دیده می‌شود، اما Icon، URL، کد، focus order یا نسخهٔ انگلیسی خراب می‌شود.</p>
+<p><strong>قاعده:</strong> اول dir/lang و Start/End؛ بعد alignment و order.</p>
+
+<h3>🧪 عمداً خرابش کن — روی کاغذ</h3>
+<figure class="visual-figure ascii-figure">
+<figcaption>RTL خراب با left/right کور</figcaption>
+<pre class="ascii-diagram" dir="ltr"><code class="language-text inline-code">.feature-icon {
+  margin-left: 12px;
 }
 
-.platform-main {
-  width: 100%;
-}</code></pre></section>
-<section aria-labelledby="tuya-fix-width-heading" class="code-fix-card"><h3 id="tuya-fix-width-heading">وقتی هدف جعبهٔ محدود و وسط‌چین است</h3><pre class="code-block" dir="ltr"><code>.platform-main {
-  width: min(100% - 160px, 1200px);
-  margin-inline: auto;
-}</code></pre></section>
-</div>
-<p><strong>برای TUYA:</strong> معمولاً Section/Shell بیرونی padding صفحه را کنترل می‌کند؛ Platform Main داخل آن می‌نشیند؛ Copy و Visual فرزندان Main هستند.</p>
-<p><strong>برای قطعیت، Computed Style و Box Model را بررسی کن.</strong></p>
-<details class="more-know">
-<summary>بیشتر بدانید</summary>
-<p>Logical properties برای RTL مهم‌اند چون به جای چپ/راست فیزیکی، از start/end منطقی استفاده می‌کنند. با این حال، اگر width، overflow یا parent اشتباه باشد، logical margin هم خروجی درست نمی‌سازد.</p>
-</details>
-</section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="memory-rtl-heading" role="heading">🧠 لایهٔ حافظه — RTL logical properties</span></summary><section aria-labelledby="memory-rtl-heading" class="memory-layer disclosure-content lesson-section"><p><strong>🧠 استعارهٔ ماندگار:</strong> Start و End مثل ابتدا و انتهای مسیر خواندن‌اند؛ Left و Right مثل دیوارهای ثابت اتاق‌اند.</p><p><strong>🧩 در Elementor V4 یعنی چه؟</strong> برای صفحهٔ فارسی، spacing و inset را تا حد امکان با inline-start/end و padding-inline/margin-inline فکر کن.</p><p><strong>⚠️ تله رایج:</strong> Start همیشه «چپ» نیست؛ در RTL معمولاً سمت راست است.</p><p class="golden-rule"><strong>📜 قانون طلایی:</strong> برای زبان، logical فکر کن؛ برای تصویر تزئینی، آگاهانه تصمیم بگیر آینه شود یا نشود.</p></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-15-lesson-pass-criteria-8" role="heading">✅ معیار عبور اختصاصی این درس</span></summary><section aria-labelledby="lesson-15-lesson-pass-criteria-8" class="disclosure-content lesson-section lesson-pass-criteria"><p>برای رفتن به درس بعد، <strong>سطح ۱ و ۲ اجباری‌اند</strong>. سطح ۳ در ایستگاه جمع‌بندی تثبیت می‌شود.</p><h3>سطح ۱ — فهمیدم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-87"><fieldset><legend>سطح ۱ — فهمیدم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-87-1" name="chk-87-1" type="checkbox"/><span>می‌توانی Start/End را از Left/Right جدا کنی.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-87-2" name="chk-87-2" type="checkbox"/><span>می‌توانی توضیح بدهی چرا Logical Properties برای سایت دو‌زبانه مقاوم‌ترند.</span></label></fieldset></form><h3>سطح ۲ — می‌توانم انجام بدهم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-88"><fieldset><legend>سطح ۲ — می‌توانم انجام بدهم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-88-1" name="chk-88-1" type="checkbox"/><span>پروژهٔ TUYA را در RTL و LTR بدون جابه‌جایی دستی Left/Right بررسی می‌کنی.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-88-2" name="chk-88-2" type="checkbox"/><span>یک Property فیزیکی پرریسک را پیدا و با مفهوم منطقی جایگزین می‌کنی.</span></label></fieldset></form><h3>سطح ۳ — می‌توانم منتقل کنم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-89"><fieldset><legend>سطح ۳ — می‌توانم منتقل کنم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-89-1" name="chk-89-1" type="checkbox"/><span>در سناریوی «Button در فارسی درست و در انگلیسی سمت اشتباه است» می‌توانی محل بررسی را مشخص کنی.</span></label></fieldset></form></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-15-lesson-stop-point-9" role="heading">⏸ اینجا توقف کن</span></summary><section aria-labelledby="lesson-15-lesson-stop-point-9" class="lesson-stop-point lesson-section disclosure-content"><p>ایستگاه D کامل شد. قبل از ادامه، Desktop، Mobile و RTL را یک‌بار بدون یادداشت بررسی کن.</p><hr/><hr/></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" role="heading">ثبت پایان درس 15</span></summary><form class="disclosure-content lesson-completion-form interactive-form" data-persist-group="lesson-15-completion"><fieldset><legend>ثبت پایان درس 15</legend><label class="choice-row completion-choice"><input data-persist="checkbox" id="lesson-15-complete" name="lesson-15-complete" type="checkbox"/><span>این درس را با معیارهای عبور مرور کردم.</span></label></fieldset></form></details>
-<details class="lesson-disclosure" id="lesson-15-end-comparisons"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" role="heading">🆚 پایان درس: RTL، Alignment و Logical Sides</span></summary><section class="disclosure-content lesson-end-comparisons">
-<div class="inline-compare-grid">
-<section class="inline-compare-card"><h3>RTL Direction در برابر Text Alignment</h3><p>Direction مسیر معنایی نوشتار است؛ Text Align محل ایستادن متن داخل جعبه. فارسی فقط <code dir="ltr">text-align:right</code> نیست.</p></section>
-<section class="inline-compare-card"><h3>Start/End در برابر Left/Right</h3><p>Start/End سمت شروع و پایان زبان است؛ Left/Right مختصات فیزیکی صفحه است. برای سایت دو‌زبانه و RTL، Start/End ذهن تو را از چپ/راست خام نجات می‌دهد.</p></section>
-</div>
-</section></details>
-<details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" id="rtl-flex-direction-title" role="heading">تکمیل نسخه 22 — RTL فقط متن نیست؛ محور Flex هم اثر می‌گیرد</span></summary><section aria-labelledby="rtl-flex-direction-title" class="smart-note-card disclosure-content">
-<p>در CSS، <code class="inline-code" dir="ltr">flex-direction: row</code> در امتداد inline direction حرکت می‌کند. در صفحهٔ RTL، main-start معمولاً سمت راست است. پس اگر سه آیتم را در Row می‌بینی، ترتیب بصری می‌تواند با ذهن LTR فرق کند.</p>
-<p><code class="inline-code" dir="ltr">margin-inline-start/end</code> هم فقط به راست/چپ ساده خلاصه نمی‌شود؛ نگاشت آن به <code class="inline-code" dir="ltr">direction</code>، <code class="inline-code" dir="ltr">writing-mode</code> و <code class="inline-code" dir="ltr">text-orientation</code> وابسته است.</p>
-<div class="visual-card-grid two"><div class="visual-card"><strong>LTR row</strong><div class="mini-flow ltr"><span>1</span><span>2</span><span>3</span></div><p>main-start از چپ شروع می‌شود.</p></div><div class="visual-card"><strong>RTL row</strong><div class="mini-flow rtl"><span>1</span><span>2</span><span>3</span></div><p>main-start از راست شروع می‌شود.</p></div></div>
-<p class="golden-rule"><strong>قانون طلایی:</strong> در RTL، اول direction و writing-mode را در Computed Style ببین؛ بعد دربارهٔ start/end قضاوت کن.</p>
-</section></details><details class="lesson-disclosure" id="lesson-15-responsive-checkpoint"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" role="heading">📱 ایست بازرسی Responsive — Responsive و RTL را جداگانه تست کن</span></summary><section class="disclosure-content lesson-section responsive-checkpoint">
-<p class="status-chip"><strong>status:</strong> verified_and_scoped</p>
-<p>Row/Column، Start/End و ترتیب بصری در RTL به context جهت وابسته‌اند. در Mobile TUYA محتوای انگلیسی و لوگوهای لاتین باید LTR بمانند، اما Shell صفحه می‌تواند RTL باشد.</p>
-<p>پس از هر تغییر breakpoint، <code>direction</code>، logical margins/padding و ترتیب واقعی را در Computed Style بررسی کن.</p>
-<details class="more-know"><summary>منابع رسمی این ایست</summary>
-<ul>
-<li><a href="https://elementor.com/help/responsive-editing/">Responsive editing — Editor V4</a></li>
-<li><a href="https://elementor.com/help/responsive-design-using-containers/">Create responsive design with containers</a></li>
-<li><a href="https://elementor.com/help/mobile-editing/">Responsive editing for mobile and tablets</a></li>
-</ul>
-</details>
-</section></details><details class="lesson-disclosure responsive-build-test" id="lesson-15-responsive-build-test">
-<summary class="lesson-disclosure-summary"><span aria-level="3" role="heading">📱 بساز و امتحان کن — Responsive: RTL، Logical Sides و Responsive</span></summary>
-<section class="disclosure-content lesson-section responsive-build-test-content">
-<p class="status-chip"><strong>status:</strong> verified_by_official_documentation</p>
-<p class="exercise-goal"><strong>هدف:</strong> جهت متن، جهت Flex و logical spacing را جداگانه آزمایش کن.</p>
-<div class="responsive-exercise-grid">
-<section class="exercise-step"><h4>۱. بساز</h4><ol><li>یک Container RTL با متن فارسی و یک Logo Strip/label انگلیسی LTR بساز.</li><li>margin-inline-start/end و padding-inline را در Desktop و Mobile مقایسه کن.</li><li>Direction فلکس را جدا از direction متن تغییر بده و نتیجه را ثبت کن.</li></ol></section>
-<section class="exercise-step"><h4>۲. پیش‌بینی کن</h4><p>پیش‌بینی کن inline-start در context فعلی به کدام سمت فیزیکی نگاشت می‌شود.</p></section>
-<section class="exercise-step exercise-break"><h4>۳. خرابی عمدی</h4><p>برای یک فاصله از margin-left/right فیزیکی استفاده کن و direction را عوض کن.</p></section>
-<section class="exercise-step"><h4>۴. امتحان و خطایابی</h4><p>direction، writing-mode، margin-inline-start/end و computed physical margins.</p></section>
-</div>
-<p class="exercise-pass"><strong>معیار قبولی:</strong> فاصله‌ها با تغییر جهت معنای درست دارند و متن انگلیسی/لوگوها بی‌دلیل RTL نشده‌اند.</p>
-<fieldset class="responsive-exercise-log">
-<legend>ثبت انجام تمرین</legend>
-<label for="lesson-15-responsive-build-test-done-build"><input data-persist="" id="lesson-15-responsive-build-test-done-build" name="lesson-15-responsive-build-test-done-build" type="checkbox"/> ساخت را انجام دادم و قبل از مشاهده پیش‌بینی نوشتم.</label>
-<label for="lesson-15-responsive-build-test-done-test"><input data-persist="" id="lesson-15-responsive-build-test-done-test" name="lesson-15-responsive-build-test-done-test" type="checkbox"/> Desktop، Tablet، Mobile و یک عرض بین breakpointها را آزمودم.</label>
-<label for="lesson-15-responsive-build-test-done-debug"><input data-persist="" id="lesson-15-responsive-build-test-done-debug" name="lesson-15-responsive-build-test-done-debug" type="checkbox"/> حداقل یک مقدار را در Computed Style یا Box Model بررسی کردم.</label>
-<label class="exercise-note-label" for="lesson-15-responsive-build-test-note">نتیجهٔ یک‌خطی من
-        <input data-persist="" id="lesson-15-responsive-build-test-note" name="lesson-15-responsive-build-test-note" placeholder="مثلاً: مقدار Mobile از Tablet ارث می‌گرفت." type="text"/>
-</label>
+در RTL شاید درست به نظر برسد.
+در LTR ممکن است فاصله سمت اشتباه باشد.
+Intent واقعی: فاصله بین icon و text، نه الزاماً سمت چپ.</code></pre>
+</figure>
+
+<h3>Checkpoint</h3>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<form class="interactive-form checklist-form" data-persist-group="checklist-85">
+<fieldset>
+<legend>Checkpoint درس ۱۵</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-85-1" name="chk-85-1" type="checkbox"/><span>RTL را با text-align:right یکی نگرفته‌ام.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-85-2" name="chk-85-2" type="checkbox"/><span>left/rightهای مهم را به physical یا logical طبقه‌بندی کرده‌ام.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-85-3" name="chk-85-3" type="checkbox"/><span>کد، URL و قطعه‌های لاتین LTR/isolated مانده‌اند.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-85-4" name="chk-85-4" type="checkbox"/><span>direction را برای جابه‌جایی ظاهری Icon دستکاری نکرده‌ام.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-85-5" name="chk-85-5" type="checkbox"/><span>row-reverse را بدون بررسی reading/focus order استفاده نکرده‌ام.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-85-6" name="chk-85-6" type="checkbox"/><span>تصمیم نهایی Icon/Button order هنوز با CTA واقعی باید تست شود.</span></label>
 </fieldset>
-<p class="evidence-line"><strong>مبنای رسمی:</strong> <a href="https://elementor.com/help/responsive-editing/">Help Center رسمی Elementor</a>. نتیجهٔ مشاهده‌شدهٔ تمرین به محیط، محتوا و breakpointهای پروژه وابسته است.</p>
+</form>
 </section>
-</details><details class="lesson-disclosure design-system-decision" id="lesson-15-design-system-decision-v30">
-<summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" role="heading">🏛 تصمیم Design System — logical properties</span></summary>
+
+<h3>Exit Ticket — قبل از ادامه</h3>
+<p><strong>بازیابی کوتاه:</strong> تفاوت Start/End و Left/Right را با مثال Feature Item توضیح بده.</p>
+<p><strong>انتقال به موقعیت تازه:</strong> برای یک کارت دو‌زبانه با Badge گوشه‌ای، چه زمانی از inset-inline-end استفاده می‌کنی و چه زمانی right فیزیکی قابل دفاع است؟</p>
+<details class="disclosure-card">
+<summary>راهنمای خودسنجی اختصاصی همین درس</summary>
+<p>پاسخ خوب باید بگوید اگر Badge باید در پایان مسیر متن باشد، logical بهتر است؛ اگر واقعاً گوشهٔ فیزیکی تصویر/کارت مهم است، right/left فیزیکی قابل دفاع است.</p>
+</details>
+
+</section>
+</details>
+
+<details class="lesson-disclosure" id="lesson-15-responsive-checkpoint">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" role="heading">📱 ایست بازرسی Responsive — RTL در عرض‌های مختلف</span>
+</summary>
+<section class="disclosure-content lesson-section responsive-checkpoint">
+<p class="status-chip"><strong>status:</strong> <code dir="ltr">provisional_until_bilingual_validation</code></p>
+<ul>
+<li>Feature List را در عرض‌های مختلف تست کن؛ dot/text alignment نباید با دوخطی‌شدن خراب شود.</li>
+<li>Button Icon/Text را در RTL و LTR ذهنی یا واقعی تست کن.</li>
+<li>URL و نسخهٔ انگلیسی داخل Paragraph را در Mobile بررسی کن.</li>
+<li>Nodeهای Stage را اگر language-dependent هستند با logical inset بررسی کن؛ اگر decorative هستند case-by-case بمانند.</li>
+<li>code blockها و CSS snippets را LTR نگه دار.</li>
+</ul>
+</section>
+</details>
+
+<details aria-labelledby="lesson-15-lesson-deep-dive-7" class="lesson-section lesson-deep-dive lesson-disclosure">
+<summary class="lesson-disclosure-summary" id="lesson-15-lesson-deep-dive-7">C. عمیق‌تر نگاه کن — اختیاری</summary>
+
+<h3>📂 Case Study — فارسی درست است، انگلیسی خراب می‌شود</h3>
+<p><strong>هدف:</strong> 🔍 عیب‌یابی کن<br/>
+<strong>وضعیت:</strong> <code class="inline-code" dir="ltr">bilingual_audit</code></p>
+<p>سناریو: نسخهٔ فارسی TUYA درست دیده می‌شود، اما اگر متن انگلیسی شود، فاصلهٔ Icon، جهت Button و حاشیه‌ها اشتباه می‌شوند.</p>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<ul>
+<li>آیا از margin-left/right برای رابطهٔ icon/text استفاده شده؟</li>
+<li>آیا text-align جای dir را گرفته؟</li>
+<li>آیا row-reverse بدون بررسی DOM/focus استفاده شده؟</li>
+<li>آیا URL یا code snippet ایزوله نشده؟</li>
+<li>آیا spacing باید logical باشد یا physical؟</li>
+<li>آیا Component واقعاً دو‌زبانه است یا فقط فارسی خواهد بود؟</li>
+</ul>
+</section>
+<p>نتیجهٔ درست: intent فاصله و جهت را بنویس؛ بعد logical/physical بودن را تصمیم بگیر.</p>
+
+<h3>🔬 پشت صحنه</h3>
+<p>در DevTools، source rule و computed style را با هم ببین. ممکن است declaration تو <code dir="ltr">margin-inline-start</code> باشد اما computed خروجی physical نمایش داده شود. این طبیعی است؛ مهم source intent است.</p>
+<hr/>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-15-lesson-pass-criteria-8" role="heading">✅ معیار عبور اختصاصی این درس</span>
+</summary>
+<section aria-labelledby="lesson-15-lesson-pass-criteria-8" class="disclosure-content lesson-section lesson-pass-criteria">
+<p>برای رفتن به درس بعد، سطح ۱ و ۲ اجباری‌اند. سطح ۳ در ایستگاه‌های بعدی تثبیت می‌شود.</p>
+
+<h3>سطح ۱ — فهمیدم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-88">
+<fieldset>
+<legend>سطح ۱ — فهمیدم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-88-1" name="chk-88-1" type="checkbox"/><span>می‌توانم توضیح بدهم RTL با text-align:right فرق دارد.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-88-2" name="chk-88-2" type="checkbox"/><span>می‌دانم Start/End با Direction تغییر می‌کند و Left/Right فیزیکی‌اند.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-88-3" name="chk-88-3" type="checkbox"/><span>می‌توانم inline/block axis را در فارسی توضیح بدهم.</span></label>
+</fieldset>
+</form>
+
+<h3>سطح ۲ — می‌توانم انجام بدهم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-89">
+<fieldset>
+<legend>سطح ۲ — می‌توانم انجام بدهم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-89-1" name="chk-89-1" type="checkbox"/><span>در TUYA، left/rightهای مهم را audit و به logical/physical طبقه‌بندی می‌کنم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-89-2" name="chk-89-2" type="checkbox"/><span>Feature Item و Button را برای RTL/LTR و focus order بررسی می‌کنم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-89-3" name="chk-89-3" type="checkbox"/><span>کد، URL، نسخه و قطعه‌های لاتین را LTR/isolated نگه می‌دارم.</span></label>
+</fieldset>
+</form>
+
+<h3>سطح ۳ — می‌توانم منتقل کنم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-90">
+<fieldset>
+<legend>سطح ۳ — می‌توانم منتقل کنم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-90-1" name="chk-90-1" type="checkbox"/><span>برای یک کارت دو‌زبانه می‌توانم تشخیص بدهم کدام Position واقعاً فیزیکی است و کدام باید logical باشد.</span></label>
+</fieldset>
+</form>
+</section>
+</details>
+
+<details class="lesson-disclosure" id="lesson-15-design-system-decision-v30">
+<summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" role="heading">🏛 تصمیم Design System — Logical utilities</span></summary>
 <section class="disclosure-content lesson-section">
-<ul class="decision-questions"><li>این مقدار باید direct literal بماند یا Variable شود؟</li><li>declaration در Local Class می‌ماند یا reuse آن Global Class را توجیه می‌کند؟</li><li>فقط Style reuse داریم یا Structure نیز تکرار شده است؟</li><li>آیا Component واقعاً توجیه دارد، یا Class/Variable کافی است؟</li></ul>
-<p><code dir="ltr">proposed_strategy</code> — پاسخ وابسته به intent، scope، reuse و هزینهٔ propagation است.</p>
-</section></details></article>
+<ul class="decision-questions">
+<li>این spacing باید direct value بماند یا Utility logical شود؟</li>
+<li>آیا Component واقعاً دو‌زبانه/جهت‌پذیر است؟</li>
+<li>آیا left/right فیزیکی هدف واقعی است؟</li>
+<li>آیا bdi/dir:auto برای dynamic text لازم است؟</li>
+<li>آیا order بصری با reading/focus order سازگار است؟</li>
+</ul>
+<p><code dir="ltr">proposed_strategy</code> — فعلاً logical utilityها را فقط برای patternهای تکراری بساز. همهٔ left/rightها را کورکورانه تبدیل نکن.</p>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-15-lesson-stop-point-9" role="heading">⏸ اینجا توقف کن</span>
+</summary>
+<section aria-labelledby="lesson-15-lesson-stop-point-9" class="lesson-stop-point lesson-section disclosure-content">
+<p>در درس بعد طبق ترتیب واقعی جزوه ادامه می‌دهیم. تا اینجا TUYA باید از نظر RTL، Start/End، bidi و logical/physical decision قابل دفاع باشد؛ اما تصمیم‌های CTA، dynamic text و نسخهٔ انگلیسی هنوز باید با محتوای واقعی اعتبارسنجی شوند.</p>
+<hr/>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" role="heading">ثبت پایان درس 15</span>
+</summary>
+<form class="disclosure-content lesson-completion-form interactive-form" data-persist-group="lesson-15-completion">
+<fieldset>
+<legend>ثبت پایان درس 15</legend>
+<label class="choice-row completion-choice"><input data-persist="checkbox" id="lesson-15-complete" name="lesson-15-complete" type="checkbox"/><span>این درس را با معیارهای عبور مرور کردم.</span></label>
+</fieldset>
+</form>
+</details>
+
+</article>

@@ -1,256 +1,570 @@
-<article class="lesson card-surface" data-lesson="14" id="lesson-14"><h2 class="lesson-title former-h1">درس 14 — Responsive Inheritance و Breakpointها</h2><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-14-lesson-compass-1" role="heading">🧭 قطب‌نمای درس</span></summary><section aria-labelledby="lesson-14-lesson-compass-1" class="disclosure-content lesson-section lesson-compass"><p><strong>در این درس یاد می‌گیری:</strong> Responsive را به‌عنوان تغییر کنترل‌شدهٔ همان ساختار بفهمی.</p><p><strong>در این درس هنوز یاد نمی‌گیری:</strong> ساخت Section جدا برای هر دستگاه را.</p><p><strong>در پایان باید بتوانی:</strong> TUYA را بدون Duplicate از Desktop به Mobile تبدیل کنی.</p></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" id="lesson-14-lesson-meta-2" role="heading">زمان، سنگینی و نوع فعالیت</span></summary><section aria-labelledby="lesson-14-lesson-meta-2" class="lesson-meta disclosure-content lesson-section"><div aria-label="جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت" class="table-wrap" role="region" tabindex="0"><table class="data-table educational-table edu-table"><caption>جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت</caption><thead><tr><th scope="col">مورد</th><th scope="col">پیشنهاد</th></tr></thead><tbody><tr><th scope="row">سنگینی</th><td>🔴 سنگین</td></tr><tr><th scope="row">نوع فعالیت</th><td>🛠 اجرایی + 🔍 عیب‌یابی + 📱 چندعرضی</td></tr><tr><th scope="row">هستهٔ فهم</th><td>۳۰–۴۰ دقیقه</td></tr><tr><th scope="row">تثبیت و تمرین</th><td>۴۰–۶۰ دقیقه</td></tr><tr><th scope="row">عمق اختیاری</th><td>۲۰–۳۰ دقیقه</td></tr></tbody></table></div><aside aria-label="راهنمای معلم" class="teacher-note"><p><strong>راهنمای معلم:</strong> چند Viewport و یک DOM را هم‌زمان تست می‌کنی.</p></aside><p class="status-line"><code class="inline-code" dir="ltr">status: proposed_until_real_learner_pilot</code></p></section></details><section aria-labelledby="lesson-14-lesson-understand-4" class="lesson-section lesson-understand lesson-core-concept" data-core-concept="true"><h2 id="lesson-14-lesson-understand-4">A. بفهم</h2><h3>مدل ذهنی</h3><details class="more-know ascii-disclosure"><summary>نمای متنی ساده / ASCII اختیاری</summary><figure class="visual-figure ascii-figure"><figcaption>نمودار یا یادداشت دیداری</figcaption><pre class="ascii-diagram" dir="ltr">Base/Desktop value
-      ↓
-Tablet override if needed
-      ↓
-Mobile override if needed</pre></figure></details><p>Responsive یعنی همان DOM و همان Component با تنظیمات مناسب فضای موجود.</p><h3>Workflow</h3><details class="more-know ascii-disclosure"><summary>نمای متنی ساده / ASCII اختیاری</summary><figure class="visual-figure ascii-figure"><figcaption>نمودار یا یادداشت دیداری</figcaption><pre class="ascii-diagram" dir="ltr">Build base
-Resize slowly
-Observe first failure
-Change minimum necessary control
-Retest content and states</pre></figure></details><p>Breakpoint را براساس شکست محتوا انتخاب کن، نه صرفاً نام دستگاه.</p><hr/></section><details class="lesson-disclosure conceptual-reference" data-concept-version="31.0.0" data-source-sha256="cc24056f7e6407318b1a69797588466a8bc599b98fd96caa368e4fc84da0a568" id="lesson-14-concept-reference"><summary>📚 مرجع مفهومی کامل — درک عمیق Responsive؛ Inheritance، Override و Breakpoint</summary><div class="concept-reference-body concept-reference-v31" data-concept-index="14" data-source-version="31.0.0"><p class="concept-reference-lead">این مرجع کامل برای ساخت مدل ذهنی، عیب‌یابی و تصمیم‌گیری مستقل نوشته شده است. متن اصلی درس، کارت‌ها، آزمون‌ها و Step‑Throughها همچنان در جای خود باقی مانده‌اند.</p><section aria-labelledby="concept-v31-14-section-01" class="concept-reference-part concept-reference-problem"><h3 id="concept-v31-14-section-01">مسئله‌ای که Responsive حل می‌کند</h3><p>Responsive یعنی یک Layout بتواند با فضای متفاوت، محتوای متفاوت و روش تعامل متفاوت سازگار شود.</p><p>Responsive فقط این نیست که Desktop را کوچک کنی. گاهی در Mobile:</p><ul>
-<li>Direction عوض می‌شود؛</li>
-<li>اولویت محتوا تغییر می‌کند؛</li>
-<li>دکمه تمام‌عرض می‌شود؛</li>
-<li>Grid ستون کمتری می‌گیرد؛</li>
-<li>Typography سیال می‌شود؛</li>
-<li>تزئین حذف می‌شود.</li>
-</ul><hr/></section><section aria-labelledby="concept-v31-14-section-02" class="concept-reference-part concept-reference-analogy"><h3 id="concept-v31-14-section-02">تشبیه به دنیای واقعی: آبشار و سدها</h3><p>Desktop را سرچشمهٔ آبشار تصور کن. مقدارها به مراحل پایین‌تر می‌ریزند:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Desktop
+<article class="lesson card-surface" data-lesson="14" id="lesson-14">
+
+<h2 class="lesson-title former-h1">درس 14 — Responsive Inheritance و Breakpointها</h2>
+
+<details class="lesson-disclosure" open>
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-14-lesson-compass-1" role="heading">🧭 قطب‌نمای درس</span>
+</summary>
+<section aria-labelledby="lesson-14-lesson-compass-1" class="disclosure-content lesson-section lesson-compass">
+<p><strong>در این درس یاد می‌گیری:</strong> Responsive را به‌عنوان تغییر کنترل‌شدهٔ همان ساختار بفهمی؛ یعنی یک DOM، یک Section و یک Component را در عرض‌های مختلف با Overrideهای حداقلی و مستند تطبیق بدهی.</p>
+<p><strong>در این درس هنوز یاد نمی‌گیری:</strong> ساخت Section جدا برای هر دستگاه، Container Query عملی در پنل V4، Performance کامل Responsive، یا Breakpointهای قطعی بدون خواندن تنظیمات واقعی سایت.</p>
+<p><strong>در پایان باید بتوانی:</strong> TUYA را بدون Duplicate از Desktop به Mobile تبدیل کنی، Responsive Contract بنویسی، و بدانی چه چیزی inherited است، چه چیزی override شده و چه چیزی باید Reset شود.</p>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" id="lesson-14-lesson-meta-2" role="heading">زمان، سنگینی و نوع فعالیت</span>
+</summary>
+<section aria-labelledby="lesson-14-lesson-meta-2" class="lesson-meta disclosure-content lesson-section">
+<div aria-label="جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت" class="table-wrap" role="region" tabindex="0">
+<table class="data-table educational-table edu-table">
+<caption>جدول آموزشی دوره — زمان، سنگینی و نوع فعالیت</caption>
+<thead><tr><th scope="col">مورد</th><th scope="col">پیشنهاد</th></tr></thead>
+<tbody>
+<tr><th scope="row">سنگینی</th><td>🔴 سنگین</td></tr>
+<tr><th scope="row">نوع فعالیت</th><td>🛠 اجرایی + 🔍 عیب‌یابی + 📱 چندعرضی</td></tr>
+<tr><th scope="row">هستهٔ فهم</th><td>۳۰–۴۰ دقیقه</td></tr>
+<tr><th scope="row">تثبیت و تمرین</th><td>۴۰–۶۰ دقیقه</td></tr>
+<tr><th scope="row">عمق اختیاری</th><td>۲۰–۳۰ دقیقه</td></tr>
+</tbody>
+</table>
+</div>
+<aside aria-label="راهنمای معلم" class="teacher-note">
+<p><strong>راهنمای معلم:</strong> این درس باید با چند Viewport و یک DOM تست شود. اگر هنرجو برای Mobile نسخهٔ جدا بسازد، مسئله را حل نکرده؛ نگهداری را سخت‌تر کرده است.</p>
+</aside>
+<p class="status-line"><code class="inline-code" dir="ltr">status: revised_responsive_inheritance_context</code></p>
+</section>
+</details>
+
+<section aria-labelledby="lesson-14-lesson-understand-4" class="lesson-section lesson-understand lesson-core-concept" data-core-concept="true">
+<h2 id="lesson-14-lesson-understand-4">A. بفهم</h2>
+
+<h3>پیوند با درس‌های قبلی</h3>
+<p>تا درس ۱۳، Structure، Layout، Typography، Media، Position و Layering را ساختی. حالا باید همهٔ این تصمیم‌ها را در عرض‌های مختلف نگه داری. Responsive یعنی همان ساختار، اما با تغییرهای کنترل‌شده و حداقلی.</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Base / Desktop
+↓
+Inherited values
+↓
+Tablet override only if needed
+↓
+Mobile override only if needed
+↓
+Reset if override is no longer needed</code></pre>
+</figure>
+
+<h3>مسئله</h3>
+<p>اگر در Desktop چیزی خوب دیده شود، الزاماً در Tablet و Mobile خوب نیست. اما راه‌حل هم ساختن سه Section جدا نیست. باید بفهمی کدام مقدار از Desktop به پایین ارث می‌رسد، کجا واقعاً شکست رخ داده، و کدام کنترل با کمترین تغییر باید override شود.</p>
+
+<h3>مدل آبشار</h3>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<p>Desktop مثل سرچشمه است. مقدارها به Tablet و Mobile می‌ریزند، مگر اینکه در یکی از دستگاه‌ها مقدار مستقل بسازی.</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Desktop: 40px
+Tablet:  inherit
+Mobile:  16px  ← local override</code></pre>
+</figure>
+<p>اگر بعداً Desktop را 48px کنی، Mobile همچنان 16px می‌ماند؛ چون سد محلی دارد.</p>
+</section>
+
+<h3>Override با Copy کردن مقدار فرق دارد</h3>
+<p>اگر در Mobile همان مقدار Desktop را دستی وارد کنی، ظاهراً یکسان است، اما دیگر inherited نیست. این کار Maintenance را سخت می‌کند. مقدار صریح را فقط وقتی بساز که تفاوت رفتاری واقعی لازم است.</p>
+
+<h3>Reset یعنی حذف مقدار محلی</h3>
+<p>اگر یک مقدار Mobile دیگر لازم نیست، آن را با کپی‌کردن Desktop «هم‌شکل» نکن؛ مقدار محلی را Reset/پاک کن تا دوباره از مقدار بالاتر پیروی کند.</p>
+
+<h3>Breakpoint براساس شکست محتواست، نه نام دستگاه</h3>
+<p>Breakpoint نباید فقط چون نامش Tablet یا Mobile است تغییر بگیرد. سؤال درست این است:</p>
+<blockquote><p>Layout در چه عرضی دیگر قرارداد فعلی را حفظ نمی‌کند؟</p></blockquote>
+<p>ممکن است Hero در ۸۷۰px بشکند، نه در عدد اسمی Tablet. Breakpointهای واقعی Elementor هم باید از تنظیمات سایت خوانده شوند، نه از حافظه یا حدس.</p>
+
+<h3>Responsive Contract قبل از عدد</h3>
+<p>قبل از واردکردن هر عدد، قرارداد Responsive بنویس:</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Desktop:
+- Shell row
+- Copy / Visual کنار هم
+- Visual Stage کامل
+- Logo Strip یک یا دو خط کنترل‌شده
+
+Tablet:
+- Row یا Column؟ وابسته به شکست محتوا
+- Gap کمتر فقط در صورت نیاز
+- Heading و Stage بازبینی شوند
+
+Mobile:
+- Shell column
+- Copy اول
+- Visual بعد از متن یا طبق UX
+- Button تمام‌عرض در صورت نیاز
+- تزئین محدود
+- Nodeها ساده‌تر، نه نسخهٔ جدا</code></pre>
+</figure>
+
+<h3>Responsive یعنی Duplicate نه</h3>
+<p>ساخت Section جدا برای Desktop/Tablet/Mobile آخرین راه‌حل است، نه شروع کار. Duplicate کردن سکشن‌ها باعث مشکل محتوا، SEO، Accessibility، Maintenance، Performance و هماهنگی Design System می‌شود.</p>
+
+<h3>Fluid و Breakpoint مکمل‌اند</h3>
+<p>بعضی چیزها مثل spacing و typography می‌توانند سیال باشند؛ مثلاً با clamp. اما تغییر ساختار از Row به Column با clamp حل نمی‌شود. پس Responsive دو ابزار دارد: تغییر سیال و تغییر نقطه‌ای.</p>
+
+<h3>قاعدهٔ این درس</h3>
+<p>از Desktop شروع کن، عرض را آهسته کم کن، اولین شکست واقعی را پیدا کن، فقط کمترین کنترل لازم را تغییر بده، و بعد inheritance/override/reset را مستند کن.</p>
+<hr/>
+</section>
+
+<details class="lesson-disclosure conceptual-reference" data-concept-version="tuya-revised-14.0.0" id="lesson-14-concept-reference">
+<summary>📚 مرجع مفهومی کامل — Responsive Inheritance، Override، Reset و Breakpoint</summary>
+<div class="concept-reference-body concept-reference-v31" data-concept-index="14" data-source-version="tuya-revised-14.0.0">
+
+<p class="concept-reference-lead">این مرجع، بخش مفهومی فعلی درس را حفظ می‌کند و آن را به تصمیم‌های TUYA وصل می‌کند. هدف، تبدیل Desktop به Mobile با همان DOM است؛ نه ساخت چند نسخهٔ جدا.</p>
+
+<section class="concept-reference-part concept-reference-problem" aria-labelledby="lesson-14-ref-problem">
+<h3 id="lesson-14-ref-problem">۱. مسئله‌ای که Responsive حل می‌کند</h3>
+<p>Responsive یعنی Layout بتواند با فضای متفاوت، محتوای متفاوت و روش تعامل متفاوت سازگار شود. Responsive فقط کوچک‌کردن Desktop نیست. گاهی در Mobile باید Direction عوض شود، دکمه تمام‌عرض شود، Grid ستون کمتری بگیرد، Typography سیال شود یا تزئین حذف/ساده شود.</p>
+</section>
+
+<section class="concept-reference-part concept-reference-analogy" aria-labelledby="lesson-14-waterfall">
+<h3 id="lesson-14-waterfall">۲. تشبیه آبشار و سدها</h3>
+<p>مقدارها از Base/Desktop به پایین می‌آیند:</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Desktop
   ↓
 Tablet
   ↓
-Mobile
-</code></pre></figure><p>تا وقتی در Tablet یا Mobile مقدار مستقل نسازی، آب از بالا ادامه پیدا می‌کند.</p><p>وقتی در Mobile عدد تازه‌ای وارد می‌کنی، مثل ساختن سد است:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">Desktop: 40px
-Tablet: inherit
-Mobile: 16px ← سد محلی
-</code></pre></figure><p>اگر Mobile را نیز دستی روی 40px بگذاری، ظاهراً فعلاً با Desktop برابر است، اما دیگر به Desktop متصل نیست. اگر Desktop بعداً 48px شود، Mobile همچنان 40px می‌ماند.</p><hr/></section><section aria-labelledby="concept-v31-14-section-03" class="concept-reference-part"><h3 id="concept-v31-14-section-03">Reset یعنی شکستن سد</h3><p>اگر می‌خواهی Mobile دوباره از مقدار بالاتر پیروی کند، عدد Desktop را در Mobile کپی نکن. مقدار صریح Mobile را Reset یا پاک کن.</p><p>این کار DOM را سبک‌تر نمی‌کند؛ موضوع اصلی <strong>سادگی Cascade و نگهداری</strong> است.</p><p>قانون:</p><blockquote>
-<p>مقدار صریح را فقط وقتی بساز که واقعاً تفاوت رفتاری لازم است.</p>
-</blockquote><hr/></section><section aria-labelledby="concept-v31-14-section-04" class="concept-reference-part"><h3 id="concept-v31-14-section-04">Breakpoint چیست؟</h3><p>Breakpoint مرزی است که در آن مجموعه‌ای از Styleها فعال می‌شوند. اما Breakpoint نباید از نام دستگاه نتیجه‌گیری شود.</p><p>بهتر است بپرسی:</p><blockquote>
-<p>Layout در چه عرضی دیگر قرارداد فعلی را حفظ نمی‌کند؟</p>
-</blockquote><p>ممکن است Hero در ۸۷۰px بشکند، نه دقیقاً در عددی که نام Tablet دارد.</p><p>Breakpointهای سفارشی Elementor باید از تنظیمات واقعی سایت خوانده شوند؛ نباید عددهای فرضی را قانون جزوه معرفی کرد.</p><hr/></section><section aria-labelledby="concept-v31-14-section-05" class="concept-reference-part"><h3 id="concept-v31-14-section-05">Responsive Contract</h3><p>برای هر Section، قبل از واردکردن عددها یک قرارداد بنویس:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="auto"><code class="language-text inline-code" dir="ltr">Desktop:
-- Hero row
-- Copy 55%
-- Visual 45%
+Mobile</code></pre>
+</figure>
+<p>وقتی در Mobile مقدار مستقل وارد می‌کنی، یک سد محلی ساخته‌ای. این سد تا وقتی Reset نشود، از Desktop جدید پیروی نمی‌کند.</p>
+</section>
 
-Tablet:
-- Hero row فشرده
-- Gap کمتر
-- Heading سیال
-
-Mobile:
-- Hero column
-- Copy اول
-- Button تمام‌عرض
-- تزئین محدود
-</code></pre></figure><p>این Contract تصمیم را توضیح می‌دهد. اعداد سپس برای اجرای آن می‌آیند.</p><hr/></section><section aria-labelledby="concept-v31-14-section-06" class="concept-reference-part"><h3 id="concept-v31-14-section-06">Fluid Typography و Spacing</h3><p>Responsive همیشه نیازمند چند جهش Breakpoint نیست. برای مقیاس سیال می‌توان از <code class="inline-code" dir="ltr">clamp()</code> استفاده کرد:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-css inline-code" dir="ltr">padding-inline: clamp(1rem, 4vw, 5rem);
-font-size: clamp(2rem, 1.25rem + 3vw, 4.5rem);
-</code></pre></figure><p>اما اگر ساختار باید از Row به Column تغییر کند، <code class="inline-code" dir="ltr">clamp()</code> جای Media Query یا کنترل Responsive را نمی‌گیرد.</p><hr/></section><section aria-labelledby="concept-v31-14-section-07" class="concept-reference-part"><h3 id="concept-v31-14-section-07">Container Queries؛ Component به فضای خودش نگاه می‌کند</h3><p>Media Query به Viewport نگاه می‌کند. Container Query به اندازهٔ Container نزدیک Component نگاه می‌کند.</p><p>کارت ممکن است در دو جای سایت باشد:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">Hero Wide Area: 700px
-Sidebar: 320px
-</code></pre></figure><p>Viewport در هر دو یکسان است، اما فضای کارت متفاوت است. Container Query می‌تواند کارت را براساس فضای واقعی خودش تغییر دهد.</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-css inline-code" dir="ltr">.card-region {
-  container-type: inline-size;
-}
-
-@container (min-width: 36rem) {
-  .card {
-    grid-template-columns: 12rem 1fr;
-  }
-}
-</code></pre></figure><p>Container Query جایگزین کامل Media Query نیست؛ مکمل آن است.</p><p>در مستندات رسمی بررسی‌شده، کنترل بصری Native قطعی برای Container Query در پنل V4 اثبات نشده است. بنابراین این بخش باید به‌عنوان CSS پیشرفته با Custom CSS و تست نسخه هدف ارائه شود.</p><hr/></section><section aria-labelledby="concept-v31-14-section-08" class="concept-reference-part concept-reference-elementor"><h3 id="concept-v31-14-section-08">در Elementor V4</h3><p>وقتی Device Mode را عوض می‌کنی:</p><ol>
-<li>ببین کدام Property Indicator نشان می‌دهد مقدار از کجا آمده است.</li>
-<li>فقط تفاوت لازم را Override کن.</li>
+<section class="concept-reference-part" aria-labelledby="lesson-14-inheritance">
+<h3 id="lesson-14-inheritance">۳. Inheritance و Responsive Override</h3>
+<p>در Elementor، بسیاری از کنترل‌ها می‌توانند در Device Mode متفاوت مقدار بگیرند. اگر برای دستگاه پایین‌تر مقدار مستقل نداشته باشی، مقدار بالاتر یا Base رفتار را تعیین می‌کند. اما وقتی مقدار محلی ساختی، آن دستگاه مستقل می‌شود.</p>
+<p>قانون عملی:</p>
+<ul>
+<li>اول مقدار Base را درست کن.</li>
+<li>در Tablet/Mobile فقط وقتی override بساز که شکست واقعی رخ داده باشد.</li>
 <li>اگر تفاوت دیگر لازم نیست، Reset کن.</li>
-<li>Class درست و State درست را انتخاب کن.</li>
-<li>Frontend واقعی را آزمایش کن؛ Preview Editor تنها شاهد کافی نیست.</li>
-</ol><p>Custom CSS نیز می‌تواند Device-specific و State-specific باشد، پس منبع Style را دقیق دنبال کن.</p><hr/></section><section aria-labelledby="concept-v31-14-section-09" class="concept-reference-part"><h3 id="concept-v31-14-section-09">سناریوی واقعی: Grid کارت‌ها</h3><p>Desktop:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">4 columns
-</code></pre></figure><p>Tablet:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">2 columns
-</code></pre></figure><p>Mobile:</p><figure class="concept-code-figure"><pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-text inline-code" dir="ltr">1 column
-</code></pre></figure><p>اما اگر از <code class="inline-code" dir="ltr">auto-fit/minmax()</code> استفاده می‌کنی، ممکن است برخی تغییرها بدون Breakpoint رخ دهند. باید تصمیم بگیری کنترل صریح ۴→۲→۱ مهم‌تر است یا جریان سیال براساس حداقل عرض کارت.</p><hr/></section><section aria-labelledby="concept-v31-14-section-10" class="concept-reference-part concept-reference-traps"><h3 id="concept-v31-14-section-10">اشتباهات رایج</h3><ul>
-<li>کپی عدد Desktop در Mobile به‌جای Reset</li>
-<li>ساخت Override برای هر Property</li>
-<li>انتخاب Breakpoint فقط بر اساس نام Device</li>
-<li>تست‌نکردن عرض‌های میانی</li>
-<li>مخفی‌کردن محتوا به‌جای بازطراحی Layout</li>
-<li>ساخت نسخهٔ Duplicate Desktop/Mobile بدون نیاز</li>
-<li>کوچک‌کردن متن برای پنهان‌کردن مشکل Width</li>
-<li>فرض Native بودن Container Query در Elementor بدون تست</li>
-</ul><hr/></section><section aria-labelledby="concept-v31-14-section-11" class="concept-reference-part concept-reference-devtools"><h3 id="concept-v31-14-section-11">پل به DevTools</h3><p>Device Toolbar را باز کن و عرض را پیوسته تغییر بده، نه فقط Presetها را. در Styles Panel Media Query فعال و Computed Value را ببین. برای Container Query نیز Badge و Overlay مربوط به Container در نسخه‌های پشتیبان DevTools مفید است.</p><hr/></section><section aria-labelledby="concept-v31-14-section-12" class="concept-reference-part concept-reference-analogy"><h3 id="concept-v31-14-section-12">تصویر ذهنی نهایی</h3><p>Responsive مثل آبشاری است که مقدارها از بالا جاری می‌شوند. Override سد محلی است. هر سد باید دلیل داشته باشد؛ و وقتی دلیل از بین رفت، باید سد را برداری، نه اینکه آب را با سطل شبیه سرچشمه کنی.</p><hr/></section><section aria-labelledby="concept-v31-14-section-13" class="concept-reference-part concept-reference-golden"><h3 id="concept-v31-14-section-13">قوانین طلایی</h3><ul>
-<li><strong>«Responsive یعنی تغییر قرارداد Layout، نه فقط کوچک‌کردن همه‌چیز.»</strong></li>
-<li><strong>«مقدار برابر با Desktop را در Mobile تکرار نکن؛ اگر تفاوتی لازم نیست، Override را Reset کن.»</strong></li>
-<li><strong>«Breakpoint را از نقطه شکست Layout استخراج کن، نه از نام دستگاه.»</strong></li>
-<li><strong>«Media Query به صفحه نگاه می‌کند؛ Container Query به فضای Component.»</strong></li>
-<li><strong>«Container Query مکمل Media Query است، نه جایگزین مطلق آن.»</strong></li>
-</ul></section><footer class="concept-reference-evidence"><h3>منابع رسمی و وضعیت اعتبار این فصل</h3><p>رفتارهای CSS و مرورگر از استانداردها و مستندات رسمی، رفتار Elementor از Help Center رسمی، و تشبیه‌ها به‌عنوان <code class="inline-code" dir="ltr">derived_explanation</code> ارائه شده‌اند.</p><ul>
-<li>Elementor Help: Responsive editing and inherited responsive values</li>
-<li>CSS Media Queries / CSS Containment specifications</li>
-<li>Elementor Help: Custom CSS per device and state</li>
-</ul><hr/></footer></div></details><details class="lesson-disclosure settings-values-units" id="lesson-14-settings-values-units">
-<summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" id="lesson-14-settings-values-units-heading" role="heading">⚙️ تنظیمات، مقدارها و واحدها — Responsive؛ breakpoint با px تعریف می‌شود، طراحی فقط px نیست</span></summary>
+<li>مقدار بالاتر را فقط برای شبیه‌کردن ظاهری در دستگاه پایین‌تر کپی نکن.</li>
+</ul>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-14-breakpoint">
+<h3 id="lesson-14-breakpoint">۴. Breakpoint را از شکست محتوا استخراج کن</h3>
+<p>Breakpoint مرز فعال‌شدن Styleهاست. اما عدد Breakpoint باید از مشاهدهٔ شکست Layout و تنظیمات واقعی سایت بیاید. نام دستگاه کافی نیست.</p>
+<p>روش مشاهده:</p>
+<ol>
+<li>Desktop را پایدار کن.</li>
+<li>عرض را آرام کم کن.</li>
+<li>اولین شکست واقعی را پیدا کن: برخورد، overflow، خوانایی بد، فشردگی، crop، line break بد.</li>
+<li>نوع شکست را طبقه‌بندی کن.</li>
+<li>کمترین کنترل لازم را تغییر بده.</li>
+<li>دوباره از Desktop تا Mobile تست کن.</li>
+</ol>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-14-contract">
+<h3 id="lesson-14-contract">۵. Responsive Contract برای TUYA</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="TUYA Responsive Contract">
+<table class="data-table educational-table edu-table">
+<caption>Responsive Contract پیشنهادی TUYA</caption>
+<thead><tr><th scope="col">Viewport</th><th scope="col">قرارداد رفتاری</th><th scope="col">وضعیت</th></tr></thead>
+<tbody>
+<tr><th scope="row">Desktop</th><td>Shell در Row؛ Copy و Visual کنار هم؛ Stage کامل؛ Logo Strip با Wrap کنترل‌شده.</td><td><code dir="ltr">confirmed_goal</code></td></tr>
+<tr><th scope="row">Tablet</th><td>Row فشرده یا Column؛ تصمیم وابسته به اولین شکست واقعی.</td><td><code dir="ltr">provisional_until_resize_test</code></td></tr>
+<tr><th scope="row">Mobile</th><td>Shell معمولاً Column؛ Copy اول؛ Visual ساده‌تر؛ دکمه/CTA در صورت نیاز تمام‌عرض؛ تزئین محدود.</td><td><code dir="ltr">provisional_until_content_test</code></td></tr>
+<tr><th scope="row">Between Breakpoints</th><td>عرض‌های بینابینی هم باید تست شوند، نه فقط آیکن‌های دستگاه.</td><td><code dir="ltr">required_check</code></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-14-tunya-controls">
+<h3 id="lesson-14-tunya-controls">۶. چه کنترل‌هایی احتمالاً Responsive می‌شوند؟</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Responsive controls">
+<table class="data-table educational-table edu-table">
+<caption>کنترل‌های محتمل در TUYA</caption>
+<thead><tr><th scope="col">بخش</th><th scope="col">کنترل محتمل</th><th scope="col">قاعده</th></tr></thead>
+<tbody>
+<tr><th scope="row">TUYA Shell</th><td>Direction، Gap، Padding</td><td>اولین شکست Layout را ببین؛ فقط حداقل override.</td></tr>
+<tr><th scope="row">Copy / Visual</th><td>Basis، Width، Order</td><td>Order فقط با دلیل UX و بررسی reading/focus order.</td></tr>
+<tr><th scope="row">Typography</th><td>Font size، line-height، max width</td><td>متن واقعی فارسی و Mobile تست شود.</td></tr>
+<tr><th scope="row">Logo Strip</th><td>Gap، max-size، wrap</td><td>Hide فقط با دلیل محتوایی؛ اول Wrap/Size.</td></tr>
+<tr><th scope="row">Visual Stage</th><td>Aspect ratio، max-size، Node offsets</td><td>Position نهایی هنوز provisional است.</td></tr>
+<tr><th scope="row">Layering</th><td>Overflow و z-index</td><td>در Mobile clipping را جدا بررسی کن.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-14-fluid">
+<h3 id="lesson-14-fluid">۷. Fluid Typography و Spacing</h3>
+<p>Responsive همیشه با چند پرش Breakpoint انجام نمی‌شود. برای بعضی اندازه‌ها می‌توان از مقدارهای سیال استفاده کرد:</p>
+<figure class="concept-code-figure">
+<pre class="ascii-diagram concept-code-block" dir="ltr"><code class="language-css inline-code" dir="ltr">padding-inline: clamp(1rem, 4vw, 5rem);
+font-size: clamp(2rem, 1.25rem + 3vw, 4.5rem);</code></pre>
+</figure>
+<p>اما اگر ساختار باید از Row به Column تغییر کند، مقدار سیال جای تغییر Layout را نمی‌گیرد. Fluid value و Breakpoint override مکمل‌اند.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-14-container-query">
+<h3 id="lesson-14-container-query">۸. Container Query در حد آشنایی</h3>
+<p>Media Query به Viewport نگاه می‌کند؛ Container Query به فضای خود Component. این مفهوم برای Componentهای قابل استفاده در چند محیط مهم است.</p>
+<p>اما در این درس، Container Query را به‌عنوان CSS پیشرفته می‌شناسیم، نه کنترل قطعی پنل. برای Elementor V4، وجود کنترل Native قطعی در پنل را بدون شواهد نسخهٔ هدف ادعا نکن. اگر لازم شد، باید با Custom CSS و تست نسخهٔ واقعی بررسی شود.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-14-duplicate">
+<h3 id="lesson-14-duplicate">۹. چرا Duplicate Section خطرناک است؟</h3>
+<p>Duplicate کردن سکشن برای هر دستگاه شاید سریع به نظر برسد، اما هزینه دارد:</p>
+<ul>
+<li>متن باید در چند جای مختلف به‌روزرسانی شود؛</li>
+<li>Screen Reader ممکن است محتوای تکراری ببیند، اگر پنهان‌سازی درست نباشد؛</li>
+<li>Performance افت می‌کند؛</li>
+<li>Design System و Classها چندشاخه می‌شوند؛</li>
+<li>Debug سخت‌تر می‌شود.</li>
+</ul>
+<p>Duplicate فقط برای موارد بسیار خاص و با دلیل مستند قابل بررسی است؛ نه به‌عنوان روش آموزشی این پروژه.</p>
+</section>
+
+<section class="concept-reference-part" aria-labelledby="lesson-14-debug">
+<h3 id="lesson-14-debug">۱۰. Debug Responsive</h3>
+<p>اگر Mobile خراب است، این ترتیب را رعایت کن:</p>
+<ol>
+<li>مشکل از Layout است یا Typography یا Media یا Position یا Layering؟</li>
+<li>آیا مقدار از Desktop inherited است یا Mobile override دارد؟</li>
+<li>آیا override ضروری است یا باید Reset شود؟</li>
+<li>آیا مشکل با یک کنترل حل می‌شود یا چند کنترل را بی‌دلیل تغییر داده‌ای؟</li>
+<li>آیا فقط breakpoint iconها را تست کرده‌ای یا عرض‌های بینابینی را هم دیده‌ای؟</li>
+<li>آیا content واقعی و states واقعی تست شده‌اند؟</li>
+</ol>
+</section>
+
+<section class="concept-reference-part concept-reference-golden" aria-labelledby="lesson-14-golden">
+<h3 id="lesson-14-golden">۱۱. قوانین طلایی</h3>
+<ul>
+<li><strong>Responsive یعنی همان DOM با تغییر کنترل‌شده، نه نسخهٔ جدا برای هر دستگاه.</strong></li>
+<li><strong>Breakpoint را از شکست محتوا بگیر، نه از نام دستگاه.</strong></li>
+<li><strong>Override فقط وقتی لازم است که رفتار واقعاً باید فرق کند.</strong></li>
+<li><strong>Reset یعنی بازگشت به مقدار بالاتر، نه کپی دستی مقدار Desktop.</strong></li>
+<li><strong>اول قرارداد Responsive را بنویس، بعد عدد بده.</strong></li>
+<li><strong>بین Breakpointها را هم تست کن.</strong></li>
+<li><strong>Container Query را بدون شواهد نسخهٔ هدف به‌عنوان کنترل پنل V4 ادعا نکن.</strong></li>
+<li><strong>Duplicate Section آخرین راه‌حل است، نه شروع کار.</strong></li>
+</ul>
+</section>
+
+<footer class="concept-reference-evidence">
+<h3>منابع و وضعیت اعتبار</h3>
+<p>مفاهیم Responsive Inheritance، Override، Breakpoint، Media Query، Container Query و clamp بر پایهٔ CSS و رفتار ابزارهای responsive نوشته شده‌اند. Breakpointهای واقعی Elementor باید از تنظیمات سایت خوانده شوند و در این درس قطعی اعلام نمی‌شوند.</p>
+<ul>
+<li><a href="https://elementor.com/help/responsive-editing/" rel="noopener noreferrer" target="_blank">Elementor — Responsive editing</a></li>
+<li><a href="https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/" rel="noopener noreferrer" target="_blank">Elementor — Units of measurement</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries" rel="noopener noreferrer" target="_blank">MDN — Media queries</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries" rel="noopener noreferrer" target="_blank">MDN — Container queries</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp" rel="noopener noreferrer" target="_blank">MDN — clamp()</a></li>
+</ul>
+</footer>
+
+</div>
+</details>
+
+<details class="lesson-disclosure settings-values-units" id="lesson-14-settings-values-units">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" id="lesson-14-settings-values-units-heading" role="heading">⚙️ تنظیمات، مقدارها و واحدها — Breakpoint، Override، Reset، clamp و Responsive values</span>
+</summary>
 <section aria-labelledby="lesson-14-settings-values-units-heading" class="disclosure-content settings-units-body">
-<p class="settings-units-lead">Breakpoint آستانهٔ viewport است؛ داخل هر breakpoint می‌توانی از px، rem، % یا viewport units استفاده کنی. انتخاب واحد و انتخاب breakpoint دو تصمیم جدا هستند.</p>
-<aside class="unit-analogy"><strong>🧠 تصویر ذهنی:</strong> Breakpoint چراغ راهنمای تغییر مسیر است؛ واحد، خط‌کش اندازه‌گیری داخل هر مسیر.</aside>
-<div aria-label="جدول تنظیمات و واحدهای این درس" class="table-wrap units-table-wrap" role="region" tabindex="0">
+<p class="settings-units-lead">در Responsive، مقدار مهم است؛ اما مهم‌تر این است که مقدار inherited است یا override محلی. یک عدد یکسان می‌تواند نگهداری متفاوتی داشته باشد.</p>
+<div aria-label="جدول تنظیمات و واحدهای درس ۱۴" class="table-wrap units-table-wrap" role="region" tabindex="0">
 <table class="data-table educational-table units-context-table">
-<caption>تنظیمات، نوع مقدار، مرجع محاسبه و راهنمای انتخاب</caption>
-<thead><tr><th scope="col">تنظیم</th><th scope="col">CSS / مفهوم</th><th scope="col">مقدار یا واحد</th><th scope="col">مرجع</th><th scope="col">کاربرد پیشنهادی</th><th scope="col">تله</th><th scope="col">شاهد</th></tr></thead>
-<tbody><tr><th scope="row">Breakpoint</th><td><code dir="ltr">media query threshold</code></td><td>معمولاً px در ابزارها</td><td>viewport width</td><td>جایی که محتوا می‌شکند.</td><td>مدل گوشی را جای معیار محتوا نگذار.</td><td><code dir="ltr">E_RESP</code></td></tr><tr><th scope="row">Viewport units</th><td><code dir="ltr">vw / vh / svh / lvh / dvh</code></td><td>Elementor بعضی کنترل‌ها VW/VH؛ CSS واحدهای جدید بیشتری دارد</td><td>viewport family</td><td>برای وابستگی به viewport با تست واقعی.</td><td>CSS-supported را به‌عنوان UI-exposed معرفی نکن.</td><td><code dir="ltr">E_UNITS</code></td></tr><tr><th scope="row">Responsive value</th><td><code dir="ltr">هر Property responsive</code></td><td>همان نوع مقدار Property</td><td>inherit/override</td><td>کمترین override لازم.</td><td>Reset ممکن است inherited value را برگرداند.</td><td><code dir="ltr">E_RESP</code></td></tr></tbody>
+<caption>تنظیمات، نوع مقدار، مرجع و تله</caption>
+<thead><tr><th scope="col">تنظیم</th><th scope="col">نوع مقدار</th><th scope="col">مرجع</th><th scope="col">تله</th></tr></thead>
+<tbody>
+<tr><th scope="row">Breakpoint</th><td>px/rem threshold</td><td>تنظیمات سایت و شکست محتوا</td><td>عدد فرضی را قانون جزوه کنی.</td></tr>
+<tr><th scope="row">Device Override</th><td>local value</td><td>Device Mode</td><td>مقدار Desktop را بی‌دلیل کپی کنی.</td></tr>
+<tr><th scope="row">Reset</th><td>حذف مقدار محلی</td><td>cascade بالاتر</td><td>به‌جای Reset، مقدار مشابه دستی وارد شود.</td></tr>
+<tr><th scope="row">clamp()</th><td>min / preferred / max</td><td>viewport یا container context</td><td>جایگزین تغییر ساختار Row/Column فرض شود.</td></tr>
+<tr><th scope="row">Order</th><td>number</td><td>visual order در flex/grid</td><td>با reading/focus order یکی فرض شود.</td></tr>
+</tbody>
 </table>
 </div>
 <div class="unit-guidance-grid">
-<section><h3>🧮 محاسبهٔ راهگشا</h3><p>viewport width=390px؛ 10vw=39px. viewport dynamic height=760px؛ 100dvh=760px. این مثال CSS است و باید در مرورگر واقعی کنترل شود.</p></section>
-<section><h3>📱 در Responsive</h3><p>خود این بخش موضوع Responsive است: مقدار، واحد، source و breakpoint را چهار ستون جدا ثبت کن.</p></section>
-<section><h3>🔬 در DevTools</h3><p>viewport size، media query فعال، computed value و source breakpoint را بررسی کن.</p></section>
+<section><h3>🧮 محاسبهٔ راهگشا</h3><p>اگر Mobile مقدار 24px دارد و Desktop بعداً از 32px به 40px تغییر کند، Mobile همچنان 24px می‌ماند. اگر Mobile باید پیرو Desktop باشد، مقدار محلی را Reset کن.</p></section>
+<section><h3>📱 در Responsive</h3><p>فقط Desktop/Tablet/Mobile iconها را تست نکن. عرض‌های بینابینی مثل 900، 780، 640، 480 و 360 را هم بررسی کن.</p></section>
+<section><h3>🔬 در DevTools</h3><p>Computed Style، Media Query active، class target، و overrideهای Device Mode را با هم بخوان. ظاهر نهایی به‌تنهایی نمی‌گوید مقدار inherited است یا override.</p></section>
 </div>
-<p class="unit-atlas-link"><a href="#appendix-v29-units-atlas">📐 بازگشت به اطلس مرکزی مقدارها و واحدها</a></p>
-<footer class="settings-units-evidence"><strong>وضعیت:</strong> <code dir="ltr">verified_by_official_help_and_css_sources</code><br/><strong>منابع:</strong> <a href="https://elementor.com/help/responsive-editing/" rel="noopener noreferrer" target="_blank">Elementor V4 — Responsive editing</a>، <a href="https://elementor.com/help/whats-the-difference-between-px-em-rem-vw-and-vh/" rel="noopener noreferrer" target="_blank">Elementor — Units of measurement</a>، <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length" rel="noopener noreferrer" target="_blank">MDN — CSS length values</a>، <a href="https://www.w3.org/TR/css-values-4/" rel="noopener noreferrer" target="_blank">W3C — CSS Values and Units</a></footer>
 </section>
-</details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-14-lesson-practice-5" role="heading">B. بساز و امتحان کن</span></summary><section aria-labelledby="lesson-14-lesson-practice-5" class="disclosure-content lesson-practice lesson-section"><h3>🏗 پروژهٔ TUYA — Mobile Layout</h3><p>در Device Size باریک:</p><section aria-labelledby="section-hidden-209-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-209-heading">بخش آموزشی</h2><dl class="term-grid"><dt>Platform Main Direction</dt><dd>Column</dd><dt>Align Items</dt><dd>Stretch یا Center برحسب طراحی</dd><dt>Copy Width</dt><dd>100%</dd><dt>Visual Width</dt><dd>100%</dd><dt>Visual Max Width</dt><dd>کنترل‌شده</dd><dt>Gap</dt><dd>کمتر از Desktop</dd><dt>Padding</dt><dd>متناسب‌تر</dd></dl></section><p>ترتیب DOM را حفظ کن: Copy سپس Visual، مگر اینکه دلیل محتوایی روشن برای تغییر داشته باشی.</p><h3>❓ سؤال توقف</h3><p>آیا برای Mobile باید یک سکشن TUYA دوم بسازی؟</p><details class="disclosure-card"><summary>پاسخ</summary>خیر؛ ابتدا همان ساختار را Responsive کن.</details><h3>⚠️ تلهٔ اصلی</h3><p><strong>تله:</strong> بدون بررسی Inheritance، روی هر Device همهٔ مقادیر را دوباره وارد کنی.</p><p><strong>نشانه:</strong> نگهداری سخت و Conflict زیاد.</p><h3>🧪 عمداً خرابش کن</h3><p>Main را در Mobile همچنان Row نگه دار و Visual را Shrink=0 کن.</p><h4>👀 انتظار داری ببینی</h4><ul>
-<li>Copy بسیار باریک می‌شود؛</li>
-<li>Visual بیرون می‌زند؛</li>
-<li>متن سطرهای نامناسب پیدا می‌کند؛</li>
-<li>Scroll افقی محتمل است.</li>
-</ul><p>Direction را Column و اندازه‌ها را منطقی کن.</p><h3>تست ضروری</h3><section aria-labelledby="section-hidden-210-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-210-heading">بخش آموزشی</h2><ul><li>320px</li>
-<li>375px</li>
-<li>Tablet portrait</li>
-<li>Tablet landscape</li>
-<li>Zoom 200%</li>
-<li>متن طولانی‌تر</li></ul></section><h3>Checkpoint</h3><section aria-labelledby="section-hidden-211-heading" class="smart-note-card" dir="rtl" lang="fa"><h2 class="visually-hidden" id="section-hidden-211-heading">بخش آموزشی</h2><form class="interactive-form checklist-form" data-persist-group="checklist-78"><fieldset><legend>Checkpoint</legend><label class="choice-row"><input data-persist="checkbox" id="chk-78-1" name="chk-78-1" type="checkbox"/><span>یک DOM برای همهٔ Deviceها دارم</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-78-2" name="chk-78-2" type="checkbox"/><span>Mobile بدون Scroll افقی است</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-78-3" name="chk-78-3" type="checkbox"/><span>Nodeها با Stage مقیاس می‌شوند</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-78-4" name="chk-78-4" type="checkbox"/><span>Logoها Wrap می‌شوند</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-78-5" name="chk-78-5" type="checkbox"/><span>Inheritance را آگاهانه استفاده کرده‌ام</span></label></fieldset></form></section><h3>Exit Ticket — قبل از ادامه</h3><p><strong>بازیابی کوتاه:</strong> Responsive Inheritance یعنی چه؟</p><p><strong>انتقال به یک موقعیت تازه:</strong> Hero در 700px می‌شکند. چگونه تصمیم می‌گیری Width/Wrap کافی است یا Breakpoint لازم داری؟</p><details class="disclosure-card">
-<summary>راهنمای خودسنجی اختصاصی همین درس</summary>
-<h3>آناتومی پاسخ خوب</h3>
-<form class="interactive-form checklist-form" data-persist-group="checklist-79"><fieldset><legend>آناتومی پاسخ خوب</legend><label class="choice-row"><input data-persist="checkbox" id="chk-79-1" name="chk-79-1" type="checkbox"/><span>نقطهٔ شکست محتوا و Device Size را مشخص کرده است.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-79-2" name="chk-79-2" type="checkbox"/><span>ابتدا Width، Wrap و Direction را بررسی کرده است.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-79-3" name="chk-79-3" type="checkbox"/><span>یک DOM را حفظ کرده و Duplicate Section پیشنهاد نداده است.</span></label></fieldset></form>
-<p>پاسخ کامل لازم نیست طولانی باشد؛ باید نشان بدهد <strong>چه چیزی را بررسی می‌کنی، چرا، و چگونه نتیجه را اثبات می‌کنی</strong>.</p>
-</details></section></details><details aria-labelledby="lesson-14-lesson-deep-dive-7" class="lesson-section lesson-deep-dive lesson-disclosure"><summary class="lesson-disclosure-summary" id="lesson-14-lesson-deep-dive-7">C. عمیق‌تر نگاه کن — اختیاری</summary><h3>📂 CASE-HOME2-GRID-001 — <code class="inline-code" dir="ltr">100vh</code></h3><p><strong>هدف:</strong> ⚖️ دو روش را مقایسه کن</p><p>Min Height برابر 100vh در Export دیده شده است. در Mobile باید رفتار نوار مرورگر و گزینه‌های Viewport جدید در Runtime مقایسه شوند؛ نتیجهٔ قطعی از Export ممکن نیست.</p><h3>📂 CASE-SOL-ABS-001 — Card Mobile</h3><p>متن Absolute با Offset ثابت را با متن در Normal Flow در عرض باریک مقایسه کن.</p><h3>🔬 پشت صحنه</h3><p>V4 کنترل Responsive را در رابط ارائه می‌کند؛ نیازی نیست Media Query دستی بنویسی.</p><hr/></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="memory-responsive-heading" role="heading">🧠 لایهٔ حافظه — Responsive sizing</span></summary><section aria-labelledby="memory-responsive-heading" class="memory-layer disclosure-content lesson-section"><p><strong>🧠 استعارهٔ ماندگار:</strong> Desktop نقشهٔ بزرگ است؛ Mobile ترجمهٔ همان معنا در فضای کوچک‌تر است، نه Screenshot فشرده.</p><p><strong>🧩 در Elementor V4 یعنی چه؟</strong> در هر Breakpoint مقدارهای width، max-width، gap، padding و order را جدا بررسی کن.</p><p><strong>⚠️ تله رایج:</strong> اگر فقط عددها را کوچک کنی اما Flow را عوض نکنی، طرح در Mobile می‌شکند.</p><p class="golden-rule"><strong>📜 قانون طلایی:</strong> در Responsive معنا را حفظ کن، نه تصویر ثابت Desktop را.</p><details class="more-know"><summary>بیشتر بدانید</summary><p>Computed Style مهم‌تر از چیزی است که فکر می‌کنی تنظیم کرده‌ای؛ چون مقدار نهایی از ترکیب inheritance، کلاس‌ها، stateها، breakpoints و CSS مرورگر ساخته می‌شود.</p></details></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-14-lesson-pass-criteria-8" role="heading">✅ معیار عبور اختصاصی این درس</span></summary><section aria-labelledby="lesson-14-lesson-pass-criteria-8" class="disclosure-content lesson-section lesson-pass-criteria"><p>برای رفتن به درس بعد، <strong>سطح ۱ و ۲ اجباری‌اند</strong>. سطح ۳ در ایستگاه جمع‌بندی تثبیت می‌شود.</p><h3>سطح ۱ — فهمیدم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-81"><fieldset><legend>سطح ۱ — فهمیدم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-81-1" name="chk-81-1" type="checkbox"/><span>می‌توانی Responsive Inheritance و Override در Device Sizeهای مختلف را توضیح بدهی.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-81-2" name="chk-81-2" type="checkbox"/><span>می‌توانی Breakpoint را براساس شکست محتوا انتخاب کنی، نه نام دستگاه.</span></label></fieldset></form><h3>سطح ۲ — می‌توانم انجام بدهم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-82"><fieldset><legend>سطح ۲ — می‌توانم انجام بدهم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-82-1" name="chk-82-1" type="checkbox"/><span>Main Layout TUYA را بدون Duplicate از Row به Column تبدیل می‌کنی.</span></label><label class="choice-row"><input data-persist="checkbox" id="chk-82-2" name="chk-82-2" type="checkbox"/><span>Desktop، Tablet، Mobile و Zoom را با یک DOM آزمایش می‌کنی.</span></label></fieldset></form><h3>سطح ۳ — می‌توانم منتقل کنم</h3><form class="interactive-form checklist-form" data-persist-group="checklist-83"><fieldset><legend>سطح ۳ — می‌توانم منتقل کنم</legend><label class="choice-row"><input data-persist="checkbox" id="chk-83-1" name="chk-83-1" type="checkbox"/><span>در یک Hero جدید می‌توانی مشخص کنی مشکل با Wrap/Width حل می‌شود یا Breakpoint جدید لازم است.</span></label></fieldset></form></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-14-lesson-stop-point-9" role="heading">⏸ اینجا توقف کن</span></summary><section aria-labelledby="lesson-14-lesson-stop-point-9" class="lesson-stop-point lesson-section disclosure-content"><p>ایستگاه D نیمه‌کامل است. در درس بعد جهت RTL و Start/End را روی همین Layout بررسی می‌کنیم.</p><hr/></section></details><details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" role="heading">ثبت پایان درس 14</span></summary><form class="disclosure-content lesson-completion-form interactive-form" data-persist-group="lesson-14-completion"><fieldset><legend>ثبت پایان درس 14</legend><label class="choice-row completion-choice"><input data-persist="checkbox" id="lesson-14-complete" name="lesson-14-complete" type="checkbox"/><span>این درس را با معیارهای عبور مرور کردم.</span></label></fieldset></form></details>
-<details class="lesson-disclosure" id="lesson-14-end-comparisons"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" role="heading">🆚 پایان درس: Responsive، Breakpoint و واحدهای Viewport</span></summary><section class="disclosure-content lesson-end-comparisons">
-<div class="inline-compare-grid">
-<section class="inline-compare-card"><h3>Responsive Inheritance در برابر مقدار مستقل</h3><p>Inheritance یعنی مقدار desktop/default به پایین می‌آید تا وقتی در breakpoint کوچک‌تر override شود. مقدار مستقل موبایل یعنی واقعاً تصمیم طراحی متفاوتی گرفته‌ای.</p><p>برای هر breakpoint مقدار نده؛ فقط وقتی قانون طراحی عوض می‌شود مقدار بده.</p></section>
-<section class="inline-compare-card"><h3><span dir="ltr">vw</span> در برابر <span dir="ltr">%</span> و <span dir="ltr">vh</span> در برابر <span dir="ltr">min-height</span></h3><p><code dir="ltr">%</code> نسبت به parent است؛ <code dir="ltr">vw</code> نسبت به viewport. <code dir="ltr">vh</code> به ارتفاع پنجره وابسته است؛ <code dir="ltr">min-height</code> حداقل قد می‌دهد و اجازه رشد می‌دهد.</p><p class="golden-rule">قانون طلایی: برای تقسیم داخل parent، اول %/Flex/Grid؛ برای Hero واقعی شاید viewport unit.</p></section>
-</div>
-</section></details>
-<details class="lesson-disclosure"><summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" id="custom-breakpoints-title" role="heading">تکمیل نسخه 22 — Breakpoint سفارشی و واحدهای Viewport جدید</span></summary><section aria-labelledby="custom-breakpoints-title" class="smart-note-card disclosure-content">
-<p>Elementor برای Responsive Editing، breakpointهای پیش‌فرض دارد و امکان افزودن/سفارشی‌سازی breakpointهای بیشتر / custom breakpoints را هم فراهم می‌کند. بنابراین در این جزوه، هیچ عدد breakpoint را قانون جهانی فرض نکن؛ آن را از تنظیمات پروژه بخوان.</p>
-<div class="table-scroll"><table>
-<caption>واحدهای viewport که باید بشناسی</caption>
-<thead><tr><th scope="col">واحد</th><th scope="col">رفتار کلی</th><th scope="col">نکتهٔ عملی</th></tr></thead>
-<tbody>
-<tr><td><code class="inline-code" dir="ltr">vw / vh</code></td><td>درصدی از اندازهٔ viewport</td><td>برای layout داخل parent همیشه بهتر از <code class="inline-code" dir="ltr">width:100%</code> نیست.</td></tr>
-<tr><td><code class="inline-code" dir="ltr">svw / svh</code></td><td>viewport کوچک</td><td>برای حالت‌هایی که UI مرورگر فضا را کم می‌کند مفید است.</td></tr>
-<tr><td><code class="inline-code" dir="ltr">lvw / lvh</code></td><td>viewport بزرگ</td><td><code class="inline-code" dir="ltr">vw</code> معمولاً با large viewport هم‌ارز در نظر گرفته می‌شود.</td></tr>
-<tr><td><code class="inline-code" dir="ltr">dvw / dvh</code></td><td>viewport پویا</td><td>با تغییر UI مرورگر به‌روزرسانی می‌شود؛ راه‌حل جادویی همهٔ overflowها نیست.</td></tr>
-</tbody>
-</table></div>
-<p class="golden-rule"><strong>قانون طلایی:</strong> اول معلوم کن اندازه نسبت به parent است یا viewport؛ بعد واحد انتخاب کن.</p>
-</section></details>
-<details class="lesson-disclosure" id="lesson-14-practical-findings"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" id="lesson-14-practical-findings-heading" role="heading">🔎 یافتهٔ عملی و خطایابی</span></summary><section aria-labelledby="lesson-14-practical-findings-heading" class="disclosure-content practical-findings">
-<p class="finding-scope">این بخش فقط ادعاهایی را آموزش می‌دهد که یا در مشاهدهٔ واقعی ثبت شده‌اند یا Help Center رسمی Elementor آن‌ها را صریحاً پشتیبانی می‌کند. نتیجه‌های وابسته به Theme، نسخه یا ساختار DOM با دامنهٔ اعتبار نوشته شده‌اند.</p>
-<article class="finding-card" data-verification="verified_by_official_help" id="finding-responsive-value-still-active">
-<div class="evidence-badges"><span class="evidence-badge official">تأیید Help Center</span></div>
-<h3>چرا مقدار Mobile را پاک کردم ولی فاصله یا اندازه هنوز باقی است؟</h3>
-<p><strong>برداشت اشتباه:</strong> خالی‌کردن کنترل در breakpoint کوچک‌تر یعنی مقدار نهایی صفر می‌شود.</p>
-<p><strong>قاعدهٔ رسمی:</strong> مقدارهای responsive به‌صورت cascade از breakpoint بزرگ‌تر به کوچک‌تر ارث می‌رسند. مقدار inherited در UI به‌شکل placeholder کم‌رنگ نمایش داده می‌شود.</p>
-<div class="finding-checks">
-<section><h4>در Elementor</h4><p>کنترل Desktop/Tablet/Mobile را به‌ترتیب بررسی کن و فرق «مقدار محلی» با «placeholder ارث‌رسیده» را ببین.</p></section>
-<section><h4>در DevTools</h4><p>در viewport هدف، matched media query و computed value نهایی را بررسی کن.</p></section>
-</div>
-<p class="golden-rule"><strong>قانون طلایی:</strong> خالی‌بودن فیلد responsive همیشه به معنی خالی‌بودن computed value نیست.</p>
-<details class="more-know"><summary>منبع رسمی و دامنه</summary><p><a href="https://elementor.com/help/responsive-editing/">Responsive editing</a> و <a href="https://elementor.com/help/inherited-responsive-values/">Inherited responsive values</a>. مقالهٔ دوم دربارهٔ Sections/Columns هشدار دامنه دارد؛ اصل cascade برای responsive editing در مقالهٔ جدیدتر نیز مستند شده است.</p></details>
-</article>
-<article class="finding-card" data-verification="verified_by_official_help" id="finding-breakpoint-cascade-direction">
-<div class="evidence-badges"><span class="evidence-badge official">تأیید Help Center</span></div>
-<h3>چرا تغییر Desktop روی Mobile اثر گذاشت، ولی تغییر Mobile روی Desktop نه؟</h3>
-<p>Elementor تغییرهای breakpoint بزرگ‌تر را به breakpointهای کوچک‌تر cascade می‌کند؛ جهت برعکس معمولاً اتفاق نمی‌افتد. در widescreen، Desktop نقطهٔ مرجع است و inheritance می‌تواند به سمت breakpoint بزرگ‌تر نیز تعریف شود.</p>
-<p class="golden-rule"><strong>قانون طلایی:</strong> breakpointها جزیره‌های کاملاً مستقل نیستند؛ قبل از override، زنجیرهٔ inheritance را بخوان.</p>
-<details class="more-know"><summary>منبع رسمی</summary><p><a href="https://elementor.com/help/additional-breakpoints/">Additional custom breakpoints</a></p></details>
-</article>
-</section></details>
-<details class="lesson-disclosure" id="lesson-14-responsive-checkpoint"><summary class="lesson-disclosure-summary"><span aria-level="2" class="disclosure-title" role="heading">📱 ایست بازرسی Responsive — Workflow رسمی Desktop → Tablet → Mobile</span></summary><section class="disclosure-content lesson-section responsive-checkpoint">
-<p class="status-chip"><strong>status:</strong> verified_and_scoped</p>
-<ol><li>Desktop را baseline قرار بده.</li><li>Tablet را قبل از Mobile بررسی کن، چون مقادیر بزرگ‌تر به کوچک‌تر cascade می‌شوند.</li><li>Direction، Width/Height، Order، Typography و Spacing را فقط در صورت نیاز override کن.</li><li>بین breakpointها با viewport handles تست کن؛ breakpoint نام دستگاه نیست، یک عرض viewport است.</li></ol>
-<p><strong>Tablet TUYA:</strong> چون طرح Tablet تحویل نشده، رفتار آن <code>proposed_pending_designer_confirmation</code> است و نباید به‌عنوان مشاهده قطعی نوشته شود.</p>
-<details class="more-know"><summary>منابع رسمی این ایست</summary>
-<ul>
-<li><a href="https://elementor.com/help/responsive-editing/">Responsive editing — Editor V4</a></li>
-<li><a href="https://elementor.com/help/responsive-design-using-containers/">Create responsive design with containers</a></li>
-<li><a href="https://elementor.com/help/mobile-editing/">Responsive editing for mobile and tablets</a></li>
-</ul>
 </details>
-</section></details><details class="lesson-disclosure step-through-v2-disclosure" id="stv2-responsive-inheritance">
+
+<details class="lesson-disclosure step-through-v2" id="lesson-14-responsive-step-through">
 <summary class="lesson-disclosure-summary">
-<span aria-level="2" class="disclosure-title" id="stv2-responsive-inheritance-heading" role="heading">▶ Step‑Through v2 — Responsive Inheritance — مقدار از کجا آمده است؟</span>
+<span aria-level="2" class="disclosure-title" role="heading">🧭 Step‑Through — Inherit، Override یا Reset؟</span>
 </summary>
-<section aria-labelledby="stv2-responsive-inheritance-heading" class="disclosure-content step-through-v2" data-step-through-v2="" data-stv2-id="stv2-responsive-inheritance" data-stv2-renderer="responsive-inheritance" tabindex="0">
-<header class="stv2-header">
-<p class="stv2-kicker">چرخهٔ فعال: ببین ← پیش‌بینی کن ← بررسی کن ← خراب کن ← انتقال بده</p>
-<p><strong>🎯 هدف:</strong> منبع هر مقدار را در Desktop، Tablet و Mobile ببین و Reset را با حذف تصادفی اشتباه نگیر.</p>
-<div aria-label="وضعیت شواهد" class="stv2-evidence-row"><span class="stv2-evidence-badge">تأییدشده با Help Center رسمی Elementor</span><span class="stv2-evidence-badge">تأییدشده با Help Center رسمی Elementor</span></div>
-</header>
-<div class="stv2-progress-row">
-<span class="stv2-step-count" data-stv2-count="">مرحله ۱</span>
-<progress data-stv2-progress="" max="4" value="1">1/4</progress>
-<span class="stv2-phase" data-stv2-phase=""></span>
-</div>
-<div class="stv2-three-view">
-<section aria-labelledby="stv2-responsive-inheritance-visual-title" class="stv2-card stv2-visual-card">
-<h3 id="stv2-responsive-inheritance-visual-title">👁 نتیجهٔ بصری</h3>
-<div aria-label="نمای بصری مرحله" class="stv2-visual" data-stv2-visual=""></div>
-</section>
-<section aria-labelledby="stv2-responsive-inheritance-elementor-title" class="stv2-card">
-<h3 id="stv2-responsive-inheritance-elementor-title">🧩 تنظیم Elementor</h3>
-<dl class="stv2-definition-list" data-stv2-elementor=""></dl>
-</section>
-<section aria-labelledby="stv2-responsive-inheritance-computed-title" class="stv2-card">
-<h3 id="stv2-responsive-inheritance-computed-title">🔬 Computed / مدل محاسباتی</h3>
-<dl class="stv2-definition-list" data-stv2-computed=""></dl>
-<p class="stv2-model-note">اعداد نمایشی ممکن است مدل آموزشی باشند؛ برچسب شواهد هر مرحله را ببین.</p>
-</section>
-</div>
-<section aria-labelledby="stv2-responsive-inheritance-state-title" class="stv2-explanation">
-<h3 data-stv2-title="" id="stv2-responsive-inheritance-state-title"></h3>
-<p data-stv2-summary=""></p>
-<p data-stv2-explanation=""></p>
-<p class="golden-rule"><strong>📜 قانون طلایی:</strong> <span data-stv2-golden=""></span></p>
-<p><strong>وضعیت این مرحله:</strong> <code class="inline-code" data-stv2-evidence="" dir="ltr"></code></p>
-</section>
-<section aria-labelledby="stv2-responsive-inheritance-prediction-title" class="stv2-prediction">
-<h3 id="stv2-responsive-inheritance-prediction-title">❓ پیش‌بینی کن</h3>
-<p data-stv2-prompt=""></p>
-<div aria-label="گزینه‌های پیش‌بینی" class="stv2-prediction-options" data-stv2-options="" role="group"></div>
-<p aria-live="polite" class="stv2-feedback" data-stv2-feedback="" role="status"></p>
-</section>
-<div aria-label="کنترل مراحل" class="stv2-actions">
-<button class="ui-btn" data-stv2-prev="" type="button">مرحلهٔ قبل</button>
-<button class="ui-btn" data-stv2-reveal="" type="button">نمایش پاسخ</button>
-<button class="ui-btn" data-stv2-next="" type="button">مرحلهٔ بعد</button>
-<button class="ui-btn" data-stv2-reset="" type="button">شروع دوباره</button>
-</div>
-<p aria-live="polite" class="stv2-status" data-stv2-status="" role="status"></p>
-<p class="stv2-lab-link"><a href="#lesson-14-responsive-build-test">🧪 همین مفهوم را در «بساز و امتحان کن» اجرا کن</a></p>
-<section aria-label="خلاصهٔ همهٔ مراحل برای چاپ" class="stv2-print-all"><div class="table-wrap" role="region" tabindex="0"><table class="data-table educational-table"><caption>خلاصهٔ همهٔ مراحل Step‑Through v2</caption><thead><tr><th scope="col">مرحله</th><th scope="col">نتیجه</th><th scope="col">وضعیت شواهد</th><th scope="col">قانون طلایی</th></tr></thead><tbody><tr><th scope="row">1 — Desktop مقدار پایه را تعریف می‌کند</th><td>Padding روی Desktop برابر 48px است و breakpointهای کوچک‌تر هنوز override ندارند.</td><td><code class="inline-code" dir="ltr">verified_by_official_elementor_help</code></td><td>وجود مقدار در Mobile الزاماً به معنی تنظیم مستقیم در Mobile نیست.</td></tr><tr><th scope="row">2 — Tablet Override، Mobile Inherited</th><td>Tablet برابر 32px شده و Mobile همان 32px را به‌صورت inherited می‌بیند.</td><td><code class="inline-code" dir="ltr">verified_by_official_elementor_help</code></td><td>عدد را تنها نبین؛ منبع عدد را هم بخوان.</td></tr><tr><th scope="row">3 — Mobile Override مستقل</th><td>Mobile برابر 20px است؛ Desktop و Tablet بدون تغییر می‌مانند.</td><td><code class="inline-code" dir="ltr">verified_by_official_elementor_help</code></td><td>Override را حداقلی و هدفمند نگه دار.</td></tr><tr><th scope="row">4 — Reset Mobile و بازگشت مقدار Inherited</th><td>20px حذف می‌شود و Mobile دوباره 32px را از Tablet دریافت می‌کند.</td><td><code class="inline-code" dir="ltr">verified_by_official_elementor_help</code></td><td>بعد از Reset، منبع جدید مقدار را بررسی کن.</td></tr></tbody></table></div></section>
-<noscript><p class="warning-box">برای تعامل مرحله‌ای JavaScript محلی باید فعال باشد؛ خلاصهٔ چاپی همهٔ مراحل در همین بخش موجود است.</p></noscript>
-<script class="stv2-config" type="application/json">{"goal":"منبع هر مقدار را در Desktop، Tablet و Mobile ببین و Reset را با حذف تصادفی اشتباه نگیر.","id":"stv2-responsive-inheritance","lab_target":"lesson-14-responsive-build-test","lesson_id":"lesson-14","renderer":"responsive-inheritance","schema_version":"1.0.0","states":[{"computed":[["Desktop used value","48px"],["Tablet source","Desktop"],["Mobile source","Desktop"]],"elementor":[["Desktop Padding","48px"],["Tablet","Inherited"],["Mobile","Inherited"]],"evidence":"verified_by_official_elementor_help","explanation":"در مدل پیش‌فرض، مقدار بزرگ‌تر به کوچک‌تر cascade می‌شود مگر override ایجاد شود.","golden_rule":"وجود مقدار در Mobile الزاماً به معنی تنظیم مستقیم در Mobile نیست.","id":"desktop-source","phase":"منبع","prediction":{"correct":1,"feedback_correct":"درست است؛ Mobile از نزدیک‌ترین breakpoint بزرگ‌ترِ دارای مقدار ارث می‌برد.","feedback_wrong":"Cascade را از بزرگ‌تر به کوچک‌تر و مرحله‌به‌مرحله دنبال کن.","options":["48px از Desktop","32px از Tablet","0px"],"prompt":"اگر Tablet را روی 32px override کنیم و Mobile مقدار مستقیم نداشته باشد، Mobile چه می‌گیرد؟"},"summary":"Padding روی Desktop برابر 48px است و breakpointهای کوچک‌تر هنوز override ندارند.","title":"Desktop مقدار پایه را تعریف می‌کند","visual":{"devices":[{"name":"Desktop","source":"local","value":"48px"},{"name":"Tablet","source":"inherited","value":"48px"},{"name":"Mobile","source":"inherited","value":"48px"}]}},{"computed":[["Desktop source","Desktop"],["Tablet source","Tablet"],["Mobile source","Tablet"]],"elementor":[["Desktop Padding","48px"],["Tablet Padding","32px — مستقیم"],["Mobile Padding","32px — inherited"]],"evidence":"verified_by_official_elementor_help","explanation":"رنگ یا حالت muted در Editor به تشخیص مقدار inherited کمک می‌کند.","golden_rule":"عدد را تنها نبین؛ منبع عدد را هم بخوان.","id":"tablet-override","phase":"Override","prediction":{"correct":1,"feedback_correct":"درست است؛ تغییر breakpoint کوچک‌تر به بزرگ‌تر برنمی‌گردد.","feedback_wrong":"Cascade Responsive به‌طور پیش‌فرض از بزرگ‌تر به کوچک‌تر است، نه برعکس.","options":["20px","48px باقی می‌ماند","به Auto تبدیل می‌شود"],"prompt":"اگر فقط Mobile را روی 20px تنظیم کنیم، Desktop چه می‌شود؟"},"summary":"Tablet برابر 32px شده و Mobile همان 32px را به‌صورت inherited می‌بیند.","title":"Tablet Override، Mobile Inherited","visual":{"devices":[{"name":"Desktop","source":"local","value":"48px"},{"name":"Tablet","source":"override","value":"32px"},{"name":"Mobile","source":"inherited","value":"32px"}]}},{"computed":[["Desktop used","48px"],["Tablet used","32px"],["Mobile used","20px"]],"elementor":[["Desktop","48px"],["Tablet","32px"],["Mobile","20px — مستقیم"]],"evidence":"verified_by_official_elementor_help","explanation":"این مرحله نشان می‌دهد Responsive correction باید فقط جایی انجام شود که طرح واقعاً نیاز دارد.","golden_rule":"Override را حداقلی و هدفمند نگه دار.","id":"mobile-override","phase":"Override کوچک‌تر","prediction":{"correct":0,"feedback_correct":"بله؛ با حذف override، inheritance دوباره فعال می‌شود.","feedback_wrong":"Reset را به‌عنوان بازگشت به زنجیرهٔ inheritance ببین.","options":["از Tablet، یعنی 32px","همیشه صفر می‌شود","از Theme بدون بررسی"],"prompt":"اگر Mobile override را Reset کنیم، مقدار Mobile از کجا می‌آید؟"},"summary":"Mobile برابر 20px است؛ Desktop و Tablet بدون تغییر می‌مانند.","title":"Mobile Override مستقل","visual":{"devices":[{"name":"Desktop","source":"local","value":"48px"},{"name":"Tablet","source":"override","value":"32px"},{"name":"Mobile","source":"override","value":"20px"}]}},{"computed":[["Mobile used value","32px"],["Value source","Tablet"],["Desktop effect","بدون تغییر"]],"elementor":[["Mobile direct value","Reset / حذف"],["Mobile displayed value","32px muted"],["Source indicator","Tablet"]],"evidence":"verified_by_official_elementor_help","explanation":"پاک‌کردن یک مقدار responsive لزوماً به صفر منجر نمی‌شود؛ ممکن است مقدار inherited دوباره ظاهر شود.","golden_rule":"بعد از Reset، منبع جدید مقدار را بررسی کن.","id":"mobile-reset","phase":"خطایابی","prediction":{"correct":0,"feedback_correct":"درست است؛ خود Editor منبع inherited را قابل مشاهده می‌کند.","feedback_wrong":"عدد یکسان کافی نیست؛ حالت نمایش و منبع را بررسی کن.","options":["نمایش muted و indicator منبع","فقط نام دستگاه","فقط رنگ Background"],"prompt":"برای تشخیص مقدار inherited در Editor V4، به چه نشانه‌ای توجه می‌کنی؟"},"summary":"20px حذف می‌شود و Mobile دوباره 32px را از Tablet دریافت می‌کند.","title":"Reset Mobile و بازگشت مقدار Inherited","visual":{"devices":[{"name":"Desktop","source":"local","value":"48px"},{"name":"Tablet","source":"override","value":"32px"},{"name":"Mobile","source":"inherited","value":"32px"}]}}],"storage_key":"elementor-v4-workbook:v27:stv2:responsive-inheritance","title":"Responsive Inheritance — مقدار از کجا آمده است؟","type":"layer_reveal_debug","verification":[{"source_id":"ELEMENTOR_RESPONSIVE_EDITING","status":"verified_by_official_elementor_help"},{"source_id":"ELEMENTOR_INHERITED_VALUES","status":"verified_by_official_elementor_help"}]}</script>
-</section>
-</details><details class="lesson-disclosure responsive-build-test" id="lesson-14-responsive-build-test">
-<summary class="lesson-disclosure-summary"><span aria-level="3" role="heading">📱 بساز و امتحان کن — Responsive: Inheritance، Reset و Breakpoint واقعی</span></summary>
-<section class="disclosure-content lesson-section responsive-build-test-content">
-<p class="status-chip"><strong>status:</strong> verified_by_official_documentation</p>
-<p class="exercise-goal"><strong>هدف:</strong> ببین مقدار خالی در Mobile لزوماً به معنی صفر نیست.</p>
-<div class="responsive-exercise-grid">
-<section class="exercise-step"><h4>۱. بساز</h4><ol><li>در Desktop برای Padding یک مقدار مشخص بگذار.</li><li>به Tablet و Mobile برو و مقدار inherited را بدون تغییر مشاهده کن.</li><li>در Mobile override بده، سپس آن را Reset کن و بازگشت inheritance را ثبت کن.</li></ol></section>
-<section class="exercise-step"><h4>۲. پیش‌بینی کن</h4><p>پیش‌بینی کن بعد از Reset مقدار نهایی از کدام breakpoint می‌آید.</p></section>
-<section class="exercise-step exercise-break"><h4>۳. خرابی عمدی</h4><p>برای یک شکست کوچک، breakpoint اضافی بساز و سپس پیچیدگی cascade را مقایسه کن.</p></section>
-<section class="exercise-step"><h4>۴. امتحان و خطایابی</h4><p>مقدار muted/inherited در پنل، CSS rule فعال و viewport width واقعی.</p></section>
-</div>
-<p class="exercise-pass"><strong>معیار قبولی:</strong> برای هر مقدار می‌توانی بگویی local override است یا inherited و منبع آن کدام breakpoint است.</p>
-<fieldset class="responsive-exercise-log">
-<legend>ثبت انجام تمرین</legend>
-<label for="lesson-14-responsive-build-test-done-build"><input data-persist="" id="lesson-14-responsive-build-test-done-build" name="lesson-14-responsive-build-test-done-build" type="checkbox"/> ساخت را انجام دادم و قبل از مشاهده پیش‌بینی نوشتم.</label>
-<label for="lesson-14-responsive-build-test-done-test"><input data-persist="" id="lesson-14-responsive-build-test-done-test" name="lesson-14-responsive-build-test-done-test" type="checkbox"/> Desktop، Tablet، Mobile و یک عرض بین breakpointها را آزمودم.</label>
-<label for="lesson-14-responsive-build-test-done-debug"><input data-persist="" id="lesson-14-responsive-build-test-done-debug" name="lesson-14-responsive-build-test-done-debug" type="checkbox"/> حداقل یک مقدار را در Computed Style یا Box Model بررسی کردم.</label>
-<label class="exercise-note-label" for="lesson-14-responsive-build-test-note">نتیجهٔ یک‌خطی من
-        <input data-persist="" id="lesson-14-responsive-build-test-note" name="lesson-14-responsive-build-test-note" placeholder="مثلاً: مقدار Mobile از Tablet ارث می‌گرفت." type="text"/>
-</label>
-</fieldset>
-<p class="evidence-line"><strong>مبنای رسمی:</strong> <a href="https://elementor.com/help/inherited-responsive-values/">Help Center رسمی Elementor</a>. نتیجهٔ مشاهده‌شدهٔ تمرین به محیط، محتوا و breakpointهای پروژه وابسته است.</p>
-<p class="stv2-back-link"><a href="#stv2-responsive-inheritance">↩ مفهوم را با Step‑Through v2 مرور کن</a></p></section>
-</details><details class="lesson-disclosure design-system-decision" id="lesson-14-design-system-decision-v30">
-<summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" role="heading">🏛 تصمیم Design System — Responsive overrides</span></summary>
 <section class="disclosure-content lesson-section">
-<ul class="decision-questions"><li>این مقدار باید direct literal بماند یا Variable شود؟</li><li>declaration در Local Class می‌ماند یا reuse آن Global Class را توجیه می‌کند؟</li><li>فقط Style reuse داریم یا Structure نیز تکرار شده است؟</li><li>آیا Component واقعاً توجیه دارد، یا Class/Variable کافی است؟</li></ul>
-<p><code dir="ltr">proposed_strategy</code> — پاسخ وابسته به intent، scope، reuse و هزینهٔ propagation است.</p>
-</section></details></article>
+<p>هر حالت را پیش‌بینی کن، بعد پاسخ را بخوان.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Responsive Step Through">
+<table class="data-table educational-table edu-table">
+<caption>خلاصهٔ حالت‌های Responsive</caption>
+<thead><tr><th scope="col">حالت</th><th scope="col">وضعیت</th><th scope="col">چه چیزی یاد می‌گیری؟</th><th scope="col">قانون طلایی</th></tr></thead>
+<tbody>
+<tr><th scope="row">۱</th><td>Desktop padding 40px، Mobile بدون مقدار</td><td>Mobile inherited است.</td><td>بدون نیاز، override نساز.</td></tr>
+<tr><th scope="row">۲</th><td>Mobile padding 16px</td><td>Mobile مستقل شده است.</td><td>Override فقط با دلیل.</td></tr>
+<tr><th scope="row">۳</th><td>Mobile دستی 40px، مثل Desktop</td><td>ظاهر برابر، اما cascade شکسته است.</td><td>برابری ظاهری یعنی inheritance نیست.</td></tr>
+<tr><th scope="row">۴</th><td>Reset مقدار Mobile</td><td>Mobile دوباره از بالا پیروی می‌کند.</td><td>Reset برای پاک‌کردن سد محلی.</td></tr>
+<tr><th scope="row">۵</th><td>Row به Column</td><td>ساختار واقعاً متفاوت شده است.</td><td>clamp جای تغییر Layout را نمی‌گیرد.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-14-lesson-practice-5" role="heading">B. بساز و امتحان کن</span>
+</summary>
+<section aria-labelledby="lesson-14-lesson-practice-5" class="disclosure-content lesson-practice lesson-section">
+
+<h3>🏗 پروژهٔ TUYA — Responsive Contract بدون Duplicate</h3>
+<p>در این تمرین، TUYA را از Desktop تا Mobile با همان DOM بررسی می‌کنی. هنوز Section جدا، Container Query عملی، یا Performance audit نداریم.</p>
+
+<h3>مرحلهٔ ۰ — Evidence Gate</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Evidence Gate lesson 14">
+<table class="data-table educational-table edu-table">
+<caption>Evidence Gate قبل از Responsive Override</caption>
+<thead><tr><th scope="col">برچسب</th><th scope="col">در این تمرین</th><th scope="col">نتیجه</th></tr></thead>
+<tbody>
+<tr><th scope="row"><code dir="ltr">confirmed</code></th><td>TUYA باید با همان Section/DOM از Desktop به Mobile تبدیل شود.</td><td>Duplicate Section ممنوع است.</td></tr>
+<tr><th scope="row"><code dir="ltr">confirmed</code></th><td>Desktop base قبلاً با Flow/Flex/Media/Position ساخته شده است.</td><td>Responsive باید کمترین تغییر را اعمال کند.</td></tr>
+<tr><th scope="row"><code dir="ltr">provisional</code></th><td>Tablet contract، Mobile order، gapها، font sizeها، stage ratio.</td><td>با Resize test تعیین می‌شوند.</td></tr>
+<tr><th scope="row"><code dir="ltr">unknown</code></th><td>Breakpointهای واقعی سایت، متن نهایی، assets نهایی، states نهایی.</td><td>بدون UI واقعی قطعی نشوند.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>مرحلهٔ ۱ — Responsive Contract را بنویس، نه عدد</h3>
+<aside class="implementation-step-card" aria-label="اقدام کوچک درس چهارده">
+<h4>فقط یک اقدام کوچک</h4>
+<p><strong>هدف:</strong> نوشتن قرارداد Responsive قبل از واردکردن override.</p>
+<p><strong>مسیر:</strong> Elementor Editor → Preview/Responsive Mode → Desktop/Tablet/Mobile و Resize آهسته.</p>
+<p><strong>Element هدف:</strong> کل TUYA Section، اما تغییر فقط روی کنترل شکست‌خورده.</p>
+<p><strong>Class فعال:</strong> Classهای موجود؛ Global جدید نساز.</p>
+<p><strong>Property:</strong> Direction / Gap / Padding / Typography / Stage size / Node offsets فقط در صورت شکست واقعی.</p>
+<p><strong>نباید تغییر کند:</strong> ساختار DOM، Duplicate Section، Position/Layering نهایی، Design System نهایی.</p>
+<p><strong>عبارت تأیید پایانی:</strong> «Responsive Contract نوشته شد و فقط اولین شکست واقعی با کمترین override اصلاح شد.»</p>
+</aside>
+
+<h3>مرحلهٔ ۲ — جدول شکست‌ها را پر کن</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Responsive failure log">
+<table class="data-table educational-table edu-table">
+<caption>Failure Log برای Responsive</caption>
+<thead><tr><th scope="col">عرض</th><th scope="col">شکست مشاهده‌شده</th><th scope="col">نوع مشکل</th><th scope="col">کمترین کنترل لازم</th><th scope="col">وضعیت</th></tr></thead>
+<tbody>
+<tr><th scope="row">Desktop stable</th><td>بدون شکست</td><td>Base</td><td>هیچ</td><td><code dir="ltr">confirmed_base</code></td></tr>
+<tr><th scope="row">Tablet candidate</th><td>فشردگی Copy/Visual؟</td><td>Layout</td><td>Direction/GAP/Basis فقط در صورت نیاز</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Mobile candidate</th><td>متن، Visual یا Button؟</td><td>Typography/Layout/Media</td><td>Column/width/button/gap</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Between breakpoints</th><td>Unknown</td><td>Regression</td><td>بعد از تغییر تست شود</td><td><code dir="ltr">required_check</code></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>مرحلهٔ ۳ — مقدارهای شروع قراردادی</h3>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Provisional responsive contract">
+<table class="data-table educational-table edu-table">
+<caption>قرارداد شروع Responsive برای TUYA</caption>
+<thead><tr><th scope="col">بخش</th><th scope="col">Desktop</th><th scope="col">Tablet</th><th scope="col">Mobile</th><th scope="col">وضعیت</th></tr></thead>
+<tbody>
+<tr><th scope="row">Shell Direction</th><td>Row</td><td>Row فشرده یا Column</td><td>Column</td><td><code dir="ltr">provisional_until_resize</code></td></tr>
+<tr><th scope="row">Copy/Visual Order</th><td>Copy + Visual</td><td>همان یا Column</td><td>Copy اول، Visual بعدی</td><td><code dir="ltr">provisional_until_ux</code></td></tr>
+<tr><th scope="row">Gap</th><td>Base</td><td>کمتر فقط در صورت شکست</td><td>کمتر/عمودی</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Typography</th><td>Base</td><td>fluid یا override محدود</td><td>readability-first</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Visual Stage</th><td>full</td><td>max-size محدود</td><td>ساده‌تر و قابل‌خواندن</td><td><code dir="ltr">provisional</code></td></tr>
+<tr><th scope="row">Decoration</th><td>کامل‌تر</td><td>کمتر در صورت فشردگی</td><td>محدود</td><td><code dir="ltr">provisional</code></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>مرحلهٔ ۴ — تست Reset</h3>
+<ol>
+<li>یک override موقت Mobile برای Gap بساز.</li>
+<li>مشاهده کن Mobile مستقل شده است.</li>
+<li>Desktop gap را تغییر بده.</li>
+<li>ببین Mobile هنوز مقدار خودش را دارد.</li>
+<li>override Mobile را Reset کن.</li>
+<li>مشاهده کن Mobile دوباره پیرو مقدار بالاتر می‌شود.</li>
+</ol>
+
+<h3>مرحلهٔ ۵ — سؤال توقف</h3>
+<p>اگر Mobile فعلاً همان مقدار Desktop را لازم دارد، کار درست چیست؟</p>
+<form class="interactive-form stop-question-form" data-persist-group="stop-question-14">
+<fieldset>
+<legend>چک‌لیست یادگیری</legend>
+<label class="choice-row"><input data-persist="radio" id="radio-14-a" name="stop-question-14" type="radio" value="A"/><span>A) همان مقدار Desktop را در Mobile هم دستی وارد کنم.</span></label>
+<label class="choice-row"><input data-persist="radio" id="radio-14-b" name="stop-question-14" type="radio" value="B"/><span>B) Mobile را بدون مقدار محلی نگه دارم تا inherited بماند.</span></label>
+<label class="choice-row"><input data-persist="radio" id="radio-14-c" name="stop-question-14" type="radio" value="C"/><span>C) یک Section جدا برای Mobile بسازم.</span></label>
+</fieldset>
+</form>
+<details class="disclosure-card">
+<summary>پاسخ با دلیل</summary>
+<p><strong>B درست است.</strong> اگر رفتار متفاوت لازم نیست، override محلی نساز. مقدار inherited نگهداری را ساده‌تر می‌کند.</p>
+</details>
+
+<h3>⚠️ تلهٔ اصلی</h3>
+<p><strong>تله:</strong> برای هر دستگاه یک Section جدا بسازی.</p>
+<p><strong>نشانه:</strong> متن در Desktop تغییر کرده اما Mobile قدیمی مانده، یا محتوای تکراری در DOM زیاد شده است.</p>
+<p><strong>قاعده:</strong> یک DOM، یک Section، override حداقلی.</p>
+
+<h3>🧪 عمداً خرابش کن — روی کاغذ</h3>
+<figure class="visual-figure ascii-figure">
+<figcaption>Responsive خراب با Duplicate</figcaption>
+<pre class="ascii-diagram" dir="ltr"><code class="language-text inline-code" dir="ltr">Desktop Section
+Tablet Section
+Mobile Section
+
+نتیجه:
+- سه نسخهٔ محتوا
+- سه مسیر Style
+- احتمال محتوای تکراری
+- Maintenance سخت
+- Performance بدتر</code></pre>
+</figure>
+
+<h3>Checkpoint</h3>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<form class="interactive-form checklist-form" data-persist-group="checklist-79">
+<fieldset>
+<legend>Checkpoint درس ۱۴</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-79-1" name="chk-79-1" type="checkbox"/><span>Responsive Contract قبل از عددها نوشته شده است.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-79-2" name="chk-79-2" type="checkbox"/><span>هیچ Section جدا برای Mobile ساخته نشده است.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-79-3" name="chk-79-3" type="checkbox"/><span>اولین شکست واقعی با Resize آهسته پیدا شده است.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-79-4" name="chk-79-4" type="checkbox"/><span>فقط کمترین کنترل لازم override شده است.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-79-5" name="chk-79-5" type="checkbox"/><span>تفاوت inherited/override/reset را روی یک کنترل تست کرده‌ام.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-79-6" name="chk-79-6" type="checkbox"/><span>عرض‌های بین Breakpointها هم باید تست شوند.</span></label>
+</fieldset>
+</form>
+</section>
+
+<h3>Exit Ticket — قبل از ادامه</h3>
+<p><strong>بازیابی کوتاه:</strong> Override و Reset را با مثال Gap توضیح بده.</p>
+<p><strong>انتقال به موقعیت تازه:</strong> اگر کارت در Sidebar باریک است اما Viewport Desktop است، چرا Container Query ممکن است مفید باشد و چرا فعلاً آن را بدون شواهد پنل V4 قطعی نمی‌کنی؟</p>
+<details class="disclosure-card">
+<summary>راهنمای خودسنجی اختصاصی همین درس</summary>
+<p>پاسخ خوب باید بگوید Media Query به Viewport نگاه می‌کند و Container Query به فضای خود Component؛ اما در Elementor V4 باید پشتیبانی/روش اجرا در نسخهٔ هدف بررسی شود.</p>
+</details>
+
+</section>
+</details>
+
+<details class="lesson-disclosure" id="lesson-14-responsive-checkpoint">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" role="heading">📱 ایست بازرسی Responsive — یک DOM، چند عرض</span>
+</summary>
+<section class="disclosure-content lesson-section responsive-checkpoint">
+<p class="status-chip"><strong>status:</strong> <code dir="ltr">provisional_until_runtime_validation</code></p>
+<ul>
+<li>Desktop، Tablet، Mobile و چند عرض بینابینی را تست کن.</li>
+<li>با متن واقعی فارسی، Logoهای واقعی و Visual Stage واقعی تست کن.</li>
+<li>اگر مشکل فقط در یک عرض رخ می‌دهد، همان کنترل مربوط را تغییر بده، نه کل سکشن را.</li>
+<li>Order بصری را با reading/focus order قاطی نکن.</li>
+<li>Duplicate Section بدون دلیل مستند ممنوع است.</li>
+</ul>
+</section>
+</details>
+
+<details aria-labelledby="lesson-14-lesson-deep-dive-7" class="lesson-section lesson-deep-dive lesson-disclosure">
+<summary class="lesson-disclosure-summary" id="lesson-14-lesson-deep-dive-7">C. عمیق‌تر نگاه کن — اختیاری</summary>
+
+<h3>📂 Case Study — Mobile درست دیده می‌شود اما Maintenance خراب است</h3>
+<p><strong>هدف:</strong> 🔍 عیب‌یابی تصمیم Responsive<br/>
+<strong>وضعیت:</strong> <code class="inline-code" dir="ltr">decision_audit</code></p>
+<p>سناریو: Mobile و Desktop هر دو خوب دیده می‌شوند، اما برای Mobile یک Section جدا ساخته شده است.</p>
+<section class="smart-note-card" dir="rtl" lang="fa">
+<ul>
+<li>آیا محتوا در دو جا تکرار شده؟</li>
+<li>آیا Screen Reader محتوای پنهان را می‌بیند؟</li>
+<li>آیا Performance به خاطر DOM اضافی بدتر شده؟</li>
+<li>آیا Classها و Variableها دو مسیر متفاوت گرفته‌اند؟</li>
+<li>آیا همین نتیجه با Direction/Gap/Padding/Order محدود قابل حل بود؟</li>
+<li>آیا تفاوت واقعاً ساختاری است یا فقط Style است؟</li>
+</ul>
+</section>
+<p>نتیجهٔ درست: ظاهر درست کافی نیست؛ مسیر نگهداری و کیفیت DOM را هم Audit کن.</p>
+
+<h3>🔬 پشت صحنه</h3>
+<p>در DevTools، Media Query فعال، computed value و source rule را بررسی کن. ظاهر نهایی نمی‌گوید مقدار از inherited value آمده یا override محلی است.</p>
+<hr/>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-14-lesson-pass-criteria-8" role="heading">✅ معیار عبور اختصاصی این درس</span>
+</summary>
+<section aria-labelledby="lesson-14-lesson-pass-criteria-8" class="disclosure-content lesson-section lesson-pass-criteria">
+<p>برای رفتن به درس بعد، سطح ۱ و ۲ اجباری‌اند. سطح ۳ در ایستگاه‌های بعدی تثبیت می‌شود.</p>
+
+<h3>سطح ۱ — فهمیدم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-82">
+<fieldset>
+<legend>سطح ۱ — فهمیدم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-82-1" name="chk-82-1" type="checkbox"/><span>می‌توانم inherited value، override و reset را توضیح بدهم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-82-2" name="chk-82-2" type="checkbox"/><span>می‌دانم Breakpoint باید براساس شکست محتوا باشد، نه نام دستگاه.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-82-3" name="chk-82-3" type="checkbox"/><span>می‌دانم Duplicate Section راه‌حل اول Responsive نیست.</span></label>
+</fieldset>
+</form>
+
+<h3>سطح ۲ — می‌توانم انجام بدهم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-83">
+<fieldset>
+<legend>سطح ۲ — می‌توانم انجام بدهم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-83-1" name="chk-83-1" type="checkbox"/><span>برای TUYA Responsive Contract می‌نویسم و فقط کمترین override لازم را می‌سازم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-83-2" name="chk-83-2" type="checkbox"/><span>با Resize آهسته اولین شکست واقعی را پیدا می‌کنم.</span></label>
+<label class="choice-row"><input data-persist="checkbox" id="chk-83-3" name="chk-83-3" type="checkbox"/><span>وقتی override لازم نیست، مقدار محلی را Reset می‌کنم.</span></label>
+</fieldset>
+</form>
+
+<h3>سطح ۳ — می‌توانم منتقل کنم</h3>
+<form class="interactive-form checklist-form" data-persist-group="checklist-84">
+<fieldset>
+<legend>سطح ۳ — می‌توانم منتقل کنم</legend>
+<label class="choice-row"><input data-persist="checkbox" id="chk-84-1" name="chk-84-1" type="checkbox"/><span>برای یک Card reusable می‌توانم فرق Media Query و Container Query را توضیح بدهم و بگویم چرا اجرای Container Query نیازمند شواهد نسخهٔ هدف است.</span></label>
+</fieldset>
+</form>
+</section>
+</details>
+
+<details class="lesson-disclosure" id="lesson-14-design-system-decision-v30">
+<summary class="lesson-disclosure-summary"><span aria-level="3" class="disclosure-title" role="heading">🏛 تصمیم Design System — Responsive tokens و overrides</span></summary>
+<section class="disclosure-content lesson-section">
+<ul class="decision-questions">
+<li>این responsive value باید direct override بماند یا Token شود؟</li>
+<li>تغییر در Local Class کافی است یا Global Class باید responsive شود؟</li>
+<li>آیا Component باید در contextهای مختلف رفتار متفاوت داشته باشد؟</li>
+<li>آیا Container Query لازم است یا Media Query کافی است؟</li>
+<li>آیا reset کردن مقدار محلی بهتر از ساخت token جدید است؟</li>
+</ul>
+<p><code dir="ltr">proposed_strategy</code> — فعلاً Responsive overrideها local/provisional هستند. تا وقتی Contract و شکست‌های واقعی پایدار نشده‌اند، Token سراسری نساز.</p>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="2" class="disclosure-title" id="lesson-14-lesson-stop-point-9" role="heading">⏸ اینجا توقف کن</span>
+</summary>
+<section aria-labelledby="lesson-14-lesson-stop-point-9" class="lesson-stop-point lesson-section disclosure-content">
+<p>در درس بعد طبق ترتیب واقعی جزوه ادامه می‌دهیم. تا اینجا TUYA باید با یک DOM و بدون Duplicate از Desktop به Mobile تبدیل شود، اما Breakpointها و مقدارهای نهایی هنوز باید با UI واقعی اعتبارسنجی شوند.</p>
+<hr/>
+</section>
+</details>
+
+<details class="lesson-disclosure">
+<summary class="lesson-disclosure-summary">
+<span aria-level="3" class="disclosure-title" role="heading">ثبت پایان درس 14</span>
+</summary>
+<form class="disclosure-content lesson-completion-form interactive-form" data-persist-group="lesson-14-completion">
+<fieldset>
+<legend>ثبت پایان درس 14</legend>
+<label class="choice-row completion-choice"><input data-persist="checkbox" id="lesson-14-complete" name="lesson-14-complete" type="checkbox"/><span>این درس را با معیارهای عبور مرور کردم.</span></label>
+</fieldset>
+</form>
+</details>
+
+</article>

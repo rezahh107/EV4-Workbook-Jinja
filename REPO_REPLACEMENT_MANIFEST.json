@@ -1,0 +1,268 @@
+{
+  "package": "elementor_v4_repo_replacement_source_v26",
+  "created_at_utc": "2026-06-21T11:08:51Z",
+  "status": "repo_replacement_source_candidate",
+  "intended_use": "Copy contents of repo-root/ into the repository root, replacing matching files.",
+  "primary_replacement_file": "assets/TUYA_Standalone_Workbook_v32_0_0.html",
+  "versioned_html_copy": "assets/TUYA_Standalone_Workbook_v32_0_0_lessons_1_21_release_candidate_v25.html",
+  "content_units_count": 21,
+  "reports_count": 21,
+  "lesson_articles_in_primary_html": 21,
+  "nav_lesson_links_in_primary_html": 21,
+  "duplicate_ids_in_primary_html": {},
+  "missing_expected_units": [],
+  "missing_expected_reports": [],
+  "build_validate": {
+    "project_build_run": false,
+    "project_validate_run": false,
+    "reason": "This is a source replacement package derived from standalone HTML and content units. No package.json/build scripts were provided in the handoff."
+  },
+  "qa_note": "Manual QA in a real browser is still required before production publication.",
+  "files": [
+    {
+      "path": "01_START_HERE.md",
+      "size_bytes": 1620,
+      "sha256": "483c637f3ee028a938f4cbc5c10c438260d36c54cefd283d5d2fcdb2cfc5c487"
+    },
+    {
+      "path": "02_HANDOFF_PROMPT_FA.md",
+      "size_bytes": 16260,
+      "sha256": "67af9dcb593ead021b1426d535430ce48cc90393aa516f78e5169e3730a7b3e2"
+    },
+    {
+      "path": "03_CURRENT_STATE.md",
+      "size_bytes": 1043,
+      "sha256": "74d02597fa1ac757485ac39575784667898bc9c60e5abcc19682766dfadc8494"
+    },
+    {
+      "path": "04_DECISION_AND_CONFLICT_LOG.md",
+      "size_bytes": 1351,
+      "sha256": "2a6f7d773757f6b853b18135331f50d8b3b21bbcf3b5a5b1ed98af2754a3ab4f"
+    },
+    {
+      "path": "05_INPUT_CHECKLIST.md",
+      "size_bytes": 819,
+      "sha256": "3aa4ceaba525b1df2943d2d89fba11f05527948ea74e27772bf65f3c225e15d5"
+    },
+    {
+      "path": "assets/TUYA_Standalone_Workbook_v32_0_0.html",
+      "size_bytes": 2286588,
+      "sha256": "9be8126bdfc533f0b7d68e191d39d86ad20b147684ac50cc0cf1444f3ce5e7dc"
+    },
+    {
+      "path": "assets/TUYA_Standalone_Workbook_v32_0_0_lessons_1_21_release_candidate_v25.html",
+      "size_bytes": 2286588,
+      "sha256": "9be8126bdfc533f0b7d68e191d39d86ad20b147684ac50cc0cf1444f3ce5e7dc"
+    },
+    {
+      "path": "content/units/031-lesson-1.md",
+      "size_bytes": 38497,
+      "sha256": "bc5d82ec58562136e1a29d982e9246e32702e6d35962e32d7563982f7f9170a1"
+    },
+    {
+      "path": "content/units/033-lesson-2.md",
+      "size_bytes": 35792,
+      "sha256": "92fd04c816f9b25663ceb0f435e27f82e8838ce7e5402f4dddec77af14901e2d"
+    },
+    {
+      "path": "content/units/034-lesson-3.md",
+      "size_bytes": 38563,
+      "sha256": "e8d0385acf563e0e106519b152b6834edc245bc62880cb55ee746317e127ae1b"
+    },
+    {
+      "path": "content/units/035-lesson-4.md",
+      "size_bytes": 39012,
+      "sha256": "d477d392160f6632adc84d089d3956f2da2246c8fbf1f187d8ff3d5b71d16166"
+    },
+    {
+      "path": "content/units/037-lesson-5.md",
+      "size_bytes": 36341,
+      "sha256": "3e62f18a28ce1e26dc736852649abb99533bea99c06ca1fa0f71a9fa3f27dad8"
+    },
+    {
+      "path": "content/units/038-lesson-6.md",
+      "size_bytes": 36574,
+      "sha256": "641da42bc0423dc61c0920b2c5d33c18b47d20e1fa47e66af664eab217e74656"
+    },
+    {
+      "path": "content/units/039-lesson-7.md",
+      "size_bytes": 41415,
+      "sha256": "92cb71bcb77d70c0b4e37cacf5ef250cb20298ac6264af87f0ac863b5de0fe8d"
+    },
+    {
+      "path": "content/units/040-lesson-8.md",
+      "size_bytes": 39070,
+      "sha256": "90483545ae896161f6b2639bca88a227a120f9fb698db65c81fd9ee3ea9aecd6"
+    },
+    {
+      "path": "content/units/041-lesson-9.md",
+      "size_bytes": 38317,
+      "sha256": "1abbdf971fffd954e24d45a2b30c91d63f1db74fad3176b0076031cac44c464a"
+    },
+    {
+      "path": "content/units/043-lesson-10.md",
+      "size_bytes": 41264,
+      "sha256": "62ba124f45d576c37ed52323e5e0b100f761e0cdecaa23824e6ec01f33fd317c"
+    },
+    {
+      "path": "content/units/044-lesson-11.md",
+      "size_bytes": 43145,
+      "sha256": "738a34c16235035cb7e389183ae58f032f433283e1b84f9a6c6d21d2e4570d70"
+    },
+    {
+      "path": "content/units/046-lesson-12.md",
+      "size_bytes": 43227,
+      "sha256": "d974829a6bbfb2afa46ac6a9587589b94de6d117a74049c499803eead9f2f533"
+    },
+    {
+      "path": "content/units/047-lesson-13.md",
+      "size_bytes": 39693,
+      "sha256": "2e9ced6f09f11ece57e3a1572ab1438696688c3509471d95a95004bf319c82d1"
+    },
+    {
+      "path": "content/units/048-lesson-14.md",
+      "size_bytes": 43452,
+      "sha256": "f093c72ece7bcb5fb6eaa42e21a765094ef19da8a7df8e0a5e7970942722148c"
+    },
+    {
+      "path": "content/units/050-lesson-15.md",
+      "size_bytes": 43041,
+      "sha256": "14f803e9269cdc6ebdc289e829019608ceb45cb6944366e7f42c6ec1a8e12276"
+    },
+    {
+      "path": "content/units/052-lesson-16.md",
+      "size_bytes": 40923,
+      "sha256": "46de0b5a5208393e93c87b2b87e9059781e445be49d12ae03446002373f1884d"
+    },
+    {
+      "path": "content/units/053-lesson-17.md",
+      "size_bytes": 44959,
+      "sha256": "d1903502e61e669e501eae9b96b577c4259d3c1057ceaae894ad005f6bd44efd"
+    },
+    {
+      "path": "content/units/054-lesson-18.md",
+      "size_bytes": 44179,
+      "sha256": "acc4d4b8e886ac759725e698409ca8d7373dc3875b44e9a656a994b8fb6089b2"
+    },
+    {
+      "path": "content/units/063-lesson-19.md",
+      "size_bytes": 41954,
+      "sha256": "a82a119673b25a55095dd2c74f1e70d3944d94c4a28aa83f840c096bcf652c51"
+    },
+    {
+      "path": "content/units/064-lesson-20.md",
+      "size_bytes": 50431,
+      "sha256": "64a94598d5768dad0b4a492fb590784bf5c235fc8ec567770367c8f12af809a9"
+    },
+    {
+      "path": "content/units/066-lesson-21.md",
+      "size_bytes": 38505,
+      "sha256": "c85acc3c99bfd53523a14204cb99ee8a6c4d7e1182ca8127ba90d2a24a78ab95"
+    },
+    {
+      "path": "reports/LESSON_10_REWRITE_REPORT_FA.md",
+      "size_bytes": 3071,
+      "sha256": "d00bfedc24df67dda42615da7fe3e8b5634da14e4e9081aa1c0e64e8e5b3b61d"
+    },
+    {
+      "path": "reports/LESSON_11_REWRITE_REPORT_FA.md",
+      "size_bytes": 3219,
+      "sha256": "40a8fe2094ac509305ff307d6e4e49bf2b15a3bb1cd6825a1b3bee42e5927c05"
+    },
+    {
+      "path": "reports/LESSON_12_REWRITE_REPORT_FA.md",
+      "size_bytes": 3040,
+      "sha256": "09d6d64f911b8abf937ef4f2c2d03845f56f06103a5dc69ce068d6c99110b8c4"
+    },
+    {
+      "path": "reports/LESSON_13_REWRITE_REPORT_FA.md",
+      "size_bytes": 2921,
+      "sha256": "bc57f92b711541e29b3c4f6f8090f8608e07af0d976e78de474007abc3faac7d"
+    },
+    {
+      "path": "reports/LESSON_14_REWRITE_REPORT_FA.md",
+      "size_bytes": 3646,
+      "sha256": "daf6fd84e2e5eee49369693b61d32e2de14317dfdabdb563a4247095a1ebecec"
+    },
+    {
+      "path": "reports/LESSON_15_REWRITE_REPORT_FA.md",
+      "size_bytes": 3432,
+      "sha256": "16e65d5abaf82d37561fac282d9a6f6fde9ac04ec5ac1c2dabda5c9726742ac0"
+    },
+    {
+      "path": "reports/LESSON_16_REWRITE_REPORT_FA.md",
+      "size_bytes": 3565,
+      "sha256": "45e1161924f23af285e963d3615ace433688c38fe9c6332f39a068f61e8ea39f"
+    },
+    {
+      "path": "reports/LESSON_17_REWRITE_REPORT_FA.md",
+      "size_bytes": 3484,
+      "sha256": "b2554c1c8905cf1dc34892ea60662e0246eeb048b825ce315e97f9ff84c031cd"
+    },
+    {
+      "path": "reports/LESSON_18_REWRITE_REPORT_FA.md",
+      "size_bytes": 3653,
+      "sha256": "5dc44957f46890e3724ba189bf65e1c7a402e643ac4a26d099a2aeee07c192da"
+    },
+    {
+      "path": "reports/LESSON_19_REWRITE_REPORT_FA.md",
+      "size_bytes": 3740,
+      "sha256": "e55904f248073ef5142840cd7d6700e957e9a2dfc0a95977c7af61dbc86cd207"
+    },
+    {
+      "path": "reports/LESSON_1_REWRITE_REPORT_FA.md",
+      "size_bytes": 582,
+      "sha256": "c7308903b768c44d00671a188b9684832341a4a0780f265954c0e4efc6c26111"
+    },
+    {
+      "path": "reports/LESSON_20_REWRITE_REPORT_FA.md",
+      "size_bytes": 3686,
+      "sha256": "15412fea4ff0162d935cd10f9c128ef8603606f66014fb0a544ef9390f4de932"
+    },
+    {
+      "path": "reports/LESSON_21_REWRITE_REPORT_FA.md",
+      "size_bytes": 4073,
+      "sha256": "cd9e82196cc6f43dd6720659d1a4da5155e94350a59258294e1fcd543dc2888d"
+    },
+    {
+      "path": "reports/LESSON_2_REWRITE_REPORT_FA.md",
+      "size_bytes": 2173,
+      "sha256": "e82ee6c3472f4f226fd5c48cd298738a311efacf0592a37bc2ed3050862a734b"
+    },
+    {
+      "path": "reports/LESSON_3_REWRITE_REPORT_FA.md",
+      "size_bytes": 3054,
+      "sha256": "f7e9931dfa83f436b37a3659e82d9db2630c4a68e8c00bb5a7deacaaecedcbb5"
+    },
+    {
+      "path": "reports/LESSON_4_REWRITE_REPORT_FA.md",
+      "size_bytes": 2612,
+      "sha256": "8fea3dcfd90b015b8cf712173e245c3728108e7aea9699f651ce39c745b59d74"
+    },
+    {
+      "path": "reports/LESSON_5_REWRITE_REPORT_FA.md",
+      "size_bytes": 2762,
+      "sha256": "a1c660182fe7aa5a8e0b4c21520c3a0b64754073b7b46b48031262a1c9e74bb4"
+    },
+    {
+      "path": "reports/LESSON_6_REWRITE_REPORT_FA.md",
+      "size_bytes": 2860,
+      "sha256": "101c489e02e267dec19441eab88715bbd41317b761c1913aeeb6b75647eda5d5"
+    },
+    {
+      "path": "reports/LESSON_7_REWRITE_REPORT_FA.md",
+      "size_bytes": 2956,
+      "sha256": "0ea42970bed809617306e0dc29a3db3d7aa023fc3d64de6816b6163c6af52856"
+    },
+    {
+      "path": "reports/LESSON_8_REWRITE_REPORT_FA.md",
+      "size_bytes": 2821,
+      "sha256": "ee56617ebb7bba6bf1db7cfe8e28e0a4f7d5b49becf3b83c6b9a4d33d539ecf4"
+    },
+    {
+      "path": "reports/LESSON_9_REWRITE_REPORT_FA.md",
+      "size_bytes": 2802,
+      "sha256": "ab2f14a608290d745ec4d369d854979fa083c9faf747625d58e93fbdd5105d54"
+    }
+  ]
+}
