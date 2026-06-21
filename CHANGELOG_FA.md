@@ -1,11 +1,17 @@
 # تغییرات
 
+## انتقال روح آموزشی TUYA — in progress
+
+- یادداشت حفظ یادگیری دیداری به «یادداشت انتقال روح آموزشی TUYA» تبدیل شد.
+- اصل Context-first، تفکیک confirmed/provisional/unknown، یک اقدام کوچک، Flow/Absolute، درصد نسبت به Parent، Min Height، و اصلاح Rename در Structure ثبت شد.
+- این تغییر هنوز بازنویسی خطی همهٔ درس‌ها نیست؛ لایهٔ یکپارچه‌سازی برای اعمال مرحلهٔ بعدی است.
+
 ## Repository Tooling 1.1.0 — LLM-ready handoff and GitHub governance
 
 - قرارداد `AGENTS.md` و `llm/model-contract.yaml` اضافه شد.
 - Task ساختاریافته و گزارش بازگشت مدل اضافه شد.
 - ابزارهای ساخت Handoff قطعی، بررسی ZIP برگشتی و اجرای همه Gateها اضافه شد.
-- GitHub Actions، Dependabot، PR Template، Issue Template، `.gitattributes` و `.editorconfig` اضافه شد.
+- GitHub Actions، Dependabot، PR Template، Issue Template، `.gitattributes` و `.editorconfig` اضافه شدند.
 - خروجی‌های تولیدی از Repository منبع جدا و در `.gitignore` ثبت شدند.
 
 # تغییرات نسخه 32.0.0
